@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Beneficiaries and Riders – V & V Advisors LLC</title>
+  <title>Beneficiaries and Riders – V & V Advisors</title>
   <meta name="description" content="Understand beneficiaries and policy riders in life insurance—how they protect families, provide flexibility, and strengthen your financial foundation." />
   <link rel="canonical" href="https://www.example.com/pages/beneficiaries_riders.html" />
 
@@ -17,16 +17,16 @@
 
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Beneficiaries and Riders – V & V Advisors LLC" />
+  <meta property="og:title" content="Beneficiaries and Riders – V & V Advisors" />
   <meta property="og:description" content="Learn how life insurance beneficiaries and riders work to provide flexibility, protection, and peace of mind for your loved ones." />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="../assets/img/social/beneficiaries_riders.jpg" />
   <meta property="og:url" content="https://www.example.com/pages/beneficiaries_riders.html" />
-  <meta property="og:site_name" content="V & V Advisors LLC" />
+  <meta property="og:site_name" content="V & V Advisors" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Beneficiaries and Riders – V & V Advisors LLC" />
+  <meta name="twitter:title" content="Beneficiaries and Riders – V & V Advisors" />
   <meta name="twitter:description" content="Understand beneficiaries and life insurance riders—two key components of building family financial protection." />
   <meta name="twitter:image" content="../assets/img/social/beneficiaries_riders.jpg" />
 
@@ -36,7 +36,7 @@
 
     window.addEventListener("DOMContentLoaded", () => {
       addJSONLDSchema({
-        pageTitle: "Beneficiaries and Riders – V & V Advisors LLC",
+        pageTitle: "Beneficiaries and Riders – V & V Advisors",
         pageDescription: "Understand beneficiaries and policy riders in life insurance—how they protect families, provide flexibility, and strengthen your financial foundation.",
         pageUrl: window.location.href,
         keywords: ["life insurance", "beneficiaries", "policy riders", "living benefits", "financial literacy", "V & V Advisors"]
@@ -62,7 +62,7 @@
   </header>
 
   <!-- SECTION 1 -->
-  <section class="flashy-section reveal delay-2">
+  <section class="flashy-section reveal delay-1">
     <h2>Beneficiaries: Choosing Who You Protect</h2>
     <p>
       A <strong>beneficiary</strong> is the person or entity that receives your life insurance proceeds.
@@ -85,7 +85,7 @@
   </section>
 
   <!-- SECTION 2 -->
-  <section class="flashy-section reveal delay-3">
+  <section class="flashy-section reveal delay-1">
     <h2>Riders: Tailoring Protection to Your Life</h2>
     <p>
       <strong>Riders</strong> are add-ons to your life insurance policy that extend or customize coverage.
@@ -93,23 +93,42 @@
     </p>
 
     <div class="accordion-flashy">
-      <button class="accordion-btn" aria-expanded="false"><span>1. Accelerated Death Benefit Rider</span><i data-feather="chevron-down"></i></button>
-      <div class="accordion-content"><p>Allows early access to part of the death benefit if you are diagnosed with a terminal illness.</p></div>
 
-      <button class="accordion-btn" aria-expanded="false"><span>2. Waiver of Premium Rider</span><i data-feather="chevron-down"></i></button>
-      <div class="accordion-content"><p>Waives future premium payments if you become totally disabled and unable to work.</p></div>
+      <button class="accordion-btn" aria-expanded="false">
+        <span>1. Accelerated Death Benefit Rider</span>
+      </button>
+      <div class="accordion-content">
+        <p>Allows early access to part of the death benefit if you are diagnosed with a terminal illness.</p>
+      </div>
 
-      <button class="accordion-btn" aria-expanded="false"><span>3. Child Term Rider</span><i data-feather="chevron-down"></i></button>
-      <div class="accordion-content"><p>Provides term life coverage for your children, often convertible to permanent coverage later.</p></div>
+      <button class="accordion-btn" aria-expanded="false">
+        <span>2. Waiver of Premium Rider</span>
+      </button>
+      <div class="accordion-content">
+        <p>Waives future premium payments if you become totally disabled and unable to work.</p>
+      </div>
 
-      <button class="accordion-btn" aria-expanded="false"><span>4. Guaranteed Insurability Rider</span><i data-feather="chevron-down"></i></button>
-      <div class="accordion-content"><p>Allows you to increase coverage at specific times without another medical exam.</p></div>
+      <button class="accordion-btn" aria-expanded="false">
+        <span>3. Child Term Rider</span>
+      </button>
+      <div class="accordion-content">
+        <p>Provides term life coverage for your children, often convertible to permanent coverage.</p>
+      </div>
+
+      <button class="accordion-btn" aria-expanded="false">
+        <span>4. Guaranteed Insurability Rider</span>
+      </button>
+      <div class="accordion-content">
+        <p>Allows you to increase coverage at specific times without another medical exam.</p>
+      </div>
+
     </div>
 
     <p class="source">
-      Source: <a href="https://www.investopedia.com/terms/l/life-insurance-rider.asp" target="_blank" rel="noopener">Investopedia – Life Insurance Riders Explained</a>
+      Source: <a href="https://www.investopedia.com/terms/l/life-insurance-rider.asp" target="_blank">Investopedia – Life Insurance Riders Explained</a>
     </p>
   </section>
+
 
   <!-- SECTION 3 -->
   <section class="flashy-section reveal delay-1">
@@ -134,5 +153,27 @@
 <!-- Core Scripts -->
 <script type="module" src="/assets/js/core.js" defer></script>
 <script type="module" src="/assets/js/pages/financial_ed.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".accordion-btn");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        const content = btn.nextElementSibling;
+
+        // toggle state
+        btn.setAttribute("aria-expanded", !expanded);
+
+        if (!expanded) {
+          content.classList.add("open");
+        } else {
+          content.classList.remove("open");
+        }
+      });
+    });
+  });
+
+</script>
 </body>
 </html>

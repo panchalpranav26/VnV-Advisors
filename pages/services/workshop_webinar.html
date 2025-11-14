@@ -5,8 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Workshops and Webinars – V & V Advisors LLC</title>
-  <meta name="description" content="Join V & V Advisors LLC’s educational workshops and webinars to build your financial literacy—learn budgeting, insurance, wealth-building, and debt management from trusted professionals." />
+  <title>Workshops and Webinars – V & V Advisors</title>
+  <meta name="description" content="Join V & V Advisors’s educational workshops and webinars to build your financial literacy—learn budgeting, insurance, wealth-building, and debt management from trusted professionals." />
   <link rel="canonical" href="https://www.example.com/pages/workshops_webinars.html" />
 
   <!-- Google Fonts -->
@@ -15,290 +15,18 @@
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/style.css" />
 
-  <!-- Feather Icons -->
-
-
-  <!-- Flashy Enhancements (Non-conflicting) -->
-  <style>
-    /* ============================================================
-       FLASHY STYLES – NON-CONFLICTING
-       Reusable classes only – no global overrides
-       ============================================================ */
-
-    .wrap {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: var(--pad-x);
-    }
-
-    /* Hero Section – Glass + Gradient */
-    .hero-flashy {
-      position: relative;
-      padding: clamp(5rem, 10vw, 8rem) var(--pad-x);
-      text-align: center;
-      color: var(--white);
-      overflow: hidden;
-      border-radius: var(--radius);
-      margin-bottom: 4rem;
-      background:
-              radial-gradient(circle at 30% 80%, rgba(20, 180, 166, 0.2) 0%, transparent 50%),
-              radial-gradient(circle at 70% 20%, rgba(0, 119, 182, 0.15) 0%, transparent 50%),
-              linear-gradient(135deg, var(--navy-900), var(--navy-800));
-      animation: heroPulse 15s ease infinite;
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(45, 212, 191, 0.2);
-    }
-
-    @keyframes heroPulse {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-
-    .page-title {
-      font-size: var(--fs-h1);
-      font-weight: 700;
-      margin: 0 0 1.5rem;
-      background: linear-gradient(90deg, #fff, var(--teal-400), #fff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: titleGlow 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes titleGlow {
-      from { filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.5)); }
-      to { filter: drop-shadow(0 0 20px rgba(45, 212, 191, 0.8)); }
-    }
-
-    /* Section Title with Underline */
-    .section-title {
-      position: relative;
-      display: inline-block;
-      padding-bottom: 0.5rem;
-      margin-bottom: 2rem !important;
-      color: var(--teal-400);
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      left: 0; bottom: 0;
-      width: 60px; height: 2px;
-      background: var(--teal-400);
-      border-radius: 2px;
-      box-shadow: 0 0 12px rgba(45, 212, 191, 0.7);
-    }
-
-    /* Table – Flashy */
-    .table-flashy {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1.5rem;
-      background: var(--surface-alt);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-1);
-    }
-
-    .table-flashy th {
-      background: rgba(20, 180, 166, 0.15);
-      color: var(--teal-400);
-      text-align: left;
-      padding: 1rem;
-      font-weight: 600;
-    }
-
-    .table-flashy td {
-      padding: 1rem;
-      border-bottom: 1px solid rgba(45, 212, 191, 0.1);
-      transition: all var(--anim-fast) ease;
-    }
-
-    .table-flashy tr:hover {
-      background: rgba(20, 180, 166, 0.08);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    /* List – Reusable Flashy */
-    .flashy-list,
-    .flashy-list ol,
-    .flashy-list ul {
-      list-style: none;
-      padding: 0;
-      margin: 1.5rem 0;
-      max-width: 800px;
-    }
-
-    .flashy-list li {
-      position: relative;
-      padding-left: 2.2rem;
-      margin-bottom: 1rem;
-      transition: all var(--anim-fast) ease;
-    }
-
-    .flashy-list ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.35rem;
-      width: 10px; height: 10px;
-      background: var(--teal-400);
-      border-radius: 50%;
-      box-shadow: 0 0 8px rgba(45, 212, 191, 0.6);
-    }
-
-    .flashy-list li:hover {
-      transform: translateX(6px);
-      color: var(--teal-400);
-    }
-
-    .flashy-list li i {
-      position: absolute;
-      left: 0;
-      color: var(--teal-400);
-    }
-
-    /* Card Grid */
-    .card-grid {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      margin-top: 2rem;
-    }
-
-    .flashy-card {
-      background: var(--surface-alt);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-1);
-      transition: all var(--anim-med) ease;
-      border: 1px solid rgba(45, 212, 191, 0.15);
-    }
-
-    .flashy-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-2);
-      border-color: var(--teal-400);
-    }
-
-    .flashy-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      transition: transform var(--anim-med) ease;
-    }
-
-    .flashy-card:hover img {
-      transform: scale(1.05);
-    }
-
-    .card-body {
-      padding: 1.5rem;
-    }
-
-    .card-body h3 {
-      margin: 0 0 0.75rem;
-      color: var(--teal-400);
-    }
-
-    /* Buttons with Icon */
-    .btn-glow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.8rem 1.6rem;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      transition: all var(--anim-fast) ease;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .btn-glow::before {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%;
-      width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left var(--anim-med) ease;
-      z-index: -1;
-    }
-
-    .btn-glow:hover::before {
-      left: 100%;
-    }
-
-    .btn-primary {
-      background: var(--teal-500);
-      color: white;
-      box-shadow: 0 0 20px rgba(20, 180, 166, 0.4);
-    }
-
-    .btn-primary:hover {
-      background: var(--teal-400);
-      transform: translateY(-2px);
-      box-shadow: 0 0 30px rgba(45, 212, 191, 0.7);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--teal-400);
-      border: 2px solid var(--teal-400);
-    }
-
-    .btn-secondary:hover {
-      background: var(--teal-400);
-      color: var(--navy-900);
-      box-shadow: 0 0 20px rgba(45, 212, 191, 0.5);
-    }
-
-    /* CTA Section */
-    .cta-flashy {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: var(--surface-alt);
-      border-radius: var(--radius);
-      margin: 4rem 0;
-      box-shadow: var(--shadow-1);
-    }
-
-    /* Reveal Animations */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s var(--anim-med) cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .delay-1 { transition-delay: 0.1s; }
-    .delay-2 { transition-delay: 0.2s; }
-    .delay-3 { transition-delay: 0.3s; }
-
-    /* Responsive */
-    @media (max-width: 640px) {
-      .hero-flashy { padding: 4rem var(--pad-x); }
-      .btn-glow { width: 100%; justify-content: center; }
-    }
-  </style>
-
   <!-- Open Graph -->
-  <meta property="og:title" content="Workshops and Webinars – V & V Advisors LLC" />
-  <meta property="og:description" content="Engage with interactive, family-focused financial education through live and virtual workshops by V & V Advisors LLC." />
+  <meta property="og:title" content="Workshops and Webinars – V & V Advisors" />
+  <meta property="og:description" content="Engage with interactive, family-focused financial education through live and virtual workshops by V & V Advisors." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="../assets/img/social/workshops_webinars.jpg" />
   <meta property="og:url" content="https://www.example.com/pages/workshops_webinars.html" />
-  <meta property="og:site_name" content="V & V Advisors LLC" />
+  <meta property="og:site_name" content="V & V Advisors" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Workshops and Webinars – V & V Advisors LLC" />
-  <meta name="twitter:description" content="Join V & V Advisors LLC to strengthen your financial foundation with expert-led workshops and webinars." />
+  <meta name="twitter:title" content="Workshops and Webinars – V & V Advisors" />
+  <meta name="twitter:description" content="Join V & V Advisors to strengthen your financial foundation with expert-led workshops and webinars." />
   <meta name="twitter:image" content="../assets/img/social/workshops_webinars.jpg" />
 
   <!-- JSON-LD added dynamically via JS -->
@@ -307,7 +35,7 @@
 
     window.addEventListener("DOMContentLoaded", () => {
       addJSONLDSchema({
-        pageTitle: "Workshops and Webinars – V & V Advisors LLC",
+        pageTitle: "Workshops and Webinars – V & V Advisors",
         pageDescription: "Join interactive sessions designed to empower families through financial literacy, protection, and wealth-building habits.",
         pageUrl: window.location.href,
         keywords: [
@@ -316,7 +44,7 @@
           "family financial education",
           "budgeting webinar",
           "insurance literacy",
-          "V & V Advisors LLC"
+          "V & V Advisors"
         ]
       });
     });
@@ -332,15 +60,15 @@
   <header class="page-hero reveal">
     <h1 class="page-title">Workshops and Webinars</h1>
     <p class="lead">
-      At <strong>V & V Advisors LLC</strong>, we believe financial literacy should be accessible to everyone.
+      At <strong>V & V Advisors</strong>, we believe financial literacy should be accessible to everyone.
       Our workshops and webinars bring families together to learn practical money habits—budgeting, insurance planning, and building lasting wealth—with compassion and clarity.
     </p>
   </header>
 
   <!-- UPCOMING EVENTS -->
-  <section class="content reveal delay-1">
-    <h2 class="section-title">Upcoming Live Sessions</h2>
-    <table class="table-flashy">
+  <section class="flashy-section delay-1">
+    <h2>Upcoming Live Sessions</h2>
+    <table class="flashy-table">
       <thead>
       <tr>
         <th><i data-feather="book-open"></i> Topic</th>
@@ -354,27 +82,27 @@
         <td>Budgeting for Beginners: The 50/30/20 Method</td>
         <td>Nov 14, 2025</td>
         <td>Virtual (Zoom)</td>
-        <td><a href="#" class="btn-glow btn-primary"><i data-feather="user-plus"></i> Register</a></td>
+        <td><a href="#" class="btn-glow md"><i data-feather="user-plus"></i> Register</a></td>
       </tr>
       <tr>
         <td>Understanding Life Insurance: Protecting Your Family’s Future</td>
         <td>Dec 3, 2025</td>
         <td>In-Person (Tracy, CA)</td>
-        <td><a href="#" class="btn-glow btn-primary"><i data-feather="user-plus"></i> Register</a></td>
+        <td><a href="#" class="btn-glow md"><i data-feather="user-plus"></i> Register</a></td>
       </tr>
       <tr>
         <td>Debt-Free Living: Practical Steps to Regain Control</td>
         <td>Jan 18, 2026</td>
         <td>Virtual (Google Meet)</td>
-        <td><a href="#" class="btn-glow btn-primary"><i data-feather="user-plus"></i> Register</a></td>
+        <td><a href="#" class="btn-glow md"><i data-feather="user-plus"></i> Register</a></td>
       </tr>
       </tbody>
     </table>
   </section>
 
   <!-- BENEFITS -->
-  <section class="benefits reveal delay-2">
-    <h2 class="section-title">Why Join Our Programs?</h2>
+  <section class="flashy-section delay-1">
+    <h2>Why Join Our Programs?</h2>
     <ul class="flashy-list">
       <li><i data-feather="shield"></i> <strong>Trusted Guidance:</strong> Led by experienced financial educators and professionals.</li>
       <li><i data-feather="users"></i> <strong>Family-Oriented:</strong> Designed for real-life family needs, not just theory.</li>
@@ -384,46 +112,46 @@
   </section>
 
   <!-- RECORDINGS -->
-  <section class="recordings reveal delay-3">
-    <h2 class="section-title">Recent Webinar Recordings</h2>
-    <div class="card-grid">
-      <div class="flashy-card reveal delay-1">
+  <section class="flashy-section delay-1">
+    <h2>Recent Webinar Recordings</h2>
+    <div class="methods-grid">
+      <div class="flashy-card delay-1">
         <img src="../assets/img/webinars/budget_basics.jpg" alt="Budgeting Workshop">
-        <div class="card-body">
+        <div>
           <h3>Smart Budgeting for Families</h3>
           <p>Learn how to create a flexible, goal-oriented budget that works for your household.</p>
-          <a href="#" class="btn-glow btn-secondary"><i data-feather="play-circle"></i> Watch Replay</a>
+          <a href="#" class="btn-glow md"><i data-feather="play-circle"></i> Watch Replay</a>
         </div>
       </div>
-      <div class="flashy-card reveal delay-2">
+      <div class="flashy-card delay-2">
         <img src="../assets/img/webinars/insurance_basics.jpg" alt="Insurance Webinar">
-        <div class="card-body">
+        <div>
           <h3>Life Insurance Simplified</h3>
           <p>Understand policy types, terms, and how to protect your loved ones effectively.</p>
-          <a href="#" class="btn-glow btn-secondary"><i data-feather="play-circle"></i> Watch Replay</a>
+          <a href="#" class="btn-glow md"><i data-feather="play-circle"></i> Watch Replay</a>
         </div>
       </div>
-      <div class="flashy-card reveal delay-3">
+      <div class="flashy-card delay-3">
         <img src="../assets/img/webinars/wealth_building.jpg" alt="Wealth Building Session">
-        <div class="card-body">
+        <div>
           <h3>Building Wealth Step-by-Step</h3>
           <p>Explore safe, consistent investment strategies and long-term financial growth.</p>
-          <a href="#" class="btn-glow btn-secondary"><i data-feather="play-circle"></i> Watch Replay</a>
+          <a href="#" class="btn-glow md"><i data-feather="play-circle"></i> Watch Replay</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="cta-flashy reveal delay-1">
-    <h2 class="section-title">Want to Host a Workshop?</h2>
-    <p>Partner with V & V Advisors LLC to bring financial literacy to your community, school, or workplace.</p>
-    <a href="/pages/contact.html" class="btn-glow btn-primary"><i data-feather="mail"></i> Contact Us</a>
+  <section class="flashy-section delay-1">
+    <h2>Want to Host a Workshop?</h2>
+    <p>Partner with V & V Advisors to bring financial literacy to your community, school, or workplace.</p>
+    <a href="/pages/contact.html" class="btn-glow md"><i data-feather="mail"></i> Contact Us</a>
   </section>
 
   <!-- REFERENCES -->
-  <section class="references reveal delay-2">
-    <h3 class="section-title">Learn More</h3>
+  <section class="flashy-section delay-1">
+    <h2>Learn More</h2>
     <ul class="flashy-list">
       <li><i data-feather="external-link"></i> <a href="https://www.fdic.gov/resources/consumers/money-smart/index.html" target="_blank" rel="noopener">FDIC Money Smart Program</a></li>
       <li><i data-feather="external-link"></i> <a href="https://www.consumerfinance.gov/consumer-tools/" target="_blank" rel="noopener">Consumer Financial Protection Bureau Tools</a></li>
@@ -438,22 +166,5 @@
 <!-- Core Scripts -->
 <script type="module" src="/assets/js/core.js" defer></script>
 <script type="module" src="/assets/js/pages/services.js" defer></script>
-<!-- Initialize Feather Icons + Scroll Reveal -->
-<script>
-  // Initialize Feather Icons
-  feather.replace();
-
-  // Scroll Reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  reveals.forEach(el => observer.observe(el));
-</script>
 </body>
 </html>

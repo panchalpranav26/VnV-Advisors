@@ -5,8 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Our Team – V & V Advisors LLC</title>
-  <meta name="description" content="Meet the V & V Advisors LLC team—dedicated professionals empowering families through financial literacy, protection, and wealth-building education." />
+  <title>Our Team – V & V Advisors</title>
+  <meta name="description" content="Meet the V & V Advisors team—dedicated professionals empowering families through financial literacy, protection, and wealth-building education." />
   <link rel="canonical" href="https://www.example.com/pages/our_team.html" />
 
   <!-- Google Fonts -->
@@ -14,266 +14,19 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/style.css" />
-
-
-  <!-- Feather Icons -->
-
-
-  <!-- Flashy Custom Styles (Non-conflicting) -->
-  <style>
-    /* ============================================================
-       FLASHY TEAM PAGE – REUSABLE & NON-CONFLICTING
-       ============================================================ */
-
-    /* Page Header – Animated Gradient */
-    .page-header {
-      text-align: center;
-      padding: clamp(4rem, 8vw, 6rem) var(--pad-x);
-      background:
-              radial-gradient(circle at 20% 80%, rgba(20, 180, 166, 0.2) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(0, 119, 182, 0.15) 0%, transparent 50%),
-              linear-gradient(135deg, var(--navy-900), var(--navy-800));
-      color: var(--white);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .page-header::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(45deg, transparent, rgba(45, 212, 191, 0.1), transparent);
-      animation: shimmer 8s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    @keyframes shimmer {
-      0%, 100% { transform: translateX(-100%); }
-      50% { transform: translateX(100%); }
-    }
-
-    .page-title {
-      font-size: var(--fs-h1);
-      font-weight: 700;
-      margin-bottom: 1rem;
-      background: linear-gradient(90deg, #ffffff, var(--teal-400), #ffffff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: titleGlow 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes titleGlow {
-      from { filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.4)); }
-      to { filter: drop-shadow(0 0 20px rgba(45, 212, 191, 0.7)); }
-    }
-
-    /* Team Grid */
-    .team-grid {
-      display: grid;
-      gap: 2.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      margin: 4rem auto;
-      max-width: var(--maxw);
-      padding: 0 var(--pad-x);
-    }
-
-    /* Flashy Team Card */
-    .team-card {
-      background: var(--surface-alt);
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid rgba(45, 212, 191, 0.15);
-      transition: all var(--anim-med) ease;
-      position: relative;
-      box-shadow: var(--shadow-1);
-    }
-
-    .team-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 4px;
-      background: linear-gradient(90deg, transparent, var(--teal-400), transparent);
-      transform: scaleX(0);
-      transition: transform var(--anim-med) ease;
-    }
-
-    .team-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .team-card:hover {
-      transform: translateY(-12px);
-      box-shadow: var(--shadow-2);
-      border-color: var(--teal-400);
-    }
-
-    .team-card img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      transition: transform var(--anim-med) ease;
-    }
-
-    .team-card:hover img {
-      transform: scale(1.05);
-    }
-
-    .team-card h2 {
-      margin: 1.5rem 1.5rem 0.5rem;
-      font-size: 1.75rem;
-      color: var(--teal-400);
-    }
-
-    .team-card .role {
-      margin: 0 1.5rem 1rem;
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .team-card p {
-      margin: 0 1.5rem 1.5rem;
-      line-height: 1.7;
-    }
-
-    /* Flashy Table */
-    .team-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0;
-      font-size: 0.95rem;
-    }
-
-    .team-table th,
-    .team-table td {
-      padding: 0.75rem 1.5rem;
-      text-align: left;
-      border-bottom: 1px solid rgba(45, 212, 191, 0.2);
-      transition: background var(--anim-fast) ease;
-    }
-
-    .team-table th {
-      background: rgba(20, 43, 63, 0.4);
-      color: var(--teal-400);
-      font-weight: 600;
-      width: 38%;
-    }
-
-    .team-table tr:hover td {
-      background: rgba(45, 212, 191, 0.1);
-    }
-
-    .team-table a {
-      color: var(--teal-400);
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .team-table a:hover {
-      color: var(--teal-400);
-    }
-
-    /* Icon Styling */
-    .icon {
-      width: 1.1em;
-      height: 1.1em;
-      stroke: currentColor;
-      stroke-width: 2.2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      fill: none;
-    }
-
-    /* Mission Section */
-    .mission-section {
-      max-width: var(--maxw);
-      margin: 5rem auto;
-      padding: 3rem 2rem;
-      text-align: center;
-      background: rgba(11, 27, 42, 0.35);
-      backdrop-filter: blur(4px);
-      border-radius: var(--radius);
-      border: 1px solid rgba(45, 212, 191, 0.2);
-      box-shadow: var(--shadow-1);
-    }
-
-    .mission-section h2 {
-      position: relative;
-      display: inline-block;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-      color: var(--teal-400);
-    }
-
-    .mission-section h2::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 60px;
-      height: var(--underline-h);
-      background: var(--teal-400);
-      border-radius: 2px;
-      box-shadow: 0 0 10px rgba(45, 212, 191, 0.6);
-    }
-
-    .mission-section em {
-      display: block;
-      margin: 1.5rem 0;
-      font-size: 1.1rem;
-      color: var(--ink-100);
-    }
-
-    .mission-section a {
-      color: var(--teal-400);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .mission-section a:hover {
-      color: var(--white);
-    }
-
-    /* Reveal Animations */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s var(--anim-med) cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.6s var(--anim-med) cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .delay-1 { transition-delay: 0.1s; }
-    .delay-2 { transition-delay: 0.2s; }
-
-    /* Responsive */
-    @media (max-width: 640px) {
-      .team-card img { height: 240px; }
-      .team-table th,
-      .team-table td { padding: 0.6rem 1rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages/about.css" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Our Team – V & V Advisors LLC" />
-  <meta property="og:description" content="Meet the financial education team at V & V Advisors LLC and discover the people helping families build strong financial futures." />
+  <meta property="og:title" content="Our Team – V & V Advisors" />
+  <meta property="og:description" content="Meet the financial education team at V & V Advisors and discover the people helping families build strong financial futures." />
   <meta property="og:type" content="profile" />
   <meta property="og:image" content="../assets/img/social/our_team_banner.jpg" />
   <meta property="og:url" content="https://www.example.com/pages/our_team.html" />
-  <meta property="og:site_name" content="V & V Advisors LLC" />
+  <meta property="og:site_name" content="V & V Advisors" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Our Team – V & V Advisors LLC" />
+  <meta name="twitter:title" content="Our Team – V & V Advisors" />
   <meta name="twitter:description" content="Meet the people empowering families with financial literacy and wealth-building knowledge." />
   <meta name="twitter:image" content="../assets/img/social/our_team_banner.jpg" />
 
@@ -283,8 +36,8 @@
 
     window.addEventListener("DOMContentLoaded", () => {
       addJSONLDSchema({
-        pageTitle: "Our Team – V & V Advisors LLC",
-        pageDescription: "Meet the V & V Advisors LLC team—dedicated professionals empowering families through financial literacy, protection, and wealth-building education.",
+        pageTitle: "Our Team – V & V Advisors",
+        pageDescription: "Meet the V & V Advisors team—dedicated professionals empowering families through financial literacy, protection, and wealth-building education.",
         pageUrl: window.location.href,
         keywords: ["our team", "financial literacy experts", "V & V Advisors", "wealth building advisors", "financial education"]
       });
@@ -297,61 +50,14 @@
 
 <main class="wrap">
   <!-- Page Header -->
-  <header class="page-header reveal">
+  <header class="page-hero reveal">
     <h1 class="page-title">Our Team</h1>
-    <p class="lead">At <strong>V & V Advisors LLC</strong>, we believe that trust begins with transparency.
+    <p class="lead">At <strong>V & V Advisors</strong>, we believe that trust begins with transparency.
       Meet the passionate professionals guiding families toward a confident, financially healthy future.</p>
   </header>
 
-  <!-- Team Grid -->
-  <section class="team-grid">
-    <article class="team-card reveal">
-      <img src="../assets/img/team/vish_panchal.jpg" alt="Vish Panchal – Co-Founder, Financial Strategist" loading="lazy" />
-      <h2>Vish Panchal</h2>
-      <p class="role">Co-Founder & Financial Strategist</p>
-      <p>Vish specializes in helping families understand core money principles—from budgeting and protection to wealth-building strategies.
-        With years of experience in financial education, his mission is to simplify complex topics so everyone can act confidently.</p>
-      <table class="team-table">
-        <tr>
-          <th><i data-feather="target" class="icon"></i> Focus Areas</th>
-          <td>Financial Literacy, Family Protection, Smart Budgeting</td>
-        </tr>
-        <tr>
-          <th><i data-feather="map-pin" class="icon"></i> Community</th>
-          <td>Tracy CA | Bay Area</td>
-        </tr>
-        <tr>
-          <th><i data-feather="linkedin" class="icon"></i> LinkedIn</th>
-          <td><a href="#" target="_blank" rel="noopener">View Profile</a></td>
-        </tr>
-      </table>
-    </article>
-
-    <article class="team-card reveal delay-1">
-      <img src="../assets/img/team/vik_panchal.jpg" alt="Vik Panchal – Co-Founder, Financial Coach" loading="lazy" />
-      <h2>Vik Panchal</h2>
-      <p class="role">Co-Founder & Financial Coach</p>
-      <p>Vik focuses on mentorship and practical coaching—bridging personal finance knowledge with action.
-        He leads workshops that encourage responsible spending, disciplined saving, and goal-based planning for long-term stability.</p>
-      <table class="team-table">
-        <tr>
-          <th><i data-feather="target" class="icon"></i> Focus Areas</th>
-          <td>Financial Coaching, Debt Management, Wealth-Building Habits</td>
-        </tr>
-        <tr>
-          <th><i data-feather="map-pin" class="icon"></i> Community</th>
-          <td>Central Valley | California</td>
-        </tr>
-        <tr>
-          <th><i data-feather="linkedin" class="icon"></i> LinkedIn</th>
-          <td><a href="#" target="_blank" rel="noopener">View Profile</a></td>
-        </tr>
-      </table>
-    </article>
-  </section>
-
   <!-- Mission Section -->
-  <section class="mission-section reveal delay-2">
+  <section class="flashy-section delay-1">
     <h2>Our Shared Mission</h2>
     <p>We are united by one purpose:</p>
     <p><em>to empower families with the knowledge and tools for financial literacy, protection, and wealth-building strategies through healthy financial habits.</em></p>
@@ -360,6 +66,81 @@
       <a href="https://www.consumerfinance.gov/" target="_blank" rel="noopener">Consumer Financial Protection Bureau (CFPB)</a>, and
       <a href="https://www.investor.gov/" target="_blank" rel="noopener">Investor.gov by the SEC</a>.
     </p>
+  </section>
+
+  <!-- Team Grid -->
+  <section class="team-grid">
+    <article class="team-card reveal">
+      <h2>Pranav Panchal</h2>
+      <table class="team-table">
+        <tr>
+          <th colspan="2" class="role-title">
+            Co-Founder & Financial Strategist
+          </th>
+        </tr>
+        <tr>
+          <td colspan="2" class="bio-text">
+            Pranav specializes in helping families understand core money principles—from budgeting and
+            protection to wealth-building strategies. With years of experience in financial education,
+            his mission is to simplify complex topics so everyone can act confidently.
+          </td>
+        </tr>
+
+        <tr>
+          <th><i data-feather="target" class="icon"></i> Focus Areas</th>
+          <td>Financial Literacy, Family Protection, Smart Budgeting</td>
+        </tr>
+
+        <tr>
+          <th><i data-feather="map-pin" class="icon"></i> Community</th>
+          <td>Tracy CA | Bay Area</td>
+        </tr>
+
+        <tr>
+          <th><i data-feather="linkedin" class="icon"></i> LinkedIn</th>
+          <td>
+            <a href="#" target="_blank" class="is-hoverable">View Profile</a>
+          </td>
+        </tr>
+      </table>
+
+    </article>
+
+    <article class="team-card reveal delay-1">
+      <h2>Hemali Panchal</h2>
+      <table class="team-table">
+        <tr>
+          <th colspan="2" class="role-title">
+            Co-Founder & Financial Coach
+          </th>
+        </tr>
+        <tr>
+          <td colspan="2" class="bio-text">
+            Hemali focuses on mentorship and practical coaching—bridging personal finance knowledge with
+            action. She leads workshops that encourage responsible spending, disciplined saving, and
+            goal-based planning for long-term stability.
+          </td>
+        </tr>
+
+        <tr>
+          <th><i data-feather="target" class="icon"></i> Focus Areas</th>
+          <td>Financial Coaching, Debt Management, Wealth-Building Habits</td>
+        </tr>
+
+        <tr>
+          <th><i data-feather="map-pin" class="icon"></i> Community</th>
+          <td>Central Valley | California</td>
+        </tr>
+
+        <tr>
+          <th><i data-feather="linkedin" class="icon"></i> LinkedIn</th>
+          <td>
+            <a href="#" target="_blank" class="is-hoverable">View Profile</a>
+          </td>
+        </tr>
+      </table>
+
+    </article>
   </section>
 </main>
 

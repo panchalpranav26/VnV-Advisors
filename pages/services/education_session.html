@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Education Session – V & V Advisors LLC</title>
-    <meta name="description" content="Join an Education Session with V & V Advisors LLC to learn the foundations of financial literacy, protection, and wealth-building through healthy money habits." />
+    <title>Education Session – V & V Advisors</title>
+    <meta name="description" content="Join an Education Session with V & V Advisors to learn the foundations of financial literacy, protection, and wealth-building through healthy money habits." />
     <link rel="canonical" href="https://www.example.com/services/education_session.html" />
 
     <!-- Google Fonts -->
@@ -15,267 +15,17 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/style.css" />
 
-    <!-- Feather Icons -->
-
-
-    <!-- Flashy Enhancements (Non-conflicting) -->
-    <style>
-        /* ============================================================
-           FLASHY EDUCATION PAGE – NON-CONFLICTING CLASSES
-           ============================================================ */
-
-        /* Page Header – Hero Style */
-        .page-header {
-            text-align: center;
-            padding: clamp(3rem, 10vw, 6rem) var(--pad-x);
-            background:
-                    radial-gradient(circle at 30% 80%, rgba(20, 180, 166, 0.15), transparent 50%),
-                    radial-gradient(circle at 70% 20%, rgba(0, 119, 182, 0.1), transparent 50%),
-                    linear-gradient(135deg, var(--navy-900), var(--navy-800));
-            border-radius: var(--radius);
-            margin-bottom: 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%232dd4bf" opacity="0.3"/><circle cx="80" cy="80" r="3" fill="%2314b8a6" opacity="0.2"/></svg>') repeat;
-            opacity: 0.1;
-            animation: float 20s infinite linear;
-        }
-
-        @keyframes float {
-            from { transform: translate(0, 0); }
-            to { transform: translate(100px, -100px); }
-        }
-
-        .page-header h1 {
-            font-size: var(--fs-h1);
-            margin: 0 0 1rem;
-            background: linear-gradient(90deg, #ffffff, var(--teal-400), #ffffff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: titleGlow 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes titleGlow {
-            from { filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.4)); }
-            to { filter: drop-shadow(0 0 20px rgba(45, 212, 191, 0.7)); }
-        }
-
-        .page-header .lead {
-            max-width: 70ch;
-            margin: 0 auto;
-            color: var(--ink-100);
-        }
-
-        /* Section Title Underline */
-        h2 {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem !important;
-            color: var(--teal-400);
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 60px;
-            height: var(--underline-h);
-            background: var(--teal-400);
-            border-radius: 2px;
-            box-shadow: 0 0 10px rgba(45, 212, 191, 0.6);
-        }
-
-        /* Two-column Grid */
-        .grid.two-cols {
-            display: grid;
-            gap: 3rem;
-            grid-template-columns: 1fr 1fr;
-            align-items: start;
-        }
-
-        @media (max-width: 768px) {
-            .grid.two-cols {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Image */
-        .rounded.shadow-lg {
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-2);
-            width: 100%;
-            height: auto;
-            transition: transform var(--anim-med) ease;
-        }
-
-        .rounded.shadow-lg:hover {
-            transform: scale(1.02);
-        }
-
-        /* Flashy List with Icons */
-        .flashy-list {
-            list-style: none;
-            padding: 0;
-            margin: 1.5rem 0;
-        }
-
-        .flashy-list li {
-            position: relative;
-            padding-left: 2.2rem;
-            margin-bottom: 1rem;
-            transition: all var(--anim-fast) ease;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .flashy-list li i {
-            color: var(--teal-400);
-            width: 20px;
-            height: 20px;
-        }
-
-        .flashy-list li:hover {
-            transform: translateX(8px);
-            color: var(--teal-400);
-        }
-
-        /* Table – Flashy */
-        .table-flashy {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            background: var(--surface-alt);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-1);
-            margin-top: 1.5rem;
-        }
-
-        .table-flashy th {
-            background: rgba(20, 180, 166, 0.15);
-            color: var(--teal-400);
-            text-align: left;
-            padding: 1rem;
-            font-weight: 600;
-        }
-
-        .table-flashy td {
-            padding: 1rem;
-            border-bottom: 1px solid rgba(45, 212, 191, 0.15);
-            transition: all var(--anim-fast) ease;
-        }
-
-        .table-flashy td:first-child {
-            font-weight: 600;
-            color: var(--teal-500);
-        }
-
-        .table-flashy tr:hover td {
-            background: rgba(20, 180, 166, 0.08);
-            color: var(--white);
-        }
-
-        .table-flashy i {
-            margin-right: 0.5rem;
-            color: var(--teal-400);
-        }
-
-        /* ------------------------------------------------------------
-           ICON PLACEHOLDER – REPLACES IMAGE
-           ------------------------------------------------------------ */
-        .icon-placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-            background: var(--surface-alt);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-2);
-            transition: all var(--anim-med) ease;
-        }
-
-        .icon-placeholder:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 0 30px rgba(45, 212, 191, 0.4);
-            background: rgba(20, 180, 166, 0.08);
-        }
-
-        .icon-large {
-            width: 120px;
-            height: 120px;
-            color: var(--teal-400);
-            stroke-width: 1.8;
-            margin-bottom: 1rem;
-            transition: all var(--anim-med) ease;
-        }
-
-        .icon-large:hover {
-            color: var(--teal-500);
-            transform: scale(1.15) rotate(5deg);
-            filter: drop-shadow(0 0 15px rgba(45, 212, 191, 0.5));
-        }
-
-        .icon-caption {
-            font-size: 0.95rem;
-            color: var(--muted);
-            max-width: 280px;
-            margin: 0;
-        }
-
-        /* CTA Section */
-        .cta {
-            padding: 4rem 2rem;
-            text-align: center;
-            background: linear-gradient(135deg, var(--navy-800), var(--navy-900));
-            border-radius: var(--radius);
-            margin: 3rem 0;
-        }
-
-        /* Scroll Reveal */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s var(--anim-med) cubic-bezier(0.22, 1, 0.36, 1),
-            transform 0.6s var(--anim-med) cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-
-        /* Spacing Helpers */
-        .mt-3 { margin-top: 1rem; }
-        .mt-5 { margin-top: 2.5rem; }
-        .mt-6 { margin-top: 3rem; }
-    </style>
     <!-- Open Graph -->
-    <meta property="og:title" content="Education Session – V & V Advisors LLC" />
+    <meta property="og:title" content="Education Session – V & V Advisors" />
     <meta property="og:description" content="Empowering families with knowledge for financial literacy, protection, and wealth-building through healthy habits." />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="../assets/img/social/education_session.jpg" />
     <meta property="og:url" content="https://www.example.com/services/education_session.html" />
-    <meta property="og:site_name" content="V & V Advisors LLC" />
+    <meta property="og:site_name" content="V & V Advisors" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Education Session – V & V Advisors LLC" />
+    <meta name="twitter:title" content="Education Session – V & V Advisors" />
     <meta name="twitter:description" content="Learn to build financial confidence and long-term stability with our guided Education Sessions." />
     <meta name="twitter:image" content="../assets/img/social/education_session.jpg" />
 
@@ -285,8 +35,8 @@
 
         window.addEventListener("DOMContentLoaded", () => {
             addJSONLDSchema({
-                pageTitle: "Education Session – V & V Advisors LLC",
-                pageDescription: "Join an Education Session with V & V Advisors LLC to learn the foundations of financial literacy, protection, and wealth-building through healthy money habits.",
+                pageTitle: "Education Session – V & V Advisors",
+                pageDescription: "Join an Education Session with V & V Advisors to learn the foundations of financial literacy, protection, and wealth-building through healthy money habits.",
                 pageUrl: window.location.href,
                 keywords: ["financial education", "money habits", "wealth building", "financial literacy", "V & V Advisors", "family finance"]
             });
@@ -300,14 +50,12 @@
 <main class="wrap">
 
     <!-- HERO HEADER -->
-    <header class="page-header reveal">
-        <h1>Education Sessions</h1>
+    <header class="page-hero reveal">
+        <h1 class="page-title">Education Sessions</h1>
         <p class="lead">Empowering families to take control of their financial future through personalized, easy-to-understand education and tools.</p>
-    </header>
-
 
     <!-- OVERVIEW SECTION -->
-    <section class="grid two-cols align-start mt-5 reveal delay-1">
+        <section class="flashy-section delay-1">
         <div>
             <h2>Why Join an Education Session?</h2>
             <p>Our sessions are designed to simplify complex financial topics and guide you through the principles of financial literacy, protection, and wealth-building. Each session combines real-world examples and trusted strategies that have helped thousands of families make smarter financial choices.</p>
@@ -323,17 +71,13 @@
                 <a href="https://www.consumerfinance.gov/" target="_blank" rel="noopener">CFPB</a> educational frameworks.
             </p>
         </div>
-        <!-- ICON REPLACES IMAGE -->
-        <div class="icon-placeholder">
-            <i data-feather="users" class="icon-large"></i>
-            <p class="icon-caption">Financial education session with V & V Advisors LLC</p>
-        </div>
+
     </section>
 
     <!-- TABLE OF TOPICS -->
-    <section class="mt-6 reveal delay-2">
+        <section class="flashy-section delay-1">
         <h2>Session Topics Overview</h2>
-        <table class="table-flashy mt-3">
+        <table class="flashy-table">
             <thead>
             <tr>
                 <th><i data-feather="book-open"></i> Session</th>
@@ -366,12 +110,12 @@
     </section>
 
     <!-- CALL TO ACTION -->
-    <section class="cta mt-6 reveal delay-3">
+        <section class="flashy-section delay-1">
         <h2>Ready to Begin?</h2>
         <p>Join a live or virtual session to start your journey toward financial confidence.</p>
-        <a href="/pages/contact.html" class="btn btn-primary">Book an Education Session</a>
+        <a href="/pages/contact.html" class="btn-glow md">Book an Education Session</a>
     </section>
-
+    </header>
 </main>
 
 <div id="site-footer"></div>

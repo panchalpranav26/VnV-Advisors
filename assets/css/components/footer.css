@@ -1,104 +1,111 @@
-/*
- * FILE: assets/css/components/footer.css
- * ROLE: Styles for the site-wide footer, including the responsive grid layout and links.
- * HOW TO MODIFY: Adjust grid breakpoints and spacing.
- * EXTENSION POINTS: Add new sections or social media icons.
- */
-
-/* ============================================================
-   9) COMPONENT: Footer
-   - Responsive grid for columns
-   ============================================================ */
-
-.footer-grid {
-    display: grid;
-    gap: 16px;
-    padding: 24px var(--pad-x) 50px;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.footer-grid h5 {
-    font-family: var(--font-serif), serif;
-    margin: 0 0 8px;
-}
-
-.footer-grid a {
-    display: block;
-    color: var(--muted);
-    padding: 6px 0;
-}
-.footer-grid a:hover {
+/* ===========================
+   FOOTER BASE
+=========================== */
+.footer {
+    background: var(--teal-800);
     color: var(--white);
+    padding: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-@media (max-width: 900px) {
-    .footer-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-@media (max-width: 520px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
+.footer-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding-inline: var(--pad-x);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
-.footer-list,
-.footer-list ul,
-.footer-list ol {
+.footer-col {
+    flex: 1;
+    min-width: 240px;
+}
+
+/* Brand Title */
+.footer-brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: .6rem;
+}
+
+/* Subtext */
+.footer-text {
+    color: #000000;
+    line-height: 1.6;
+    max-width: 40ch;
+}
+
+/* Column Headings */
+.footer-heading {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: .8rem;
+    color: #000000;
+}
+
+/* Footer List */
+.footer-list {
     list-style: none;
     padding: 0;
-}
-
-.footer-list li {
-    position: relative;
-    transition: all var(--anim-fast) ease;
-    display: flex;
-    align-items: center;
-}
-
-.footer-list ul li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--teal-400);
-    font-size: 1.5rem;
-    line-height: 1;
-}
-
-.footer-list ol {
-    counter-reset: list-item;
-}
-
-.footer-list ol li {
-    counter-increment: list-item;
-}
-
-.footer-list ol li::before {
-    content: counter(list-item) '.';
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-    color: var(--teal-400);
-}
-
-.footer-list li:hover {
-    transform: translateX(8px);
-    color:
-            var(--teal-400);
-}
-
-.site-footer-clr {
     margin: 0;
-    color: var(--fg);
-    font-size: var(--fs-base);
-    line-height: var(--lh-base);
-    background:
-        /* Teal glow on top-right */
-            radial-gradient(rgba(20, 150, 130, 0.45) 0%, transparent 65%),
+    display: grid;
+    gap: .5rem;
+}
 
-                /* Navy glow on top-left */
-            radial-gradient(rgba(15, 45, 75, 0.55) 0%, transparent 70%),
+.footer-list a {
+    color: #000000;
+    text-decoration: none;
+    opacity: 0.85;
+    transition: opacity .25s, transform .25s;
+    font-weight: bold;
+}
 
-                /* Base vertical gradient: TOP navy → BOTTOM gray */
-            linear-gradient(180deg, var(--navy-800) 0%, var(--gray-600) 45%, var(--gray-300) 100%);
+.footer-list a:hover {
+    opacity: 1;
+    transform: translateX(4px);
+    color: var(--white);
+    font-weight: bold;
+}
+
+/* Social Icons */
+.footer-social {
+    display: flex;
+    gap: 14px;
+    margin-top: .3rem;
+}
+
+.footer-social a {
+    color: var(--white);
+    opacity: 0.85;
+    transition: opacity .25s, transform .25s;
+}
+
+.footer-social a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.12);
+
+    text-align: center;
+    font-size: 0.85rem;
+    color: #000000;
+    line-height: 1.6;
+    background: var(--gray-300);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .footer-inner {
+        flex-direction: column;
+        text-align: left;
+        gap: 2rem;
+    }
 }

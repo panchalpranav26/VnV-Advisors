@@ -18,28 +18,19 @@
     top: 0;
     z-index: var(--z-header);
     height: var(--nav-h);
-
-    /* Hybrid Soft-Glass Background (Same design language as dropdown-pane) */
-    background:
-            linear-gradient(180deg,
-            rgba(255, 255, 255, 0.06),
-            rgba(255, 255, 255, 0.02)
-            ),
-            var(--surface-alt);
-
-    backdrop-filter: blur(8px); /* Slightly softer than dropdown-pane for comfort */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--teal-800);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
     display: flex;
-    align-items: flex-end; /* bottom-align children */
+    align-items: flex-end;
 }
 
 /* Container for brand + menu + CTA */
 .nav {
     display: flex;
-    align-items: flex-end; /* keeps everything bottom-aligned */
     justify-content: space-between;
+    align-items: flex-end;
     height: var(--nav-h);
-    padding-inline: var(--pad-x)
 }
 
 
@@ -81,33 +72,47 @@
 
 .menu {
     display: flex;
-    gap: 8px;
+    gap: 12px;
+    align-items: center;
+    height: var(--nav-h);
+}
+
+.menu-item {
+    position: relative;
+    display: flex;
     align-items: flex-end;
 }
 
-.menu > li {
-    position: relative;
-    list-style: none;
+/* --- FIX 1: reduce top-level link hover padding --- */
+.menu > .menu-item > .link {
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 
-/* Top-level nav link style */
+/* Softer hover */
+.menu > .menu-item > .link:hover {
+    background: var(--teal-400);
+    );
+}
+
+/* ============================================================
+   LINKS
+============================================================ */
 .link {
-    position: relative;
     display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    align-items: flex-end;
     padding: 10px 12px;
     border-radius: var(--radius-sm);
-    color: var(--fg);
+    color: #000000;
     font-weight: 600;
     text-decoration: none;
-    transition: background var(--anim-fast) ease, color var(--anim-fast) ease;
+    transition: background var(--anim-fast), color var(--anim-fast);
 }
 
 /* Soft hover (token-consistent with dropdown hover) */
 .link:hover,
 .link:focus-visible {
-    background: rgba(255, 255, 255, 0.06);
+    background:var(--teal-400);
     outline: none;
 }
 
@@ -127,50 +132,44 @@
 
 /* ============================================================
    HL3-S UNDERLINE (Top-Level Links)
-   - Same underline style used inside dropdown-pane
-   ============================================================ */
-
-.menu > li > .link::after,
-.menu > li.nav-item--has-dropdown > .parent-with-caret > .link::after {
+============================================================ */
+.menu > .menu-item > .link::after,
+.menu > .menu-item.nav-item--has-dropdown > .parent-with-caret > .link::after {
     content: "";
     position: absolute;
     left: 12px;
     right: 12px;
     bottom: 6px;
     height: var(--underline-h);
-    background: linear-gradient(
-            90deg,
-            transparent 0%,
-            var(--underline) 18%,
-            var(--underline) 82%,
-            transparent 100%
-    );
     transform: scaleX(0);
     transform-origin: left center;
     transition: transform var(--anim-med) ease;
     border-radius: 2px;
     pointer-events: none;
-    display: flex;
-    align-items: flex-end;
 }
 
 /* Desktop-only hover animations */
 @media (min-width: 981px) {
 
     /* Normal hover underline (for direct links) */
-    .menu > li:hover > .link::after,
-    .menu > li > .link:focus-visible::after {
+    .menu > .menu-item:hover > .link::after,
+    .menu > .menu-item > .link:focus-visible::after {
         transform: scaleX(1);
     }
 
     /* Hover underline for dropdown parents */
-    .menu > li.nav-item--has-dropdown:hover .parent-with-caret > .link::after {
+    .menu > .menu-item.nav-item--has-dropdown:hover
+    .parent-with-caret > .link::after {
         transform: scaleX(1);
     }
 
     /* Highlight dropdown parent when hovered */
-    .menu > li.nav-item--has-dropdown:hover .parent-with-caret > .link {
-        background: rgba(255, 255, 255, 0.06);
+    .menu > .menu-item.nav-item--has-dropdown:hover
+    .parent-with-caret > .link {
+        background: var(--teal-400);
+    }
+    .mobile-nav-toggle {
+        display: none;
     }
 }
 

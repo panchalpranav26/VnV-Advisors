@@ -6,7 +6,7 @@ export function addJSONLDSchema({
                                     pageDescription,
                                     pageUrl,
                                     keywords = [],
-                                    businessName = "V & V Advisors LLC",
+                                    businessName = "V & V Advisors",
                                     city = "Tracy",
                                     state = "CA",
                                     country = "US"

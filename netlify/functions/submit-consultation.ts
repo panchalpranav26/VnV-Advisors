@@ -73,7 +73,7 @@ export const handler: Handler = async (event) => {
 
 
         const footerLines = [
-            "V & V Advisors LLC — Financial Education & Protection",
+            "V & V Advisors — Financial Education & Protection",
             "Empowering families for generational growth.",
             "Tracy, CA • contact@vnvbrothers.com • vnvbrothers.com"
         ];
@@ -90,7 +90,7 @@ export const handler: Handler = async (event) => {
         const userText = [
             `Hi ${data.name},`,
             ``,
-            `Thank you for requesting a consultation with V & V Advisors LLC.`,
+            `Thank you for requesting a consultation with V & V Advisors.`,
             `Session Type: ${data.topic}`,
             ``,
             `Your message:`,
@@ -98,7 +98,7 @@ export const handler: Handler = async (event) => {
             ``,
             `A member of our advisory team will reach out shortly.`,
             ``,
-            `— V & V Advisors LLC`,
+            `— V & V Advisors`,
             `Financial Education & Protection`,
             `Tracy, CA • contact@vnvbrothers.com • vnvbrothers.com`,
         ].join("\n");

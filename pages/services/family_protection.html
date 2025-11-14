@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Family Protection Planning – V & V Advisors LLC</title>
-    <meta name="description" content="Protect your loved ones and build lasting security through smart insurance, emergency funds, and estate planning. Learn family protection strategies with V & V Advisors LLC." />
+    <title>Family Protection Planning – V & V Advisors</title>
+    <meta name="description" content="Protect your loved ones and build lasting security through smart insurance, emergency funds, and estate planning. Learn family protection strategies with V & V Advisors." />
     <link rel="canonical" href="https://www.example.com/pages/family_protection.html" />
 
     <!-- Google Fonts -->
@@ -15,268 +15,18 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/style.css" />
 
-    <!-- Feather Icons -->
-
-    <!-- Flashy Enhancements (Non-conflicting) -->
-    <style>
-        /* ============================================================
-           FLASHY ENHANCEMENTS – NON-CONFLICTING
-           Uses core.css tokens + custom classes
-           ============================================================ */
-
-        .wrap {
-            max-width: var(--maxw);
-            margin: 0 auto;
-            padding: var(--pad-x);
-        }
-
-        /* Page Title – Glowing Gradient */
-        .page-title {
-            font-size: var(--fs-h1);
-            font-weight: 700;
-            text-align: center;
-            margin: 2rem 0 1.5rem;
-            background: linear-gradient(90deg, #ffffff, var(--teal-400), #ffffff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: titleGlow 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes titleGlow {
-            from { filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.4)); }
-            to { filter: drop-shadow(0 0 20px rgba(45, 212, 191, 0.7)); }
-        }
-
-        /* Lead Paragraph */
-        .lead {
-            text-align: center;
-            max-width: 80ch;
-            margin: 0 auto 3rem;
-            font-size: 1.15rem;
-            color: var(--ink-100);
-        }
-
-        /* Section Base */
-        .section {
-            margin: 3.5rem 0;
-            padding: 2.5rem;
-            background: var(--surface-alt);
-            border-radius: var(--radius);
-            border: 1px solid rgba(45, 212, 191, 0.15);
-            box-shadow: var(--shadow-1);
-            transition: all var(--anim-med) ease;
-        }
-
-        .section:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-2);
-            border-color: var(--teal-400);
-        }
-
-        /* Section Title with Teal Underline */
-        .section h2 {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--teal-400);
-        }
-
-        .section h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 60px;
-            height: var(--underline-h);
-            background: var(--teal-400);
-            border-radius: 2px;
-            box-shadow: 0 0 12px rgba(45, 212, 191, 0.6);
-        }
-
-        /* Flashy List – Reusable Class */
-        .flashy-list,
-        .flashy-list ol,
-        .flashy-list ul {
-            list-style: none;
-            padding: 0;
-            margin: 1.5rem 0;
-        }
-
-        .flashy-list li {
-            position: relative;
-            padding-left: 2.2rem;
-            margin-bottom: 1rem;
-            transition: all var(--anim-fast) ease;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .flashy-list li i {
-            position: absolute;
-            left: 0;
-            top: 0.1rem;
-            color: var(--teal-400);
-            width: 1.6rem;
-            height: 1.6rem;
-        }
-
-        .flashy-list li:hover {
-            transform: translateX(8px);
-            color: var(--teal-400);
-        }
-
-        /* Tables – Flashy */
-        .info-table,
-        .checklist-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            background: rgba(11, 27, 42, 0.3);
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .info-table th,
-        .checklist-table th {
-            background: var(--teal-600);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .info-table td,
-        .checklist-table td {
-            padding: 1rem;
-            border-bottom: 1px solid rgba(45, 212, 191, 0.2);
-            transition: background var(--anim-fast);
-        }
-
-        .info-table tr:hover td,
-        .checklist-table tr:hover td {
-            background: rgba(45, 212, 191, 0.1);
-        }
-
-        /* Checklist Interactive */
-        .checklist-table input[type="checkbox"] {
-            appearance: none;
-            width: 1.4rem;
-            height: 1.4rem;
-            border: 2px solid var(--teal-400);
-            border-radius: 4px;
-            margin-right: 0.8rem;
-            cursor: pointer;
-            position: relative;
-            transition: all var(--anim-fast);
-        }
-
-        .checklist-table input[type="checkbox"]:checked {
-            background: var(--teal-400);
-            border-color: var(--teal-400);
-        }
-
-        .checklist-table input[type="checkbox"]:checked::after {
-            content: '✓';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        /* Sources Footer */
-        .sources {
-            font-size: 0.85rem;
-            color: var(--muted);
-            margin-top: 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            align-items: center;
-        }
-
-        .sources a {
-            color: var(--teal-400);
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
-
-        .sources a:hover {
-            color: var(--teal-400);
-        }
-
-        /* Reveal Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s var(--anim-med) cubic-bezier(0.22, 1, 0.36, 1),
-            transform 0.6s var(--anim-med) cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-
-        /* CTA Button */
-        .btn-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.9rem 1.8rem;
-            background: var(--teal-500);
-            color: white;
-            border-radius: var(--radius-sm);
-            font-weight: 600;
-            text-decoration: none;
-            box-shadow: 0 0 20px rgba(20, 180, 166, 0.4);
-            transition: all var(--anim-fast) ease;
-            margin-top: 1.5rem;
-        }
-
-        .btn-cta:hover {
-            background: var(--teal-400);
-            transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(45, 212, 191, 0.7);
-        }
-
-        .btn-cta i {
-            width: 1.4rem;
-            height: 1.4rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .section {
-                padding: 1.8rem;
-            }
-            .info-table, .checklist-table {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
-
     <!-- Open Graph -->
-    <meta property="og:title" content="Family Protection Planning – V & V Advisors LLC" />
+    <meta property="og:title" content="Family Protection Planning – V & V Advisors" />
     <meta property="og:description" content="Build a secure future for your family through protection planning—life insurance, estate planning, and emergency readiness." />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="../assets/img/social/family_protection.jpg" />
     <meta property="og:url" content="https://www.example.com/pages/family_protection.html" />
-    <meta property="og:site_name" content="V & V Advisors LLC" />
+    <meta property="og:site_name" content="V & V Advisors" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Family Protection Planning – V & V Advisors LLC" />
-    <meta name="twitter:description" content="Learn how to safeguard your family’s future with insurance, wills, and financial literacy tools from V & V Advisors LLC." />
+    <meta name="twitter:title" content="Family Protection Planning – V & V Advisors" />
+    <meta name="twitter:description" content="Learn how to safeguard your family’s future with insurance, wills, and financial literacy tools from V & V Advisors." />
     <meta name="twitter:image" content="../assets/img/social/family_protection.jpg" />
 
     <!-- JSON-LD added dynamically via JS -->
@@ -285,8 +35,8 @@
 
         window.addEventListener("DOMContentLoaded", () => {
             addJSONLDSchema({
-                pageTitle: "Family Protection Planning – V & V Advisors LLC",
-                pageDescription: "Protect your loved ones and build lasting security through smart insurance, emergency funds, and estate planning. Learn family protection strategies with V & V Advisors LLC.",
+                pageTitle: "Family Protection Planning – V & V Advisors",
+                pageDescription: "Protect your loved ones and build lasting security through smart insurance, emergency funds, and estate planning. Learn family protection strategies with V & V Advisors.",
                 pageUrl: window.location.href,
                 keywords: ["family protection", "life insurance", "estate planning", "emergency fund", "financial literacy", "V & V Advisors"]
             });
@@ -298,20 +48,21 @@
 <div id="site-header"></div>
 
 <main class="wrap">
-
-    <h1 class="page-title reveal">Family Protection Planning</h1>
-    <p class="lead reveal delay-1">
-        Empower your family with a secure financial foundation. Family protection planning combines <strong>insurance coverage</strong>, <strong>emergency funds</strong>, and <strong>estate planning</strong>—helping you safeguard what matters most.
-    </p>
+    <header class="page-hero reveal">
+        <h1 class="page-title">Family Protection Planning</h1>
+        <p class="lead">
+            Empower your family with a secure financial foundation. Family protection planning combines <strong>insurance coverage</strong>, <strong>emergency funds</strong>, and <strong>estate planning</strong>—helping you safeguard what matters most.
+        </p>
+    </header>
 
     <!-- Section 1: Overview -->
-    <section class="section reveal delay-2">
+    <section class="flashy-section delay-1">
         <h2>Why Family Protection Matters</h2>
         <p>
             Unexpected events—such as illness, loss of income, or death—can deeply affect your loved ones. A well-structured protection plan ensures financial stability, reduces stress, and preserves family wealth.
         </p>
 
-        <table class="info-table">
+        <table class="flashy-table">
             <thead>
             <tr>
                 <th><i data-feather="shield"></i> Focus Area</th>
@@ -338,7 +89,7 @@
             </tbody>
         </table>
 
-        <div class="sources">
+        <div class="source">
             <i data-feather="link"></i> Sources:
             <a href="https://www.consumerfinance.gov/" target="_blank" rel="noopener">CFPB</a>,
             <a href="https://www.naic.org/" target="_blank" rel="noopener">NAIC</a>,
@@ -347,7 +98,7 @@
     </section>
 
     <!-- Section 2: Insurance -->
-    <section class="section reveal delay-3">
+    <section class="flashy-section delay-1">
         <h2>1. Build a Safety Net with Life Insurance</h2>
         <p>
             Life insurance provides peace of mind that your loved ones will be financially supported. It can cover daily living expenses, debts, education costs, and funeral expenses.
@@ -359,13 +110,13 @@
             <li><i data-feather="check-circle"></i> <strong>Indexed Universal Life (IUL)</strong> – Provides flexible premiums and potential cash growth tied to a stock index.</li>
         </ul>
 
-        <div class="sources">
+        <div class="source">
             <i data-feather="external-link"></i> Learn more from <a href="https://www.naic.org/consumer_insurance.htm" target="_blank">NAIC Consumer Insurance Guide</a>.
         </div>
     </section>
 
     <!-- Section 3: Emergency Fund -->
-    <section class="section reveal delay-1">
+    <section class="flashy-section delay-1">
         <h2>2. Strengthen Your Financial Safety Cushion</h2>
         <p>
             An emergency fund prevents you from turning to high-interest credit in tough times. Aim for <strong>3–6 months of essential living expenses</strong>.
@@ -374,13 +125,13 @@
             Automate small contributions each payday—consistency matters more than size.
         </p>
 
-        <div class="sources">
+        <div class="source">
             <i data-feather="book-open"></i> See <a href="https://www.fdic.gov/resources/consumers/money-smart/" target="_blank">FDIC Money Smart</a> for budgeting and savings resources.
         </div>
     </section>
 
     <!-- Section 4: Estate Planning -->
-    <section class="section reveal delay-2">
+    <section class="flashy-section delay-1">
         <h2>3. Plan Ahead with Estate and Legal Tools</h2>
         <p>
             Estate planning isn’t just for the wealthy—it ensures your wishes are respected and simplifies matters for your family.
@@ -392,16 +143,16 @@
             <li><i data-feather="lock"></i> Consider a <strong>trust</strong> to manage property and minimize probate.</li>
         </ul>
 
-        <div class="sources">
+        <div class="source">
             <i data-feather="help-circle"></i> Visit <a href="https://www.consumerfinance.gov/consumer-tools/estate-planning/" target="_blank">CFPB Estate Planning Resources</a>.
         </div>
     </section>
 
     <!-- Section 5: Checklist -->
-    <section class="section reveal delay-3">
+    <section class="flashy-section delay-1">
         <h2>4. Family Protection Checklist</h2>
 
-        <table class="checklist-table">
+        <table class="flashy-table">
             <thead>
             <tr>
                 <th><i data-feather="check-square"></i> Task</th>
@@ -420,13 +171,13 @@
     </section>
 
     <!-- Closing CTA -->
-    <section class="section reveal delay-1" style="text-align: center;">
+    <section class="flashy-section delay-1">
         <h2>Empower Your Family Today</h2>
         <p>
-            At <strong>V & V Advisors LLC</strong>, we believe family protection begins with financial education and proactive planning.
+            At <strong>V & V Advisors</strong>, we believe family protection begins with financial education and proactive planning.
             Explore more resources or connect with us for guidance on building your protection roadmap.
         </p>
-        <a href="/pages/contact.html" class="btn-cta">
+        <a href="/pages/contact.html" class="btn-glow md">
             <i data-feather="message-circle"></i> Book a Free Consultation
         </a>
     </section>
@@ -438,22 +189,5 @@
 <!-- Core Scripts -->
 <script type="module" src="/assets/js/core.js" defer></script>
 <script type="module" src="/assets/js/pages/services.js" defer></script>
-<!-- Initialize Feather Icons + Scroll Reveal -->
-<script>
-    // Initialize Feather Icons
-    feather.replace();
-
-    // Scroll Reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, { threshold: 0.15 });
-
-    reveals.forEach(el => observer.observe(el));
-</script>
 </body>
 </html>

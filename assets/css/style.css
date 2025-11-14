@@ -8,6 +8,7 @@
 /* Core Styles */
 @import "core.css";
 @import "layout.css";
+@import "flashy.css";
 
 /* Component Styles */
 @import "components/nav.css";

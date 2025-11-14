@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Success Stories – V & V Advisors LLC</title>
+    <title>Success Stories – V & V Advisors</title>
 
     <!-- Primary Meta Description for SEO -->
     <meta name="description" content="Read testimonials and anonymized case studies from families and individuals who have achieved financial success through our guidance." />
@@ -33,7 +33,7 @@
         /* Hero Background with Animated Gradient */
         .page-hero {
             position: relative;
-            min-height: 80vh;
+            min-height: 55vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -44,7 +44,7 @@
             background:
                     radial-gradient(circle at 30% 70%, rgba(45, 212, 191, 0.15) 0%, transparent 50%),
                     radial-gradient(circle at 70% 30%, rgba(20, 119, 182, 0.1) 0%, transparent 50%),
-                    linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 100%);
+                    linear-gradient(135deg, var(--gray-300) 30%, var(--teal-700) 70%);
             background-size: 200% 200%;
             animation: heroBgShift 15s ease infinite;
         }
@@ -52,18 +52,6 @@
         @keyframes heroBgShift {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
-        }
-
-        /* Glowing Page Title */
-        .page-title {
-            font-size: var(--fs-h1);
-            font-weight: 700;
-            margin: 0 0 1.5rem;
-            background: linear-gradient(90deg, #ffffff, var(--teal-400), #ffffff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: titleGlow 3s ease-in-out infinite alternate;
         }
 
         @keyframes titleGlow {
@@ -77,14 +65,13 @@
             align-items: center;
             gap: 0.75rem;
             padding: 1rem 2rem;
-            background: var(--backdrop-color);
-            backdrop-filter: blur(var(--backdrop-blur));
+            background: var(--gray-300);
             border: 1px solid rgba(45, 212, 191, 0.3);
             border-radius: var(--radius);
             box-shadow: var(--shadow-1);
             font-size: 1.25rem;
             font-weight: 600;
-            color: var(--teal-400);
+            color: #000000;
             animation: pulseGlow 2s ease-in-out infinite;
         }
 
@@ -92,22 +79,13 @@
         .icon-clock {
             width: 28px;
             height: 28px;
-            stroke: var(--teal-400);
+            stroke: var(--teal-700);
             animation: iconRotate 3s linear infinite;
         }
 
         @keyframes iconRotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% {
-                box-shadow: var(--shadow-1), 0 0 20px rgba(45, 212, 191, 0.4);
-            }
-            50% {
-                box-shadow: var(--shadow-2), 0 0 30px rgba(45, 212, 191, 0.7);
-            }
         }
 
         /* Feather Icon Animation */
@@ -120,51 +98,19 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Lead Text */
-        .lead {
-            max-width: 70ch;
-            margin: 2rem auto 0;
-            color: var(--ink-100);
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        /* Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s var(--anim-med) cubic-bezier(0.22, 1, 0.36, 1),
-            transform 0.8s var(--anim-med) cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
-        @media (max-width: 640px) {
-            .page-title {
-                font-size: clamp(2.2rem, 6vw, 3rem);
-            }
-            .coming-soon-badge {
-                padding: 0.9rem 1.5rem;
-                font-size: 1.1rem;
-            }
-        }
     </style>
 
     <!-- Open Graph (Facebook/LinkedIn/iMessage link preview) -->
-    <meta property="og:title" content="Success Stories – V & V Advisors LLC" />
+    <meta property="og:title" content="Success Stories – V & V Advisors" />
     <meta property="og:description" content="Read testimonials and anonymized case studies from families and individuals who have achieved financial success through our guidance." />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="/assets/img/social/preview.jpg" />
     <meta property="og:url" content="https://www.example.com/pages/stories.html" />
-    <meta property="og:site_name" content="V & V Advisors LLC" />
+    <meta property="og:site_name" content="V & V Advisors" />
 
     <!-- Twitter Card (X preview) -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Success Stories – V & V Advisors LLC" />
+    <meta name="twitter:title" content="Success Stories – V & V Advisors" />
     <meta name="twitter:description" content="Read testimonials and anonymized case studies from families and individuals who have achieved financial success through our guidance." />
     <meta name="twitter:image" content="/assets/img/social/preview.jpg" />
 
@@ -175,7 +121,7 @@
             "@graph": [
                 {
                     "@type": ["FinancialService", "EducationalOrganization"],
-                    "name": "V & V Advisors LLC",
+                    "name": "V & V Advisors",
                     "description": "Empowering and helping build families with financial literacy, protection, and wealth-building strategies by healthy financial habits.",
                     "address": {
                         "@type": "PostalAddress",
@@ -208,9 +154,6 @@
             <span>Coming Soon!</span>
         </div>
 
-        <p class="lead">
-            We’re preparing something special to showcase our success stories. Stay tuned!
-        </p>
     </header>
 </main>
 

@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Mission & Story – V & V Advisors LLC</title>
-    <meta name="description" content="Discover the mission and story behind V & V Advisors LLC — empowering families with financial literacy, protection, and wealth-building strategies through healthy financial habits." />
+    <title>Mission & Story – V & V Advisors</title>
+    <meta name="description" content="Discover the mission and story behind V & V Advisors — empowering families with financial literacy, protection, and wealth-building strategies through healthy financial habits." />
     <link rel="canonical" href="https://www.example.com/pages/about_mission_story.html" />
 
     <!-- Google Fonts -->
@@ -15,266 +15,17 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/style.css" />
 
-    <!-- Feather Icons -->
-
-
-    <!-- Flashy Enhancements (Non-conflicting) -->
-    <style>
-        /* ============================================================
-           FLASHY COMPONENTS – REUSABLE & NON-CONFLICTING
-           ============================================================ */
-
-        /* Container */
-        .wrap {
-            max-width: var(--maxw);
-            margin: 0 auto;
-            padding: 0 var(--pad-x);
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            padding: clamp(6rem, 12vw, 10rem) var(--pad-x);
-            text-align: center;
-            color: var(--white);
-            overflow: hidden;
-            background:
-                    radial-gradient(circle at 20% 80%, rgba(20, 180, 166, 0.25) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 20%, rgba(0, 119, 182, 0.2) 0%, transparent 50%),
-                    linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 70%);
-            background-size: 200% 200%;
-            animation: heroGradientShift 12s ease infinite;
-            border-radius: var(--radius);
-            margin-bottom: 4rem;
-        }
-
-        @keyframes heroGradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .page-title {
-            font-size: var(--fs-h1);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(90deg, #ffffff, var(--teal-400), #ffffff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: titleGlow 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes titleGlow {
-            from { filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.4)); }
-            to { filter: drop-shadow(0 0 20px rgba(45, 212, 191, 0.7)); }
-        }
-
-        /* Section Headings */
-        .section-title {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem !important;
-            color: var(--teal-400);
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 60px;
-            height: var(--underline-h);
-            background: var(--teal-400);
-            border-radius: 2px;
-            box-shadow: 0 0 10px rgba(45, 212, 191, 0.6);
-        }
-
-        /* Grid Layouts */
-        .grid-2 {
-            display: grid;
-            gap: 3rem;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-        }
-
-        @media (max-width: 768px) {
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Reusable Card */
-        .card {
-            background: var(--surface-alt);
-            padding: 2rem;
-            border-radius: var(--radius);
-            border: 1px solid rgba(45, 212, 191, 0.15);
-            transition: all var(--anim-med) ease;
-            box-shadow: var(--shadow-1);
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-2);
-            border-color: var(--teal-400);
-        }
-
-        /* Checklist with Feather Icons */
-        .list-check {
-            list-style: none;
-            padding: 0;
-            margin: 1.5rem 0 0;
-        }
-
-        .list-check li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            font-size: 1.05rem;
-            transition: all var(--anim-fast) ease;
-        }
-
-        .list-check li:hover {
-            color: var(--teal-400);
-            transform: translateX(6px);
-        }
-
-        .list-check i {
-            color: var(--teal-400);
-            width: 20px;
-            height: 20px;
-        }
-
-        /* Image Block */
-        .visual-block img {
-            width: 100%;
-            height: auto;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-2);
-            transition: transform var(--anim-med) ease;
-        }
-
-        .visual-block img:hover {
-            transform: scale(1.03);
-        }
-
-        /* Timeline Table */
-        .table-flashy {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 2rem;
-            background: var(--surface-alt);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-1);
-        }
-
-        .table-flashy th,
-        .table-flashy td {
-            padding: 1rem 1.5rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(45, 212, 191, 0.1);
-        }
-
-        .table-flashy th {
-            background: rgba(20, 180, 166, 0.15);
-            color: var(--teal-400);
-            font-weight: 600;
-        }
-
-        .table-flashy tr:hover {
-            background: rgba(20, 180, 166, 0.08);
-            transition: background var(--anim-fast) ease;
-        }
-
-        .table-flashy tr td:first-child {
-            font-weight: 600;
-            color: var(--teal-400);
-        }
-
-        .data-table a {
-            color: var(--teal-400);
-            text-decoration: underline;
-            transition: color var(--anim-fast) ease;
-        }
-
-        .data-table a:hover {
-            color: var(--teal-400);
-        }
-
-        /* CTA Button */
-        .btn-primary {
-            display: inline-block;
-            padding: 0.9rem 2rem;
-            background: var(--teal-500);
-            color: white;
-            border-radius: var(--radius-sm);
-            font-weight: 600;
-            text-decoration: none;
-            transition: all var(--anim-fast) ease;
-            box-shadow: 0 0 20px rgba(20, 180, 166, 0.4);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
-            transform: translateX(-100%);
-            transition: transform var(--anim-med) ease;
-            z-index: -1;
-        }
-
-        .btn-primary:hover::before {
-            transform: translateX(100%);
-        }
-
-        .btn-primary:hover {
-            background: var(--teal-400);
-            transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(45, 212, 191, 0.7);
-        }
-
-        /* Scroll Reveal */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s var(--anim-med) cubic-bezier(0.22, 1, 0.36, 1),
-            transform 0.6s var(--anim-med) cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-
-        /* Center Text Utility */
-        .center-text {
-            text-align: center;
-        }
-    </style>
-
     <!-- Open Graph -->
-    <meta property="og:title" content="Mission & Story – V & V Advisors LLC" />
-    <meta property="og:description" content="Learn how V & V Advisors LLC empowers families to build financial confidence through literacy and protection strategies." />
+    <meta property="og:title" content="Mission & Story – V & V Advisors" />
+    <meta property="og:description" content="Learn how V & V Advisors empowers families to build financial confidence through literacy and protection strategies." />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="../assets/img/social/mission_story.jpg" />
     <meta property="og:url" content="https://www.example.com/pages/about_mission_story.html" />
-    <meta property="og:site_name" content="V & V Advisors LLC" />
+    <meta property="og:site_name" content="V & V Advisors" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Mission & Story – V & V Advisors LLC" />
+    <meta name="twitter:title" content="Mission & Story – V & V Advisors" />
     <meta name="twitter:description" content="Discover our mission to build financially confident families through literacy and healthy money habits." />
     <meta name="twitter:image" content="../assets/img/social/mission_story.jpg" />
 
@@ -284,8 +35,8 @@
 
         window.addEventListener("DOMContentLoaded", () => {
             addJSONLDSchema({
-                pageTitle: "Mission & Story – V & V Advisors LLC",
-                pageDescription: "Discover the mission and story behind V & V Advisors LLC — empowering families with financial literacy, protection, and wealth-building strategies through healthy financial habits.",
+                pageTitle: "Mission & Story – V & V Advisors",
+                pageDescription: "Discover the mission and story behind V & V Advisors — empowering families with financial literacy, protection, and wealth-building strategies through healthy financial habits.",
                 pageUrl: window.location.href,
                 keywords: ["financial literacy", "wealth building", "financial education", "V & V Advisors", "money habits", "financial protection"]
             });
@@ -296,7 +47,7 @@
 <body>
 <div id="site-header"></div>
 
-<main class="wrap about-page">
+<main class="wrap">
     <!-- HERO -->
     <section class="page-hero reveal">
         <h1 class="page-title">Our Mission & Story</h1>
@@ -304,38 +55,28 @@
     </section>
 
     <!-- MISSION -->
-    <section class="mission grid-2 reveal delay-1">
-        <div class="card">
-            <h2 class="section-title">Our Mission</h2>
-            <p>At <strong>V & V Advisors LLC</strong>, our mission is simple yet powerful — to make <em>financial literacy accessible, practical, and actionable</em> for every family. We believe strong financial habits are the foundation for lifelong security and opportunity.</p>
-            <ul class="list-check">
+    <section class="flashy-section delay-1">
+            <h2>Our Mission</h2>
+            <p>At <strong>V & V Advisors</strong>, our mission is simple yet powerful — to make <em>financial literacy accessible, practical, and actionable</em> for every family. We believe strong financial habits are the foundation for lifelong security and opportunity.</p>
+            <ul class="checkflashy-list">
                 <li><i data-feather="zap"></i> Empower families to make confident financial decisions</li>
                 <li><i data-feather="shield"></i> Promote financial protection through education</li>
                 <li><i data-feather="trending-up"></i> Guide toward long-term wealth strategies</li>
             </ul>
-        </div>
-        <div class="visual-block">
-            <img
-                    src="https://images.unsplash.com/photo-1554224256-4b7d7a5e2b2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                    alt="Family discussing financial goals together"
-                    loading="lazy"
-                    style="width:100%; height:auto; display:block;"
-            >
-        </div>
     </section>
 
     <!-- STORY -->
-    <section class="story reveal delay-2">
-        <h2 class="section-title">Our Story</h2>
-        <p>V & V Advisors LLC was founded with a shared vision — to bridge the gap between financial knowledge and real-world financial well-being. What began as personal experiences helping families navigate insurance, budgeting, and wealth protection has grown into a mission-driven organization dedicated to national financial empowerment.</p>
+    <section class="flashy-section delay-1">
+        <h2>Our Story</h2>
+        <p>V & V Advisors was founded with a shared vision — to bridge the gap between financial knowledge and real-world financial well-being. What began as personal experiences helping families navigate insurance, budgeting, and wealth protection has grown into a mission-driven organization dedicated to national financial empowerment.</p>
 
-        <table class="table-flashy">
+        <table class="flashy-table">
             <thead>
             <tr><th>Year</th><th>Milestone</th></tr>
             </thead>
             <tbody>
             <tr><td>2018</td><td>Our founders began providing free community workshops on budgeting and saving.</td></tr>
-            <tr><td>2020</td><td>V & V Advisors LLC was formally established in Tracy, California.</td></tr>
+            <tr><td>2020</td><td>V & V Advisors was formally established in Tracy, California.</td></tr>
             <tr><td>2022</td><td>Launched online learning modules for families to access trusted financial resources remotely.</td></tr>
             <tr><td>2024</td><td>Expanded into digital tools for protection planning and personalized wealth strategies.</td></tr>
             </tbody>
@@ -343,11 +84,11 @@
     </section>
 
     <!-- WHY IT MATTERS -->
-    <section class="why-matters reveal delay-3">
-        <h2 class="section-title">Why It Matters</h2>
+    <section class="flashy-section delay-1">
+        <h2>Why It Matters</h2>
         <p>Financial literacy directly improves families’ stability and community well-being. According to national studies, improved financial knowledge leads to higher savings rates, better credit management, and reduced financial stress.</p>
 
-        <table class="table-flashy data-table">
+        <table class="flashy-table">
             <thead>
             <tr><th>Key Insight</th><th>Statistic</th><th>Source</th></tr>
             </thead>
@@ -372,10 +113,10 @@
     </section>
 
     <!-- CALL TO ACTION -->
-    <section class="cta center-text reveal delay-1">
-        <h2 class="section-title">Join Our Mission</h2>
-        <p>Start building your family’s financial foundation today with trusted education and tools from V & V Advisors LLC.</p>
-        <a href="/pages/financial_ed.html" class="btn-primary">Explore Financial Education</a>
+    <section class="flashy-section delay-1">
+        <h2>Join Our Mission</h2>
+        <p>Start building your family’s financial foundation today with trusted education and tools from V & V Advisors.</p>
+        <a href="/pages/financial_ed.html" class="btn-glow md">Explore Financial Education</a>
     </section>
 </main>
 
@@ -384,22 +125,5 @@
 <!-- Core Scripts -->
 <script type="module" src="/assets/js/core.js" defer></script>
 <script type="module" src="/assets/js/pages/about.js" defer></script>
-<!-- Initialize Feather Icons + Scroll Reveal -->
-<script>
-    // Feather Icons
-    feather.replace();
-
-    // Scroll Reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, { threshold: 0.15 });
-
-    reveals.forEach(el => observer.observe(el));
-</script>
 </body>
 </html>

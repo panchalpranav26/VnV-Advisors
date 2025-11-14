@@ -1,14 +1,20 @@
-/*
- * FILE: assets/css/layout.css
- * ROLE: Defines main structural styles: page wrappers, grid systems, and spacing utilities.
- * HOW TO MODIFY: Adjust max-width, padding, and gutter sizes for responsive layout.
- * EXTENSION POINTS: Add new grid systems (e.g., 4-column, masonry) or utility classes for margins/paddings.
- */
-
 /* ============================================================
-   3) LAYOUT
-   - Container & common wrappers
+   LAYOUT.CSS — STRUCTURE, WRAPPERS, GRIDS, CONTENT
    ============================================================ */
+
+/* --------------------------------------
+   1. Core Layout Wrappers
+--------------------------------------- */
+
+.menu-wrap {
+    max-width: var(--maxw);
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: var(--pad-x);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
 
 .wrap {
     max-width: var(--maxw);
@@ -25,489 +31,88 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Utility for scroll-lock (used by mobile menu) */
+/* Disable scrolling (mobile menu) */
 .no-scroll {
     overflow: hidden;
 }
 
-/* ============================================================
-   flashy-components.css
-   Combined, deduplicated, non-conflicting styles
-   Reuses core.css tokens | Prefix: .flashy-*, .comp-*
-   ============================================================ */
+/* --------------------------------------
+   2. Section Content Styles (article style)
+--------------------------------------- */
 
-/* Fallbacks for any missing tokens (remove if already in core.css) */
-:root {
-    --underline-h: 3px;              /* used by .flashy-section h2::after */
-    --maxw: 1200px;                   /* used by .wrap */
-    --pad-x: 1rem;                    /* used by .wrap / hero */
-    --surface-alt: rgba(11,27,42,.25);/* used by .flashy-section */
-    --shadow-1: 0 8px 24px rgba(0,0,0,.25);
-    --shadow-2: 0 14px 40px rgba(0,0,0,.35);
-    --anim-fast: .18s;
-    --anim-med: .35s;
-    --anim-slow: .6s;
-}
-
-/* ------------------------------------------------------------
-   1. PAGE TITLE – Glowing Gradient (Reusable)
-   ------------------------------------------------------------ */
-.page-title {
-    font-size: var(--fs-h1);
-    color: var(--white);
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-
-    /* Gradient Text */
-    background: linear-gradient(90deg, var(--teal-400), var(--teal-600), var(--navy-500));
-    -webkit-background-clip: text;
-    background-clip: text;
-    animation: titleGlow 3s ease-in-out infinite alternate;
-}
-
-@keyframes titleGlow {
-    0% { text-shadow: 0 0 4px rgba(20, 220, 200, 0.3); }
-    100% { text-shadow: 0 0 12px rgba(20, 220, 200, 0.65); }
-}
-
-/* ------------------------------------------------------------
-   2. LEAD TEXT
-   ------------------------------------------------------------ */
-.lead {
-    text-align: center;
-    max-width: 80ch;
-    margin: 0 auto 3rem;
-    font-size: 1.25rem;
-    color: var(--ink-100);
-    line-height: 1.7;
-}
-
-/* ------------------------------------------------------------
-   4. FLASHY SECTION (Replaces <section>)
-   ------------------------------------------------------------ */
-.flashy-section {
-    margin: 1rem 0;
-    padding: 1rem;
-    background: var(--surface-alt);
-    border-radius: var(--radius);
-    border: 1px solid var(--teal-500); /* Soft navy border */
-    box-shadow: var(--shadow-1);
-    transition: all var(--anim-med) ease;
+.section-content h2 {
     position: relative;
-    overflow: hidden;
-    scroll-margin-top: 72px;
-
+    margin: 0 0 1rem;
+    color: var(--teal-400);
+    font-size: 1.75rem;
 }
 
-.flashy-section:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-2);
-    border: 1px solid rgba(45, 212, 191, 0.2);
-}
-
-.flashy-section h2 {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem !important;
-    color: var(--white);
-    font-size: var(--fs-h3);
-}
-
-.flashy-section h2::after {
+.section-content h2::after {
     content: '';
     position: absolute;
-    left: 0; bottom: 0;
-    width: 60px; height: var(--underline-h);
+    left: 0;
+    bottom: -6px;
+    width: 50px;
+    height: 3px;
     background: var(--teal-400);
     border-radius: 2px;
     box-shadow: 0 0 10px rgba(45, 212, 191, 0.6);
 }
 
-.flashy-section.two-col {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;   /* or center */
-    justify-content: space-between;
-    gap: 2rem;                 /* space between text & image */
+.section-content p {
+    margin: 0.75rem 0 0;
+    line-height: 1.7;
 }
 
-/* ensure both columns share space */
-.flashy-section.two-col .content-col {
-    flex: 2;                   /* text takes 2/3 width */
+.disclaimer {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(45, 212, 191, 0.3);
 }
 
-.flashy-section.two-col .image-col {
-    flex: 1;                   /* image takes 1/3 width */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* --------------------------------------
+   3. Grid Systems (global)
+--------------------------------------- */
+
+.methods-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
 }
 
-.flashy-section.two-col img {
-    width: 100%;
-    max-width: 330px;          /* control size */
-    height: auto;
-    border-radius: 10px;
-    object-fit: contain;
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin: 2rem 0 3rem;
 }
 
-/* Mobile Responsive */
-@media (max-width: 900px) {
-    .flashy-section.two-col {
-        flex-direction: column;
+/* Breakpoints */
+@media (max-width: 980px) {
+    .methods-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-.image-col {
-    flex: 1;
-    display: flex;
-    align-items: center;
+@media (max-width: 640px) {
+    .methods-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-.image-col img {
-    width: auto;
-    height: auto;
-    border-radius: 10px;
-}
+/* --------------------------------------
+   4. Sources / Notes / Citations
+--------------------------------------- */
 
-/* ------------------------------------------------------------
-   5. HERO SECTIONS (Multiple Variants)
-   ------------------------------------------------------------ */
-.page-hero,
-.hero-section,
-.hero {
-    position: relative;
-    text-align: center;
-    padding: 35px 20px;
-    overflow: hidden;
-
-    background: linear-gradient(
-            180deg,
-            rgba(10, 32, 55, 0.65) 0%,
-            rgba(15, 45, 75, 0.35) 40%,
-            rgba(40, 50, 60, 0.1) 100%
-    );
-
-    background-size: 200% 200%;
-    animation: heroGradientShift 12s ease infinite;
-}
-
-@keyframes heroGradientShift {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 100% 100%; }
-    100% { background-position: 0% 0%; }
-}
-
-/* Hero Icon Pulse */
-.hero-icon,
-.hero-section img {
-    width: 80px; height: 80px;
-    margin-bottom: 1.5rem;
-    filter: drop-shadow(0 0 15px rgba(45, 212, 191, 0.5));
-    animation: iconPulse 2s ease-in-out infinite;
-}
-
-@keyframes iconPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-}
-
-/* ------------------------------------------------------------
-   6. REUSABLE FLASHY LIST (.flashy-list)
-   ------------------------------------------------------------ */
-.flashy-list,
-.flashy-list ul,
-.flashy-list ol {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-}
-
-.flashy-list li {
-    position: relative;
-    padding-left: 2.2rem;
-    margin-bottom: 1rem;
-    transition: all var(--anim-fast) ease;
-    display: flex;
-    align-items: center;
-}
-
-.flashy-list ul li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--teal-400);
-    font-size: 1.5rem;
-    line-height: 1;
-}
-
-.flashy-list ol {
-    counter-reset: list-item;
-}
-
-.flashy-list ol li {
-    counter-increment: list-item;
-}
-
-.flashy-list ol li::before {
-    content: counter(list-item) '.';
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-    color: var(--teal-400);
-}
-
-.flashy-list li:hover {
-    transform: translateX(8px);
-    color: var(--teal-400);
-}
-
-/* Icon variant */
-.flashy-list li i {
-    position: absolute;
-    left: 0;
-    color: var(--teal-400);
-    width: 1.6rem; height: 1.6rem;
-    transition: transform var(--anim-fast);
-}
-
-.flashy-list li:hover i {
-    transform: scale(1.3) rotate(15deg);
-}
-
-/* ------------------------------------------------------------
-   7. FLASHY TABLE (.flashy-table)
-   ------------------------------------------------------------ */
-.flashy-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.5rem 0;
-    background: rgba(11, 27, 42, 0.35);
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-1);
-}
-
-.flashy-table th,
-.flashy-table td {
-    padding: 1rem 1.2rem;
-    text-align: left;
-    border-bottom: 1px solid rgba(45, 212, 191, 0.15);
-}
-
-.flashy-table th {
-    background: rgba(20, 180, 166, 0.15);
-    color: var(--teal-400);
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-}
-
-.flashy-table tr:hover {
-    background: rgba(45, 212, 191, 0.1);
-}
-
-.flashy-table tr:hover td {
-    color: var(--teal-400);
-}
-
-/* ------------------------------------------------------------
-   8. FLASHY CARD (.flashy-card)
-   ------------------------------------------------------------ */
-.flashy-card {
-    background: rgba(11, 27, 42, 0.35);
-    backdrop-filter: blur(4px);
-    padding: 2rem;
-    border-radius: var(--radius);
-    border: 1px solid rgba(45, 212, 191, 0.2);
-    transition: all var(--anim-med) ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.flashy-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 4px;
-    background: linear-gradient(90deg, transparent, var(--teal-400), transparent);
-    transform: scaleX(0);
-    transition: transform var(--anim-med) ease;
-}
-
-.flashy-card:hover::before {
-    transform: scaleX(1);
-}
-
-.flashy-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--teal-400);
-    box-shadow: 0 0 25px rgba(45, 212, 191, 0.5);
-}
-
-.flashy-card h3 {
-    margin: 0 0 1rem;
-    color: var(--teal-400);
-    font-size: 1.4rem;
-}
-
-/* ------------------------------------------------------------
-   9. BUTTONS – Glowing CTA
-   ------------------------------------------------------------ */
-.btn-glow {
-    display: inline-block;
-    background: var(--teal-500);
-    color: white;
-    border: none;
-    border-radius: var(--radius-sm);
-    font-weight: 600;
-    text-align: center;
-    cursor: pointer;
-    transition: all var(--anim-fast) ease;
-    box-shadow: 0 0 20px rgba(20, 180, 166, 0.4);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-
-}
-
-.btn-glow::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left var(--anim-med) ease;
-    z-index: -1;
-}
-
-.btn-glow:hover::before {
-    left: 100%;
-}
-
-.btn-glow:hover {
-    background: var(--teal-400);
-    transform: translateY(-3px);
-    box-shadow: 0 0 30px rgba(45, 212, 191, 0.7);
-}
-
-/* Size variants */
-.btn-glow.sm {
-    padding: 0.7rem 1rem;   /* same as default */
-    padding-top: 8px;
-    padding-bottom: 8px; /* instead of 0.9rem (~14px) */
-    font-size: 12px;
-}
-
-.btn-glow.md {
-    padding: 0.9rem 2rem;   /* same as default */
-    font-size: 1rem;
-}
-
-.btn-glow.lg {
-    padding: 1.1rem 2.6rem;
-    font-size: 1.1rem;
-}
-
-/* ------------------------------------------------------------
-   10. ACCORDION
-   ------------------------------------------------------------ */
-.accordion-flashy {
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-1);
-    margin: 1.5rem 0;
-}
-
-.accordion-btn {
-    width: 100%;
-    background: rgba(11, 27, 42, 0.4);
-    color: var(--white);
-    padding: 1.2rem 1.5rem;
-    text-align: left;
-    border: none;
-    font-weight: 600;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all var(--anim-med) ease;
-}
-
-.accordion-btn::after {
-    content: '';
-    width: 12px; height: 12px;
-    border-right: 2px solid var(--teal-400);
-    border-bottom: 2px solid var(--teal-400);
-    transform: rotate(45deg);
-    transition: transform var(--anim-med) ease;
-}
-
-.accordion-btn[aria-expanded="true"]::after {
-    transform: rotate(225deg);
-}
-
-.accordion-btn:hover {
-    background: rgba(20, 180, 166, 0.2);
-    padding-left: 1.8rem;
-}
-
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    background: rgba(11, 27, 42, 0.25);
-    padding: 0 1.5rem;
-    transition: max-height var(--anim-slow) ease, padding var(--anim-slow) ease;
-}
-
-.accordion-content.open {
-    max-height: 300px;
-    padding: 1.2rem 1.5rem;
-}
-
-/* ------------------------------------------------------------
-   11. CALCULATOR (Glassmorphic)
-   ------------------------------------------------------------ */
-.calc-glass,
-.calc-flashy {
-    background: var(--backdrop-color);
-    backdrop-filter: blur(6px);
-    padding: 2rem;
-    border-radius: var(--radius);
-    border: 1px solid rgba(45, 212, 191, 0.3);
-    max-width: 500px;
-    margin: 2rem auto;
-    box-shadow: var(--shadow-1);
-    text-align: center;
-}
-
-.calc-glass input,
-.calc-flashy input {
-    width: 100%;
-    padding: 0.75rem;
-    margin: 0.5rem 0 1rem;
-    border: 1px solid var(--teal-400);
-    border-radius: var(--radius-sm);
-    background: rgba(11, 27, 42, 0.6);
-    color: white;
-}
-
-.calc-glass input:focus,
-.calc-flashy input:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.3);
-}
-
-/* ------------------------------------------------------------
-   12. MISC: Sources, Notes, Quotes
-   ------------------------------------------------------------ */
 .source,
 .source-list li,
 .sources,
 .sources-inline {
     font-size: 0.85rem;
-    color: var(--muted);
+    color: #000000;
     margin-top: 1rem;
 }
 
@@ -515,7 +120,7 @@ footer {
 .source-list a,
 .sources a,
 .sources-inline a {
-    color: var(--teal-400);
+    color: #000000;
     text-decoration: underline;
 }
 
@@ -523,7 +128,7 @@ footer {
 .source-list a:hover,
 .sources a:hover,
 .sources-inline a:hover {
-    color: var(--white);
+    color: var(--teal-700);
 }
 
 .note {
@@ -534,211 +139,21 @@ footer {
     font-size: 0.85rem;
 }
 
-.quote-card,
-.flashy-quote,
-.insight {
-    background: rgba(20, 180, 166, 0.1);
-    border-left: 4px solid var(--teal-400);
-    padding: 1.5rem;
-    margin: 2rem 0;
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    font-style: italic;
-    color: var(--ink-100);
-    position: relative;
-}
-
-.quote-card::before,
-.flashy-quote::before {
-    content: '“';
-    font-size: 3rem;
-    color: var(--teal-500);
-    float: left;
-    margin-right: 0.5rem;
-    line-height: 1;
-}
-
-/* ------------------------------------------------------------
-   13. ICONS
-   ------------------------------------------------------------ */
-.icon,
-.icon-inline {
-    width: 1.4em;
-    height: 1.4em;
-    vertical-align: -0.2em;
-    margin-right: 0.5rem;
-    color: var(--teal-400);
-}
-
-/* ------------------------------------------------------------
-   14. REVEAL ANIMATIONS
-   ------------------------------------------------------------ */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition:
-            opacity 0.6s var(--anim-med) cubic-bezier(0.22, 1, 0.36, 1),
-            transform 0.6s var(--anim-med) cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-
-/* ------------------------------------------------------------
-   15. RESPONSIVE
-   ------------------------------------------------------------ */
-@media (max-width: 640px) {
-    .flashy-section,
-    .flashy-card,
-    .calc-glass,
-    .calc-flashy { padding: 1.8rem; }
-
-    .flashy-table th,
-    .flashy-table td { padding: 0.8rem; font-size: 0.9rem; }
-
-    .page-title { font-size: 2.5rem; }
-}
-
-/* Grid for the “Popular Budgeting Methods” cards */
-.methods-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
-}
-
-/* Info grid for Emergency Funds page */
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem; /* 20px if base = 16px */
-    margin: 2rem 0 3rem;
-}
-
-@media (max-width: 980px) { .methods-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 640px) { .methods-grid { grid-template-columns: 1fr; } }
-
-/* Superscript reference styling */
+/* Citations */
 .cite-ref {
     font-size: .8em;
     vertical-align: super;
     line-height: 1;
     margin-left: .25rem;
-}
-.cite-ref a { color: var(--teal-400); text-decoration: none; }
-.cite-ref a:hover { text-decoration: underline; }
-
-/* Flashy Table (Base) */
-.flashy-table{
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.5rem 0;
-    background: rgba(11, 27, 42, 0.35);
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-1);
-    border: 1px solid rgba(45, 212, 191, 0.15);
-    transition: all var(--anim-med) ease;
-    position: relative;
+    color: #000000;
 }
 
-/* Flashy Hover (same behavior as flashy-section / flashy-card) */
-.flashy-table:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 25px rgba(45, 212, 191, 0.5);
-    border-color: var(--teal-400);
+.cite-ref a {
+    color: #000000;
+    text-decoration: none;
 }
 
-/* Flashy Table Upgrade */
-.flashy-table {
-    position: relative;
-    background: rgba(11, 27, 42, 0.35);
-    backdrop-filter: blur(4px);
-    border-radius: var(--radius);
-    border: 1px solid rgba(45, 212, 191, 0.2);
-    overflow: hidden;
-    transition: all var(--anim-med) ease;
-    box-shadow: var(--shadow-1);
-}
-
-/* Gradient top highlight bar */
-.flashy-table::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 4px;
-    background: linear-gradient(90deg, transparent, var(--teal-400), transparent);
-    transform: scaleX(0);
-    transition: transform var(--anim-med) ease;
-}
-
-/* Hover effect (matches flashy-card) */
-.flashy-table:hover::before {
-    transform: scaleX(1);
-}
-
-.flashy-table:hover{
-    transform: translateY(-6px);
-    border-color: var(--teal-400);
-    box-shadow: 0 0 25px rgba(45, 212, 191, 0.4);
-}
-
-
-/* Flashy Checklist */
-.checkflashy-list {
-    list-style: none;
-    margin: 1.5rem 0;
-    background: rgba(11, 27, 42, 0.35);
-    backdrop-filter: blur(4px);
-    border-radius: var(--radius);
-    border: 1px solid rgba(45, 212, 191, 0.2);
-    padding: 1.5rem 2rem;
-    box-shadow: var(--shadow-1);
-    transition: all var(--anim-med) ease;
-}
-
-.checkflashy-list:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 25px rgba(45, 212, 191, 0.45);
-    border-color: var(--teal-400);
-}
-
-/* Each checklist item */
-.checkflashy-list li {
-    position: relative;
-    padding-left: 2.4rem;
-    margin-bottom: 1rem;
-    font-size: 1.05rem;
-    display: flex;
-    align-items: flex-start;
-    line-height: 1.5;
-    transition: all var(--anim-fast) ease;
-}
-
-/* Teal glowing checkmark icon */
-.checkflashy-list .check-icon {
-    position: absolute;
-    left: 0;
-    top: 0.2rem;
-    width: 1.4rem;
-    height: 1.4rem;
-    border-radius: 4px;
-    background: var(--teal-500);
-    mask: url('data:image/svg+xml;utf8,<svg fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.285 6.708a1 1 0 0 0-1.57-1.25l-9.03 11.33-4.4-4.399a1 1 0 1 0-1.414 1.415l5.177 5.176a1 1 0 0 0 1.483-.06l9.754-12.212z"/></svg>') center / 75% no-repeat;
-    transition: transform var(--anim-fast), box-shadow var(--anim-fast);
-}
-
-/* Hover interaction */
-.checkflashy-list li:hover {
-    color: var(--teal-400);
-    transform: translateX(6px);
-}
-
-.checkflashy-list li:hover .check-icon {
-    transform: scale(1.2) rotate(6deg);
-    box-shadow: 0 0 10px rgba(45, 212, 191, 0.75);
+.cite-ref a:hover {
+    color: var(--white);
+    text-decoration: underline;
 }

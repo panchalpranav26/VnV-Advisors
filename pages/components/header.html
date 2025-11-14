@@ -1,52 +1,39 @@
 <!-- ============================================================
      HEADER (Desktop + Mobile Navigation)
-     Injected by core.js → loadHeaderFooter()
      ============================================================ -->
 <header class="header">
-  <div class="wrap nav" role="navigation" aria-label="Primary Navigation">
+  <nav class="menu-wrap" role="navigation" aria-label="Primary Navigation">
 
-    <!-- ============================================================
-         MOBILE: HAMBURGER (Shown <981px)
-         ============================================================ -->
-    <button id="mobile-nav-toggle"
-            class="mobile-nav-toggle"
-            aria-label="Open Menu"
-            aria-expanded="false"
-            aria-controls="mobile-nav-panel">
-      <span class="mobile-nav-toggle__icon" aria-hidden="true">
-        <span></span><span></span><span></span>
-      </span>
-    </button>
-
-    <!-- ============================================================
-         BRAND (Centered on Mobile)
-         ============================================================ -->
-    <a class="brand" href="/" id="nav-logo" data-home aria-label="V & V Advisors LLC – Home">
-      <span class="brand__name">V & V Advisors LLC</span>
+    <!-- BRAND -->
+    <a class="brand" href="/" id="nav-logo" aria-label="V & V Advisors – Home">
+      <span class="brand__name">V & V Advisors</span>
     </a>
 
-    <!-- ============================================================
-         DESKTOP NAVIGATION (≥981px)
-         ============================================================ -->
-    <ul class="menu" role="menubar">
+    <!-- TOP-LEVEL NAV (DIV-BASED) -->
+    <div class="menu" role="menubar">
 
       <!-- HOME -->
-      <li role="none">
+      <div class="menu-item" role="none">
         <a class="link" role="menuitem" href="/" data-home>Home</a>
-      </li>
+      </div>
 
       <!-- ⭐ FINANCIAL EDUCATION (MEGA) -->
-      <li role="none" class="nav-item--has-dropdown" id="nav-financial-education">
+      <div class="menu-item nav-item--has-dropdown" id="nav-financial-education" role="none">
         <div class="parent-with-caret">
-          <a class="link" role="menuitem" href="/pages/financial_ed.html" aria-haspopup="true">Financial Education</a>
+          <a class="link" role="menuitem" href="/pages/financial_ed.html" aria-haspopup="true">
+            Financial Education
+          </a>
           <button class="caret-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Open Financial Education Menu">
             <span class="caret" aria-hidden="true">
-              <svg width="10" height="10" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 6 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <svg width="10" height="10" viewBox="0 0 20 20" fill="none">
+                <path d="M5 7l5 6 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
             </span>
           </button>
         </div>
 
         <div class="dropdown-pane dropdown-pane--mega" role="menu" aria-label="Financial Education Menu">
+
           <div class="mega__grid">
 
             <section class="mini-card">
@@ -86,16 +73,19 @@
               <li><a href="/pages/financial_ed/family_fin_planning.html">Family Financial Planning</a></li>
             </ul>
           </section>
+
         </div>
-      </li>
+      </div>
 
       <!-- 🧩 SERVICES -->
-      <li role="none" class="nav-item--has-dropdown">
+      <div class="menu-item nav-item--has-dropdown" role="none">
         <div class="parent-with-caret">
           <a class="link" role="menuitem" href="/pages/services.html">Services</a>
           <button class="caret-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Open Services Menu">
             <span class="caret" aria-hidden="true">
-              <svg width="10" height="10" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 6 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <svg width="10" height="10" viewBox="0 0 20 20" fill="none">
+                <path d="M5 7l5 6 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
             </span>
           </button>
         </div>
@@ -110,38 +100,22 @@
             </ul>
           </section>
         </div>
-      </li>
+      </div>
 
       <!-- 🌟 SUCCESS STORIES -->
-      <li role="none" class="nav-item--has-dropdown">
-        <div class="parent-with-caret">
-          <a class="link" role="menuitem" href="/pages/stories.html">Success Stories</a>
-          <!--<button class="caret-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Open Success Stories Menu">
-            <span class="caret" aria-hidden="true">
-              <svg width="10" height="10" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 6 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </span>
-          </button>-->
-        </div>
-
-      <!-- <div class="dropdown-pane dropdown-pane--mini" role="menu" aria-label="Success Stories Menu">
-          <section class="mini-card">
-            <ul>
-              <li><a href="/pages/stories/help_families.html">Families We Helped</a></li>
-              <li><a href="/pages/stories/young_college.html">Young Adults & College</a></li>
-              <li><a href="/pages/stories/retirement_success.html">Retirement Success</a></li>
-              <li><a href="/pages/stories/community_impact.html">Community Impact</a></li>
-            </ul>
-          </section>
-        </div> -->
-      </li>
+      <div class="menu-item" role="none">
+        <a class="link" role="menuitem" href="/pages/stories.html">Success Stories</a>
+      </div>
 
       <!-- 🧭 ABOUT -->
-      <li role="none" class="nav-item--has-dropdown">
+      <div class="menu-item nav-item--has-dropdown" role="none">
         <div class="parent-with-caret">
           <a class="link" role="menuitem" href="/pages/about.html">About</a>
           <button class="caret-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Open About Menu">
             <span class="caret" aria-hidden="true">
-              <svg width="10" height="10" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 6 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <svg width="10" height="10" viewBox="0 0 20 20" fill="none">
+                <path d="M5 7l5 6 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
             </span>
           </button>
         </div>
@@ -156,28 +130,28 @@
             </ul>
           </section>
         </div>
-      </li>
+      </div>
 
       <!-- ✉ CONTACT -->
-      <li role="none">
+      <div class="menu-item" role="none">
         <a class="link" role="menuitem" href="/pages/contact.html">Contact</a>
-      </li>
+      </div>
 
-      <!-- CTA (Desktop-Only) -->
-      <li role="none" class="desktop-only">
-          <a href="/pages/consultation.html" class="btn-glow sm">Free Consultation</a>
-      </li>
+      <!-- CTA -->
+      <div class="menu-item desktop-only" role="none">
+        <a href="/pages/consultation.html" class="btn-glow sm">Free Consultation</a>
+      </div>
 
-    </ul>
-  </div>
+    </div> <!-- .menu -->
+
+  </nav>
 </header>
 
-
 <!-- ============================================================
-     MOBILE NAV PANEL (Drawer) — Controlled by mobile_nav.js
+     MOBILE NAV PANEL (Drawer)
      ============================================================ -->
 <nav id="mobile-nav-panel" class="mobile-nav-panel" role="navigation" aria-label="Mobile Navigation">
-  <ul class="menu mobile-menu" role="menubar">
+  <ul class="mobile-menu" role="menubar">
     <!-- mobile_nav.js clones desktop menu here -->
   </ul>
 </nav>

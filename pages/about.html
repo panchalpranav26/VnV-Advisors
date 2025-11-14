@@ -5,10 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>About V & V Advisors LLC – Mission, Values, and Credentials</title>
+    <title>About V & V Advisors – Mission, Values, and Credentials</title>
 
     <!-- Primary Meta Description for SEO -->
-    <meta name="description" content="Learn about the mission, story, credentials, and values of V & V Advisors LLC, a financial education and protection firm based in Tracy, CA." />
+    <meta name="description" content="Learn about the mission, story, credentials, and values of V & V Advisors, a financial education and protection firm based in Tracy, CA." />
 
     <!-- Canonical URL (update when domain is live) -->
     <link rel="canonical" href="https://www.example.com/pages/about.html" />
@@ -19,170 +19,18 @@
     <!-- External CSS (Modularized) -->
     <link rel="stylesheet" href="../assets/css/style.css" />
 
-    <!-- Feather Icons -->
-
-
-    <!-- Flashy Enhancements (Non-conflicting)-->
-    <style>
-        /* ============================================================
-           FLASHY ABOUT PAGE – NON-CONFLICTING
-           Uses core.css tokens + custom classes prefixed with .flashy-
-           ============================================================ */
-
-        /* Page Title – Glowing Gradient */
-        .page-title {
-            font-size: var(--fs-h1);
-            font-weight: 700;
-            text-align: center;
-            margin: 2rem 0 1.5rem;
-            background: linear-gradient(90deg, #ffffff, var(--teal-400), #ffffff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: titleGlow 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes titleGlow {
-            from { filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.4)); }
-            to { filter: drop-shadow(0 0 20px rgba(45, 212, 191, 0.7)); }
-        }
-
-        /* Lead Text */
-        .lead {
-            text-align: center;
-            margin: 0 auto 3rem;
-            font-size: 1.2rem;
-            color: var(--ink-100);
-            max-width: 70ch;
-        }
-
-        /* Section Card */
-        .about-section {
-            background: var(--surface-alt);
-            padding: 2.5rem;
-            border-radius: var(--radius);
-            border: 1px solid rgba(45, 212, 191, 0.15);
-            box-shadow: var(--shadow-1);
-            transition: all var(--anim-med) ease;
-            margin-bottom: 2.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-section:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-2);
-            border-color: var(--teal-400);
-        }
-
-        .about-section::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 4px;
-            background: linear-gradient(90deg, transparent, var(--teal-400), transparent);
-            transform: scaleX(0);
-            transition: transform var(--anim-med) ease;
-        }
-
-        .about-section:hover::before {
-            transform: scaleX(1);
-        }
-
-        /* Section Title with Teal Underline */
-        .section-title {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 0.75rem;
-            margin-bottom: 1.5rem !important;
-            color: var(--teal-400);
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 70px;
-            height: var(--underline-h);
-            background: var(--teal-400);
-            border-radius: 2px;
-            box-shadow: 0 0 12px rgba(45, 212, 191, 0.6);
-        }
-
-        /* Flashy List with Feather Icons */
-        .flashy-list {
-            list-style: none;
-            padding: 0;
-            margin: 1.5rem 0;
-        }
-
-        .flashy-list li {
-            position: relative;
-            padding-left: 2.8rem;
-            margin-bottom: 1.2rem;
-            transition: all var(--anim-fast) ease;
-            font-weight: 500;
-        }
-
-        .flashy-list li i {
-            position: absolute;
-            left: 0;
-            top: 0.1rem;
-            color: var(--teal-400);
-            width: 1.8rem;
-            height: 1.8rem;
-        }
-
-        .flashy-list li:hover {
-            transform: translateX(10px);
-            color: var(--teal-400);
-        }
-
-        .flashy-list li strong {
-            color: var(--white);
-        }
-
-        /* Reveal Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s var(--anim-med) cubic-bezier(0.22, 1, 0.36, 1),
-            transform 0.6s var(--anim-med) cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-
-        /* Responsive */
-        @media (max-width: 640px) {
-            .about-section {
-                padding: 2rem;
-            }
-            .flashy-list li {
-                padding-left: 2.4rem;
-            }
-        }
-    </style>
-
     <!-- Open Graph (Facebook/LinkedIn/iMessage link preview) -->
-    <meta property="og:title" content="About V & V Advisors LLC – Mission, Values, and Credentials" />
-    <meta property="og:description" content="Learn about the mission, story, credentials, and values of V & V Advisors LLC, a financial education and protection firm based in Tracy, CA." />
+    <meta property="og:title" content="About V & V Advisors – Mission, Values, and Credentials" />
+    <meta property="og:description" content="Learn about the mission, story, credentials, and values of V & V Advisors, a financial education and protection firm based in Tracy, CA." />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="/assets/img/social/preview.jpg" />
     <meta property="og:url" content="https://www.example.com/pages/about.html" />
-    <meta property="og:site_name" content="V & V Advisors LLC" />
+    <meta property="og:site_name" content="V & V Advisors" />
 
     <!-- Twitter Card (X preview) -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="About V & V Advisors LLC – Mission, Values, and Credentials" />
-    <meta name="twitter:description" content="Learn about the mission, story, credentials, and values of V & V Advisors LLC, a financial education and protection firm based in Tracy, CA." />
+    <meta name="twitter:title" content="About V & V Advisors – Mission, Values, and Credentials" />
+    <meta name="twitter:description" content="Learn about the mission, story, credentials, and values of V & V Advisors, a financial education and protection firm based in Tracy, CA." />
     <meta name="twitter:image" content="/assets/img/social/preview.jpg" />
 
     <!-- JSON-LD Schema for SEO Rich Results -->
@@ -192,7 +40,7 @@
             "@graph": [
                 {
                     "@type": ["FinancialService", "EducationalOrganization"],
-                    "name": "V & V Advisors LLC",
+                    "name": "V & V Advisors",
                     "description": "Empowering and helping build families with financial literacy, protection, and wealth-building strategies by healthy financial habits.",
                     "address": {
                         "@type": "PostalAddress",
@@ -216,27 +64,27 @@
 
 <!-- Main Content -->
 <main class="wrap">
-    <header class="page-header reveal">
-        <h1>About V & V Advisors LLC</h1>
+    <header class="page-hero reveal">
+        <h1 class="page-title">About V & V Advisors</h1>
         <p class="lead">We are a financial education and protection firm based in Tracy, CA, committed to empowering families to achieve financial peace of mind.</p>
     </header>
 
-    <section class="about-section reveal delay-2">
-        <h2 class="section-title">Our Mission & Story</h2>
+    <section class="flashy-section delay-1">
+        <h2>Our Mission & Story</h2>
         <p>
-            Our mission is simple: to empower and help build families with financial literacy, protection, and wealth-building strategies by fostering healthy financial habits. Founded in Tracy, CA, V & V Advisors LLC started with the belief that everyone deserves access to clear, ethical, and actionable financial education. We focus on providing the knowledge and tools necessary to navigate the complexities of personal finance.
+            Our mission is simple: to empower and help build families with financial literacy, protection, and wealth-building strategies by fostering healthy financial habits. Founded in Tracy, CA, V & V Advisors started with the belief that everyone deserves access to clear, ethical, and actionable financial education. We focus on providing the knowledge and tools necessary to navigate the complexities of personal finance.
         </p>
     </section>
 
-    <section class="about-section reveal delay-3">
-        <h2 class="section-title">Credentials & California License</h2>
+    <section class="flashy-section delay-1">
+        <h2>Credentials & California License</h2>
         <p>
             Our team holds the necessary credentials and is licensed to provide guidance on financial protection products, specifically life insurance, in the state of California. We adhere to all state and federal regulations, ensuring our advice is compliant and trustworthy. We believe in transparency and encourage clients to verify our credentials.
         </p>
     </section>
 
-    <section class="about-section reveal">
-        <h2 class="section-title">Values & Code of Ethics</h2>
+    <section class="flashy-section delay-1">
+        <h2>Values & Code of Ethics</h2>
         <p>Our work is guided by a strict code of ethics centered on:</p>
         <ul class="flashy-list">
             <li><i data-feather="shield"></i><strong>Integrity:</strong> Always putting the client's best interest first.</li>
@@ -255,22 +103,5 @@
 <script type="module" src="../assets/js/core.js" defer></script>
 <script type="module" src="../assets/js/pages/about.js" defer></script>
 
-<!-- Initialize Feather Icons + Scroll Reveal -->
-<script>
-    // Initialize Feather Icons
-    feather.replace();
-
-    // Scroll Reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, { threshold: 0.15 });
-
-    reveals.forEach(el => observer.observe(el));
-</script>
 </body>
 </html>

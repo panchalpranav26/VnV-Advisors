@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Kids & Teens Financial Education – V & V Advisors LLC</title>
-    <meta name="description" content="Help kids and teens build smart money habits early. Learn saving, budgeting, goal setting, and responsible spending through fun, interactive lessons from V & V Advisors LLC." />
+    <title>Kids & Teens Financial Education – V & V Advisors</title>
+    <meta name="description" content="Help kids and teens build smart money habits early. Learn saving, budgeting, goal setting, and responsible spending through fun, interactive lessons from V & V Advisors." />
     <link rel="canonical" href="https://www.example.com/pages/kids_teens.html" />
 
     <!-- Google Fonts -->
@@ -16,17 +16,17 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Kids & Teens Financial Education – V & V Advisors LLC" />
+    <meta property="og:title" content="Kids & Teens Financial Education – V & V Advisors" />
     <meta property="og:description" content="Teach financial wellness early. Budgeting, saving, and goal-setting tools designed for kids and teens." />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="../assets/img/social/kids_teens_finance.jpg" />
     <meta property="og:url" content="https://www.example.com/pages/kids_teens.html" />
-    <meta property="og:site_name" content="V & V Advisors LLC" />
+    <meta property="og:site_name" content="V & V Advisors" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Kids & Teens Financial Education – V & V Advisors LLC" />
-    <meta name="twitter:description" content="Help kids and teens build strong money habits with trusted resources from V & V Advisors LLC." />
+    <meta name="twitter:title" content="Kids & Teens Financial Education – V & V Advisors" />
+    <meta name="twitter:description" content="Help kids and teens build strong money habits with trusted resources from V & V Advisors." />
     <meta name="twitter:image" content="../assets/img/social/kids_teens_finance.jpg" />
 
     <!-- JSON-LD added dynamically via JS -->
@@ -35,10 +35,10 @@
 
         window.addEventListener("DOMContentLoaded", () => {
             addJSONLDSchema({
-                pageTitle: "Kids & Teens Financial Education – V & V Advisors LLC",
-                pageDescription: "Help kids and teens build smart money habits early. Learn saving, budgeting, goal setting, and responsible spending through fun, interactive lessons from V & V Advisors LLC.",
+                pageTitle: "Kids & Teens Financial Education – V & V Advisors",
+                pageDescription: "Help kids and teens build smart money habits early. Learn saving, budgeting, goal setting, and responsible spending through fun, interactive lessons from V & V Advisors.",
                 pageUrl: window.location.href,
-                keywords: ["financial literacy for kids", "financial education teens", "saving for kids", "budgeting for teens", "V & V Advisors LLC", "family financial wellness"]
+                keywords: ["financial literacy for kids", "financial education teens", "saving for kids", "budgeting for teens", "V & V Advisors", "family financial wellness"]
             });
         });
     </script>
@@ -62,11 +62,11 @@
         <a href="https://www.finrafoundation.org/financial-capability-study" target="_blank" rel="noopener">FINRA Foundation</a>
     </p>
     <!-- Kids Section -->
-    <section class="flashy-section reveal delay-1">
+    <section class="flashy-section delay-1">
         <h2>For Kids (Ages 6–12)</h2>
         <p>Kids learn best through play and examples. Introducing money basics at a young age builds a foundation for lifelong financial wellness.</p>
 
-        <table class="table-flashy mt-3">
+        <table class="flashy-table mt-3">
             <thead>
             <tr>
                 <th><i data-feather="lightbulb" class="icon"></i> Concept</th>
@@ -95,11 +95,11 @@
     </section>
 
     <!-- Teens Section -->
-    <section class="flashy-section reveal delay-2">
+    <section class="flashy-section delay-1">
         <h2>For Teens (Ages 13–18)</h2>
         <p>Teens begin handling real money decisions — earning from part-time jobs, using debit cards, or planning for college. Early financial literacy helps them manage credit, spending, and savings responsibly.</p>
 
-        <table class="table-flashy">
+        <table class="flashy-table">
             <thead>
             <tr>
                 <th>Topic</th>
@@ -128,29 +128,96 @@
     </section>
 
     <!-- Interactive Calculator -->
-    <section class="interactive-section reveal delay-3">
-        <h2>Try This: Your First Budget</h2>
-        <p>Use this simple calculator to see how your weekly allowance or job income can be split:</p>
+    <section class="flashy-section delay-1">
+        <h2>50/30/20 Budget Breakdown</h2>
 
-        <div class="calc-flashy">
-            <h3>50/30/20 Budget Calculator</h3>
-            <label for="income">Monthly Take-Home Income ($)</label>
-            <input type="number" id="income" placeholder="e.g. 5000" min="0" step="0.01">
+        <p>
+            The 50/30/20 method is a simple budgeting framework that divides your monthly
+            take-home income into three clear categories. Below is a reference table
+            along with trusted calculators from leading financial websites.
+        </p>
 
-            <button id="calcBtn" class="btn-glow">Calculate</button>
+        <table class="flashy-table">
+            <thead>
+            <tr>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Percentage</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>Needs</strong></td>
+                <td>Essential expenses required to live — housing, groceries, utilities, transportation, insurance.</td>
+                <td>50%</td>
+            </tr>
 
-            <div id="results" class="calc-results">
-                <p><strong>Needs (50%):</strong> $<span id="needs">0.00</span></p>
-                <p><strong>Wants (30%):</strong> $<span id="wants">0.00</span></p>
-                <p><strong>Savings/Debt (20%):</strong> $<span id="savings">0.00</span></p>
-            </div>
-        </div>
+            <tr>
+                <td><strong>Wants</strong></td>
+                <td>Non-essential lifestyle expenses — dining out, entertainment, travel, shopping.</td>
+                <td>30%</td>
+            </tr>
+
+            <tr>
+                <td><strong>Savings & Debt Payments</strong></td>
+                <td>Emergency fund contributions, retirement savings, investments, or extra debt payments.</td>
+                <td>20%</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin-top: 2rem;">Trusted Online Calculators</h3>
+        <table class="flashy-table">
+            <thead>
+            <tr>
+                <th>Source</th>
+                <th>Description</th>
+                <th>Link</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>SoFi</strong></td>
+                <td>Interactive budgeting calculator based on the 50/30/20 rule.</td>
+                <td>
+                    <a href="https://www.sofi.com/money/50-30-20-rule-calculator/" target="_blank" rel="noopener">
+                        Visit SoFi →
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>NerdWallet</strong></td>
+                <td>Budget calculator with breakdown of needs/wants/savings.</td>
+                <td>
+                    <a href="https://www.nerdwallet.com/article/finance/how-to-budget" target="_blank" rel="noopener">
+                        Visit NerdWallet →
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Bankrate</strong></td>
+                <td>Budgeting tools and monthly expense planners.</td>
+                <td>
+                    <a href="https://www.bankrate.com/personal-finance/budget-calculator/" target="_blank" rel="noopener">
+                        Visit Bankrate →
+                    </a>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+        <p class="source">
+            Sources: SoFi, NerdWallet, Bankrate.
+        </p>
     </section>
 
     <!-- Resources -->
-    <section class="resources reveal delay-1">
+    <section class="flashy-section delay-1">
         <h2>Trusted Learning Resources</h2>
-        <ul class="flashy-list">
+        <ul class="source-list">
             <li><a href="https://www.consumerfinance.gov/youth-financial-education/" target="_blank" rel="noopener">CFPB Youth Financial Education Portal</a></li>
             <li><a href="https://www.fdic.gov/resources/consumers/money-smart/teach.html" target="_blank" rel="noopener">FDIC Money Smart for Young People</a></li>
             <li><a href="https://www.jumpstart.org/" target="_blank" rel="noopener">Jump$tart Coalition for Personal Financial Literacy</a></li>

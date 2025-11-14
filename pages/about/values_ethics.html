@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Values & Code of Ethics – V & V Advisors LLC</title>
-    <meta name="description" content="Explore the guiding values and code of ethics that drive V & V Advisors LLC to empower families with financial literacy, protection, and wealth-building strategies through healthy financial habits." />
+    <title>Values & Code of Ethics – V & V Advisors</title>
+    <meta name="description" content="Explore the guiding values and code of ethics that drive V & V Advisors to empower families with financial literacy, protection, and wealth-building strategies through healthy financial habits." />
     <link rel="canonical" href="https://www.example.com/pages/values_ethics.html" />
 
     <!-- Google Fonts -->
@@ -14,212 +14,19 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/style.css" />
-
-    <!-- Feather Icons -->
-
-
-    <!-- Flashy Enhancements (Non-conflicting) -->
-    <style>
-        /* ============================================================
-           FLASHY STYLES – NON-CONFLICTING
-           All new classes prefixed with .flashy-
-           ============================================================ */
-
-        /* Hero Title */
-        .flashy-hero-title {
-            font-size: var(--fs-h1);
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(90deg, #ffffff, var(--teal-400), #ffffff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: titleGlow 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes titleGlow {
-            from { filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.4)); }
-            to { filter: drop-shadow(0 0 20px rgba(45, 212, 191, 0.7)); }
-        }
-
-        /* Section Title with Underline */
-        .flashy-section-title {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem !important;
-            color: var(--teal-400);
-        }
-
-        .flashy-section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 60px;
-            height: var(--underline-h);
-            background: var(--teal-400);
-            border-radius: 2px;
-            box-shadow: 0 0 10px rgba(45, 212, 191, 0.6);
-        }
-
-        /* Container */
-        .wrap {
-            max-width: var(--maxw);
-            margin: 0 auto;
-            padding: var(--pad-x);
-            padding-top: 3rem;
-        }
-
-        /* Values Table → Card Grid */
-        .flashy-values-grid {
-            display: grid;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            .flashy-values-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .flashy-value-card {
-            background: var(--surface-alt);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            border: 1px solid rgba(45, 212, 191, 0.15);
-            transition: all var(--anim-med) ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .flashy-value-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 4px;
-            background: linear-gradient(90deg, transparent, var(--teal-400), transparent);
-            transform: scaleX(0);
-            transition: transform var(--anim-med) ease;
-        }
-
-        .flashy-value-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .flashy-value-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-2);
-            border-color: var(--teal-400);
-        }
-
-        .flashy-value-icon {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 1rem;
-            color: var(--teal-400);
-        }
-
-        .flashy-value-card h3 {
-            margin: 0 0 0.75rem;
-            color: var(--teal-500);
-            font-size: 1.25rem;
-        }
-
-        .flashy-value-card p {
-            margin: 0.5rem 0 0;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .flashy-value-card a {
-            color: var(--teal-400);
-            text-decoration: underline;
-            font-weight: 600;
-        }
-
-        /* Ethics List – Reusable Flashy List */
-        .flashy-list li {
-            position: relative;
-            padding-left: 2.5rem;
-            margin-bottom: 1.2rem;
-            transition: all var(--anim-fast) ease;
-            line-height: 1.7;
-        }
-
-        .flashy-list li i {
-            position: absolute;
-            left: 0;
-            top: 0.1rem;
-            color: var(--teal-400);
-            width: 20px;
-            height: 20px;
-        }
-
-        .flashy-list li:hover {
-            transform: translateX(8px);
-            color: var(--teal-400);
-        }
-
-        .flashy-list strong {
-            color: var(--teal-500);
-        }
-
-        /* CTA Button */
-        .flashy-cta {
-            text-align: center;
-            margin-top: 3rem;
-        }
-
-        .flashy-cta .btn-primary {
-            background: var(--teal-500);
-            color: white;
-            padding: 0.9rem 2rem;
-            border-radius: var(--radius-sm);
-            font-weight: 600;
-            box-shadow: 0 0 20px rgba(20, 180, 166, 0.4);
-            transition: all var(--anim-fast) ease;
-            display: inline-block;
-        }
-
-        .flashy-cta .btn-primary:hover {
-            background: var(--teal-400);
-            transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(45, 212, 191, 0.7);
-        }
-
-        /* Reveal Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s var(--anim-med) cubic-bezier(0.22, 1, 0.36, 1),
-            transform 0.6s var(--anim-med) cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-    </style>
-
+    
     <!-- Open Graph -->
-    <meta property="og:title" content="Values & Code of Ethics – V & V Advisors LLC" />
-    <meta property="og:description" content="The core values of trust, transparency, and education that guide V & V Advisors LLC in empowering families for long-term financial well-being." />
+    <meta property="og:title" content="Values & Code of Ethics – V & V Advisors" />
+    <meta property="og:description" content="The core values of trust, transparency, and education that guide V & V Advisors in empowering families for long-term financial well-being." />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="../assets/img/social/values_ethics.jpg" />
     <meta property="og:url" content="https://www.example.com/pages/values_ethics.html" />
-    <meta property="og:site_name" content="V & V Advisors LLC" />
+    <meta property="og:site_name" content="V & V Advisors" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Values & Code of Ethics – V & V Advisors LLC" />
-    <meta name="twitter:description" content="Explore the guiding principles and ethical standards that form the foundation of V & V Advisors LLC." />
+    <meta name="twitter:title" content="Values & Code of Ethics – V & V Advisors" />
+    <meta name="twitter:description" content="Explore the guiding principles and ethical standards that form the foundation of V & V Advisors." />
     <meta name="twitter:image" content="../assets/img/social/values_ethics.jpg" />
 
     <!-- JSON-LD added dynamically via JS -->
@@ -228,8 +35,8 @@
 
         window.addEventListener("DOMContentLoaded", () => {
             addJSONLDSchema({
-                pageTitle: "Values & Code of Ethics – V & V Advisors LLC",
-                pageDescription: "Explore the guiding values and code of ethics that drive V & V Advisors LLC to empower families with financial literacy, protection, and wealth-building strategies.",
+                pageTitle: "Values & Code of Ethics – V & V Advisors",
+                pageDescription: "Explore the guiding values and code of ethics that drive V & V Advisors to empower families with financial literacy, protection, and wealth-building strategies.",
                 pageUrl: window.location.href,
                 keywords: ["financial literacy", "ethical finance", "family empowerment", "V & V Advisors values", "code of ethics", "financial education", "trust", "transparency"]
             });
@@ -243,49 +50,49 @@
 <main class="wrap">
 
     <!-- HERO SECTION -->
-    <section class="hero-section reveal">
-        <h1 class="flashy-hero-title">Our Values & Code of Ethics</h1>
-        <p class="lead" style="max-width: 720px; margin: 0 auto;">
-            At <strong>V & V Advisors LLC</strong>, we are dedicated to empowering families with the knowledge and tools for financial literacy, protection, and wealth-building strategies through healthy financial habits.
+    <section class="page-hero reveal">
+        <h1 class="page-title">Our Values & Code of Ethics</h1>
+        <p class="lead">
+            At <strong>V & V Advisors</strong>, we are dedicated to empowering families with the knowledge and tools for financial literacy, protection, and wealth-building strategies through healthy financial habits.
         </p>
     </section>
 
     <!-- VALUES GRID -->
-    <section class="reveal delay-1">
-        <h2 class="flashy-section-title">Our Core Values</h2>
+    <section class="flashy-section delay-1">
+        <h2>Our Core Values</h2>
         <p>These guiding values shape every service, conversation, and decision we make — ensuring we serve our clients and communities with the highest integrity and care.</p>
 
-        <div class="flashy-values-grid">
-            <div class="flashy-value-card reveal delay-1">
-                <i data-feather="shield" class="flashy-value-icon"></i>
+        <div class="methods-grid">
+            <div class="flashy-card">
+                <i data-feather="shield"></i>
                 <h3>Integrity</h3>
                 <p>We uphold honesty, fairness, and transparency in all financial guidance and interactions.</p>
                 <p>We provide fact-based advice backed by reputable sources such as <a href="https://www.consumerfinance.gov/" target="_blank">CFPB</a> and <a href="https://www.fdic.gov/" target="_blank">FDIC</a>.</p>
             </div>
 
-            <div class="flashy-value-card reveal delay-2">
-                <i data-feather="book-open" class="flashy-value-icon"></i>
+            <div class="flashy-card">
+                <i data-feather="book-open"></i>
                 <h3>Education</h3>
                 <p>We believe financial literacy is the foundation for empowerment and generational stability.</p>
                 <p>We simplify complex topics — from budgeting to insurance — and reference trusted educational resources like <a href="https://www.finra.org/investors" target="_blank">FINRA Investor Education</a>.</p>
             </div>
 
-            <div class="flashy-value-card reveal delay-3">
-                <i data-feather="heart" class="flashy-value-icon"></i>
+            <div class="flashy-card">
+                <i data-feather="heart"></i>
                 <h3>Trust</h3>
                 <p>Trust is earned through consistency and accountability.</p>
                 <p>We align our actions with promises, ensuring families can rely on our advice and transparency.</p>
             </div>
 
-            <div class="flashy-value-card reveal delay-1">
-                <i data-feather="zap" class="flashy-value-icon"></i>
+            <div class="flashy-card">
+                <i data-feather="zap"></i>
                 <h3>Empowerment</h3>
                 <p>We help individuals and families gain control of their financial future.</p>
                 <p>We offer tools and coaching to help people set goals, save, and invest with confidence.</p>
             </div>
 
-            <div class="flashy-value-card reveal delay-2">
-                <i data-feather="users" class="flashy-value-icon"></i>
+            <div class="flashy-card">
+                <i data-feather="users"></i>
                 <h3>Respect</h3>
                 <p>Every client’s story, background, and financial journey are valued and honored.</p>
                 <p>We provide an inclusive, judgment-free environment where every family feels supported.</p>
@@ -294,8 +101,8 @@
     </section>
 
     <!-- CODE OF ETHICS -->
-    <section class="reveal delay-1">
-        <h2 class="flashy-section-title">Our Code of Ethics</h2>
+    <section class="flashy-section delay-1">
+        <h2>Our Code of Ethics</h2>
         <p>The <strong>V & V Advisors Code of Ethics</strong> outlines the moral compass that guides our professional behavior and protects our clients’ trust.</p>
 
         <ul class="flashy-list">
@@ -304,17 +111,19 @@
             <li><i data-feather="lock"></i> <strong>Confidentiality:</strong> Safeguard personal and financial information with utmost care.</li>
             <li><i data-feather="dollar-sign"></i> <strong>Transparency in Fees and Partnerships:</strong> Clearly disclose all compensation and affiliations.</li>
             <li><i data-feather="trending-up"></i> <strong>Continuous Learning:</strong> Commit to staying informed about financial laws, consumer rights, and ethical standards.</li>
-            <li><i data-feather="check-circle"></i> <strong>Compliance with Regulations:</strong> Operate in full accordance with state and federal standards such as those set by the <a href="https://insurance.ca.gov/" target="_blank">California Department of Insurance (CDI)</a> and <a href="https://www.naic.org/" target="_blank">NAIC</a>.</li>
+            <li><i data-feather="check-circle"></i> <strong>Compliance with Regulations:</strong> Operate in full accordance with state and federal standards such as those set by the</li>
+                <li><a href="https://insurance.ca.gov/" target="_blank">California Department of Insurance (CDI)</a></li>
+                <li><a href="https://www.naic.org/" target="_blank">NAIC</a></li>
         </ul>
     </section>
 
     <!-- CALL TO ACTION -->
-    <section class="flashy-cta reveal delay-2">
-        <h2 class="flashy-section-title">Together, We Build Stronger Financial Futures</h2>
-        <p style="max-width: 700px; margin: 0 auto;">
+    <section class="flashy-section delay-1">
+        <h2>Together, We Build Stronger Financial Futures</h2>
+        <p>
             These values and ethical principles aren’t just words — they guide how we help every family grow with clarity and confidence.
         </p>
-        <a href="/pages/contact.html" class="btn btn-primary">Contact Us</a>
+        <a href="/pages/contact.html" class="btn-glow md">Contact Us</a>
     </section>
 
 </main>

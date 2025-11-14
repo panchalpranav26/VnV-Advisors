@@ -7,9 +7,9 @@
 
 .contact-form .form-group label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     font-weight: 500;
-    color: var(--fg);
+    color: #000000;
 }
 
 .contact-form input,

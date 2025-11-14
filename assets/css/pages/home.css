@@ -1,18 +1,12 @@
 .home-hero {
     position: relative;
     text-align: center;
-    padding: 35px 20px;
+    padding: 10px 10px;
     overflow: hidden;
 
-    background: linear-gradient(
-            180deg,
-            rgba(10, 32, 55, 0.65) 0%,
-            rgba(15, 45, 75, 0.35) 40%,
-            rgba(40, 50, 60, 0.1) 100%
-    );
+    background: var(--gray-300);
 
     background-size: 200% 200%;
-    animation: heroGradientShift 12s ease infinite;
 }
 
 @keyframes heroGradientShift {
@@ -30,25 +24,27 @@
 
 .hero-title {
     font-size: var(--fs-h1);
+    color: var(--white);
     font-weight: 700;
-    margin-bottom: 1rem;
-    background: linear-gradient(90deg, #ffffff, var(--teal-400), #ffffff);
+    margin-bottom: 1.5rem;
+
+    /* Gradient Text */
+    background: linear-gradient(180deg, var(--teal-600));
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
-    animation: titleGlow 3s ease-in-out infinite alternate;
+    animation: heroGlow 5s ease-in-out infinite alternate;
 }
 
-@keyframes titleGlow {
-    from { filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.4)); }
-    to { filter: drop-shadow(0 0 20px rgba(45, 212, 191, 0.7)); }
+@keyframes heroGlow {
+    0% { text-shadow: 0 0 4px rgba(20, 220, 200, 0.3); }
+    50% { text-shadow: 0 0 12px rgba(20, 220, 200, 0.65); }
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
     max-width: 70ch;
-    margin: 0 auto 2.5rem;
-    color: var(--ink-100);
+    margin: 0 auto 1rem;
+    color: #000000;
     line-height: 1.7;
 }
 
@@ -58,10 +54,10 @@
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 1.5rem 2rem;
-    margin: 2rem auto 0;
+    padding: 1.5rem;
+    margin: 1rem auto 0;
     max-width: 560px;
-    background: var(--backdrop-color);
+    background: var(--gray-600);
     backdrop-filter: blur(var(--backdrop-blur));
     border-radius: var(--radius);
     border: 1px solid rgba(45, 212, 191, 0.2);

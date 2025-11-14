@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Compounding & Time – V & V Advisors LLC</title>
+  <title>Compounding & Time – V & V Advisors</title>
   <meta name="description" content="Discover how time and compounding work together to grow your savings and investments exponentially. Learn to start early and build wealth with confidence." />
   <link rel="canonical" href="https://www.example.com/pages/compounding_time.html" />
 
@@ -21,16 +21,16 @@
   <!-- Flashy Enhancements (Non-conflicting) -->
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Compounding & Time – V & V Advisors LLC" />
+  <meta property="og:title" content="Compounding & Time – V & V Advisors" />
   <meta property="og:description" content="Understand how time magnifies the power of compounding to help you build long-term wealth." />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="../assets/img/social/compounding_time.jpg" />
   <meta property="og:url" content="https://www.example.com/pages/compounding_time.html" />
-  <meta property="og:site_name" content="V & V Advisors LLC" />
+  <meta property="og:site_name" content="V & V Advisors" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Compounding & Time – V & V Advisors LLC" />
+  <meta name="twitter:title" content="Compounding & Time – V & V Advisors" />
   <meta name="twitter:description" content="Explore how small, consistent investments grow over time through compounding interest." />
   <meta name="twitter:image" content="../assets/img/social/compounding_time.jpg" />
 
@@ -40,7 +40,7 @@
 
     window.addEventListener("DOMContentLoaded", () => {
       addJSONLDSchema({
-        pageTitle: "Compounding & Time – V & V Advisors LLC",
+        pageTitle: "Compounding & Time – V & V Advisors",
         pageDescription: "Learn how compounding and time create exponential growth for your financial future. Understand the math and start investing early.",
         pageUrl: window.location.href,
         keywords: ["compounding interest", "time value of money", "financial literacy", "savings growth", "wealth building", "V & V Advisors"]
@@ -63,7 +63,7 @@
     </p>
   </header>
 
-  <p class="sources reveal delay-2">
+  <p class="sources delay-1">
     Source:
     <a href="https://www.investor.gov/introduction-investing/investing-basics/compound-interest" target="_blank" rel="noopener">
       U.S. SEC <i data-feather="external-link" class="icon"></i>
@@ -77,11 +77,11 @@
   </p>
 
   <!-- Why Compounding Matters -->
-  <section class="section-flashy reveal delay-1">
+  <section class="flashy-section delay-1">
     <h2><i data-feather="trending-up" class="icon"></i> Why Compounding Matters</h2>
     <p>Compounding rewards consistency. Even small, regular investments can grow significantly if you give them enough time. The earlier you start, the more your earnings multiply.</p>
 
-    <table class="table-glass">
+    <table class="flashy-table">
       <thead>
       <tr>
         <th>Starting Age</th>
@@ -102,26 +102,21 @@
   </section>
 
   <!-- Interactive Calculator -->
-  <section class="section-flashy reveal delay-2">
+  <section class="flashy-section delay-2">
     <h2><i data-feather="calculator" class="icon"></i> Interactive Compound Interest Calculator</h2>
     <p>Experiment with the power of time. Adjust your initial amount, rate, and years to see how your investment grows.</p>
 
-    <div class="calc-glass">
-      <label>Initial Amount ($): <input type="number" id="principal" value="1000" /></label>
-      <label>Annual Interest Rate (%): <input type="number" id="rate" value="5" step="0.1" /></label>
-      <label>Years: <input type="number" id="years" value="10" /></label>
-      <label>Compounds per Year: <input type="number" id="compound" value="12" /></label>
-      <button id="calc-btn" class="btn-glow">Calculate</button>
-      <p id="result"></p>
-    </div>
+    <button id="openCalcModal" class="btn-glow md">
+      Open Compound Interest Calculator ↗
+    </button>
   </section>
 
   <!-- The Time Advantage -->
-  <section class="section-flashy reveal delay-3">
+  <section class="flashy-section delay-3">
     <h2><i data-feather="clock" class="icon"></i> The Time Advantage</h2>
     <p>
       Time amplifies compounding because growth builds on growth. Waiting even a few years to start can dramatically
-      reduce your final amount. That’s why we at V & V Advisors LLC emphasize starting small but starting early.
+      reduce your final amount. That’s why we at V & V Advisors emphasize starting small but starting early.
     </p>
 
     <blockquote class="quote-card">
@@ -136,5 +131,47 @@
 <script type="module" src="/assets/js/core.js" defer></script>
 <script type="module" src="/assets/js/pages/financial_ed.js" defer></script>
 
+
+<div id="calcModal" class="vv-modal hidden">
+  <div class="vv-modal-content form-glass">
+    <h3 class="modal-title">Compound Interest Calculator</h3>
+
+    <p class="modal-text">
+      This calculator is provided by Investor.gov and will open in a new tab.
+      It is a trusted SEC tool for estimating savings growth.
+    </p>
+
+    <div class="modal-actions">
+      <a href="https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator"
+         target="_blank" rel="noopener"
+         class="btn-glow md">
+        Continue to Calculator ↗
+      </a>
+
+      <button id="closeCalcModal" class="btn-glow sm" style="background: #ccc; color:#000;">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+
 </body>
+<script>
+  document.getElementById("openCalcModal").addEventListener("click", () => {
+    document.getElementById("calcModal").classList.remove("hidden");
+  });
+
+  document.getElementById("closeCalcModal").addEventListener("click", () => {
+    document.getElementById("calcModal").classList.add("hidden");
+  });
+
+  // Close when clicking outside modal box
+  document.getElementById("calcModal").addEventListener("click", (e) => {
+    if (e.target.id === "calcModal") {
+      document.getElementById("calcModal").classList.add("hidden");
+    }
+  });
+</script>
+
 </html>
