@@ -5,7 +5,21 @@
  * EXTENSION POINTS: None.
  */
 
-// Placeholder for home page logic
-export function initHome() {
-    // console.log('Home page script initialized.');
-}
+document.querySelectorAll('.accordion-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        const content = button.nextElementSibling;
+
+        // Close all others (optional but recommended)
+        document.querySelectorAll('.accordion-btn').forEach(btn => {
+            if (btn !== button) {
+                btn.setAttribute('aria-expanded', 'false');
+                btn.nextElementSibling.classList.remove('open');
+            }
+        });
+
+        // Toggle current
+        button.setAttribute('aria-expanded', !expanded);
+        content.classList.toggle('open', !expanded);
+    });
+});

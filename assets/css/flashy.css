@@ -48,7 +48,6 @@
     text-align: center;
     padding: 10px 10px;
     overflow: hidden;
-    background: var(--gray-300);
     background-size: 200% 200%;
     animation: heroGradientShift 12s ease infinite;
 }
@@ -118,32 +117,57 @@
     box-shadow: 0 0 10px rgba(45,212,191,0.6);
 }
 
-/* Two-column layout */
+
+
+/* TWO COLUMN STRUCTURE */
 .flashy-section.two-col {
+    padding: 0 !important;   /* ← CRITICAL FIX */
+}
+
+.flashy-section.two-col .inner {
     display: flex;
-    flex-direction: row;
     gap: 2rem;
+    padding: 2rem;
     align-items: flex-start;
 }
 
-.flashy-section.two-col .content-col { flex: 2; }
+/* CONTENT drives height */
+.flashy-section.two-col .content-col {
+    flex: 2;
+}
+
+/* IMAGE COLUMN matches content height */
 .flashy-section.two-col .image-col {
     flex: 1;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-.flashy-section.two-col img {
+/* MAGICAL FIX — image height is now content height */
+.flashy-section.two-col .image-col img {
     width: 100%;
-    max-width: 330px;
-    border-radius: 10px;
-    object-fit: contain;
+    height: auto;         /* Important: let image scale naturally */
+    /* NEW: height constraints */
+    min-height: 220px;    /* you can change this */
+    max-height: 400px;    /* prevents giant images */
+    object-fit: cover;
+
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
+/* MOBILE */
 @media (max-width: 900px) {
-    .flashy-section.two-col {
+    .flashy-section.two-col .inner {
         flex-direction: column;
+    }
+
+    .flashy-section.two-col .image-col img {
+        height: auto;
+        width: 100%;
+        max-height: 340px;
+        object-fit: cover;
     }
 }
 

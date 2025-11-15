@@ -111,6 +111,25 @@ html {
     font-size: 100%;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    /* Background image */
+    background: url('/assets/img/site_background.jpeg') center/cover no-repeat;
+
+    /* Adjust transparency (0.15–0.40 recommended) */
+    opacity: 0.28;
+
+    /* Optional: blur for softer feel */
+    filter: blur(2px);
+
+    /* Smooth scrolling with the image fixed */
+    background-attachment: fixed;
+}
+
 body {
     margin: 0;
     margin-top: 5px;
@@ -120,6 +139,10 @@ body {
     color: #000000 !important;
     min-height: 100vh;
 }
+
+
+
+
 
 /* Links & buttons baseline */
 a {
