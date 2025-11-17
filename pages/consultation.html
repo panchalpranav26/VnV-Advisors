@@ -5,41 +5,51 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Book a Consultation – V & V Advisors</title>
-  <meta name="description" content="Empower your family’s financial future with a trusted, friendly consultation—literacy, protection, and wealth-building made clear and actionable." />
+  <title>Consultation – V & V Advisors</title>
+  <meta name="description"
+        content="Book a friendly, no-pressure consultation with V & V Advisors. Get clarity on financial literacy, protection planning, and long-term wealth-building." />
   <link rel="canonical" href="https://www.example.com/pages/consultation.html" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Core CSS + Page CSS -->
+  <!-- Core CSS -->
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="stylesheet" href="/assets/css/pages/contact_consult.css" />
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
 
-  <!-- OG / Twitter -->
-  <meta property="og:title" content="Book a Consultation – V & V Advisors" />
-  <meta property="og:description" content="Guidance you can trust—build literacy, protect your family, and plan for long-term wealth." />
-  <meta property="og:type" content="website" />
+  <!-- OG Tags -->
+  <meta property="og:title" content="Consultation – V & V Advisors" />
+  <meta property="og:description" content="Friendly, education-first guidance to help your family move toward clarity, confidence, and long-term stability." />
   <meta property="og:image" content="/assets/img/social/book_consultation.jpg" />
   <meta property="og:url" content="https://www.example.com/pages/consultation.html" />
+  <meta property="og:type" content="website" />
   <meta property="og:site_name" content="V & V Advisors" />
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Book a Consultation – V & V Advisors" />
-  <meta name="twitter:description" content="Empower your family’s financial future with a trusted, friendly consultation." />
+  <meta name="twitter:title" content="Consultation – V & V Advisors" />
+  <meta name="twitter:description" content="Empower your financial future with clarity and guidance." />
   <meta name="twitter:image" content="/assets/img/social/book_consultation.jpg" />
 
-  <!-- JSON-LD via shared helper -->
+  <!-- JSON-LD -->
   <script type="module">
     import { addJSONLDSchema } from "/assets/js/components/google_seo_json.js";
+
     window.addEventListener("DOMContentLoaded", () => {
       addJSONLDSchema({
-        pageTitle: "Book a Consultation – V & V Advisors",
-        pageDescription: "Schedule a financial literacy or protection consultation with V & V Advisors.",
+        pageTitle: "Consultation – V & V Advisors",
+        pageDescription: "Schedule a consultation with V & V Advisors for guidance on financial literacy, protection planning, and long-term wealth-building.",
         pageUrl: window.location.href,
         keywords: [
-          "book consultation","financial literacy","life insurance","wealth building",
-          "budgeting help","family finance","V & V Advisors"
+          "consultation",
+          "financial literacy",
+          "protection planning",
+          "life insurance basics",
+          "wealth building",
+          "family financial planning",
+          "V & V Advisors"
         ]
       });
     });
@@ -47,153 +57,183 @@
 </head>
 
 <body>
-<!-- Header -->
 <div id="site-header"></div>
 
 <main class="wrap">
-  <!-- HERO -->
+
+  <!-- HERO ======================================================= -->
   <header class="page-hero reveal">
-    <div>
-      <h1 class="page-title">Consultation</h1>
-      <p class="lead">
-        Empower Your Family’s Financial Future with Guidance You Can Trust.
-        <br>Friendly, no-pressure consultations focused on financial literacy, protection, and long-term wealth building—tailored to your goals.
-      </p>
-      <div>
-        <a class="btn-glow md" href="https://calendly.com/your-link" target="_blank" rel="noopener">Book on Calendly</a>
-        <a class="btn-glow md" href="#request">Request a Time</a>
-      </div>
+    <h1 class="page-title">Consultation</h1>
+    <p class="lead">
+      A friendly, education-first conversation—designed to help you gain clarity,
+      reduce stress, and build confidence in your financial journey.
+      <br><strong>No pressure. No selling. Just guidance.</strong>
+    </p>
+
+    <div class="hero-btns" style="margin-top: 1rem;">
+      <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/vnvadvisors'});return false;"
+              class="btn-glow md">
+        Book on Calendly
+      </button>
+      <button class="btn-glow md" onclick="location.href='#consult_form'">
+        Request a Time
+      </button>
     </div>
   </header>
 
-  <!-- VALUE: WHAT YOU’LL GAIN -->
+
+  <!-- WHAT HAPPENS IN A CONSULTATION ============================= -->
   <section class="flashy-section delay-1">
-    <h2>What you’ll gain in 45–75 minutes</h2>
-    <div class="cards info-grid">
-      <article class="card flashy-card">
-        <div aria-hidden="true"><i data-feather="zap"></i></div>
+    <h2>What You’ll Gain in 45–75 Minutes</h2>
+
+    <div class="methods-grid">
+      <div class="flashy-card">
+        <div class="icon-box"><i data-feather="zap"></i></div>
         <h3>Clarity & Confidence</h3>
-        <p>Understand your options in simple terms—budgeting, credit, and protection without jargon.</p>
-      </article>
+        <p>We walk through your concerns and goals—budgeting, spending, debt, or protection—in simple, non-judgmental terms.</p>
+      </div>
 
-      <article class="card flashy-card">
-        <div aria-hidden="true"><i data-feather="shield"></i></div>
-        <h3>Protection Plan</h3>
-        <p>Discuss emergency funds, life insurance basics, and ways to protect what matters most.</p>
-      </article>
+      <div class="flashy-card">
+        <div class="icon-box"><i data-feather="shield"></i></div>
+        <h3>Protection Understanding</h3>
+        <p>Learn how emergency funds, risk tiers, and life insurance fit into your family’s financial stability—without sales pressure.</p>
+      </div>
 
-      <article class="card flashy-card">
-        <div aria-hidden="true"><i data-feather="trending-up"></i></div>
-        <h3>Path to Grow</h3>
-        <p>Learn simple, disciplined steps to build long-term wealth aligned to your family goals.</p>
-      </article>
+      <div class="flashy-card">
+        <div class="icon-box"><i data-feather="trending-up"></i></div>
+        <h3>Long-Term Growth Roadmap</h3>
+        <p>We outline simple steps for building long-term wealth rooted in consistent habits, compounding, and financial discipline.</p>
+      </div>
     </div>
   </section>
 
-  <!-- SESSION TYPES -->
+
+  <!-- SESSION TYPES ============================================== -->
   <section class="flashy-section delay-1">
-    <h2 class="section-title">Choose your session</h2>
-    <div class="cards info-grid">
-      <article class="flashy-card">
-        <div aria-hidden="true"><i data-feather="book"></i></div>
+    <h2>Choose Your Session</h2>
+
+    <div class="methods-grid">
+      <div class="flashy-card">
+        <div class="icon-box"><i data-feather="book"></i></div>
         <h3>Financial Literacy 101</h3>
         <ul class="flashy-list">
-          <li>Budget, credit, savings habits</li>
-          <li>Build your first plan</li>
-          <li><strong>45 min</strong> · Friendly & practical</li>
+          <li>Budgeting, saving, credit basics</li>
+          <li>Build your first money plan</li>
+          <li><strong>45 min</strong> · Educational & supportive</li>
         </ul>
-      </article>
+      </div>
 
-      <article class="flashy-card">
-        <div aria-hidden="true"><i data-feather="shield"></i></div>
+      <div class="flashy-card">
+        <div class="icon-box"><i data-feather="shield"></i></div>
         <h3>Protection Planning</h3>
         <ul class="flashy-list">
-          <li>Emergency fund + risk basics</li>
-          <li>Life insurance 101 (no sales pressure)</li>
-          <li><strong>60 min</strong> · Family-first</li>
+          <li>Risk understanding + emergency readiness</li>
+          <li>Life insurance basics (education-first)</li>
+          <li><strong>60 min</strong> · Family-first approach</li>
         </ul>
-      </article>
+      </div>
 
-      <article class="flashy-card">
-        <div aria-hidden="true"><i data-feather="trending-up"></i></div>
+      <div class="flashy-card">
+        <div class="icon-box"><i data-feather="bar-chart-2"></i></div>
         <h3>Wealth-Building Strategy</h3>
         <ul class="flashy-list">
-          <li>Principles, compounding, discipline</li>
-          <li>Align to long-term goals</li>
+          <li>Compounding, risk & return, long-term habits</li>
+          <li>Create your growth pathway</li>
           <li><strong>75 min</strong> · Actionable next steps</li>
         </ul>
-      </article>
+      </div>
     </div>
   </section>
 
-  <!-- REQUEST FORM -->
+
+  <!-- WHO THIS IS FOR ============================================ -->
   <section class="flashy-section delay-1">
-    <div>
-      <h2>Request a consultation</h2>
-      <p class="muted">Prefer us to coordinate a time with you? Send a quick request—no pressure, no spam.</p>
-    </div>
+    <h2>Who This Consultation Is Perfect For</h2>
+
+    <ul class="checkflashy-list">
+      <li><span class="check-icon"></span>Families wanting financial clarity</li>
+      <li><span class="check-icon"></span>Young parents preparing to protect and plan</li>
+      <li><span class="check-icon"></span>Anyone confused about life insurance options</li>
+      <li><span class="check-icon"></span>New homeowners planning long-term stability</li>
+      <li><span class="check-icon"></span>Individuals starting their savings or investment journey</li>
+    </ul>
+  </section>
+
+
+  <!-- HOW TO PREPARE ============================================= -->
+  <section class="flashy-section delay-1">
+    <h2>How to Prepare</h2>
+    <p>Optional—but helpful if available:</p>
+
+    <ul class="flashy-list">
+      <li><i data-feather="file-text"></i> Any existing budget or spending notes</li>
+      <li><i data-feather="credit-card"></i> A rough idea of debts & recurring expenses</li>
+      <li><i data-feather="shield"></i> Existing protection (if you have policies)</li>
+      <li><i data-feather="target"></i> Your top 2–3 financial goals</li>
+    </ul>
+
+    <p class="muted">Don’t have these? No problem — we guide you step-by-step.</p>
+  </section>
+
+
+  <!-- REQUEST FORM =============================================== -->
+  <section id="consult_form" class="flashy-section delay-1">
+    <h2>Request a Consultation</h2>
+    <p class="muted">Prefer we reach out with available times? Submit this quick request.</p>
 
     <form id="consultation-form" class="form-glass">
-      <div>
-        <div>
-          <label for="name">Full Name <span class="required">*</span></label>
-          <input id="name" name="name" type="text" required placeholder="Jane Doe" />
-        </div>
+      <label for="name">Full Name *</label>
+      <input id="name" name="name" type="text" required />
 
-        <div >
-          <label for="email">Email <span class="required">*</span></label>
-          <input id="email" name="email" type="email" required placeholder="you@example.com" />
-        </div>
-      </div>
+      <label for="email">Email *</label>
+      <input id="email" name="email" type="email" required />
 
-      <div class="grid-2">
-        <div>
-          <label for="phone">Phone (Optional)</label>
-          <input id="phone" name="phone" type="tel" placeholder="(555) 000-1234" />
-        </div>
-        <div>
-          <label for="session">Preferred Session Type <span class="required">*</span></label>
-          <select id="session" name="session" required>
-            <option value="" disabled selected>— Select —</option>
-            <option value="Financial Literacy 101">Financial Literacy 101</option>
-            <option value="Protection Planning">Protection Planning</option>
-            <option value="Wealth-Building Strategy">Wealth-Building Strategy</option>
-          </select>
-        </div>
-      </div>
+      <label for="phone">Phone (Optional)</label>
+      <input id="phone" name="phone" type="tel" />
 
-      <div >
-        <label for="message">What would you like to focus on? <span class="required">*</span></label>
-        <textarea id="message" name="message" rows="5" required placeholder="Tell us a bit about your goals or questions…"></textarea>
-      </div>
+      <label for="session">Preferred Session Type *</label>
+      <select id="session" name="session" required>
+        <option value="" disabled selected>— Select —</option>
+        <option value="Financial Literacy 101">Financial Literacy 101</option>
+        <option value="Protection Planning">Protection Planning</option>
+        <option value="Wealth-Building Strategy">Wealth-Building Strategy</option>
+      </select>
 
-      <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
+      <label for="message">What would you like to focus on? *</label>
+      <textarea id="message" name="message" rows="5"
+                placeholder="Tell us your goals, questions, or concerns…" required></textarea>
+
+      <div id="form-status" class="form-status"></div>
 
       <div class="actions">
         <button type="submit" class="btn-glow md">Submit Request</button>
-        <a class="btn btn-ghost btn-glow" href="https://calendly.com/your-link" target="_blank" rel="noopener">Book on Calendly</a>
+        <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/vnvadvisors'});return false;"
+                class="btn-glow md">
+          Book on Calendly
+        </button>
       </div>
 
-      <p class="privacy">We’ll only use your info to coordinate this consultation. No spam. No sharing.</p>
+      <p class="privacy">We’ll only use your info to coordinate a time. No spam.</p>
     </form>
   </section>
 
-  <!-- TRUST LINKS -->
+
+  <!-- TRUST SOURCES ============================================== -->
   <section class="flashy-section delay-1">
-    <h2>Grounded, unbiased education</h2>
+    <h2>Evidence-Based, Trustworthy Education</h2>
     <ul class="source-list">
-      <li><a href="https://www.consumerfinance.gov/consumer-tools/money-as-you-grow/" target="_blank" rel="noopener">CFPB — Money As You Grow</a></li>
-      <li><a href="https://www.fdic.gov/resources/consumers/money-smart/" target="_blank" rel="noopener">FDIC — Money Smart</a></li>
-      <li><a href="https://www.sec.gov/investor/pubs/roadmap.htm" target="_blank" rel="noopener">SEC — Roadmap to Saving & Investing</a></li>
+      <li><a href="https://www.consumerfinance.gov/" target="_blank">CFPB – Consumer Tools & Learning</a></li>
+      <li><a href="https://www.fdic.gov/resources/consumers/money-smart/" target="_blank">FDIC – Money Smart Program</a></li>
+      <li><a href="https://www.sec.gov/investor" target="_blank">SEC – Investor Education Resources</a></li>
+      <li><a href="https://content.naic.org" target="_blank">NAIC – Consumer Insurance Information</a></li>
     </ul>
   </section>
+
 </main>
 
-<!-- Footer -->
 <div id="site-footer"></div>
 
-<!-- Scripts -->
-<script type="module" src="/assets/js/core.js" defer></script>
-<script type="module" src="/assets/js/pages/contact_consult.js" defer></script>
+<script type="module" src="/assets/js/core.js"></script>
+<script type="module" src="/assets/js/pages/contact_consult.js"></script>
 </body>
 </html>

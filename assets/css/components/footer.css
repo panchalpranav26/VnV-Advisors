@@ -2,7 +2,7 @@
    FOOTER BASE
 =========================== */
 .footer {
-    background: var(--teal-800);
+    background: var(--teal-400);
     color: var(--white);
     padding: 1rem;
     border-top: 1px solid rgba(255,255,255,0.08);

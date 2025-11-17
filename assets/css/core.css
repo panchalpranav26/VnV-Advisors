@@ -58,7 +58,7 @@
 
 
     /* Layout tokens */
-    --maxw: 1200px;                   /* used by .wrap */
+    --maxw: 1220px;                   /* used by .wrap */
     --pad-x: 1rem;                    /* used by .wrap / hero */
     --surface-alt: rgba(11,27,42,.25);/* used by .flashy-section */               /* used by .wrap / hero */
     --nav-h: 68px; /* HD-Comfort */
@@ -306,6 +306,62 @@ h2::after {
    Compact | Frosted | Teal Glow | A2-Luxe Premium
    ============================================================ */
 
+
+/* ===================================================================
+   MENU + SECTION BUTTONS
+   A2-Luxe Premium (Teal Frosted Buttons)
+   =================================================================== */
+
+.page-toc__menu,
+.page-toc__section {
+    display: block;
+    width: 100%;
+    text-align: center;
+
+    /* Optimized sizing for sidebar */
+    padding: 5px 6px;                 /* slightly tighter */
+    font-size: 0.76rem;               /* better visual harmony */
+    font-weight: 600;
+    line-height: 1.18;                /* compact but readable */
+
+    /* Balanced shape */
+    border-radius: 6px;
+    margin-bottom: 6px;
+
+    /* Frosted Luxe look */
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(6px) saturate(145%);
+    border: 1.5px solid rgba(45, 212, 191, 0.32); /* slightly stronger */
+
+    text-decoration: none;
+
+    /* Smooth feel */
+    transition:
+            background 0.25s ease,
+            box-shadow 0.25s ease,
+            border-color 0.25s ease,
+            transform 0.2s ease;
+}
+
+
+/* Hover */
+.page-toc__menu:hover,
+.page-toc__section:hover {
+    background: var(--teal-400);
+    border-color: var(--teal-500);
+    box-shadow: 0 0 6px rgba(45, 212, 191, 0.35);
+    transform: translateY(-1px);
+}
+
+/* Active state styling for better context */
+.page-toc__menu.active,
+.page-toc__section.active {
+    background: var(--teal-400);
+    color: #000;
+    border-color: var(--teal-600);
+    box-shadow: 0 0 8px rgba(45, 212, 191, 0.45);
+}
+
 .page-toc--left {
     position: fixed;
     left: 16px;
@@ -313,7 +369,6 @@ h2::after {
     transform: translateY(-50%);
     width: 185px;
     font-family: var(--font-serif), serif;
-
     /* Subtle glass card inside the pane */
     background:var(--white);
 
@@ -324,11 +379,8 @@ h2::after {
     padding: 10px 12px;
 
     z-index: 9999;
-    max-height: 65vh;
+    max-height: none;
     overflow-y: auto;
-
-    scrollbar-width: thin;
-    scrollbar-color: var(--teal-500) rgba(255,255,255,0.06);
 }
 
 /* Scrollbar (WebKit) */
@@ -347,10 +399,17 @@ h2::after {
 /* ------------------------------------------------------------
    HEADER — Page Title Tag
 ------------------------------------------------------------ */
-.page-toc__header {
-    margin-bottom: 8px;
+.page-toc__header .page-toc__section {
+    margin-bottom: 10px;
 }
 
+
+.page-toc__title.btn-glow.md {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 8px;
+}
 
 /* ===================================================================
    PAGE TOC — TITLE ADAPTIVE GLOW (B1: Title-Only Styles)
@@ -363,20 +422,65 @@ h2::after {
    - Stronger readability
 -------------------------------------------------------------- */
 .page-toc__title {
-    background:var(--teal-700);
-    color: #000000 !important;
+    background:var(--teal-400);
+    color: #000000;
     border: 1px solid rgba(45, 212, 191, 0.28);
     box-shadow: 0 0 8px rgba(45, 212, 191, 0.25);
 
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: bold;
     text-align: center;
     border-radius: 6px;
     padding: 6px 8px;
-    margin-bottom: 8px;
+    margin-bottom: 8px !important;
 
     backdrop-filter: blur(6px) saturate(130%);
     transition: background 0.28s ease, box-shadow 0.28s ease, color 0.28s ease, border-color 0.28s ease;
 }
+
+
+.btn-toc-glow--headers {
+    padding: 6px 8px;                /* Sidebar friendly */
+    font-size: 14px !important;
+    line-height: 1.2;
+    border-radius: 6px;
+    display: block;
+    background: var(--teal-400);
+    color: #000;
+    box-shadow: 0 0 10px rgba(45,212,191,0.35);
+    border: 1px solid rgba(45,212,191,0.32);
+}
+
+.btn-toc-glow--headers:hover {
+    background: var(--teal-600);
+    color: var(--white);
+    box-shadow: 0 0 30px rgba(45,212,191,0.7);
+}
+
+
+.btn-toc-glow--title {
+    padding: 6px 8px;                /* Sidebar friendly */
+    font-size: 14px;
+    line-height: 1.2;
+    border-radius: 6px;
+    width: 100%;
+    display: block;
+    background: var(--teal-400);
+    color: #000;
+    box-shadow: 0 0 10px rgba(45,212,191,0.35);
+    border: 1px solid rgba(45,212,191,0.32);
+}
+
+.btn-toc-glow--title:hover {
+    background: var(--teal-400);
+    color: var(--white);
+    box-shadow: 0 0 30px rgba(45,212,191,0.7);
+}
+
+
+
+
+
 
 /* SOFT-ACTIVE (after TOC activates but before first section is highlighted)
    - Re-Glow moment
@@ -386,19 +490,12 @@ h2::after {
     background: var(--teal-400);
     border-color: rgba(45, 212, 191, 0.42);
     box-shadow: 0 0 10px rgba(45, 212, 191, 0.45);
-    color: #000000 !important;
 }
 
 /* NEUTRAL (after first section becomes active)
    - Subtle, blended with sidebar
    - Title becomes supportive, not dominant
 -------------------------------------------------------------- */
-.page-toc__title.neutral {
-    background: var(--teal-400);
-    color: #000000 !important;
-    box-shadow: none;
-}
-
 
 
 /* Divider line */
@@ -425,7 +522,6 @@ h2::after {
     display: block;
     padding: 5px 6px;
     font-size: 0.78rem;
-    color: #000000 !important;
     text-decoration: none;
     border-radius: 5px;
     line-height: 1.28;
@@ -436,7 +532,6 @@ h2::after {
 .page-toc--left a:hover,
 .page-toc--left a.active {
     background: var(--teal-400);
-    color: var(--teal-500);
     box-shadow: 0 0 6px rgba(45, 212, 191, 0.45);
 }
 

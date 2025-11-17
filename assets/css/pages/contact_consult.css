@@ -60,3 +60,19 @@
     color: var(--muted);
     margin-top: 8px;
 }
+
+.btn-calendly {
+    background: var(--teal-500);
+    color: white;
+    padding: 0.9rem 1.4rem;
+    border-radius: 0.6rem;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+    font-family: var(--font-serif);
+}
+
+.btn-calendly:hover {
+    background: var(--teal-600);
+}

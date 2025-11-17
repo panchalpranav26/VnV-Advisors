@@ -4,6 +4,19 @@
  * HOW TO MODIFY: Add styles for content sections, charts, or callouts unique to this page.
  * EXTENSION POINTS: None.
  */
+
+
+/* Make sure parent sections don’t hide content */
+.flashy-section {
+    overflow: visible !important;
+}
+
+/* If wrap container restricts overflow, remove it */
+.wrap {
+    overflow: visible !important;
+}
+
+
      /* Team Grid */
  .team-grid {
      display: grid;
@@ -119,4 +132,174 @@
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;
+}
+
+/* ========================================================== */
+/* ETHICS JOURNEY PATH (Option A) */
+/* ========================================================== */
+
+.ethics-journey {
+    position: relative;
+    overflow: visible;
+}
+
+/* Curved journey line */
+.journey-wrapper {
+    position: relative;
+    margin: 3rem 0;
+    padding: 2rem 1rem;
+}
+
+.journey-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(
+            to bottom,
+            var(--teal-400),
+            var(--teal-600),
+            var(--teal-500)
+    );
+    border-radius: 4px;
+    opacity: 0.6;
+}
+
+/* Step blocks */
+.journey-step {
+    position: relative;
+    padding-left: 120px;
+    margin: 3rem 0;
+    max-width: 760px;
+}
+
+.journey-step h3 {
+    margin-bottom: 0.5rem;
+    color: var(--teal-900);
+    font-family: var(--font-serif);
+}
+
+.journey-step p {
+    margin-bottom: 0.5rem;
+}
+
+/* Icons as guideposts */
+.journey-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    background: var(--white);
+    border: 3px solid var(--teal-500);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow-2);
+    animation: pulseIcon 4s ease-in-out infinite;
+}
+
+.journey-icon i {
+    width: 34px;
+    height: 34px;
+    color: var(--teal-600);
+}
+
+/* Pulse animation */
+@keyframes pulseIcon {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(45,212,191,0.4); }
+    50% { transform: scale(1.08); box-shadow: 0 0 18px rgba(45,212,191,0.65); }
+}
+
+/* Links inside compliance step */
+.journey-links {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+}
+
+.journey-links li {
+    margin-bottom: 0.4rem;
+}
+
+.journey-links a {
+    color: var(--teal-700);
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .journey-wrapper::before {
+        left: 30px;
+    }
+
+    .journey-step {
+        padding-left: 95px;
+    }
+
+    .journey-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .journey-icon i {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+
+
+/* MISSION PAGE */
+
+.timeline {
+    position: relative;
+    margin: 3rem auto;
+    padding-left: 2.5rem;
+    border-left: 3px solid var(--teal-500);
+}
+
+.timeline-step {
+    margin-bottom: 3rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.timeline-step::before {
+    content: "";
+    position: absolute;
+    left: -1.05rem;
+    top: 0.35rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    background: var(--teal-500);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.25);
+}
+
+.step-image {
+    width: 100%;
+    border-radius: var(--radius-sm);
+    margin: 1rem 0 1.5rem;
+    object-fit: cover;
+    max-height: 260px;
+}
+
+.impact-stats {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 2rem;
+}
+
+.impact-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--teal-800);
+}
+
+.impact-label {
+    opacity: 0.9;
 }

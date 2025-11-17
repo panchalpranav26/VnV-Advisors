@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Basic Page Setup -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Our Team – V & V Advisors</title>
+  <meta name="description" content="Meet the V & V Advisors team—dedicated professionals empowering families through financial literacy, protection, and wealth-building education." />
+  <link rel="canonical" href="https://www.example.com/pages/our_team.html" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/pages/about.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Our Team – V & V Advisors" />
+  <meta property="og:description" content="Meet the financial education team at V & V Advisors and discover the people helping families build strong financial futures." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:image" content="../assets/img/social/our_team_banner.jpg" />
+  <meta property="og:url" content="https://www.example.com/pages/our_team.html" />
+  <meta property="og:site_name" content="V & V Advisors" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Our Team – V & V Advisors" />
+  <meta name="twitter:description" content="Meet the people empowering families with financial literacy and wealth-building knowledge." />
+  <meta name="twitter:image" content="../assets/img/social/our_team_banner.jpg" />
+
+  <!-- JSON-LD added dynamically via JS -->
+  <script type="module">
+    import { addJSONLDSchema } from "/assets/js/components/google_seo_json.js";
+
+    window.addEventListener("DOMContentLoaded", () => {
+      addJSONLDSchema({
+        pageTitle: "Our Team – V & V Advisors",
+        pageDescription: "Meet the V & V Advisors team—dedicated professionals empowering families through financial literacy, protection, and wealth-building education.",
+        pageUrl: window.location.href,
+        keywords: ["our team", "financial literacy experts", "V & V Advisors", "wealth building advisors", "financial education"]
+      });
+    });
+  </script>
+</head>
+
+<body>
+<div id="site-header"></div>
+
+<main class="wrap">
+  <!-- Page Header -->
+  <header class="page-hero reveal">
+    <h1 class="page-title">Our Team</h1>
+    <p class="lead">At <strong>V & V Advisors</strong>, we believe that trust begins with transparency.
+      Meet the passionate professionals guiding families toward a confident, financially healthy future.</p>
+  </header>
+
+  <!-- Mission Section -->
+  <section class="flashy-section delay-1">
+    <h2>Our Shared Mission</h2>
+    <p>We are united by one purpose:</p>
+    <p><em>to empower families with the knowledge and tools for financial literacy, protection, and wealth-building strategies through healthy financial habits.</em></p>
+    <p>Our educational approach follows guidance from reputable sources including:
+      <a href="https://www.fdic.gov/resources/consumers/money-smart/index.html" target="_blank" rel="noopener">FDIC Money Smart</a>,
+      <a href="https://www.consumerfinance.gov/" target="_blank" rel="noopener">Consumer Financial Protection Bureau (CFPB)</a>, and
+      <a href="https://www.investor.gov/" target="_blank" rel="noopener">Investor.gov by the SEC</a>.
+    </p>
+  </section>
+
+  <!-- Team Grid -->
+  <section class="team-grid">
+    <article class="team-card reveal">
+      <h2>Pranav Panchal</h2>
+      <table class="team-table">
+        <tr>
+          <th colspan="2" class="role-title">
+            Co-Founder & Financial Strategist
+          </th>
+        </tr>
+        <tr>
+          <td colspan="2" class="bio-text">
+            Pranav specializes in helping families understand core money principles—from budgeting and
+            protection to wealth-building strategies. With years of experience in financial education,
+            his mission is to simplify complex topics so everyone can act confidently.
+          </td>
+        </tr>
+
+        <tr>
+          <th><i data-feather="target" class="icon"></i> Focus Areas</th>
+          <td>Financial Literacy, Family Protection, Smart Budgeting</td>
+        </tr>
+
+        <tr>
+          <th><i data-feather="map-pin" class="icon"></i> Community</th>
+          <td>Tracy CA | Bay Area</td>
+        </tr>
+
+        <tr>
+          <th><i data-feather="linkedin" class="icon"></i> LinkedIn</th>
+          <td>
+            <a href="#" target="_blank" class="is-hoverable">View Profile</a>
+          </td>
+        </tr>
+      </table>
+
+    </article>
+
+    <article class="team-card delay-1">
+      <h2>Hemali Panchal</h2>
+      <table class="team-table">
+        <tr>
+          <th colspan="2" class="role-title">
+            Co-Founder & Financial Coach
+          </th>
+        </tr>
+        <tr>
+          <td colspan="2" class="bio-text">
+            Hemali focuses on mentorship and practical coaching—bridging personal finance knowledge with
+            action. She leads workshops that encourage responsible spending, disciplined saving, and
+            goal-based planning for long-term stability.
+          </td>
+        </tr>
+
+        <tr>
+          <th><i data-feather="target" class="icon"></i> Focus Areas</th>
+          <td>Financial Coaching, Debt Management, Wealth-Building Habits</td>
+        </tr>
+
+        <tr>
+          <th><i data-feather="map-pin" class="icon"></i> Community</th>
+          <td>Central Valley | California</td>
+        </tr>
+
+        <tr>
+          <th><i data-feather="linkedin" class="icon"></i> LinkedIn</th>
+          <td>
+            <a href="#" target="_blank" class="is-hoverable">View Profile</a>
+          </td>
+        </tr>
+      </table>
+
+    </article>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<!-- Core Scripts -->
+<script type="module" src="/assets/js/core.js" defer></script>
+<script type="module" src="/assets/js/pages/about.js" defer></script>
+<!-- Initialize Feather Icons -->
+<script>
+  feather.replace();
+</script>
+
+<!-- Scroll Reveal -->
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

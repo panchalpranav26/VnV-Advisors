@@ -1,124 +1,226 @@
-export function initPageTOC() {
-    console.groupCollapsed("%c[TOC] Init Floating Page TOC", "color:#4db6ac;font-weight:600;");
+/* ============================================================
+   page_toc_v3.js
+   Title-aware Floating Page TOC
+   Uses lookupNavTitles_v3.js for breadcrumb resolution.
+   ============================================================ */
 
-    const pageTitleEl = document.querySelector('.page-title');
-    const headings = document.querySelectorAll('.flashy-section h2');
+import { lookupNavTitles } from "./lookupNavTitles.js";
 
+export async function initPageTOC() {
+    console.groupCollapsed(
+        "%c[TOC] Init Floating Page TOC (title-aware)",
+        "color:#4db6ac;font-weight:600;"
+    );
+
+    /* ------------------------------------------------------------
+       1. GET PAGE TITLE (normalize)
+    ------------------------------------------------------------ */
+    const fullTitle = document.title || "";
+    const cleanPageTitle = fullTitle.replace("– V & V Advisors", "").trim();
+
+    console.log("[TOC][debug] HTML Title:", cleanPageTitle);
+
+
+    /* ------------------------------------------------------------
+       2. LOOKUP JSON MENU/SECTION/PAGE TITLES
+    ------------------------------------------------------------ */
+    const lookup = await lookupNavTitles();
+    console.log("[TOC][debug] Lookup Result:", lookup);
+
+    const {
+        jsonMenuTitle,
+        jsonSectionTitle,
+        jsonPageTitle,
+        pageUrl
+    } = lookup;
+
+
+    /* ------------------------------------------------------------
+       3. SELECT ALL SECTIONS <h2>
+    ------------------------------------------------------------ */
+    const headings = document.querySelectorAll(".flashy-section h2");
     if (!headings.length) {
-        console.warn("[TOC] ❌ No .flashy-section h2 elements found — TOC cancelled.");
+        console.warn("[TOC] No .flashy-section h2 headings found → TOC cancelled.");
         console.groupEnd();
         return;
     }
 
-    // Build container
-    const toc = document.createElement('nav');
-    toc.className = 'page-toc page-toc--left';
+    const toc = document.createElement("nav");
+    toc.className = "page-toc page-toc--left";
 
-    // ---- Header ----
-    const header = document.createElement('div');
-    header.className = 'page-toc__header';
+    const header = document.createElement("div");
+    header.className = "page-toc__header";
 
-    const titleDiv = document.createElement('div');
-    titleDiv.className = 'page-toc__title';
 
-    titleDiv.textContent =
-        pageTitleEl ? pageTitleEl.textContent.trim() : "Home";
+    /* ------------------------------------------------------------
+       4. CREATE BREADCRUMBS BASED ON MATCH TYPE
+    ------------------------------------------------------------ */
 
-    // Highlight title on load
-    titleDiv.classList.add('active');
+    /** CASE A — HOME PAGE */
+    if (cleanPageTitle === "Home") {
+        console.log("[TOC] Home page → No breadcrumbs");
+        // We still add page title "Home"
+    }
 
-    header.appendChild(titleDiv);
-    header.appendChild(Object.assign(document.createElement('div'), { className: 'page-toc__divider' }));
+    /** CASE B — TOP LEVEL PAGE (Stories, Contact, Consultation) */
+    else if (lookup.jsonMenuTitle && !lookup.jsonSectionTitle) {
+        console.log("[TOC] Top-level page breadcrumb");
+
+        const homeBtn = makeCrumb("Home", "/index.html");
+        header.appendChild(homeBtn);
+
+        const menuBtn = makeCrumb(jsonMenuTitle, pageUrl);
+        header.appendChild(menuBtn);
+    }
+
+    /** CASE C — MENU INDEX (Financial Ed / Protection Products / Services / About Us) */
+    else if (jsonMenuTitle && cleanPageTitle === jsonMenuTitle) {
+        console.log("[TOC] Menu index breadcrumb");
+
+        header.appendChild(makeCrumb("Home", "/index.html"));
+        header.appendChild(makeCrumb(jsonMenuTitle, pageUrl));
+    }
+
+    /** CASE D — SECTION INDEX (Foundations, Wellness, pp-life, etc.) */
+    else if (jsonMenuTitle && jsonSectionTitle && cleanPageTitle === jsonSectionTitle) {
+        console.log("[TOC] Section index breadcrumb");
+
+        header.appendChild(makeCrumb("Home", "/index.html"));
+        header.appendChild(makeCrumb(jsonMenuTitle, lookup.menuId ? `/${lookup.menuId}/index.html` : "#"));
+        header.appendChild(makeCrumb(jsonSectionTitle, pageUrl));
+    }
+
+    /** CASE E — CONTENT PAGE */
+    else if (jsonPageTitle) {
+        console.log("[TOC] Content page breadcrumb");
+
+        header.appendChild(makeCrumb("Home", "/index.html"));
+        header.appendChild(makeCrumb(jsonMenuTitle, lookup.menuId ? `/${lookup.menuId}/index.html` : "#"));
+
+        if (jsonSectionTitle) {
+            header.appendChild(
+                makeCrumb(jsonSectionTitle, lookup.sectionId ? `/${lookup.menuId}/${lookup.sectionId}/index.html` : "#")
+            );
+        }
+    }
+
+    /* Divider line */
+    header.appendChild(
+        Object.assign(document.createElement("div"), {
+            className: "page-toc__divider"
+        })
+    );
+
+
+    /* ------------------------------------------------------------
+       5. ADD PAGE TITLE (avoid duplicates)
+    ------------------------------------------------------------ */
+    const shouldHidePageTitle =
+        cleanPageTitle === jsonMenuTitle ||
+        cleanPageTitle === jsonSectionTitle;
+
+    if (!shouldHidePageTitle) {
+        const titleBtn = document.createElement("button");
+        titleBtn.className = "page-toc__title btn-toc-glow--title active";
+        titleBtn.textContent = cleanPageTitle;
+
+        titleBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            setActiveLink(null);
+        });
+
+        header.appendChild(titleBtn);
+    }
+
     toc.appendChild(header);
 
-    // ---- Build list ----
-    const list = document.createElement('ul');
+
+    /* ------------------------------------------------------------
+       6. BUILD ANCHOR LIST FROM <h2> HEADINGS
+    ------------------------------------------------------------ */
+    const list = document.createElement("ul");
     const tocLinks = [];
 
-    headings.forEach((heading, index) => {
+    headings.forEach((heading, idx) => {
         const text = heading.textContent.trim();
-        const slug = text.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-        const section = heading.closest('.flashy-section');
+        const slug = text.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
+        const section = heading.closest(".flashy-section");
         if (!section) return;
-        if (!section.id) section.id = slug || `section-${index}`;
 
-        const li = document.createElement('li');
+        if (!section.id) section.id = slug || `section-${idx}`;
+
+        const li = document.createElement("li");
         li.innerHTML = `<a href="#${section.id}">${text}</a>`;
-        const link = li.querySelector('a');
+
+        const link = li.querySelector("a");
         list.appendChild(li);
 
         tocLinks.push({ link, section });
 
-        link.addEventListener('click', (e) => {
+        link.addEventListener("click", e => {
             e.preventDefault();
-
             const y = section.getBoundingClientRect().top + window.scrollY - 60;
-            window.scrollTo({ top: y, behavior: 'smooth' });
-
+            window.scrollTo({ top: y, behavior: "smooth" });
             setActiveLink(link);
-            markAsUserScrolled();
         });
     });
 
     toc.appendChild(list);
     document.body.appendChild(toc);
 
-    // ---- States ----
-    let userHasScrolled = false;
 
-    function markAsUserScrolled() {
-        if (!userHasScrolled) userHasScrolled = true;
-    }
-
-    // Updated highlight logic
+    /* ------------------------------------------------------------
+       7. SCROLL-BASED ACTIVE HIGHLIGHT
+    ------------------------------------------------------------ */
     function setActiveLink(activeLink) {
-        tocLinks.forEach(item => item.link.classList.remove('active'));
-        titleDiv.classList.remove('active');
+        tocLinks.forEach(item => item.link.classList.remove("active"));
 
         if (!activeLink) {
-            titleDiv.classList.add('active'); // highlight title again
+            document
+                .querySelector(".page-toc__title.btn-toc-glow--title")
+                ?.classList.add("active");
             return;
         }
-
-        activeLink.classList.add('active');
+        activeLink.classList.add("active");
     }
 
-    // ---- Scroll listener ----
-    window.addEventListener('scroll', () => {
-
-        // Restore title highlight when near top
+    window.addEventListener("scroll", () => {
         if (window.scrollY < 80) {
             setActiveLink(null);
             return;
         }
 
-        if (!userHasScrolled && window.scrollY > 60) {
-            markAsUserScrolled();
-        }
-
-        if (userHasScrolled) runHighlightCheck();
-    });
-
-    // ---- Auto-highlight sections ----
-    function runHighlightCheck() {
-        const triggerLine = window.innerHeight * 0.28;
+        const trigger = window.innerHeight * 0.28;
 
         let bestMatch = null;
         let smallestDiff = Infinity;
 
         tocLinks.forEach(({ link, section }) => {
             const rect = section.getBoundingClientRect();
-            const distance = Math.abs(rect.top - triggerLine);
+            const diff = Math.abs(rect.top - trigger);
 
-            if (rect.top <= triggerLine && distance < smallestDiff) {
-                smallestDiff = distance;
+            if (rect.top <= trigger && diff < smallestDiff) {
+                smallestDiff = diff;
                 bestMatch = link;
             }
         });
 
         setActiveLink(bestMatch || null);
-    }
+    });
 
     console.groupEnd();
+
+
+
+    /* ============================================================
+       HELPERS
+    ============================================================ */
+    function makeCrumb(title, url) {
+        const a = document.createElement("a");
+        a.className = "page-toc__title btn-toc-glow--headers";
+        a.textContent = title;
+        a.href = url;
+        return a;
+    }
 }

@@ -117,18 +117,19 @@
     box-shadow: 0 0 10px rgba(45,212,191,0.6);
 }
 
-
-
 /* TWO COLUMN STRUCTURE */
 .flashy-section.two-col {
-    padding: 0 !important;   /* ← CRITICAL FIX */
+    padding: 1.5rem !important;   /* ← CRITICAL FIX */
 }
 
 .flashy-section.two-col .inner {
     display: flex;
     gap: 2rem;
     padding: 2rem;
-    align-items: flex-start;
+}
+
+.inner {
+    padding: 2rem;
 }
 
 /* CONTENT drives height */
@@ -140,21 +141,24 @@
 .flashy-section.two-col .image-col {
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: center;      /* vertical center */
     justify-content: center;
+    flex-direction: column;/* horizontal center */
 }
 
 /* MAGICAL FIX — image height is now content height */
 .flashy-section.two-col .image-col img {
-    width: 100%;
+    max-width: 350px;
+    min-width: auto;
+    width: auto;
     height: auto;         /* Important: let image scale naturally */
     /* NEW: height constraints */
-    min-height: 220px;    /* you can change this */
-    max-height: 400px;    /* prevents giant images */
-    object-fit: cover;
-
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    min-height: auto;    /* you can change this */
+    max-height: 350px;    /* prevents giant images */
+    object-fit: contain;
+    object-position: center;
+    align-items: center;
+    justify-content: center;
 }
 
 /* MOBILE */
@@ -170,6 +174,7 @@
         object-fit: cover;
     }
 }
+
 
 
 /* ============================================================
@@ -297,6 +302,7 @@
     transition: var(--anim-med);
     position: relative;
     overflow: hidden;
+    font-family: var(--font-serif);
 }
 
 .flashy-card::before {
@@ -438,7 +444,6 @@
 .btn-glow.sm { padding: 0.7rem 1rem; font-size: 12px; }
 .btn-glow.lg { padding: 1.1rem 2.6rem; font-size: 1.1rem; }
 
-
 /* ============================================================
    8. ACCORDION
    ============================================================ */
@@ -447,13 +452,13 @@
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow-1);
-    margin: 1.5rem 0;
+    margin: 1rem 0;
 }
 
 .accordion-btn {
     width: 100%;
     background: var(--gray-300);
-    padding: 1.2rem 1.5rem;
+    padding: 1.2rem;
     border: none;
     display: flex;
     justify-content: space-between;
@@ -499,14 +504,14 @@
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
     background: rgba(11,27,42,0.25);
     transition: max-height var(--anim-slow), padding var(--anim-slow);
 }
 
 .accordion-content.open {
     max-height: 300px;
-    padding: 1.2rem 1.5rem;
+    padding: 1.2rem;
 }
 
 
@@ -580,6 +585,7 @@
     border: 1px solid rgba(45,212,191,0.3);
     box-shadow: var(--shadow-1);
     text-align: center;
+    font-family: var(--font-serif);
 }
 
 .form-glass input,

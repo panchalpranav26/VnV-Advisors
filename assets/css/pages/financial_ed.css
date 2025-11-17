@@ -1,0 +1,52 @@
+.risk-spectrum {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.risk-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.risk-bar .bar {
+    height: 18px;
+    border-radius: 999px;
+    flex-shrink: 0;
+    transition: 0.3s ease;
+}
+
+/* Bar sizes based on risk */
+.bar.low {
+    width: 30%;
+    background: var(--teal-400);
+}
+.bar.medium {
+    width: 55%;
+    background: var(--navy-500);
+}
+.bar.high {
+    width: 85%;
+    background: var(--navy-800);
+}
+
+/* Text section */
+.risk-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--navy-900);
+}
+
+.risk-info p {
+    margin: 0.25rem 0 0;
+    color: var(--navy-700);
+    font-size: 0.95rem;
+}
+
+/* Hover effects for extra clarity */
+.risk-bar:hover .bar {
+    transform: scaleY(1.25);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}

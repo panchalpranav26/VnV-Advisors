@@ -255,10 +255,10 @@ function brandedUserHtml(opts: {
 
     // table-based layout for maximum email client compatibility
     return `
-  <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background:${bgLight};padding:24px 0;">
+  <table role="presentation" style="background:${bgLight};padding:24px 0;">
     <tr>
       <td align="center">
-        <table role="presentation" cellpadding="0" cellspacing="0" width="560" style="background:#ffffff;border-radius:10px;overflow:hidden;border:1px solid #e5e7eb;">
+        <table role="presentation" width="560" style="background:#ffffff;border-radius:10px;overflow:hidden;border:1px solid #e5e7eb;">
           <tr>
             <td style="background:${primaryNavy};padding:20px 24px;" align="left">
               <img src="${logoUrl}" width="180" height="60" alt="V&V Global LLC" style="display:block;border:0;outline:none;text-decoration:none;">
@@ -274,7 +274,7 @@ function brandedUserHtml(opts: {
                 We’ve received your message and a member of the V&V Global Team will contact you shortly.
               </p>
 
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:12px 0 16px 0;">
+              <table role="presentation" style="margin:12px 0 16px 0;">
                 <tr>
                   <td style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:${textDark};padding:8px 0;">
                     <strong>Topic:</strong> ${escapeHtml(topic)}
@@ -290,7 +290,7 @@ function brandedUserHtml(opts: {
                 </tr>
               </table>
 
-              <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top:8px;">
+              <table role="presentation" style="margin-top:8px;">
                 <tr>
                   <td align="center" bgcolor="${accentTeal}" style="border-radius:6px;">
                     <a href="${calUrl}"

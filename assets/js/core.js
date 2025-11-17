@@ -23,17 +23,29 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // 2) Fix Home links (must run AFTER header loads)
         fixHomeLinks();
-        initPageTOC();
 
     } catch (e) {
         console.error('[core] Init failed:', e);
     }
 });
 
-document.addEventListener("header-loaded", () => {
-    console.info("[core] 🔔 Header-loaded event received — starting ScreenSizeWatcher…");
+import { buildDynamicNav } from './components/nav_builder.js';   // add import
+
+document.addEventListener("header-loaded", async () => {
+    console.info("[core] 🔔 Header-loaded event received — building dynamic nav…");
+
+    // 1️⃣ Build dynamic menu (AFTER header.html is loaded)
+    await buildDynamicNav();
+    console.info("[core] ✅ Dynamic nav inserted into DOM");
+
+    // 2️⃣ Now apply Desktop/Mobile behavior
     initScreenSizeWatcher();
+
+    // 3️⃣ UI Effects (icons, reveal, etc)
     initUIEffects();
+
+    // 4️⃣ Instantiate TOC
+    initPageTOC();
 });
 
 

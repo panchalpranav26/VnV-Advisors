@@ -5,21 +5,29 @@
  * EXTENSION POINTS: None.
  */
 
-document.querySelectorAll('.accordion-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        const expanded = button.getAttribute('aria-expanded') === 'true';
-        const content = button.nextElementSibling;
+document.addEventListener("header-loaded", () => {
 
-        // Close all others (optional but recommended)
-        document.querySelectorAll('.accordion-btn').forEach(btn => {
-            if (btn !== button) {
-                btn.setAttribute('aria-expanded', 'false');
-                btn.nextElementSibling.classList.remove('open');
+    // Get all accordion buttons AFTER header loads
+    const buttons = document.querySelectorAll('.accordion-btn');
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            const isOpen = btn.getAttribute("aria-expanded") === "true";
+
+            // Close all other accordions
+            buttons.forEach(b => {
+                b.setAttribute("aria-expanded", "false");
+                b.nextElementSibling.classList.remove("open");
+            });
+
+            // Open clicked accordion (if it wasn't already open)
+            if (!isOpen) {
+                btn.setAttribute("aria-expanded", "true");
+                btn.nextElementSibling.classList.add("open");
             }
         });
-
-        // Toggle current
-        button.setAttribute('aria-expanded', !expanded);
-        content.classList.toggle('open', !expanded);
     });
+
+    console.log("✔ Accordion initialized successfully AFTER header load");
 });

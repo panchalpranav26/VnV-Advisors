@@ -209,10 +209,10 @@ export function brandedConsultationUserHtml(opts: {
 
     // table-based layout for maximum email client compatibility
     return `
-  <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background:${bgLight};padding:24px 0;">
+  <table role="presentation" style="background:${bgLight};padding:24px 0;">
     <tr>
       <td align="center">
-        <table role="presentation" cellpadding="0" cellspacing="0" width="560" style="background:#ffffff;border-radius:10px;overflow:hidden;border:1px solid #e5e7eb;">
+        <table role="presentation" width="560" style="background:#ffffff;border-radius:10px;overflow:hidden;border:1px solid #e5e7eb;">
           <!-- Header (Text-based logo, centered) -->
           <tr>
             <td style="background:${primaryNavy};padding:22px 24px;text-align:center;">
@@ -236,7 +236,7 @@ export function brandedConsultationUserHtml(opts: {
               </p>
 
               <!-- Details box -->
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:12px 0 16px 0;border:1px solid #e5e7eb;border-radius:8px;">
+              <table role="presentation" style="margin:12px 0 16px 0;border:1px solid #e5e7eb;border-radius:8px;">
                 <tr>
                   <td style="padding:12px 16px;background:${bgLight};font-family:Arial,Helvetica,sans-serif;font-size:14px;color:${textDark};">
                     <div style="margin:0 0 8px 0;"><strong>Session Type:</strong> ${escapeHtml(topic)}</div>
