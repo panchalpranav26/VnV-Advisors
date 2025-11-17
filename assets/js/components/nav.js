@@ -6,7 +6,9 @@
 
 export function initNav() {
     console.info("[nav] Initializing navigation dropdown behavior…");
-
+    /* Smooth delay timers */
+    const closeTimers = {};
+    
     let navItems = document.querySelectorAll(".nav-item--has-dropdown");
 
     if (!navItems || navItems.length === 0) {

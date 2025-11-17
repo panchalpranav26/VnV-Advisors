@@ -1,97 +1,79 @@
 /* ============================================================
-   lookupNavTitles_v3.js
+   lookupNavTitles_v4.js
    Title-aware lookup for menu → section → page
-   Matches using <title>…</title> instead of folder names.
+   Returns full JSON objects so TOC can build dir-aware URLs.
    ============================================================ */
 
 export async function lookupNavTitles() {
     try {
-        /* ----------------------------------------------
-           1. READ <title> FROM HTML
-        ---------------------------------------------- */
+        /* 1. READ AND NORMALIZE TITLE */
         const rawTitle = document.title || "";
         const pageTitle = rawTitle.replace("– V & V Advisors", "").trim();
 
-        console.groupCollapsed(
-            "%c[lookupNavTitles_v3] Page Title Detected",
-            "color:#4db6ac;font-weight:600;"
-        );
-        console.log("HTML <title>:", rawTitle);
-        console.log("Normalized:", pageTitle);
-        console.groupEnd();
-
-
-        /* ----------------------------------------------
-           2. LOAD navigation_data.json
-        ---------------------------------------------- */
         const res = await fetch("/assets/navigation_data.json");
         if (!res.ok) throw new Error("Failed to load navigation_data.json");
 
         const nav = await res.json();
 
-
-        /* ----------------------------------------------
-           3. DEFAULT RETURN OBJECT
-        ---------------------------------------------- */
+        /* DEFAULT RESULT */
         let match = {
             jsonMenuTitle: null,
             jsonSectionTitle: null,
             jsonPageTitle: null,
 
-            menuId: null,
-            sectionId: null,
-            pageUrl: null
+            menuData: null,
+            sectionData: null,
+            pageData: null
         };
 
-
-        /* ----------------------------------------------
-           4. TOP-LEVEL PAGES (Success Stories, Contact…)
-        ---------------------------------------------- */
+        /* ------------------------------------------------------------
+           2. TOP-LEVEL ONLY PAGES (Stories, Contact, Consultation)
+        ------------------------------------------------------------ */
         for (const sec of nav.sections) {
             if (sec.isFolderOnly && sec.title === pageTitle) {
                 match.jsonMenuTitle = sec.title;
-                match.menuId = sec.id;
-                match.pageUrl = sec.url;
-
+                match.menuData = sec;
+                match.pageData = sec; // top-level page = its own page data
                 return match;
             }
         }
 
-
-        /* ----------------------------------------------
-           5. MENU → SECTION → PAGE MATCHING
-        ---------------------------------------------- */
+        /* ------------------------------------------------------------
+           3. MENU → SECTION → PAGE
+        ------------------------------------------------------------ */
 
         for (const menu of nav.sections) {
-            /* 5A — PAGE directly under menu (Services/About) */
+
+            /* 3A — PAGE directly under menu (Services, About) */
             if (menu.pages) {
                 for (const p of menu.pages) {
                     if (p.title === pageTitle) {
                         match.jsonMenuTitle = menu.title;
                         match.jsonPageTitle = p.title;
-                        match.menuId = menu.id;
-                        match.pageUrl = p.url;
+
+                        match.menuData = menu;
+                        match.pageData = p;
                         return match;
                     }
                 }
             }
 
-            /* 5B — CHECK SUBCATEGORIES (Financial Ed, Protection Products…) */
+            /* 3B — CHECK SUBCATEGORIES (Financial Ed / Protection Products) */
             if (menu.subcategories) {
                 for (const sub of menu.subcategories) {
-                    // Subcategory index page
+
+                    // Section index page matches the <title>
                     if (sub.title === pageTitle) {
                         match.jsonMenuTitle = menu.title;
                         match.jsonSectionTitle = sub.title;
 
-                        match.menuId = menu.id;
-                        match.sectionId = sub.id;
-
-                        match.pageUrl = sub.url;
+                        match.menuData = menu;
+                        match.sectionData = sub;
+                        match.pageData = sub; // index page
                         return match;
                     }
 
-                    // Subcategory child pages
+                    // Look inside child pages
                     if (sub.pages) {
                         for (const p of sub.pages) {
                             if (p.title === pageTitle) {
@@ -99,10 +81,9 @@ export async function lookupNavTitles() {
                                 match.jsonSectionTitle = sub.title;
                                 match.jsonPageTitle = p.title;
 
-                                match.menuId = menu.id;
-                                match.sectionId = sub.id;
-                                match.pageUrl = p.url;
-
+                                match.menuData = menu;
+                                match.sectionData = sub;
+                                match.pageData = p;
                                 return match;
                             }
                         }
@@ -111,22 +92,19 @@ export async function lookupNavTitles() {
             }
         }
 
-
-        /* ----------------------------------------------
-           6. NO MATCH FOUND
-        ---------------------------------------------- */
-        console.warn("[lookupNavTitles_v3] No matching title found in JSON for:", pageTitle);
+        /* No match */
+        console.warn("[lookupNavTitles_v4] ❗ No title match found:", pageTitle);
         return match;
 
     } catch (err) {
-        console.error("[lookupNavTitles_v3] Lookup failed:", err);
+        console.error("[lookupNavTitles_v4] Lookup failed:", err);
         return {
             jsonMenuTitle: null,
             jsonSectionTitle: null,
             jsonPageTitle: null,
-            menuId: null,
-            sectionId: null,
-            pageUrl: null
+            menuData: null,
+            sectionData: null,
+            pageData: null
         };
     }
 }

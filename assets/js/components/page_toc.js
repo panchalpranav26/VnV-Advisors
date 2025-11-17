@@ -53,56 +53,48 @@ export async function initPageTOC() {
 
 
     /* ------------------------------------------------------------
-       4. CREATE BREADCRUMBS BASED ON MATCH TYPE
+       4. CREATE BREADCRUMBS BASED ON MATCH TYPE (DIR-AWARE)
     ------------------------------------------------------------ */
+
+    const menuURL    = buildUrlTOC(lookup.menuData);
+    const sectionURL = buildUrlTOC(lookup.sectionData, lookup.menuData);
+    const pageURL    = buildUrlTOC(lookup.pageData, lookup.sectionData);
+
 
     /** CASE A — HOME PAGE */
     if (cleanPageTitle === "Home") {
-        console.log("[TOC] Home page → No breadcrumbs");
-        // We still add page title "Home"
+        // no breadcrumbs
     }
 
-    /** CASE B — TOP LEVEL PAGE (Stories, Contact, Consultation) */
-    else if (lookup.jsonMenuTitle && !lookup.jsonSectionTitle) {
-        console.log("[TOC] Top-level page breadcrumb");
-
-        const homeBtn = makeCrumb("Home", "/index.html");
-        header.appendChild(homeBtn);
-
-        const menuBtn = makeCrumb(jsonMenuTitle, pageUrl);
-        header.appendChild(menuBtn);
+    /** CASE B — TOP LEVEL PAGE (Stories, Contact, etc.) */
+    else if (jsonMenuTitle && !jsonSectionTitle) {
+        header.appendChild(makeCrumb("Home", "/index.html"));
+        header.appendChild(makeCrumb(jsonMenuTitle, menuURL));
     }
 
-    /** CASE C — MENU INDEX (Financial Ed / Protection Products / Services / About Us) */
+    /** CASE C — MENU INDEX PAGE */
     else if (jsonMenuTitle && cleanPageTitle === jsonMenuTitle) {
-        console.log("[TOC] Menu index breadcrumb");
-
         header.appendChild(makeCrumb("Home", "/index.html"));
-        header.appendChild(makeCrumb(jsonMenuTitle, pageUrl));
+        header.appendChild(makeCrumb(jsonMenuTitle, menuURL));
     }
 
-    /** CASE D — SECTION INDEX (Foundations, Wellness, pp-life, etc.) */
+    /** CASE D — SECTION INDEX PAGE */
     else if (jsonMenuTitle && jsonSectionTitle && cleanPageTitle === jsonSectionTitle) {
-        console.log("[TOC] Section index breadcrumb");
-
         header.appendChild(makeCrumb("Home", "/index.html"));
-        header.appendChild(makeCrumb(jsonMenuTitle, lookup.menuId ? `/${lookup.menuId}/index.html` : "#"));
-        header.appendChild(makeCrumb(jsonSectionTitle, pageUrl));
+        header.appendChild(makeCrumb(jsonMenuTitle, menuURL));
+        header.appendChild(makeCrumb(jsonSectionTitle, sectionURL));
     }
 
     /** CASE E — CONTENT PAGE */
     else if (jsonPageTitle) {
-        console.log("[TOC] Content page breadcrumb");
-
         header.appendChild(makeCrumb("Home", "/index.html"));
-        header.appendChild(makeCrumb(jsonMenuTitle, lookup.menuId ? `/${lookup.menuId}/index.html` : "#"));
+        header.appendChild(makeCrumb(jsonMenuTitle, menuURL));
 
         if (jsonSectionTitle) {
-            header.appendChild(
-                makeCrumb(jsonSectionTitle, lookup.sectionId ? `/${lookup.menuId}/${lookup.sectionId}/index.html` : "#")
-            );
+            header.appendChild(makeCrumb(jsonSectionTitle, sectionURL));
         }
     }
+
 
     /* Divider line */
     header.appendChild(
@@ -167,6 +159,24 @@ export async function initPageTOC() {
     });
 
     toc.appendChild(list);
+
+
+
+    /* ------------------------------------------------------------
+       8. ADD FREE CONSULTATION CTA AT BOTTOM OF TOC
+    ------------------------------------------------------------ */
+    const tocCTA = document.createElement("div");
+    tocCTA.className = "btn-glow md";
+
+    tocCTA.innerHTML = `
+    <a href="/pages/consultation.html" class="btn-glow sm toc-cta-btn">
+        Free Consultation
+    </a>
+    `;
+
+// Append CTA *after* the heading list
+    toc.appendChild(tocCTA);
+
     document.body.appendChild(toc);
 
 
@@ -223,4 +233,25 @@ export async function initPageTOC() {
         a.href = url;
         return a;
     }
+}
+
+
+/* ============================================================
+   DIR-AWARE URL BUILDER for TOC (matches nav_builder_v3)
+   ============================================================ */
+function buildUrlTOC(item, parent = null) {
+    if (!item) return "#";
+
+    // 1. If JSON entry has absolute dir → use it
+    if (item.dir) {
+        return item.dir + item.url.replace(/^\//, "");
+    }
+
+    // 2. Inherit dir from parent
+    if (parent && parent.dir) {
+        return parent.dir + item.url.replace(/^\//, "");
+    }
+
+    // 3. Fallback: use url as-is
+    return item.url;
 }

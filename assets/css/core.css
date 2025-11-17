@@ -58,7 +58,7 @@
 
 
     /* Layout tokens */
-    --maxw: 1220px;                   /* used by .wrap */
+    --maxw: 1080px;                   /* used by .wrap */
     --pad-x: 1rem;                    /* used by .wrap / hero */
     --surface-alt: rgba(11,27,42,.25);/* used by .flashy-section */               /* used by .wrap / hero */
     --nav-h: 68px; /* HD-Comfort */

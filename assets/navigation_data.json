@@ -94,9 +94,9 @@
           "dir": "/pages/",
           "url": "/protection_products/life/index.html",
           "pages": [
-            { "title": "Core Life Insurance", "url": "/protection_products/life/core_life_insurance.html" },
-            { "title": "Advanced Life Insurance", "url": "/protection_products/life/advanced_life_insurance.html" },
-            { "title": "Simplified / Guaranteed", "url": "/protection_products/life/simplified_guaranteed.html" }
+            { "title": "Core Life Insurance", "url": "/protection_products/core_life_insurance.html" },
+            { "title": "Advanced Life Insurance", "url": "/protection_products/advanced_life_insurance.html" },
+            { "title": "Simplified / Guaranteed", "url": "/protection_products/simplified_guaranteed.html" }
           ]
         },
         {
@@ -106,9 +106,9 @@
           "dir": "/pages/",
           "url": "/protection_products/annuity/index.html",
           "pages": [
-            { "title": "Traditional Annuities", "url": "/protection_products/annuity/traditional_annuities.html" },
-            { "title": "Growth-Oriented Annuities", "url": "/protection_products/annuity/growth_oriented_annuities.html" },
-            { "title": "Specialized Annuities", "url": "/protection_products/annuity/specialized_annuities.html" }
+            { "title": "Traditional Annuities", "url": "/protection_products/traditional_annuities.html" },
+            { "title": "Growth-Oriented Annuities", "url": "/protection_products/growth_oriented_annuities.html" },
+            { "title": "Specialized Annuities", "url": "/protection_products/specialized_annuities.html" }
           ]
         },
         {
@@ -118,8 +118,8 @@
           "dir": "/pages/",
           "url": "/protection_products/estate/index.html",
           "pages": [
-            { "title": "Legal Protection Essentials", "url": "/protection_products/estate/legal_protection_essentials.html" },
-            { "title": "Family & End-of-Life Planning", "url": "/protection_products/estate/family_end_of_life.html" }
+            { "title": "Legal Protection Essentials", "url": "/protection_products/legal_protection_essentials.html" },
+            { "title": "Family & End-of-Life Planning", "url": "/protection_products/family_end_of_life.html" }
           ]
         }
       ]

@@ -53,18 +53,6 @@ export async function buildDynamicNav() {
         root.appendChild(makeSimpleItem(section.title, buildUrl(section)));
     });
 
-
-    /* ------------------------------------------------------------
-       CTA BUTTON (static)
-    ------------------------------------------------------------ */
-    const cta = document.createElement("div");
-    cta.className = "menu-item desktop-only";
-    cta.innerHTML = `
-        <a href="/pages/consultation.html" class="btn-glow sm" role="menuitem">
-            Free Consultation
-        </a>`;
-    root.appendChild(cta);
-
     console.groupEnd();
     console.info("[nav_builder] ✅ Menu generation complete.");
 }
@@ -134,7 +122,7 @@ function makeMiniDropdown(section) {
         </div>
 
         <div class="dropdown-pane dropdown-pane--mini" role="menu">
-            <section class="mini-card card-tier1 mini-card-upgrade">
+            <section class="mini-card">
                 <ul class="tier1-list">
                     ${section.pages
         .map(p => `
