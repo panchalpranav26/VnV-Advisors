@@ -51,6 +51,33 @@ export async function initPageTOC() {
     const header = document.createElement("div");
     header.className = "page-toc__header";
 
+    /* Add HOME at very top of TOC */
+    const homeTop = document.createElement("a");
+    homeTop.className = "page-toc__title btn-toc-glow--headers";
+    homeTop.textContent = "Home";
+    homeTop.href = "/index.html";
+    header.appendChild(homeTop);
+
+    /* ------------------------------------------------------------
+       SPECIAL CASE — HOME PAGE RULES
+       Show only:
+       • Home button
+       • Page anchors
+       • Book Consultation CTA
+       Hide:
+       • Tagline title
+       • Breadcrumbs
+    ------------------------------------------------------------ */
+    const isHomePage =
+        cleanPageTitle === "Home" ||
+        cleanPageTitle.startsWith("V & V Advisors");
+
+    if (isHomePage) {
+        // DO NOT append breadcrumbs or page title
+        // DO NOT return here — allow anchors + CTA to render
+
+        // Continue building TOC (skip breadcrumb section only)
+    }
 
     /* ------------------------------------------------------------
        4. CREATE BREADCRUMBS BASED ON MATCH TYPE (DIR-AWARE)
@@ -62,36 +89,32 @@ export async function initPageTOC() {
 
 
     /** CASE A — HOME PAGE */
-    if (cleanPageTitle === "Home") {
-        // no breadcrumbs
+    if (isHomePage) {
+        // do nothing here — no breadcrumbs or page title
     }
 
     /** CASE B — TOP LEVEL PAGE (Stories, Contact, etc.) */
     else if (jsonMenuTitle && !jsonSectionTitle) {
-        header.appendChild(makeCrumb("Home", "/index.html"));
-        header.appendChild(makeCrumb(jsonMenuTitle, menuURL));
+        header.appendChild(makeCrumb(jsonMenuTitle, menuURL, "menu"));
     }
 
     /** CASE C — MENU INDEX PAGE */
     else if (jsonMenuTitle && cleanPageTitle === jsonMenuTitle) {
-        header.appendChild(makeCrumb("Home", "/index.html"));
-        header.appendChild(makeCrumb(jsonMenuTitle, menuURL));
+        header.appendChild(makeCrumb(jsonMenuTitle, menuURL, "menu"));
     }
 
     /** CASE D — SECTION INDEX PAGE */
     else if (jsonMenuTitle && jsonSectionTitle && cleanPageTitle === jsonSectionTitle) {
-        header.appendChild(makeCrumb("Home", "/index.html"));
-        header.appendChild(makeCrumb(jsonMenuTitle, menuURL));
-        header.appendChild(makeCrumb(jsonSectionTitle, sectionURL));
+        header.appendChild(makeCrumb(jsonMenuTitle, menuURL, "menu"));
+        header.appendChild(makeCrumb(jsonSectionTitle, sectionURL, "section"));
     }
 
     /** CASE E — CONTENT PAGE */
     else if (jsonPageTitle) {
-        header.appendChild(makeCrumb("Home", "/index.html"));
-        header.appendChild(makeCrumb(jsonMenuTitle, menuURL));
+        header.appendChild(makeCrumb(jsonMenuTitle, menuURL, "menu"));
 
         if (jsonSectionTitle) {
-            header.appendChild(makeCrumb(jsonSectionTitle, sectionURL));
+            header.appendChild(makeCrumb(jsonSectionTitle, sectionURL, "section"));
         }
     }
 
@@ -107,9 +130,12 @@ export async function initPageTOC() {
     /* ------------------------------------------------------------
        5. ADD PAGE TITLE (avoid duplicates)
     ------------------------------------------------------------ */
-    const shouldHidePageTitle =
+    let shouldHidePageTitle =
         cleanPageTitle === jsonMenuTitle ||
         cleanPageTitle === jsonSectionTitle;
+
+    if (isHomePage) shouldHidePageTitle = true;
+
 
     if (!shouldHidePageTitle) {
         const titleBtn = document.createElement("button");
@@ -166,11 +192,11 @@ export async function initPageTOC() {
        8. ADD FREE CONSULTATION CTA AT BOTTOM OF TOC
     ------------------------------------------------------------ */
     const tocCTA = document.createElement("div");
-    tocCTA.className = "btn-glow md";
+    tocCTA.className = "btn-toc-consult";
 
     tocCTA.innerHTML = `
-    <a href="/pages/consultation.html" class="btn-glow sm toc-cta-btn">
-        Free Consultation
+    <a href="/pages/consultation.html">
+        Book Consultation
     </a>
     `;
 
@@ -221,18 +247,25 @@ export async function initPageTOC() {
 
     console.groupEnd();
 
-
-
     /* ============================================================
        HELPERS
     ============================================================ */
-    function makeCrumb(title, url) {
+    function makeCrumb(title, url, level = "menu") {
         const a = document.createElement("a");
         a.className = "page-toc__title btn-toc-glow--headers";
-        a.textContent = title;
+
+        // Add hierarchy arrows:
+        let icon = "";
+        if (level === "menu") icon = "› ";
+        if (level === "section") icon = "» ";
+        if (level === "root") icon = ""; // Home
+
+        a.textContent = icon + title;
         a.href = url;
         return a;
     }
+
+
 }
 
 

@@ -1,0 +1,78 @@
+{
+  "pp_estate_legacy": {
+    "id": "pp_estate_legacy",
+    "metaDescription": "Learn how estate and legacy protection safeguards your family’s future. Understand essential legal documents, decision-making roles, and end-of-life planning backed by trusted national resources.",
+    "og": {
+      "description": "Protect your family with smart legal and legacy planning. Learn essential steps backed by CFPB, NAIC, and AARP guidance.",
+      "image": "/assets/img/protection/estate_legacy_cover.jpg",
+      "type": "website"
+    },
+    "twitter": {
+      "description": "A complete guide to estate and legacy planning—legal documents, beneficiary designations, and long-term family protection.",
+      "image": "/assets/img/protection/estate_legacy_cover.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "A complete guide to estate and legacy planning, including legal documents, decision-maker roles, family considerations, and protection strategies.",
+      "keywords": [
+        "estate planning",
+        "legacy planning",
+        "legal documents",
+        "power of attorney",
+        "living will",
+        "advance directive",
+        "beneficiary planning",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "legal_protection_essentials": {
+    "id": "legal_protection_essentials",
+    "metaDescription": "Learn how wills, living trusts, and powers of attorney protect your family, assets, and medical wishes. Evidence-based guidance for long-term clarity.",
+    "og": {
+      "description": "Understand the essential legal documents every family should have—wills, living trusts, and powers of attorney.",
+      "image": "/assets/img/social/legal_essentials.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "A clear, evidence-backed guide to wills, trusts, and powers of attorney for long-term family clarity.",
+      "image": "/assets/img/social/legal_essentials.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "A family-friendly guide to wills, living trusts, and powers of attorney and how they protect your decisions, assets, and legacy.",
+      "keywords": [
+        "estate planning",
+        "living trust",
+        "will preparation",
+        "power of attorney",
+        "legal protection",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "family_end_of_life": {
+    "id": "family_end_of_life",
+    "metaDescription": "A compassionate, evidence-backed guide to advance healthcare directives and funeral concierge services. Learn how to prepare your family for medical and end-of-life decisions with clarity and confidence.",
+    "og": {
+      "description": "Learn the essentials of advance directives and funeral planning to protect your family’s emotional and financial well-being.",
+      "image": "/assets/img/social/family_end_of_life.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "A clear guide to advance healthcare directives and funeral concierge services to support your family’s confidence and peace of mind.",
+      "image": "/assets/img/social/family_end_of_life.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Understand advance healthcare directives, decision-makers, and funeral concierge services to prepare your family for end-of-life choices with clarity.",
+      "keywords": [
+        "advance healthcare directive",
+        "funeral concierge",
+        "end-of-life planning",
+        "medical decisions",
+        "estate planning",
+        "V & V Advisors"
+      ]
+    }
+  }
+}

@@ -1,20 +1,21 @@
 /* ============================================================
-   nav_builder_v3.js
-   Dynamic navigation builder (title-aware, folder-agnostic)
-   Compatible with:
-     - navigation_data.json (dir-aware)
-     - nav.js (desktop/mobile behavior)
-     - toc_lookup_v3.js
-   ============================================================ */
+   nav_builder_v3.js — CLEAN, FIXED, SAFE
+============================================================ */
 
 async function loadNavData() {
     const res = await fetch("/assets/navigation_data.json");
     return await res.json();
 }
 
-/* ============================================================
-   MAIN ENTRY — Build Dynamic Navigation
-   ============================================================ */
+// Detect current path elements
+const currentPathParts = window.location.pathname.split("/").filter(Boolean);
+
+const CURRENT_SECTION = currentPathParts[1] || null;
+const CURRENT_TIER1  = currentPathParts[2] || null;
+
+// ============================================================
+// MAIN ENTRY
+// ============================================================
 export async function buildDynamicNav() {
     const navData = await loadNavData();
     const root = document.querySelector("#dynamic-nav-root");
@@ -26,79 +27,85 @@ export async function buildDynamicNav() {
 
     console.groupCollapsed("%c[nav_builder] Building Menu", "color:#4db6ac");
 
-    /* ------------------------------------------------------------
-       HOME BUTTON (static)
-    ------------------------------------------------------------ */
-    root.appendChild(makeSimpleItem(navData.home.title, navData.home.url, true));
+    // HOME
+    root.appendChild(makeSimpleItem(navData.home.title, navData.home.url, "home"));
 
-
-    /* ------------------------------------------------------------
-       BUILD ALL MAIN SECTIONS
-    ------------------------------------------------------------ */
+    // MAIN SECTIONS
     navData.sections.forEach(section => {
 
-        // CASE 1 → Complex 2-tier menu (Financial Ed + Protection Products)
+        // Case 1: Tiered (Financial Ed, Protection Products)
         if (section.subcategories) {
             root.appendChild(makeTieredSection(section));
             return;
         }
 
-        // CASE 2 → Mini dropdown (Services, About Us)
+        // Case 2: Mini Dropdown
         if (section.pages && section.pages.length > 0) {
             root.appendChild(makeMiniDropdown(section));
             return;
         }
 
-        // CASE 3 → Simple link (Stories, Contact, Consultation)
-        root.appendChild(makeSimpleItem(section.title, buildUrl(section)));
+        // Case 3: Simple Link
+        root.appendChild(makeSimpleItem(section.title, buildUrl(section), section.id));
     });
 
     console.groupEnd();
-    console.info("[nav_builder] ✅ Menu generation complete.");
 }
 
+function getRootLinkClass(section) {
+    return section.id === "opportunity" ? "hgi-link" : "dd-link";
+}
 
 /* ============================================================
-   URL BUILDER v4 — FULL DIR INHERITANCE
-   - If item has its own dir → use it
-   - If item has no dir → inherit dir from parent
-   ============================================================ */
+   URL BUILDER
+============================================================ */
 function buildUrl(item, parent = null) {
-    // Direct dir on item
     if (item.dir) return item.dir + item.url.replace(/^\//, "");
-
-    // Inherit dir from parent if exists
-    if (parent && parent.dir) {
-        return parent.dir + item.url.replace(/^\//, "");
-    }
-
-    // Fallback
+    if (parent && parent.dir) return parent.dir + item.url.replace(/^\//, "");
     return item.url;
 }
 
 
 /* ============================================================
-   SIMPLE TOP-LEVEL ITEM (Home, Stories, Contact)
-   ============================================================ */
-function makeSimpleItem(title, url, isHome = false) {
+   SIMPLE ITEM (No dropdown)
+============================================================ */
+function makeSimpleItem(title, url, id) {
     const div = document.createElement("div");
 
     div.innerHTML = `
         <a class="menu-link"
            role="menuitem"
-           ${isHome ? 'data-home="true"' : ""}
+           data-title="${title}"
+           data-nav-id="${id}"
            href="${url}">
             ${title}
         </a>
     `;
+
     return div;
 }
 
 
 /* ============================================================
    MINI DROPDOWN (Services, About Us)
-   — styled like your Tier-1 menu for consistency
-   ============================================================ */
+============================================================ */
+
+function getDropdownPaneClass(section) {
+    const cls = section.id === "opportunity"
+        ? "hgi-dropdown-pane"
+        : "dropdown-pane";
+
+    console.debug(`[nav] Dropdown pane for "${section.id}" → ${cls}`);
+    return cls;
+}
+
+function getTier1LabelClass(section) {
+    return section.id === "opportunity"
+        ? "hgi-tier1-label"
+        : "tier1-label";
+}
+
+
 function makeMiniDropdown(section) {
     const div = document.createElement("div");
     div.className = "menu-item nav-item--has-dropdown nav-mini";
@@ -106,10 +113,15 @@ function makeMiniDropdown(section) {
 
     div.innerHTML = `
         <div class="parent-with-caret">
-            <a class="link" href="${buildUrl(section)}" role="menuitem">
+            <a class="${getRootLinkClass(section)}"
+               href="${buildUrl(section)}"
+               data-title="${section.title}"
+               data-nav-id="${section.id}"
+               role="menuitem">
                 ${section.title}
             </a>
-            <button class="caret-toggle" aria-expanded="false" aria-haspopup="true">
+
+            <button class="caret-toggle" aria-expanded="false">
                 <span class="caret">
                     <svg width="10" height="10" viewBox="0 0 20 20">
                         <path d="M5 7l5 6 5-6"
@@ -121,18 +133,20 @@ function makeMiniDropdown(section) {
             </button>
         </div>
 
-        <div class="dropdown-pane dropdown-pane--mini" role="menu">
+        <div class="${getDropdownPaneClass(section)} dropdown-pane--mini">
             <section class="mini-card">
                 <ul class="tier1-list">
-                    ${section.pages
-        .map(p => `
-                            <li class="mini-tier1-item">
-                                <a class="tier1-label" href="${buildUrl(p, section)}" role="menuitem">
-                                    ${p.title}
-                                </a>
-                            </li>
-                        `)
-        .join("")}
+                    ${section.pages.map(p => `
+                        <li class="mini-tier1-item">
+                            <a class="${getTier1LabelClass(section)}"
+                               href="${buildUrl(p, section)}"
+                               data-title="${p.title}"
+                               data-nav-id="${p.title.toLowerCase().replace(/\s+/g,'_')}"
+                               role="menuitem">
+                                ${p.title}
+                            </a>
+                        </li>
+                    `).join("")}
                 </ul>
             </section>
         </div>
@@ -142,14 +156,9 @@ function makeMiniDropdown(section) {
 }
 
 
-
 /* ============================================================
-   FULL 2-TIER SECTION (Financial Education, Protection Products)
-   ============================================================ */
-/* ============================================================
-   FULL 2-TIER SECTION (Financial Education, Protection Products)
-   DIR-AWARE VERSION
-   ============================================================ */
+   TIERED SECTION (Financial Ed + Protection Products)
+============================================================ */
 function makeTieredSection(section) {
     const root = document.createElement("div");
 
@@ -158,10 +167,15 @@ function makeTieredSection(section) {
 
     root.innerHTML = `
         <div class="parent-with-caret">
-            <a class="link" href="${buildUrl(section)}" role="menuitem">
+            <a class="dd-link"
+               href="${buildUrl(section)}"
+               data-title="${section.title}"
+               data-nav-id="${section.id}"
+               role="menuitem">
                 ${section.title}
             </a>
-            <button class="caret-toggle" aria-expanded="false" aria-haspopup="true">
+
+            <button class="caret-toggle" aria-expanded="false">
                 <span class="caret">
                     <svg width="10" height="10" viewBox="0 0 20 20">
                         <path d="M5 7l5 6 5-6"
@@ -173,49 +187,46 @@ function makeTieredSection(section) {
             </button>
         </div>
 
-        <div class="dropdown-pane dropdown-pane--tier1" role="menu">
+        <div class="dropdown-pane dropdown-pane--tier1">
             <div class="mini-card card-tier1">
                 <ul class="tier1-list">
-                    ${section.subcategories
-        .map(
-            cat => `
-                                <li class="tier1-item" data-submenu="${cat.id}">
-                                    <a class="tier1-label" href="${buildUrl(cat, section)}" role="menuitem">
-                                        ${cat.icon || ""} ${cat.title}
-                                    </a>
-                                </li>
-                            `
-        )
-        .join("")}
+                    ${section.subcategories.map(cat => `
+                        <li class="tier1-item" ${CURRENT_TIER1 === cat.id ? "nav-active-tier1" : ""}"
+                            data-submenu="${cat.id}"
+                            data-nav-id="${cat.id}">
+
+                            <a class="tier1-label"
+                               href="${buildUrl(cat, section)}"
+                               data-title="${cat.title}"
+                               data-nav-id="${cat.id}"
+                               role="menuitem">
+                                ${cat.icon || ""} ${cat.title}
+                            </a>
+                        </li>
+                    `).join("")}
                 </ul>
             </div>
 
-            ${section.subcategories
-        .map(
-            cat => `
-                        <div class="submenu-pane" id="submenu-${cat.id}" role="menu">
-                            <div class="mini-card card-tier2">
-                                <ul>
-                                    ${cat.pages
-                .map(
-                    p => `
-                                                <li>
-                                                    <a href="${buildUrl(p, cat)}" role="menuitem">
-                                                        ${p.title}
-                                                    </a>
-                                                </li>
-                                            `
-                )
-                .join("")}
-                                </ul>
-                            </div>
-                        </div>
-                    `
-        )
-        .join("")}
+            ${section.subcategories.map(cat => `
+                <div class="submenu-pane" id="submenu-${cat.id}">
+                    <div class="mini-card card-tier2">
+                        <ul>
+                            ${cat.pages.map(p => `
+                                <li>
+                                    <a href="${buildUrl(p, cat)}"
+                                       role="menuitem"
+                                       data-title="${p.title}"
+                                       data-nav-id="${p.title.toLowerCase().replace(/\s+/g,'_')}">
+                                        ${p.title}
+                                    </a>
+                                </li>
+                            `).join("")}
+                        </ul>
+                    </div>
+                </div>
+            `).join("")}
         </div>
     `;
 
     return root;
 }
-

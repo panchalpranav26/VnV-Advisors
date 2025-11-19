@@ -1,0 +1,180 @@
+{
+  "building_wealth": {
+    "id": "building_wealth",
+    "metaDescription": "Explore the foundations of long-term wealth building — compounding, retirement basics, risk & return, and annuities — explained in clear, family-friendly language based on SEC, FINRA, and CFPB research.",
+    "og": {
+      "description": "Understand the core drivers of long-term wealth — compounding, risk, retirement planning, annuities, and disciplined financial habits.",
+      "image": "/assets/img/social/wealth_building.jpg",
+      "type": "website"
+    },
+    "twitter": {
+      "description": "Learn the foundations of long-term wealth through compounding, retirement basics, and risk management.",
+      "image": "/assets/img/social/wealth_building.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Learn the key principles that drive long-term wealth: time, compounding, savings, risk management, and income protection strategies.",
+      "keywords": [
+        "long-term wealth",
+        "compounding",
+        "retirement basics",
+        "risk and return",
+        "annuities",
+        "financial literacy",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "compounding_time": {
+    "id": "compounding_time",
+    "metaDescription": "Learn how compounding and time create exponential growth for your financial future. Evidence-backed education from SEC and FINRA sources.",
+    "og": {
+      "description": "Explore how consistent investing grows exponentially through the power of compounding.",
+      "image": "/assets/img/social/compounding_time.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Learn how compounding accelerates long-term financial growth — and why starting early matters.",
+      "image": "/assets/img/social/compounding_time.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Understand how compounding and time work together to create exponential long-term financial growth.",
+      "keywords": [
+        "compounding interest",
+        "time value of money",
+        "wealth building",
+        "long-term savings",
+        "financial literacy",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "fixed_indexed_variable": {
+    "id": "fixed_indexed_variable",
+    "metaDescription": "Learn the differences between fixed, indexed, and variable growth strategies — how they work, risk levels, return potential, and long-term planning considerations.",
+    "og": {
+      "description": "Explore how fixed, indexed, and variable accounts differ in risk, growth behavior, fees, caps, and floors.",
+      "image": "/assets/img/social/fixed_indexed_variable.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Compare fixed, indexed, and variable accounts — and see how each impacts long-term wealth.",
+      "image": "/assets/img/social/fixed_indexed_variable.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Understand the differences between fixed, indexed, and variable strategies for long-term wealth building.",
+      "keywords": [
+        "fixed accounts",
+        "indexed growth",
+        "variable investing",
+        "risk comparison",
+        "wealth building",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "annuities_101": {
+    "id": "annuities_101",
+    "metaDescription": "Learn what annuities are, how they work, and where they fit into long-term retirement and wealth-building strategies.",
+    "og": {
+      "description": "Understand the basics of annuities — types, benefits, risks, and long-term growth potential.",
+      "image": "/assets/img/social/annuities_101.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Learn how annuities grow and support long-term income in retirement.",
+      "image": "/assets/img/social/annuities_101.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Learn annuity basics, types, benefits, and risks and how annuities support long-term retirement income.",
+      "keywords": [
+        "annuities",
+        "fixed annuity",
+        "indexed annuity",
+        "variable annuity",
+        "retirement income",
+        "tax-deferred growth",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "lifetime_income_riders": {
+    "id": "lifetime_income_riders",
+    "metaDescription": "Learn how lifetime income strategies and riders protect against outliving your savings and support stable retirement income.",
+    "og": {
+      "description": "Understand how lifetime income tools and riders create predictable retirement paychecks and reduce long-term financial risks.",
+      "image": "/assets/img/social/lifetime_income_riders.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Learn how lifetime income riders support predictable, protected retirement income.",
+      "image": "/assets/img/social/lifetime_income_riders.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Educational guide on lifetime income strategies and riders — how they work, risks, and how they fit into a long-term retirement plan.",
+      "keywords": [
+        "lifetime income",
+        "income riders",
+        "annuity riders",
+        "retirement paycheck",
+        "guaranteed income",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "retirement_basics": {
+    "id": "retirement_basics",
+    "metaDescription": "Learn the essentials of retirement planning: compounding, savings timelines, tax-advantaged accounts, Social Security, and long-term investing strategies.",
+    "og": {
+      "description": "Learn practical retirement planning: compounding, tax-advantaged accounts, and long-term investing strategies.",
+      "image": "/assets/img/social/retirement_basics.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Evidence-based retirement planning to build lifelong wealth and financial security.",
+      "image": "/assets/img/social/retirement_basics.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Learn retirement planning fundamentals: compounding, long-term investing, 401(k), IRA, Roth accounts, and income protection strategies.",
+      "keywords": [
+        "retirement planning",
+        "401(k)",
+        "IRA",
+        "Roth IRA",
+        "long-term investing",
+        "compound interest",
+        "financial literacy",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "risk_return": {
+    "id": "risk_return",
+    "metaDescription": "Learn how risk and return work together in investing. Understand volatility, long-term return patterns, risk types, and disciplined strategies.",
+    "og": {
+      "description": "Understand the balance between risk and return to make informed long-term investment decisions.",
+      "image": "/assets/img/social/risk_return.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Learn how to balance risk and return with clarity and confidence.",
+      "image": "/assets/img/social/risk_return.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Understand the balance between risk and return and how different risk types affect long-term investing outcomes.",
+      "keywords": [
+        "risk and return",
+        "investment basics",
+        "volatility",
+        "portfolio diversification",
+        "financial literacy",
+        "V & V Advisors"
+      ]
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "estate_planning": {
+    "id": "estate_planning",
+    "metaDescription": "A complete family-friendly guide to Estate Planning: wills, trusts, beneficiaries, powers of attorney, advance directives, and passing wealth efficiently.",
+    "og": {
+      "description": "Learn the essentials of Estate Planning: wills, trusts, beneficiaries, POA, directives, and smart legacy protection.",
+      "image": "/assets/img/social/estate_planning.jpg",
+      "type": "website"
+    },
+    "twitter": {
+      "description": "Understand core Estate Planning topics — wills, trusts, beneficiaries, POA, directives, and efficient wealth transfer.",
+      "image": "/assets/img/social/estate_planning.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Evidence-backed education on wills, trusts, POA, beneficiaries, advance directives, and wealth transfer strategies.",
+      "keywords": [
+        "estate planning",
+        "wills",
+        "trusts",
+        "powers of attorney",
+        "advance directives",
+        "beneficiaries",
+        "passing wealth",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "estate_beneficiaries": {
+    "id": "estate_beneficiaries",
+    "metaDescription": "Learn what beneficiary designations are, why they matter, and how they protect your family during wealth transfer.",
+    "og": {
+      "description": "Understand how correct beneficiary designations protect your loved ones and ensure smooth legacy transfer.",
+      "image": "/assets/img/social/beneficiaries.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Learn how primary and contingent beneficiaries fit into your estate plan and protect your family's future.",
+      "image": "/assets/img/social/beneficiaries.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Educational guide on primary and contingent beneficiaries and their role in estate planning.",
+      "keywords": [
+        "beneficiary designations",
+        "primary beneficiary",
+        "contingent beneficiary",
+        "estate planning",
+        "life insurance",
+        "financial protection"
+      ]
+    }
+  },
+
+  "estate_directives": {
+    "id": "estate_directives",
+    "metaDescription": "Understand what Advance Directives are, how they protect your wishes, and why every family needs them.",
+    "og": {
+      "description": "Learn how Advance Directives protect your medical wishes and support family decision-making.",
+      "image": "/assets/img/social/advance_directives.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Clear, evidence-based education on Advance Directives, living wills, and medical planning.",
+      "image": "/assets/img/social/advance_directives.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Educational guide on living wills, healthcare directives, and durable power of attorney.",
+      "keywords": [
+        "advance directives",
+        "living will",
+        "healthcare directive",
+        "medical decisions",
+        "estate planning",
+        "end-of-life planning"
+      ]
+    }
+  },
+
+  "estate_legacy": {
+    "id": "estate_legacy",
+    "metaDescription": "Learn how to pass wealth efficiently using wills, trusts, organized planning, and tax-aware strategies.",
+    "og": {
+      "description": "Understand how to protect your legacy with intentional, tax-efficient wealth transfer strategies.",
+      "image": "/assets/img/social/passing_wealth.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Educational guidance on passing wealth efficiently through wills, trusts, and organized estate planning.",
+      "image": "/assets/img/social/passing_wealth.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Learn how to pass wealth using smart tax strategies, trusts, wills, and family-centered planning.",
+      "keywords": [
+        "estate planning",
+        "passing wealth",
+        "wealth transfer",
+        "trusts",
+        "wills",
+        "legacy planning"
+      ]
+    }
+  },
+
+  "estate_poa": {
+    "id": "estate_poa",
+    "metaDescription": "Learn what a Power of Attorney is, why it matters, and how it protects your financial and medical decision-making.",
+    "og": {
+      "description": "Understand the essentials of financial and healthcare POA and how they protect your family.",
+      "image": "/assets/img/social/power_of_attorney.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Learn how financial and healthcare POA documents protect decision-making rights during emergencies.",
+      "image": "/assets/img/social/power_of_attorney.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Guide to financial and healthcare Power of Attorney and how they fit into your estate plan.",
+      "keywords": [
+        "power of attorney",
+        "financial POA",
+        "healthcare POA",
+        "durable power of attorney",
+        "estate planning",
+        "family protection"
+      ]
+    }
+  },
+
+  "estate_wills_trusts": {
+    "id": "estate_wills_trusts",
+    "metaDescription": "Learn the essentials of Wills and Trusts — how they protect your family and secure your legacy.",
+    "og": {
+      "description": "Clear education on wills and trusts: how they work, what they protect, and when families need each.",
+      "image": "/assets/img/social/wills_trusts.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Learn how wills and trusts create structure, protection, and clarity for your family.",
+      "image": "/assets/img/social/wills_trusts.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Family-friendly guide on wills and trusts and how they secure your assets and legacy.",
+      "keywords": [
+        "wills",
+        "trusts",
+        "estate planning",
+        "legacy planning",
+        "asset protection",
+        "financial literacy"
+      ]
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "pp_annuity": {
+    "id": "pp_annuity",
+    "metaDescription": "Learn how annuities support retirement income, principal protection, and long-term financial stability. Explore traditional, growth-oriented, and specialized options.",
+    "og": {
+      "description": "Understand how annuities provide guaranteed income, principal protection, and long-term financial confidence.",
+      "image": "/assets/img/social/annuities_overview.jpg",
+      "type": "website"
+    },
+    "twitter": {
+      "description": "Explore how annuities support retirement planning through stable income, growth potential, and long-term protection.",
+      "image": "/assets/img/social/annuities_overview.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Educational overview of annuity types—traditional, growth-oriented, and specialized—and how they support retirement planning and long-term security.",
+      "keywords": [
+        "annuities",
+        "retirement income",
+        "annuity basics",
+        "fixed annuity",
+        "indexed annuity",
+        "income planning",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "traditional_annuities": {
+    "id": "traditional_annuities",
+    "metaDescription": "Learn about Fixed Annuities, Immediate Annuities, and Multi-Year Guaranteed Annuities (MYGA) for stable, predictable retirement income.",
+    "og": {
+      "description": "Understand how traditional annuities provide safe, predictable income for retirement.",
+      "image": "/assets/img/social/traditional_annuities.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "A clear, evidence-based guide to fixed annuities, MYGAs, and immediate annuities.",
+      "image": "/assets/img/social/traditional_annuities.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Learn how fixed, immediate, and multi-year guaranteed annuities offer dependable retirement income and principal protection.",
+      "keywords": [
+        "fixed annuities",
+        "MYGA annuity",
+        "immediate annuity",
+        "retirement income",
+        "guaranteed income",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "growth_oriented_annuities": {
+    "id": "growth_oriented_annuities",
+    "metaDescription": "Learn how Fixed Indexed Annuities (FIA), Registered Index-Linked Annuities (RILA), and Variable Annuities offer growth potential with varying levels of risk.",
+    "og": {
+      "description": "Understand FIAs, RILAs, and variable annuities—growth-focused strategies for long-term wealth planning.",
+      "image": "/assets/img/social/growth_annuities.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "A clear, evidence-based guide to FIAs, RILAs, and variable annuities for strategic long-term growth.",
+      "image": "/assets/img/social/growth_annuities.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Learn how FIAs, RILAs, and variable annuities support long-term growth with different levels of market exposure and risk.",
+      "keywords": [
+        "indexed annuities",
+        "RILA annuity",
+        "variable annuity",
+        "growth annuities",
+        "market-linked annuity",
+        "retirement planning",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "specialized_annuities": {
+    "id": "specialized_annuities",
+    "metaDescription": "Learn how income annuities, deferred income annuities, and structured settlement annuities support predictable lifetime income.",
+    "og": {
+      "description": "Understand income annuities, deferred income annuities, and structured settlement annuities with a consumer-first approach.",
+      "image": "/assets/img/social/specialized_annuities.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Evidence-based insights on specialized annuities for retirement and long-term planning.",
+      "image": "/assets/img/social/specialized_annuities.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Learn how specialized annuities—income annuities, deferred income annuities, and structured settlements—support predictable retirement income.",
+      "keywords": [
+        "specialized annuities",
+        "income annuity",
+        "structured settlement annuity",
+        "deferred income annuity",
+        "lifetime income",
+        "V & V Advisors"
+      ]
+    }
+  }
+}

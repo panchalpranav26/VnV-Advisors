@@ -1,0 +1,105 @@
+{
+  "family_fin_wellness": {
+    "id": "family_fin_wellness",
+    "metaDescription": "Explore family-centered financial guidance across kids, teens, college preparation, and long-term financial planning—evidence-backed and designed to support every stage of a family's financial journey.",
+    "og": {
+      "description": "Support your family’s financial wellness with guidance for children, teens, college preparation, and long-term household planning.",
+      "image": "/assets/img/social/family_financial_wellness.jpg",
+      "type": "website"
+    },
+    "twitter": {
+      "description": "Learn how families can build healthier financial habits at every stage: kids, teens, college planning, and long-term financial readiness.",
+      "image": "/assets/img/social/family_financial_wellness.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Learn how families can build healthier financial habits across childhood, college preparation, and long-term family planning.",
+      "keywords": [
+        "family financial wellness",
+        "kids financial education",
+        "teens budgeting",
+        "college planning",
+        "family finance",
+        "financial wellness",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "kids_teens": {
+    "id": "kids_teens",
+    "metaDescription": "Empower kids and teens with practical financial skills through research-backed lessons on saving, budgeting, earning, and healthy money habits.",
+    "og": {
+      "description": "Evidence-based money lessons for kids and teens—saving, budgeting, earning, and responsible spending habits.",
+      "image": "/assets/img/social/kids_teens_finance.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Trusted financial education for young people—saving, budgeting, earning, and building strong money habits.",
+      "image": "/assets/img/social/kids_teens_finance.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Financial literacy for kids and teens, including saving, budgeting, earning, responsible spending, and goal setting.",
+      "keywords": [
+        "financial literacy for kids",
+        "youth financial education",
+        "teens budgeting",
+        "saving skills for kids",
+        "money habits for teens",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "college_prepare": {
+    "id": "college_prepare",
+    "metaDescription": "A complete guide to preparing for college—saving early, FAFSA, financial aid, scholarships, budgeting, and long-term planning.",
+    "og": {
+      "description": "Learn how to prepare for college financially: saving early, FAFSA, financial aid, scholarships, and understanding real college costs.",
+      "image": "/assets/img/social/preparing_college.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Evidence-based college preparation guidance—saving early, applying for aid, scholarships, and planning college expenses.",
+      "image": "/assets/img/social/preparing_college.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Educational guide to preparing for college through savings, FAFSA, scholarships, aid strategies, and budgeting.",
+      "keywords": [
+        "college planning",
+        "FAFSA",
+        "529 plans",
+        "financial aid",
+        "scholarships",
+        "college savings",
+        "education planning",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "family_fin_planning": {
+    "id": "family_fin_planning",
+    "metaDescription": "Guidance for building a confident financial future—budgeting, saving, protection strategies, education planning, and long-term family readiness.",
+    "og": {
+      "description": "Evidence-backed strategies for family budgeting, saving, protection planning, and building long-term stability.",
+      "image": "/assets/img/social/family_financial_planning.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Learn strategies for family budgeting, savings, protection, and building generational wealth.",
+      "image": "/assets/img/social/family_financial_planning.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Educational guidance for families on budgeting, saving, protection planning, and generational wealth strategies.",
+      "keywords": [
+        "family financial planning",
+        "budgeting for families",
+        "saving strategies",
+        "generational wealth",
+        "family protection planning",
+        "financial literacy",
+        "V & V Advisors"
+      ]
+    }
+  }
+}

@@ -161,6 +161,22 @@ a.is-hoverable:hover {
     color: var(--teal-700) !important; /* same text color during hover */
 }
 
+a.link{
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    color: #000;
+    font-weight: 600;
+    background: var(--teal-400);
+}
+
+a.link:hover {
+    color: var(--white);
+    background: linear-gradient(135deg, var(--teal-400));
+    border-radius: var(--radius);
+
+}
+
+
 button {
     font: inherit;
     color: inherit;
@@ -176,6 +192,11 @@ h1, h2, h3, h4, p, a, table, th, td, ul, li, ol {
     letter-spacing: 0.3px;
     margin: 0 0 0.4em 0;
 }
+
+p {
+    padding-bottom: 1rem;
+}
+
 h1 { font-size: var(--fs-h1); line-height: var(--lh-tight); }
 h2 { font-size: var(--fs-h2); line-height: 1.25; }
 h3 {
@@ -319,7 +340,7 @@ h2::after {
     text-align: center;
 
     /* Optimized sizing for sidebar */
-    padding: 5px 6px;                 /* slightly tighter */
+
     font-size: 0.76rem;               /* better visual harmony */
     font-weight: 600;
     line-height: 1.18;                /* compact but readable */
@@ -376,7 +397,7 @@ h2::after {
 
     border: 1px solid rgba(45, 212, 191, 0.32);
     border-radius: 10px;
-    padding: 10px 12px;
+    padding: 8px 12px;
 
     z-index: 9999;
     max-height: none;
@@ -399,16 +420,12 @@ h2::after {
 /* ------------------------------------------------------------
    HEADER — Page Title Tag
 ------------------------------------------------------------ */
-.page-toc__header .page-toc__section {
-    margin-bottom: 10px;
-}
 
 
 .page-toc__title.btn-glow.md {
     width: 100%;
     text-align: center;
     justify-content: center;
-    padding: 8px;
 }
 
 /* ===================================================================
@@ -431,8 +448,7 @@ h2::after {
     font-weight: bold;
     text-align: center;
     border-radius: 6px;
-    padding: 6px 8px;
-    margin-bottom: 8px !important;
+    margin-bottom: 8px;
 
     backdrop-filter: blur(6px) saturate(130%);
     transition: background 0.28s ease, box-shadow 0.28s ease, color 0.28s ease, border-color 0.28s ease;
@@ -440,7 +456,6 @@ h2::after {
 
 
 .btn-toc-glow--headers {
-    padding: 6px 8px;                /* Sidebar friendly */
     font-size: 14px !important;
     line-height: 1.2;
     border-radius: 6px;
@@ -478,10 +493,6 @@ h2::after {
 }
 
 
-
-
-
-
 /* SOFT-ACTIVE (after TOC activates but before first section is highlighted)
    - Re-Glow moment
    - Strong teal emphasis
@@ -502,8 +513,6 @@ h2::after {
 .page-toc__divider {
     height: 1px;
     background: rgba(255, 255, 255, 0.15);
-    margin-bottom: 8px;
-    border-radius: 2px;
 }
 
 /* ------------------------------------------------------------
@@ -524,7 +533,7 @@ h2::after {
     font-size: 0.78rem;
     text-decoration: none;
     border-radius: 5px;
-    line-height: 1.28;
+    line-height: 1;
     transition: 0.25s ease;
 }
 

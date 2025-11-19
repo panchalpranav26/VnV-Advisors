@@ -1,5 +1,6 @@
 {
   "home": {
+    "id": "home",
     "title": "Home",
     "url": "/index.html"
   },
@@ -10,72 +11,170 @@
       "title": "Financial Education",
       "dir": "/pages/",
       "url": "/financial_education/index.html",
+
       "subcategories": [
         {
-          "id": "foundations",
+          "id": "foundation_money",
           "icon": "📘",
           "title": "Foundations of Money",
           "dir": "/pages/",
           "url": "/financial_education/foundation_money/index.html",
+
           "pages": [
-            { "title": "Budgeting Basics", "url": "/financial_education/foundation_money/budget_basics.html" },
-            { "title": "Emergency Funds", "url": "/financial_education/foundation_money/emer_funds.html" },
-            { "title": "Managing Debt", "url": "/financial_education/foundation_money/manage_debit.html" }
+            {
+              "id": "budget_basics",
+              "title": "Budgeting Basics",
+              "url": "/financial_education/foundation_money/budget_basics.html"
+            },
+            {
+              "id": "emer_funds",
+              "title": "Emergency Funds",
+              "url": "/financial_education/foundation_money/emer_funds.html"
+            },
+            {
+              "id": "manage_debit",
+              "title": "Managing Debt",
+              "url": "/financial_education/foundation_money/manage_debit.html"
+            }
           ]
         },
+
         {
-          "id": "protecting",
+          "id": "protecting_future",
           "icon": "🛡",
           "title": "Protecting Your Future",
           "dir": "/pages/",
           "url": "/financial_education/protecting_future/index.html",
+
           "pages": [
-            { "title": "Insurance 101", "url": "/financial_education/protecting_future/insurance_101.html" },
-            { "title": "Understanding Risk & Family Protection", "url": "/financial_education/protecting_future/family_risk_protection.html" },
-            { "title": "How Life Insurance Fits Into a Financial Plan", "url": "/financial_education/protecting_future/how_life_ins_fits.html" },
-            { "title": "Riders & Living Benefits Explained", "url": "/financial_education/protecting_future/riders_living_benefits.html" },
-            { "title": "How to Choose the Right Protection Strategy", "url": "/financial_education/protecting_future/how_to_choose_protection.html" }
+            {
+              "id": "insurance_101",
+              "title": "Insurance 101",
+              "url": "/financial_education/protecting_future/insurance_101.html"
+            },
+            {
+              "id": "family_risk_protection",
+              "title": "Understanding Risk & Family Protection",
+              "url": "/financial_education/protecting_future/family_risk_protection.html"
+            },
+            {
+              "id": "how_life_ins_fits",
+              "title": "How Life Insurance Fits Into a Financial Plan",
+              "url": "/financial_education/protecting_future/how_life_ins_fits.html"
+            },
+            {
+              "id": "riders_living_benefits",
+              "title": "Riders & Living Benefits Explained",
+              "url": "/financial_education/protecting_future/riders_living_benefits.html"
+            },
+            {
+              "id": "how_to_choose_protection",
+              "title": "How to Choose the Right Protection Strategy",
+              "url": "/financial_education/protecting_future/how_to_choose_protection.html"
+            }
           ]
         },
+
         {
-          "id": "wealth",
+          "id": "building_wealth",
           "icon": "📈",
           "title": "Building Long-Term Wealth",
           "dir": "/pages/",
           "url": "/financial_education/building_wealth/index.html",
+
           "pages": [
-            { "title": "Compounding & Time", "url": "/financial_education/building_wealth/compounding_time.html" },
-            { "title": "Retirement Basics", "url": "/financial_education/building_wealth/retirement_basics.html" },
-            { "title": "Risk & Return", "url": "/financial_education/building_wealth/risk_return.html" },
-            { "title": "Annuities 101", "url": "/financial_education/building_wealth/annuities_101.html" },
-            { "title": "Fixed vs. Indexed vs. Variable", "url": "/financial_education/building_wealth/fixed_indexed_variable.html" },
-            { "title": "Lifetime Income & Riders", "url": "/financial_education/building_wealth/income_riders.html" }
+            {
+              "id": "compounding_time",
+              "title": "Compounding & Time",
+              "url": "/financial_education/building_wealth/compounding_time.html"
+            },
+            {
+              "id": "retirement_basics",
+              "title": "Retirement Basics",
+              "url": "/financial_education/building_wealth/retirement_basics.html"
+            },
+            {
+              "id": "risk_return",
+              "title": "Risk & Return",
+              "url": "/financial_education/building_wealth/risk_return.html"
+            },
+            {
+              "id": "annuities_101",
+              "title": "Annuities 101",
+              "url": "/financial_education/building_wealth/annuities_101.html"
+            },
+            {
+              "id": "fixed_indexed_variable",
+              "title": "Fixed vs. Indexed vs. Variable",
+              "url": "/financial_education/building_wealth/fixed_indexed_variable.html"
+            },
+            {
+              "id": "lifetime_income_riders",
+              "title": "Lifetime Income & Riders",
+              "url": "/financial_education/building_wealth/income_riders.html"
+            }
           ]
         },
+
         {
-          "id": "wellness",
+          "id": "family_fin_wellness",
           "icon": "👨‍👩‍👧",
           "title": "Family & Financial Wellness",
           "dir": "/pages/",
           "url": "/financial_education/family_fin_wellness/index.html",
+
           "pages": [
-            { "title": "Kids & Teens", "url": "/financial_education/family_fin_wellness/kids_teens.html" },
-            { "title": "Preparing for College", "url": "/financial_education/family_fin_wellness/college_prepare.html" },
-            { "title": "Family Financial Planning", "url": "/financial_education/family_fin_wellness/family_fin_planning.html" }
+            {
+              "id": "kids_teens",
+              "title": "Kids & Teens",
+              "url": "/financial_education/family_fin_wellness/kids_teens.html"
+            },
+            {
+              "id": "college_prepare",
+              "title": "Preparing for College",
+              "url": "/financial_education/family_fin_wellness/college_prepare.html"
+            },
+            {
+              "id": "family_fin_planning",
+              "title": "Family Financial Planning",
+              "url": "/financial_education/family_fin_wellness/family_fin_planning.html"
+            }
           ]
         },
+
         {
-          "id": "estate",
+          "id": "estate_planning",
           "icon": "📜",
           "title": "Estate Planning",
           "dir": "/pages/",
           "url": "/financial_education/estate_planning/index.html",
+
           "pages": [
-            { "title": "Wills vs. Trusts", "url": "/financial_education/estate_planning/estate_wills_trusts.html" },
-            { "title": "Beneficiary Designations", "url": "/financial_education/estate_planning/estate_beneficiaries.html" },
-            { "title": "Powers of Attorney", "url": "/financial_education/estate_planning/estate_poa.html" },
-            { "title": "Advance Directives", "url": "/financial_education/estate_planning/estate_directives.html" },
-            { "title": "Passing Wealth Efficiently", "url": "/financial_education/estate_planning/estate_legacy.html" }
+            {
+              "id": "estate_wills_trusts",
+              "title": "Wills vs. Trusts",
+              "url": "/financial_education/estate_planning/estate_wills_trusts.html"
+            },
+            {
+              "id": "estate_beneficiaries",
+              "title": "Beneficiary Designations",
+              "url": "/financial_education/estate_planning/estate_beneficiaries.html"
+            },
+            {
+              "id": "estate_poa",
+              "title": "Powers of Attorney",
+              "url": "/financial_education/estate_planning/estate_poa.html"
+            },
+            {
+              "id": "estate_directives",
+              "title": "Advance Directives",
+              "url": "/financial_education/estate_planning/estate_directives.html"
+            },
+            {
+              "id": "estate_legacy",
+              "title": "Passing Wealth Efficiently",
+              "url": "/financial_education/estate_planning/estate_legacy.html"
+            }
           ]
         }
       ]
@@ -86,77 +185,171 @@
       "title": "Protection Products",
       "dir": "/pages/",
       "url": "/protection_products/index.html",
+
       "subcategories": [
         {
-          "id": "pp-life",
+          "id": "pp_life_insurance",
           "icon": "🛡",
           "title": "Life Insurance Products",
           "dir": "/pages/",
-          "url": "/protection_products/life/index.html",
+          "url": "/protection_products/life_insurance/index.html",
+
           "pages": [
-            { "title": "Core Life Insurance", "url": "/protection_products/core_life_insurance.html" },
-            { "title": "Advanced Life Insurance", "url": "/protection_products/advanced_life_insurance.html" },
-            { "title": "Simplified / Guaranteed", "url": "/protection_products/simplified_guaranteed.html" }
+            {
+              "id": "core_life_insurance",
+              "title": "Core Life Insurance",
+              "url": "/protection_products/life_insurance/core_life_insurance.html"
+            },
+            {
+              "id": "advanced_life_insurance",
+              "title": "Advanced Life Insurance",
+              "url": "/protection_products/life_insurance/advanced_life_insurance.html"
+            },
+            {
+              "id": "simplified_guaranteed",
+              "title": "Simplified / Guaranteed",
+              "url": "/protection_products/life_insurance/simplified_guaranteed.html"
+            }
           ]
         },
+
         {
-          "id": "pp-annuity",
+          "id": "pp_annuity",
           "icon": "📈",
           "title": "Annuity Products",
           "dir": "/pages/",
           "url": "/protection_products/annuity/index.html",
+
           "pages": [
-            { "title": "Traditional Annuities", "url": "/protection_products/traditional_annuities.html" },
-            { "title": "Growth-Oriented Annuities", "url": "/protection_products/growth_oriented_annuities.html" },
-            { "title": "Specialized Annuities", "url": "/protection_products/specialized_annuities.html" }
+            {
+              "id": "traditional_annuities",
+              "title": "Traditional Annuities",
+              "url": "/protection_products/annuity/traditional_annuities.html"
+            },
+            {
+              "id": "growth_oriented_annuities",
+              "title": "Growth-Oriented Annuities",
+              "url": "/protection_products/annuity/growth_oriented_annuities.html"
+            },
+            {
+              "id": "specialized_annuities",
+              "title": "Specialized Annuities",
+              "url": "/protection_products/annuity/specialized_annuities.html"
+            }
           ]
         },
+
         {
-          "id": "pp-estate",
+          "id": "pp_estate_legacy",
           "icon": "📜",
           "title": "Estate & Legacy Protection",
           "dir": "/pages/",
-          "url": "/protection_products/estate/index.html",
+          "url": "/protection_products/estate_legacy/index.html",
+
           "pages": [
-            { "title": "Legal Protection Essentials", "url": "/protection_products/legal_protection_essentials.html" },
-            { "title": "Family & End-of-Life Planning", "url": "/protection_products/family_end_of_life.html" }
+            {
+              "id": "legal_protection_essentials",
+              "title": "Legal Protection Essentials",
+              "url": "/protection_products/estate_legacy/legal_protection_essentials.html"
+            },
+            {
+              "id": "family_end_of_life",
+              "title": "Family & End-of-Life Planning",
+              "url": "/protection_products/estate_legacy/family_end_of_life.html"
+            }
           ]
         }
       ]
     },
 
     {
-      "id": "services",
+      "id": "our_services",
       "title": "Our Services",
       "dir": "/pages/",
       "url": "/our_services/index.html",
+
       "pages": [
-        { "title": "Education Session", "url": "/our_services/education_session.html" },
-        { "title": "Personalized Protection Guidance", "url": "/our_services/life_ins_guidance.html" },
-        { "title": "Family Protection Planning", "url": "/our_services/family_protection.html" },
-        { "title": "Workshops & Webinars", "url": "/our_services/workshop_webinar.html" }
+        {
+          "id": "education_session",
+          "title": "Education Session",
+          "url": "/our_services/education_session.html"
+        },
+        {
+          "id": "life_ins_guidance",
+          "title": "Personalized Protection Guidance",
+          "url": "/our_services/life_ins_guidance.html"
+        },
+        {
+          "id": "family_protection",
+          "title": "Family Protection Planning",
+          "url": "/our_services/family_protection.html"
+        },
+        {
+          "id": "workshop_webinar",
+          "title": "Workshops & Webinars",
+          "url": "/our_services/workshop_webinar.html"
+        }
       ]
     },
 
     {
-      "id": "about",
+      "id": "opportunity",
+      "title": "HGI Opportunity",
+      "dir": "/pages/",
+      "url": "/opportunity/index.html",
+
+      "pages": [
+        {
+          "id": "business_model",
+          "title": "Business Model",
+          "url": "/opportunity/business_model.html"
+        },
+        {
+          "id": "become_agent",
+          "title": "Become an Agent",
+          "url": "/opportunity/become_agent.html"
+        },
+        {
+          "id": "difference",
+          "title": "Difference",
+          "url": "/opportunity/difference.html"
+        },
+        {
+          "id": "build_income",
+          "title": "Multiple Ways to Build Income",
+          "url": "/opportunity/build_income.html"
+        }
+      ]
+    },
+
+    {
+      "id": "about_us",
       "title": "About Us",
       "dir": "/pages/",
       "url": "/about_us/index.html",
-      "pages": [
-        { "title": "Mission & Story", "url": "/about_us/mission_story.html" },
-        { "title": "Credentials & License", "url": "/about_us/credentials_licenses.html" },
-        { "title": "Values & Code of Ethics", "url": "/about_us/values_ethics.html" },
-        { "title": "Our Team", "url": "/about_us/team.html" }
-      ]
-    },
 
-    {
-      "id": "stories",
-      "title": "Success Stories",
-      "dir": "/pages/",
-      "url": "/stories/index.html",
-      "isFolderOnly": true
+      "pages": [
+        {
+          "id": "mission_story",
+          "title": "Mission & Story",
+          "url": "/about_us/mission_story.html"
+        },
+        {
+          "id": "credentials_licenses",
+          "title": "Credentials & License",
+          "url": "/about_us/credentials_licenses.html"
+        },
+        {
+          "id": "values_ethics",
+          "title": "Values & Code of Ethics",
+          "url": "/about_us/values_ethics.html"
+        },
+        {
+          "id": "team",
+          "title": "Our Team",
+          "url": "/about_us/team.html"
+        }
+      ]
     },
 
     {
@@ -164,6 +357,13 @@
       "title": "Contact",
       "dir": "/pages/",
       "url": "/contact.html",
+      "isFolderOnly": true
+    },
+    {
+      "id": "consultation",
+      "title": "Consultation",
+      "dir": "/pages/",
+      "url": "/consultation.html",
       "isFolderOnly": true
     }
   ]

@@ -1,0 +1,148 @@
+{
+  "protecting_future": {
+    "id": "protecting_future",
+    "metaDescription": "Understand the fundamentals of protecting your financial future — insurance basics, family risk planning, and how protection fits into a long-term financial strategy.",
+    "og": {
+      "description": "Learn how insurance, family risk planning, and protection strategies build a secure financial future.",
+      "image": "/assets/img/social/protecting_future.jpg",
+      "type": "website"
+    },
+    "twitter": {
+      "description": "Learn the fundamentals of protection planning, insurance basics, and family risk strategies.",
+      "image": "/assets/img/social/protecting_future.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Learn the fundamentals of protecting your financial future — Insurance 101, understanding risk, life insurance strategies, riders, and long-term protection planning.",
+      "keywords": [
+        "life insurance basics",
+        "family protection",
+        "financial risk",
+        "insurance riders",
+        "financial literacy",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "insurance_101": {
+    "id": "insurance_101",
+    "metaDescription": "Learn the essentials of insurance — how it protects your family, builds financial resilience, and supports long-term wealth.",
+    "og": {
+      "description": "Insurance protects your financial future. Learn the basics of coverage, types, and choosing the right policy.",
+      "image": "/assets/img/social/insurance_basics.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Understand how insurance safeguards your family and finances.",
+      "image": "/assets/img/social/insurance_basics.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Learn the essentials of insurance — protection basics, coverage types, and how it strengthens financial stability.",
+      "keywords": [
+        "insurance basics",
+        "Insurance 101",
+        "life insurance",
+        "risk protection",
+        "financial literacy",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "family_risk_protection": {
+    "id": "family_risk_protection",
+    "metaDescription": "Learn how families can identify financial risks, protect income, reduce vulnerability, and build a stable long-term foundation.",
+    "og": {
+      "description": "Protect your future by understanding the financial risks families face — and the tools that secure long-term stability.",
+      "image": "/assets/img/social/risk_protection.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "How families can protect income, reduce vulnerability, and build long-term security.",
+      "image": "/assets/img/social/risk_protection.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Identify financial risks, protect income, reduce vulnerability, and build a stable foundation for long-term goals.",
+      "keywords": [
+        "financial risk",
+        "family protection",
+        "life insurance",
+        "risk management",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "how_life_ins_fits": {
+    "id": "how_life_ins_fits",
+    "metaDescription": "Learn how life insurance protects income, supports long-term goals, and strengthens generational wealth strategies.",
+    "og": {
+      "description": "Understand why life insurance is a foundational tool for income protection, stability, and intergenerational wealth.",
+      "image": "/assets/img/social/life_insurance_fit.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Learn how life insurance strengthens financial planning and family protection.",
+      "image": "/assets/img/social/life_insurance_fit.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Understand the strategic role life insurance plays in protecting income, supporting goals, and building generational stability.",
+      "keywords": [
+        "life insurance",
+        "financial planning",
+        "income protection",
+        "family protection",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "riders_living_benefits": {
+    "id": "riders_living_benefits",
+    "metaDescription": "Learn how life insurance riders and living benefits enhance financial protection and long-term planning.",
+    "og": {
+      "description": "Understand how riders and living benefits strengthen your family's protection.",
+      "image": "/assets/img/social/riders_living.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Learn how insurance riders and living benefits enhance your family's long-term protection.",
+      "image": "/assets/img/social/riders_living.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Learn how insurance riders and living benefits work and how they enhance long-term protection.",
+      "keywords": [
+        "living benefits",
+        "insurance riders",
+        "accelerated benefits",
+        "life insurance",
+        "family protection",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "how_to_choose_protection": {
+    "id": "how_to_choose_protection",
+    "metaDescription": "Learn how to choose the right protection strategy by assessing risks, coverage priorities, and long-term goals.",
+    "og": {
+      "description": "Understand how to build the right protection strategy for long-term financial security.",
+      "image": "/assets/img/social/protection_strategy.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Learn how to build a clear, effective protection strategy aligned with your family goals.",
+      "image": "/assets/img/social/protection_strategy.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Learn how to choose the right protection strategy, assess risks, align coverage with goals, and protect your family long-term.",
+      "keywords": [
+        "protection strategy",
+        "life insurance planning",
+        "family protection",
+        "insurance basics",
+        "V & V Advisors"
+      ]
+    }
+  }
+}

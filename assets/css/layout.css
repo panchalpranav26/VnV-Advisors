@@ -13,7 +13,7 @@
     padding-inline: var(--pad-x);
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .wrap {
@@ -79,13 +79,13 @@ footer {
 
 .methods-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.25rem;
 }
 
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.25rem;
     margin: 2rem 0 3rem;
 }
@@ -156,4 +156,19 @@ footer {
 .cite-ref a:hover {
     color: var(--white);
     text-decoration: underline;
+}
+
+.btn-toc-consult {
+    color: var(--white);
+    border: 2px solid var(--teal-400);
+    border-radius: var(--radius);
+    text-align: center;
+    font-weight: bold;
+    background: var(--gray-600);
+}
+
+.btn-toc-consult:hover {
+    background: var(--teal-400);
+    color: var(--white);
+    border-radius: var(--radius);
 }

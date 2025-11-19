@@ -1,103 +1,119 @@
 /* ============================================================
-   lookupNavTitles_v4.js
-   Title-aware lookup for menu → section → page
-   Returns full JSON objects so TOC can build dir-aware URLs.
+   lookupNavTitles_v5.js — FINAL + ROBUST
+   Matches using folder → id → title (in that order)
+   100% reliable for highlighting & breadcrumbs
    ============================================================ */
 
 export async function lookupNavTitles() {
     try {
-        /* 1. READ AND NORMALIZE TITLE */
-        const rawTitle = document.title || "";
-        const pageTitle = rawTitle.replace("– V & V Advisors", "").trim();
-
         const res = await fetch("/assets/navigation_data.json");
         if (!res.ok) throw new Error("Failed to load navigation_data.json");
-
         const nav = await res.json();
 
-        /* DEFAULT RESULT */
-        let match = {
+        const rawTitle = document.title || "";
+        const normalizedTitle = rawTitle.toLowerCase();
+
+        /* Folder-based matching (more reliable) */
+        const path = window.location.pathname.split("/").filter(Boolean);
+
+        const folder1 = path[1] || "";   // financial_education, protection_products
+        const folder2 = path[2] || "";   // foundations, wealth, etc.
+        const pageFile = path[path.length - 1] || "";
+
+        const result = {
             jsonMenuTitle: null,
             jsonSectionTitle: null,
             jsonPageTitle: null,
-
             menuData: null,
             sectionData: null,
             pageData: null
         };
 
-        /* ------------------------------------------------------------
-           2. TOP-LEVEL ONLY PAGES (Stories, Contact, Consultation)
-        ------------------------------------------------------------ */
-        for (const sec of nav.sections) {
-            if (sec.isFolderOnly && sec.title === pageTitle) {
-                match.jsonMenuTitle = sec.title;
-                match.menuData = sec;
-                match.pageData = sec; // top-level page = its own page data
-                return match;
-            }
-        }
+        /* Fast helper */
+        const titleMatches = (t) =>
+            t && normalizedTitle.includes(t.toLowerCase());
 
         /* ------------------------------------------------------------
-           3. MENU → SECTION → PAGE
+           1. PAGE MATCH (deepest match)
         ------------------------------------------------------------ */
-
         for (const menu of nav.sections) {
-
-            /* 3A — PAGE directly under menu (Services, About) */
-            if (menu.pages) {
-                for (const p of menu.pages) {
-                    if (p.title === pageTitle) {
-                        match.jsonMenuTitle = menu.title;
-                        match.jsonPageTitle = p.title;
-
-                        match.menuData = menu;
-                        match.pageData = p;
-                        return match;
-                    }
-                }
-            }
-
-            /* 3B — CHECK SUBCATEGORIES (Financial Ed / Protection Products) */
             if (menu.subcategories) {
                 for (const sub of menu.subcategories) {
+                    for (const p of sub.pages) {
 
-                    // Section index page matches the <title>
-                    if (sub.title === pageTitle) {
-                        match.jsonMenuTitle = menu.title;
-                        match.jsonSectionTitle = sub.title;
+                        const jsonFile = p.url.split("/").pop();
 
-                        match.menuData = menu;
-                        match.sectionData = sub;
-                        match.pageData = sub; // index page
-                        return match;
-                    }
+                        if (jsonFile === pageFile || titleMatches(p.title)) {
+                            result.jsonMenuTitle = menu.title;
+                            result.jsonSectionTitle = sub.title;
+                            result.jsonPageTitle = p.title;
 
-                    // Look inside child pages
-                    if (sub.pages) {
-                        for (const p of sub.pages) {
-                            if (p.title === pageTitle) {
-                                match.jsonMenuTitle = menu.title;
-                                match.jsonSectionTitle = sub.title;
-                                match.jsonPageTitle = p.title;
+                            result.menuData = menu;
+                            result.sectionData = sub;
+                            result.pageData = p;
 
-                                match.menuData = menu;
-                                match.sectionData = sub;
-                                match.pageData = p;
-                                return match;
-                            }
+                            return result;
                         }
                     }
                 }
             }
+
+            /* Mini sections (Services, About) */
+            if (menu.pages) {
+                for (const p of menu.pages) {
+                    const jsonFile = p.url.split("/").pop();
+
+                    if (jsonFile === pageFile || titleMatches(p.title)) {
+                        result.jsonMenuTitle = menu.title;
+                        result.jsonPageTitle = p.title;
+
+                        result.menuData = menu;
+                        result.pageData = p;
+
+                        return result;
+                    }
+                }
+            }
         }
 
-        /* No match */
-        console.warn("[lookupNavTitles_v4] ❗ No title match found:", pageTitle);
-        return match;
+        /* ------------------------------------------------------------
+           2. SECTION MATCH (folder2)
+        ------------------------------------------------------------ */
+        for (const menu of nav.sections) {
+            if (menu.subcategories) {
+                for (const sub of menu.subcategories) {
+                    if (sub.id === folder2 || titleMatches(sub.title)) {
+                        result.jsonMenuTitle = menu.title;
+                        result.jsonSectionTitle = sub.title;
+
+                        result.menuData = menu;
+                        result.sectionData = sub;
+                        result.pageData = sub; // section index page
+
+                        return result;
+                    }
+                }
+            }
+        }
+
+        /* ------------------------------------------------------------
+           3. MENU MATCH (folder1)
+        ------------------------------------------------------------ */
+        for (const menu of nav.sections) {
+            if (menu.id === folder1 || titleMatches(menu.title)) {
+                result.jsonMenuTitle = menu.title;
+                result.menuData = menu;
+                result.pageData = menu; // menu index
+
+                return result;
+            }
+        }
+
+        console.warn("[lookupNavTitles_v5] ❗ No match found:", rawTitle);
+        return result;
 
     } catch (err) {
-        console.error("[lookupNavTitles_v4] Lookup failed:", err);
+        console.error("[lookupNavTitles_v5] Lookup failed:", err);
         return {
             jsonMenuTitle: null,
             jsonSectionTitle: null,

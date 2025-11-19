@@ -1,0 +1,122 @@
+{
+  "about_us": {
+    "id": "about_us",
+    "metaDescription": "Discover the mission, values, team, and educational foundation behind V & V Advisors. We empower families with financial literacy, protection planning, and long-term confidence.",
+    "og": {
+      "description": "Learn about V & V Advisors and our mission to empower families through financial literacy, protection planning, and confidence-building education.",
+      "image": "/assets/img/social/about_us.jpg",
+      "type": "website"
+    },
+    "twitter": {
+      "description": "Discover the story and purpose behind V & V Advisors' family-first financial education mission.",
+      "image": "/assets/img/social/about_us.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Learn who we are and how V & V Advisors supports families with clarity-driven financial literacy, protection guidance, and long-term stability.",
+      "keywords": [
+        "About V & V Advisors",
+        "financial literacy",
+        "family financial planning",
+        "insurance education",
+        "financial clarity",
+        "protection planning",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "mission_story": {
+    "id": "mission_story",
+    "metaDescription": "Discover the mission, story, and purpose behind V & V Advisors — empowering families with clarity, protection, and long-term financial confidence.",
+    "og": {
+      "description": "Learn how V & V Advisors helps families gain clarity, protection, and confidence through trusted financial education.",
+      "image": "/assets/img/social/mission_story.jpg"
+    },
+    "twitter": {
+      "description": "The V & V Advisors mission and story—empowering families through trusted, education-first guidance.",
+      "image": "/assets/img/social/mission_story.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Our story and mission: helping families gain clarity, protection, and long-term financial confidence through financial literacy.",
+      "keywords": [
+        "V & V Advisors mission",
+        "financial literacy",
+        "family finance",
+        "life insurance education",
+        "financial empowerment",
+        "our story"
+      ]
+    }
+  },
+
+  "credentials_licenses": {
+    "id": "credentials_licenses",
+    "metaDescription": "Explore V & V Advisors’ verified credentials and licenses. We uphold transparency, compliance, and trust for families seeking financial education and protection.",
+    "og": {
+      "description": "Learn about our verified credentials and professional licenses that ensure trusted financial education and protection.",
+      "image": "/assets/img/social/credentials_licenses.jpg"
+    },
+    "twitter": {
+      "description": "See our verified credentials and licenses ensuring reliable, compliant financial education.",
+      "image": "/assets/img/social/credentials_licenses.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Verified credentials and licenses ensuring compliance, transparency, and trust in financial literacy and protection services.",
+      "keywords": [
+        "financial literacy",
+        "insurance licensing",
+        "credential verification",
+        "California Department of Insurance",
+        "NAIC licensing",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "values_ethics": {
+    "id": "values_ethics",
+    "metaDescription": "Explore the core values and ethical principles that guide V & V Advisors in providing education-first, family-centered financial guidance.",
+    "og": {
+      "description": "The ethical foundation and family-first values that guide V & V Advisors' approach to financial education.",
+      "image": "/assets/img/social/values_ethics.jpg"
+    },
+    "twitter": {
+      "description": "Learn the ethical and educational principles that guide V & V Advisors.",
+      "image": "/assets/img/social/values_ethics.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "The guiding values, ethical standards, and regulatory alignment behind the V & V Advisors mission.",
+      "keywords": [
+        "ethical finance",
+        "financial education values",
+        "fiduciary ethics",
+        "transparency",
+        "family-first finance",
+        "V & V Advisors values"
+      ]
+    }
+  },
+
+  "team": {
+    "id": "team",
+    "metaDescription": "Meet the V & V Advisors team — dedicated financial educators helping families build clarity, protection, and long-term financial health.",
+    "og": {
+      "description": "Meet the financial education team behind V & V Advisors.",
+      "image": "/assets/img/social/team.jpg"
+    },
+    "twitter": {
+      "description": "Discover the team empowering families through financial literacy and protection planning.",
+      "image": "/assets/img/social/team.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Meet the educators dedicated to empowering families with financial literacy, protection knowledge, and long-term confidence.",
+      "keywords": [
+        "financial literacy experts",
+        "V & V Advisors team",
+        "financial educators",
+        "family financial planning",
+        "wealth-building advisors"
+      ]
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "our_services": {
+    "id": "our_services",
+    "metaDescription": "Explore V & V Advisors' guided financial education, personalized protection planning, and long-term family wealth services.",
+    "og": {
+      "description": "Discover financial education, personalized protection guidance, and wealth-building support for your family.",
+      "image": "/assets/img/social/preview_services.jpg",
+      "type": "website"
+    },
+    "twitter": {
+      "description": "Learn how V & V Advisors helps families build financial confidence and long-term security.",
+      "image": "/assets/img/social/preview_services.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Overview of V & V Advisors services including education sessions, personalized protection guidance, family protection planning, and workshops.",
+      "keywords": [
+        "financial services",
+        "financial education",
+        "protection planning",
+        "family financial planning",
+        "wealth building",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "education_session": {
+    "id": "education_session",
+    "metaDescription": "Join a V & V Advisors Education Session to build confidence in budgeting, protection planning, and wealth-building.",
+    "og": {
+      "description": "Financial education for real families—covering budgeting, protection, compounding, and healthy money habits.",
+      "image": "/assets/img/social/education_session.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Build lifelong financial confidence through guided sessions tailored to your family’s goals.",
+      "image": "/assets/img/social/education_session.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Evidence-based financial education covering budgeting, protection, wealth-building, and money habits.",
+      "keywords": [
+        "financial education",
+        "budgeting",
+        "protection planning",
+        "wealth building",
+        "family finance",
+        "coaching session",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "life_ins_guidance": {
+    "id": "life_ins_guidance",
+    "metaDescription": "Personalized guidance to help you choose the right protection strategy—life insurance, living benefits, disability coverage, and asset protection.",
+    "og": {
+      "description": "Learn how to build a powerful, personalized protection strategy aligned with your family's needs.",
+      "image": "/assets/img/social/protection_guidance.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "A customized protection strategy begins with understanding risk, goals, and financial responsibilities.",
+      "image": "/assets/img/social/protection_guidance.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Evidence-backed protection planning: life insurance, riders, disability coverage, income protection, and legacy planning.",
+      "keywords": [
+        "protection planning",
+        "life insurance guidance",
+        "living benefits",
+        "disability insurance",
+        "financial protection",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "family_protection": {
+    "id": "family_protection",
+    "metaDescription": "A life-stage-based Family Protection Path to help families protect income, build resilience, and plan for generational security.",
+    "og": {
+      "description": "Evidence-backed protection strategies for every stage of life—income protection, resilience planning, and generational wealth.",
+      "image": "/assets/img/social/family_protection.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Learn how families protect income, build stability, and plan for generational wealth through a life-stage strategy.",
+      "image": "/assets/img/social/family_protection.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Family protection strategies across each life stage—income protection, insurance planning, and long-term resilience.",
+      "keywords": [
+        "family protection planning",
+        "life insurance planning",
+        "income protection",
+        "financial security",
+        "estate planning",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "workshop_webinar": {
+    "id": "workshop_webinar",
+    "metaDescription": "Join V & V Advisors workshops and webinars to build practical financial literacy—budgeting, debt, insurance, protection planning, and more.",
+    "og": {
+      "description": "Interactive workshops and webinars to strengthen financial literacy and protection planning.",
+      "image": "/assets/img/social/workshops_webinars.jpg",
+      "type": "website"
+    },
+    "twitter": {
+      "description": "Expert-led financial literacy workshops and webinars to build confidence and long-term financial wellness.",
+      "image": "/assets/img/social/workshops_webinars.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Interactive financial education programs designed for families and communities.",
+      "keywords": [
+        "financial literacy workshops",
+        "financial education webinars",
+        "insurance education",
+        "budgeting class",
+        "community financial workshop",
+        "V & V Advisors"
+      ]
+    }
+  }
+}

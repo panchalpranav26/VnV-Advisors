@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Basic Page Setup -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Placeholder title (replaced by auto_seo_loader.js) -->
+    <title>Loading…</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/pages/opportunity.css" />
+
+    <!-- AUTO SEO LOADER -->
+    <script type="module" src="/assets/js/seo_json_build/auto_seo_loader.js"></script>
+</head>
+
+
+<body>
+
+<div id="site-header"></div>
+
+<main class="hgi-wrap">
+
+    <!-- ========================================================= -->
+    <!-- HERO -->
+    <!-- ========================================================= -->
+    <header class="hgi-hero reveal">
+        <div class="hgi-hero-inner">
+            <h1 class="hgi-hero-title">Your Opportunity Starts Here</h1>
+            <p class="hgi-hero-subtitle">A Proven System for Financial Empowerment & Leadership Growth</p>
+
+            <p class="hgi-hero-body">
+                HGI is one of the fastest-growing financial organizations in North America—empowering everyday people
+                to build businesses, become licensed in financial services, and make a lasting impact on families.
+                Whether you’re exploring a part-time income or building a long-term agency, HGI offers a path built
+                on mentorship, education, and equal opportunity.
+            </p>
+        </div>
+    </header>
+
+
+
+    <!-- ========================================================= -->
+    <!-- VIDEO SECTION WITH THUMBNAIL + MODAL -->
+    <!-- ========================================================= -->
+    <section class="hgi-video-section">
+        <div class="inner">
+
+            <div class="hgi-video-wrapper">
+                <a href="#" id="openVideoModal"  class="hgi-btn sm">PLay Video</a>
+            </div>
+
+            <!-- Modal -->
+            <div class="hgi-video-modal" id="videoModal">
+                <div class="hgi-video-modal-content">
+                    <span class="hgi-video-close" id="closeVideoModal">Close</span>
+                    <iframe id="hgiIframe"
+                            data-src="https://guest.hgicrusade.com/video/4136">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- ========================================================= -->
+    <!-- SUMMARY GRID -->
+    <!-- ========================================================= -->
+    <section class="hgi-flashy-section">
+        <div class="inner">
+            <h2 class="hgi-heading center">Explore the HGI Opportunity</h2>
+            <div class="hgi-accent-bar center"></div>
+
+            <p class="center hgi-difference-intro">
+                These four pillars represent the foundation of the HGI system—designed to help you grow personally,
+                professionally, and financially.
+            </p>
+
+            <div class="hgi-grid-2 hgi-opportunity-grid">
+                <!-- BUSINESS MODEL -->
+                <div class="hgi-card">
+                    <h3>Business Model</h3>
+                    <div class="feature-underline"></div>
+                    <p>
+                        A modern, open-architecture system that removes hierarchy barriers and allows every associate to reach the
+                        top contract level through performance, leadership, and education.
+                    </p>
+                    <a href="/pages/opportunity/business_model.html" class="hgi-btn sm">Learn More →</a>
+                </div>
+
+
+                <!-- BECOME AN AGENT -->
+                <div class="hgi-card">
+                    <h3>Become an HGI Agent</h3>
+                    <div class="feature-underline"></div>
+                    <p>
+                        Receive world-class training, mentorship, licensing support, and technology tools designed to help you
+                        launch a successful financial services business—part-time or full-time.
+                    </p>
+                    <a href="/pages/opportunity/become_agent.html" class="hgi-btn sm">Start Here →</a>
+                </div>
+
+
+                <!-- THE HGI DIFFERENCE -->
+                <div class="hgi-card">
+                    <h3>The HGI Difference</h3>
+                    <div class="feature-underline"></div>
+                    <p>
+                        See how HGI’s collaborative, performance-based advancement model compares to traditional agencies—and why
+                        thousands of leaders choose HGI’s pathway.
+                    </p>
+                    <a href="/pages/opportunity/difference.html" class="hgi-btn sm">See the Difference →</a>
+                </div>
+
+
+                <!-- MULTIPLE WAYS TO BUILD INCOME -->
+                <div class="hgi-card">
+                    <h3>Multiple Ways to Build Income</h3>
+                    <div class="feature-underline"></div>
+                    <p>
+                        Learn about the four income channels: personal income, development overrides, bonus pools, and organization
+                        expansion—designed for long-term scalability.
+                    </p>
+                    <a href="/pages/opportunity/build_income.html" class="hgi-btn sm">View Income Streams →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ========================================================= -->
+    <!-- FINAL CTA -->
+    <!-- ========================================================= -->
+    <section class="hgi-cta hgi-banner-large">
+        <div class="inner">
+            <h2>Ready to Begin Your Journey?</h2>
+            <p>
+                Whether you're seeking personal financial growth or building a long-term business, HGI gives you the tools,
+                mentorship, and support to succeed.
+            </p>
+
+            <a href="/contact" class="hgi-btn hgi-btn-lg">Speak With an Advisor</a>
+        </div>
+    </section>
+
+
+</main>
+
+
+<div id="site-footer"></div>
+
+<script type="module" src="/assets/js/core.js" defer></script>
+
+<script>
+    // Modal Video Script
+    const modal = document.getElementById('videoModal');
+    const openBtn = document.getElementById('openVideoModal');
+    const closeBtn = document.getElementById('closeVideoModal');
+    const iframe = document.getElementById('hgiIframe');
+
+    openBtn.addEventListener('click', () => {
+        modal.classList.add('open');
+        iframe.src = iframe.dataset.src; // load video
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('open');
+        iframe.src = ""; // stop video
+    });
+</script>
+
+</body>
+</html>

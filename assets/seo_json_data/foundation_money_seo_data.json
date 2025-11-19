@@ -1,0 +1,101 @@
+{
+  "foundation_money": {
+    "id": "foundation_money",
+    "metaDescription": "Explore the three core building blocks of everyday money management—budgeting basics, emergency funds, and managing debt—with evidence-backed guidance from V & V Advisors.",
+    "og": {
+      "description": "Learn the three foundational money skills—budgeting, emergency funds, and debt management—to build a stable financial base for your family.",
+      "image": "/assets/img/social/foundations_of_money.jpg",
+      "type": "website"
+    },
+    "twitter": {
+      "description": "Understand the foundations of budgeting, emergency funds, and debt management in one clear, research-backed guide.",
+      "image": "/assets/img/social/foundations_of_money.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "A guided overview of budgeting basics, emergency funds, and managing debt to help families build a strong financial foundation.",
+      "keywords": [
+        "budgeting basics",
+        "emergency fund",
+        "managing debt",
+        "financial literacy",
+        "money foundations",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "budget_basics": {
+    "id": "budget_basics",
+    "metaDescription": "Learn the essentials of budgeting—why it matters, how to build a simple step-by-step budget, and family-friendly budgeting methods.",
+    "og": {
+      "description": "Understand how a realistic, flexible budget can reduce stress, build savings, and prepare your family for the unexpected.",
+      "image": "/assets/img/social/preview-budgeting.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Learn the essentials of budgeting and discover practical methods to align your spending with your family’s goals.",
+      "image": "/assets/img/social/preview-budgeting.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Learn the essentials of budgeting: why it matters, how to build a step-by-step budget, and popular budgeting methods to support your financial health.",
+      "keywords": [
+        "budgeting basics",
+        "how to make a budget",
+        "50-30-20 rule",
+        "zero-based budgeting",
+        "family budgeting",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "emer_funds": {
+    "id": "emer_funds",
+    "metaDescription": "Build a reliable emergency fund with evidence-backed guidance. Learn how much to save, where to store it, and how to begin strengthening your financial stability.",
+    "og": {
+      "description": "A clear, evidence-backed guide to building an emergency fund that protects your family from financial shocks.",
+      "image": "/assets/img/social/emergency-fund.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Learn how to build an emergency fund and increase your financial resilience step by step.",
+      "image": "/assets/img/social/emergency-fund.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Learn how to build a reliable emergency fund, how much to save, and why it is essential for long-term financial stability.",
+      "keywords": [
+        "emergency fund",
+        "saving money",
+        "financial security",
+        "unexpected expenses",
+        "CFPB",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "manage_debit": {
+    "id": "manage_debit",
+    "metaDescription": "Learn evidence-backed strategies to manage debt responsibly—reduce high-interest balances, improve credit health, and regain financial stability.",
+    "og": {
+      "description": "Explore smart, responsible, research-backed ways to pay down debt and strengthen your financial foundation.",
+      "image": "/assets/img/social/debt_tips.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Learn effective strategies for managing and reducing debt while improving long-term financial well-being.",
+      "image": "/assets/img/social/debt_tips.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Learn trustworthy, evidence-backed strategies to manage debt responsibly—reduce high-interest balances, improve credit health, and regain financial freedom.",
+      "keywords": [
+        "debt management",
+        "credit card debt",
+        "debt snowball",
+        "debt avalanche",
+        "financial freedom",
+        "V & V Advisors"
+      ]
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "life_insurance_products": {
+    "id": "life_insurance_products",
+    "metaDescription": "Explore an educational overview of core, advanced, and simplified life insurance products. Learn how each category may support income protection, family security, and long-term planning.",
+    "og": {
+      "description": "Understand the major life insurance product families—core, advanced, and simplified/guaranteed—and how they may fit different family needs.",
+      "image": "/assets/img/social/life_insurance_products.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Educational overview of life insurance product types to help families navigate protection choices with more confidence.",
+      "image": "/assets/img/social/life_insurance_products.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Explore how core, advanced, and simplified life insurance products can support income protection and long-term planning.",
+      "keywords": [
+        "life insurance products",
+        "term life",
+        "whole life",
+        "indexed universal life",
+        "V & V Advisors",
+        "family protection"
+      ]
+    }
+  },
+
+  "core_life_insurance": {
+    "id": "core_life_insurance",
+    "metaDescription": "Understand Term Life, Whole Life, and Universal Life insurance. A V & V Advisors educational guide backed by NAIC, CFPB, and consumer-protection research.",
+    "og": {
+      "description": "Learn the differences between Term, Whole, and Universal Life insurance and how they fit into a long-term protection plan.",
+      "image": "/assets/img/social/core_life_insurance.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Understand Term, Whole, and Universal Life Insurance with evidence-backed guidance.",
+      "image": "/assets/img/social/core_life_insurance.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Understand how Term, Whole, and Universal Life insurance work, including benefits, tradeoffs, and best-fit use cases.",
+      "keywords": [
+        "term life insurance",
+        "whole life insurance",
+        "universal life insurance",
+        "life insurance basics",
+        "financial literacy",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "advanced_life_insurance": {
+    "id": "advanced_life_insurance",
+    "metaDescription": "Learn how Indexed Universal Life (IUL), Variable Universal Life (VUL), and Hybrid Life + Long-Term Care fit into advanced protection and wealth strategies. Evidence-backed guidance from V & V Advisors.",
+    "og": {
+      "description": "Understand IUL, VUL, and Hybrid LTC-linked life insurance products with a consumer-protection focused breakdown.",
+      "image": "/assets/img/social/advanced_life_insurance.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "A detailed guide to Indexed Universal Life, Variable Universal Life, and Hybrid Life + Long-Term Care coverage.",
+      "image": "/assets/img/social/advanced_life_insurance.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Explore Indexed UL, Variable UL, and Hybrid LTC-linked life insurance options with an evidence-backed consumer guide.",
+      "keywords": [
+        "IUL",
+        "VUL",
+        "Hybrid Life Insurance",
+        "LTC-linked Life Insurance",
+        "advanced life insurance",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "simplified_guaranteed_life": {
+    "id": "simplified_guaranteed_life",
+    "metaDescription": "Learn about Guaranteed Issue, Final Expense, and Children's Whole Life Insurance. A V & V Advisors guide to simplified and guaranteed protection options for families.",
+    "og": {
+      "description": "Understand consumer-friendly life insurance options that require little to no medical underwriting.",
+      "image": "/assets/img/social/simplified_life.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "A helpful, evidence-based guide to simplified and guaranteed life insurance options for families.",
+      "image": "/assets/img/social/simplified_life.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Evidence-backed guidance on Guaranteed Issue, Final Expense, and Children's Whole Life insurance.",
+      "keywords": [
+        "guaranteed issue life insurance",
+        "final expense insurance",
+        "children’s whole life",
+        "simplified underwriting life insurance",
+        "V & V Advisors"
+      ]
+    }
+  }
+}

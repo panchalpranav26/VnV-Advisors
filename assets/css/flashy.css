@@ -46,6 +46,7 @@
 .hero {
     position: relative;
     text-align: center;
+    margin-top: 3rem;
     padding: 10px 10px;
     overflow: hidden;
     background-size: 200% 200%;

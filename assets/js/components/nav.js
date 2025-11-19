@@ -1,25 +1,28 @@
 /*
  * FILE: assets/js/components/nav.js
- * ROLE: Controls navigation dropdown behavior for desktop & mobile.
- * NOTE: Works with dynamic nav_builder.js
+ * ROLE: Dropdown behavior + Active Highlighting
+ * ALIGNED WITH: nav_builder_v3.js
  */
 
+import { lookupNavTitles } from "./lookupNavTitles.js";
+
 export function initNav() {
-    console.info("[nav] Initializing navigation dropdown behavior…");
-    /* Smooth delay timers */
-    const closeTimers = {};
-    
+    console.groupCollapsed("%c[nav] 🔧 Init Navigation", "color:#4db6ac;font-weight:600;");
+
+    /* ============================================================
+       1. FIND DROPDOWN ROOTS
+    ============================================================ */
     let navItems = document.querySelectorAll(".nav-item--has-dropdown");
 
     if (!navItems || navItems.length === 0) {
-        console.warn("[nav] No dropdown nav items found — retrying in 50ms…");
+        console.warn("[nav] ❌ Nav not ready — retrying in 50ms");
         setTimeout(initNav, 50);
+        console.groupEnd();
         return;
     }
 
     const desktopQuery = window.matchMedia("(min-width: 981px)");
 
-    /* Roots for 2-tier menus */
     const finEdRoot = document.querySelector("#nav-financial_education");
     const protectionRoot = document.querySelector("#nav-protection_products");
 
@@ -29,194 +32,191 @@ export function initNav() {
     const ppTier1 = protectionRoot?.querySelectorAll(".tier1-item") || [];
     const ppTier2Panes = protectionRoot?.querySelectorAll(".submenu-pane") || [];
 
-
-    /* --------------------------------------------------------------
-       Close all dropdowns (Tier-1 + Tier-2)
-    -------------------------------------------------------------- */
+    /* ============================================================
+       2. CLOSE HELPERS
+    ============================================================ */
     function closeAllDropdowns() {
         navItems.forEach(item => {
             item.querySelector(".caret-toggle")?.setAttribute("aria-expanded", "false");
             item.querySelector(".dropdown-pane")?.classList.remove("open");
         });
-
         closeTier2();
     }
 
-    /* --------------------------------------------------------------
-       Close Tier-2 only
-    -------------------------------------------------------------- */
     function closeTier2() {
         tier2Panes.forEach(p => p.classList.remove("open"));
         ppTier2Panes.forEach(p => p.classList.remove("open"));
     }
 
-
-
-    /* ====================================================================
-       DESKTOP MODE — Hover Behavior
-       ==================================================================== */
+    /* ============================================================
+       3. DESKTOP BEHAVIOR (with safe-zone corridor)
+    ============================================================ */
     function enableDesktopBehavior() {
-        console.info("[nav] Desktop mode enabled");
 
-        navItems.forEach(item => {
-            const caretBtn = item.querySelector(".caret-toggle");
-            const pane = item.querySelector(".dropdown-pane");
+        /* --- Open/Close Top Level --- */
+        navItems.forEach((item) => {
+            const caret = item.querySelector(".caret-toggle");
+            // NEW — support either default or HGI dropdown class
+            const pane =
+                item.querySelector(".hgi-dropdown-pane") ||
+                item.querySelector(".dropdown-pane");
 
-            if (!caretBtn || !pane) return;
+            if (!caret || !pane) {
+                return;
+            }
 
+            /* ----------------------------------
+               MOUSEENTER
+            ---------------------------------- */
             item.addEventListener("mouseenter", () => {
                 closeAllDropdowns();
-                caretBtn.setAttribute("aria-expanded", "true");
+                caret.setAttribute("aria-expanded", "true");
                 pane.classList.add("open");
             });
 
-            item.addEventListener("mouseleave", () => {
-                caretBtn.setAttribute("aria-expanded", "false");
+            /* ----------------------------------
+               MOUSELEAVE
+            ---------------------------------- */
+            item.addEventListener("mouseleave", e => {
+                const to = e.relatedTarget;
+
+                const goingToTier1 =
+                    !!to &&
+                    pane.contains(to) &&
+                    !to.classList.contains("submenu-pane") &&
+                    !to.closest(".submenu-pane");
+
+                const allTier2Panes = document.querySelectorAll(`#${item.id} .submenu-pane`);
+                const goingToTier2 = [...allTier2Panes].some(p => p.contains(to));
+
+                if (goingToTier1 || goingToTier2) {
+                    return;
+                }
+
+                caret.setAttribute("aria-expanded", "false");
                 pane.classList.remove("open");
                 closeTier2();
             });
 
-            caretBtn.addEventListener("click", e => {
+            /* ----------------------------------
+               CARET CLICK
+            ---------------------------------- */
+            caret.addEventListener("click", e => {
                 e.preventDefault();
-                const isOpen = caretBtn.getAttribute("aria-expanded") === "true";
+                const open = caret.getAttribute("aria-expanded") === "true";
+
                 closeAllDropdowns();
-                caretBtn.setAttribute("aria-expanded", String(!isOpen));
-                pane.classList.toggle("open", !isOpen);
+                caret.setAttribute("aria-expanded", String(!open));
+                pane.classList.toggle("open", !open);
             });
         });
 
 
-        /* ----------------------------------------------------------------
-           TIER-1 → TIER-2 FLYOUTS (Financial Education)
-        ---------------------------------------------------------------- */
-        if (finEdRoot) {
-            console.groupCollapsed("[nav][debug] Tier-2 Debug — Financial Education");
-            console.log("finEdRoot:", finEdRoot);
-            console.log("tier1Items:", tier1Items.length);
-            console.log("tier2Panes:", tier2Panes.length);
-            console.groupEnd();
+        /* ============================================================
+           SAFE-ZONE LOGIC
+        ============================================================ */
+        function applySafeZone(item, pane) {
+            if (!item || !pane) return;
 
-            tier1Items.forEach((item, index) => {
-                const submenuId = item.dataset.submenu;
-                const pane = finEdRoot.querySelector(`#submenu-${submenuId}`);
+            item.addEventListener("mouseleave", e => {
+                const to = e.relatedTarget;
+                if (pane.contains(to) || item.contains(to)) return;
 
-                if (!pane) {
-                    console.warn(`[nav][debug] ❌ Missing pane for ${submenuId}`);
-                    return;
-                }
+                const T1 = item.getBoundingClientRect();
+                const T2 = pane.getBoundingClientRect();
 
-                /* ---------------------------
-                   Hover INTO Tier-1 item
-                --------------------------- */
-                item.addEventListener("mouseenter", () => {
-                    closeTier2();
+                const inSafeCorridor =
+                    e.clientX >= T1.right - 10 &&
+                    e.clientX <= T2.left + 10 &&
+                    e.clientY >= Math.min(T1.top, T2.top) - 20 &&
+                    e.clientY <= Math.max(T1.bottom, T2.bottom) + 20;
 
-                    const itemRect = item.getBoundingClientRect();
-                    const containerRect = finEdRoot.querySelector(".card-tier1").getBoundingClientRect();
-                    const offset = itemRect.top - containerRect.top;
+                if (inSafeCorridor) return;
 
-                    pane.style.setProperty("--submenu-offset", offset + "px");
-                    pane.classList.add("open");
-
-                    console.log(`[nav][debug] Tier1→Tier2 open:`, submenuId, "offset:", offset);
-                });
-
-                /* ---------------------------
-                   Hover OUT of Tier-1 item
-                   (SAFE-ZONE FIX APPLIED HERE)
-                --------------------------- */
-                item.addEventListener("mouseleave", e => {
-                    const to = e.relatedTarget;
-
-                    const tier1Card = finEdRoot.querySelector(".card-tier1");
-
-                    const safeZones = [
-                        pane,
-                        tier1Card,
-                        item
-                    ];
-
-                    if (safeZones.some(zone => zone && zone.contains(to))) {
-                        console.log(`[nav][debug] ✔ Safe zone for ${submenuId} — keeping open`);
-                        return;
-                    }
-
-                    console.log(`[nav][debug] ❌ Closing ${submenuId} — pointer left dropdown area`);
-                    pane.classList.remove("open");
-                });
-
-                /* Keep pane open while hovering inside */
-                pane.addEventListener("mouseenter", () => pane.classList.add("open"));
-                pane.addEventListener("mouseleave", () => {
-                    console.log(`[nav][debug] mouseleave Tier2 → close ${submenuId}`);
-                    pane.classList.remove("open");
-                });
+                pane.classList.remove("open");
             });
+
+            pane.addEventListener("mouseenter", () => pane.classList.add("open"));
+            pane.addEventListener("mouseleave", () => pane.classList.remove("open"));
         }
 
 
-        /* ----------------------------------------------------------------
-           TIER-1 → TIER-2 FLYOUTS (Protection Products)
-        ---------------------------------------------------------------- */
-        if (protectionRoot) {
-            ppTier1.forEach(item => {
+        /* ============================================================
+           Tier2 Flyouts — Financial Education
+        ============================================================ */
+        if (finEdRoot) {
+            tier1Items.forEach((item) => {
                 const submenuId = item.dataset.submenu;
-                const pane = protectionRoot.querySelector(`#submenu-${submenuId}`);
+                const pane = finEdRoot.querySelector(`#submenu-${submenuId}`);
+
                 if (!pane) return;
 
                 item.addEventListener("mouseenter", () => {
                     closeTier2();
+                    pane.classList.add("open");
 
                     const itemRect = item.getBoundingClientRect();
-                    const containerRect = protectionRoot.querySelector(".card-tier1").getBoundingClientRect();
-                    const offset = itemRect.top - containerRect.top;
+                    const cardRect = finEdRoot
+                        .querySelector(".card-tier1")
+                        .getBoundingClientRect();
 
-                    pane.style.setProperty("--submenu-offset", offset + "px");
+                    const top = itemRect.top - cardRect.top;
+                    pane.style.setProperty("--submenu-offset", `${top}px`);
+                });
+
+                applySafeZone(item, pane);
+            });
+        }
+
+
+        /* ============================================================
+           Tier2 Flyouts — Protection Products
+        ============================================================ */
+        if (protectionRoot) {
+            ppTier1.forEach((item) => {
+                const submenuId = item.dataset.submenu;
+                const pane = protectionRoot.querySelector(`#submenu-${submenuId}`);
+
+                if (!pane) return;
+
+                item.addEventListener("mouseenter", () => {
+                    closeTier2();
                     pane.classList.add("open");
+
+                    const itemRect = item.getBoundingClientRect();
+                    const cardRect = protectionRoot
+                        .querySelector(".card-tier1")
+                        .getBoundingClientRect();
+
+                    const top = itemRect.top - cardRect.top;
+                    pane.style.setProperty("--submenu-offset", `${top}px`);
                 });
 
-                item.addEventListener("mouseleave", e => {
-                    const to = e.relatedTarget;
-
-                    const safeZones = [
-                        pane,
-                        protectionRoot.querySelector(".card-tier1"),
-                        item
-                    ];
-
-                    if (safeZones.some(z => z && z.contains(to))) return;
-
-                    pane.classList.remove("open");
-                });
-
-                pane.addEventListener("mouseenter", () => pane.classList.add("open"));
-                pane.addEventListener("mouseleave", () => pane.classList.remove("open"));
+                applySafeZone(item, pane);
             });
         }
     }
 
 
-
-    /* ====================================================================
-       MOBILE MODE — Click-to-open
-       ==================================================================== */
+    /* ============================================================
+       4. MOBILE BEHAVIOR
+    ============================================================ */
     function enableMobileBehavior() {
-        console.info("[nav] Mobile mode enabled");
+        console.groupCollapsed("%c[nav][mode] 📱 Mobile Enabled", "color:#81c784");
 
         navItems.forEach(item => {
-            const caretBtn = item.querySelector(".caret-toggle");
+            const caret = item.querySelector(".caret-toggle");
             const pane = item.querySelector(".dropdown-pane");
-            if (!caretBtn || !pane) return;
+            if (!caret || !pane) return;
 
-            caretBtn.addEventListener("click", e => {
+            caret.addEventListener("click", e => {
                 e.preventDefault();
-                const isOpen = pane.classList.contains("open");
+                const open = pane.classList.contains("open");
                 closeAllDropdowns();
-                pane.classList.toggle("open", !isOpen);
+                pane.classList.toggle("open", !open);
             });
         });
 
-        /* Mobile accordion for tier-2 */
         if (finEdRoot) {
             tier1Items.forEach(item => {
                 const pane = finEdRoot.querySelector(`#submenu-${item.dataset.submenu}`);
@@ -224,22 +224,21 @@ export function initNav() {
 
                 item.addEventListener("click", e => {
                     e.preventDefault();
-                    const isOpen = pane.classList.contains("open");
+                    const open = pane.classList.contains("open");
                     closeTier2();
-                    pane.classList.toggle("open", !isOpen);
+                    pane.classList.toggle("open", !open);
                 });
             });
         }
+
+        console.groupEnd();
     }
 
-
-
-    /* ====================================================================
-       MODE SWITCHING (Desktop ↔ Mobile)
-       ==================================================================== */
+    /* ============================================================
+       5. MODE SWITCHING
+    ============================================================ */
     function applyBehavior(e) {
         closeAllDropdowns();
-
         if (e.matches) enableDesktopBehavior();
         else enableMobileBehavior();
     }
@@ -247,5 +246,134 @@ export function initNav() {
     applyBehavior(desktopQuery);
     desktopQuery.addEventListener("change", applyBehavior);
 
-    console.info("[nav] ✅ Navigation initialized with Tier-2 support");
+    /* ============================================================
+       6. ACTIVE HIGHLIGHTING (JSON-driven)
+       ============================================================ */
+
+    lookupNavTitles().then(match => {
+
+        console.groupCollapsed(
+            "%c[nav][highlight] 🎯 Starting highlight process",
+            "color:#ffd54f;font-weight:600;"
+        );
+
+        console.log("[nav][highlight] Full lookup match:", match);
+
+        const { menuData, sectionData, pageData } = match;
+
+        /* ============================================================
+           TOP-LEVEL MENU HIGHLIGHT
+        ============================================================ */
+        console.groupCollapsed(
+            "%c[nav][highlight] 🔵 Top-Level Menu",
+            "color:#4fc3f7;font-weight:600;"
+        );
+
+        if (menuData?.id) {
+            console.log(`[nav][highlight] Matched menuData.id = "${menuData.id}"`);
+            const topEl = document.querySelector(
+                `.dd-link[data-nav-id="${menuData.id}"]`
+            );
+
+            console.log("[nav][highlight] topEl found:", topEl);
+
+            if (topEl) {
+                topEl.classList.add("active-nav");
+                console.info(`[nav][highlight] ✅ Applied .active-nav to TOP menu "${menuData.title}"`);
+            } else {
+                console.warn(`[nav][highlight] ❌ Could not find top-level element for "${menuData.id}"`);
+            }
+        } else {
+            console.warn("[nav][highlight] ⚠ No menuData.id from lookup");
+        }
+
+        console.groupEnd();
+
+
+        /* ============================================================
+           TIER-1 CATEGORY HIGHLIGHT
+        ============================================================ */
+        console.groupCollapsed(
+            "%c[nav][highlight] 🟢 Tier-1 Category",
+            "color:#81c784;font-weight:600;"
+        );
+
+        if (sectionData?.id) {
+            console.log(`[nav][highlight] Matched sectionData.id = "${sectionData.id}"`);
+
+            const tier1El = document.querySelector(
+                `.tier1-label[data-nav-id="${sectionData.id}"]`
+            );
+
+            console.log("[nav][highlight] tier1El found:", tier1El);
+
+            if (tier1El) {
+                tier1El.classList.add("active-nav");
+                console.info(
+                    `[nav][highlight] ✅ Added .active-nav for Tier-1 "${sectionData.title}"`
+                );
+
+                const parentLi = tier1El.closest(".tier1-item");
+                console.log("[nav][highlight] parent <li> =", parentLi);
+
+                if (parentLi) {
+                    parentLi.classList.add("active-parent");
+                    console.info(
+                        `[nav][highlight] 📌 Marked parent <li> as .active-parent (helps open Tier-2 alignment)`
+                    );
+                }
+            } else {
+                console.warn(
+                    `[nav][highlight] ❌ Could not find Tier-1 element for "${sectionData.id}"`
+                );
+            }
+
+        } else {
+            console.warn("[nav][highlight] ⚠ No sectionData.id from lookup");
+        }
+
+        console.groupEnd();
+
+
+        /* ============================================================
+           TIER-2 PAGE HIGHLIGHT
+        ============================================================ */
+        console.groupCollapsed(
+            "%c[nav][highlight] 🟣 Tier-2 Page",
+            "color:#ce93d8;font-weight:600;"
+        );
+
+        if (pageData?.title) {
+            console.log(`[nav][highlight] Looking for pageData.title = "${pageData.title}"`);
+
+            const pageEl = document.querySelector(
+                `.submenu-pane a[data-title="${pageData.title}"]`
+            );
+
+            console.log("[nav][highlight] pageEl found:", pageEl);
+
+            if (pageEl) {
+                pageEl.classList.add("active-nav");
+                console.info(
+                    `[nav][highlight] ✅ Applied .active-nav to Tier-2 page "${pageData.title}"`
+                );
+            } else {
+                console.warn(
+                    `[nav][highlight] ❌ Could not find tier-2 link for "${pageData.title}"`
+                );
+            }
+
+        } else {
+            console.warn("[nav][highlight] ⚠ No pageData.title from lookup");
+        }
+
+        console.groupEnd();
+
+
+        console.groupEnd(); // end highlight master group
+    });
+
+    /* ============================================================ */
+    console.info("[nav] ✅ Navigation fully initialized.");
+    console.groupEnd();
 }

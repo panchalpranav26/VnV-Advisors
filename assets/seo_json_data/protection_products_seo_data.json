@@ -1,0 +1,27 @@
+{
+  "protection_products": {
+    "id": "protection_products",
+    "metaDescription": "Explore life insurance, annuity, and estate protection products with evidence-backed guidance from V & V Advisors.",
+    "og": {
+      "description": "Evidence-backed insurance, annuity, and legacy planning options to protect your family's future.",
+      "image": "/assets/img/social/protection_products.jpg",
+      "type": "website"
+    },
+    "twitter": {
+      "description": "Learn how life insurance, annuities, and legacy planning work together to protect your family's financial future.",
+      "image": "/assets/img/social/protection_products.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Protection planning covering life insurance, annuities, and legacy planning with evidence-backed, family-centered guidance.",
+      "keywords": [
+        "protection products",
+        "life insurance",
+        "annuities",
+        "estate planning",
+        "legacy protection",
+        "financial protection",
+        "V & V Advisors"
+      ]
+    }
+  }
+}

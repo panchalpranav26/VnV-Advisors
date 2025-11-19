@@ -1,0 +1,27 @@
+{
+  "financial_education": {
+    "id": "financial_education",
+    "metaDescription": "Build a strong financial foundation through four core pillars of financial literacy: money basics, family protection, wealth-building, and family financial wellness.",
+    "og": {
+      "description": "Strengthen your family's financial future through the four core learning pillars—money habits, protection, wealth-building, and family wellness.",
+      "image": "/assets/img/social/financial_education_preview.jpg",
+      "type": "website"
+    },
+    "twitter": {
+      "description": "A simple, structured way for families to learn financial basics, build protection, and grow long-term wealth.",
+      "image": "/assets/img/social/financial_education_preview.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Financial education designed to help families build foundational money skills, protection planning, wealth strategies, and long-term financial wellness.",
+      "keywords": [
+        "financial education",
+        "financial literacy",
+        "family finance",
+        "budgeting basics",
+        "wealth building",
+        "insurance education",
+        "V & V Advisors"
+      ]
+    }
+  }
+}

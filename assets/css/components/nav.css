@@ -9,20 +9,19 @@
    ============================================================ */
 
 .header {
-    position: sticky;           /* Makes nav stay visible at top when scrolling */
+    position: fixed;           /* Makes nav stay visible at top when scrolling */
     top: 0;
     z-index: var(--z-header);   /* Ensures nav stays above page content */
     height: var(--nav-h);       /* Global token for nav height */
     background: var(--teal-400);/* Default teal background */
     backdrop-filter: blur(8px); /* Adds subtle blur behind header */
-    display: flex;
-    align-items: flex-end;      /* Align nav items to bottom for consistent spacing */
-}
+    width: 100%;
+    }
 
 .nav {
     display: flex;
     justify-content: space-between; /* Logo left, nav menu right */
-    align-items: flex-end;
+    align-items: center;
     height: var(--nav-h);
 }
 
@@ -51,17 +50,14 @@
    ============================================================ */
 
 .menu {
-    display: flex;
-    gap: 12px;                   /* Space between top-level items */
-    align-items: center;
     height: var(--nav-h);
     font-size: 14px;
+    align-items: center;
 }
 
 .menu-item {
     position: relative;          /* Needed for dropdown-pane absolute positioning */
-    display: flex;
-    align-items: flex-end;
+
 }
 
 /* Additional spacing rules for top links only */
@@ -76,15 +72,59 @@
         About Us, Success Storie, Contact
    ============================================================ */
 
-.link {
+.dd-link {
     display: inline-flex;
-    align-items: flex-end;
-    padding: 10px 12px;
+    align-items: center;
+    padding: 10px;
     border-radius: var(--radius-sm);
     color: #000;
     font-weight: 600;
     text-decoration: none;
+
+    transition:
+            opacity 360ms ease,
+            transform 420ms cubic-bezier(.22,1,.36,1)
 }
+
+.dd-link:hover,
+.dd-link:focus-visible {
+    background: var(--teal-800);
+    color: var(--white);
+}
+
+.hgi-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px;
+
+    border-radius: var(--radius-sm);
+    background: #00236E;
+
+    color: var(--white);
+    font-weight: 600;
+    text-decoration: none;
+
+    animation: glow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    50%, 100% {
+        box-shadow: 0 0 8px var(--white);
+    }
+    25% {
+        box-shadow: 0 0 18px #00236E;
+    }
+}
+
+
+.hgi-link:hover {
+    background: var(--white);
+    color: #000000;
+    box-shadow:
+            0 0 18px rgba(45, 212, 191, 0.85),
+            0 0 6px rgba(45, 212, 191, 0.65);
+}
+
 
 .btn-glow.sm {
     padding: 8px 14px;
@@ -94,8 +134,8 @@
 /* tier1 labels are <a> links inside the item */
 .menu-link {
     display: inline-flex;
-    align-items: flex-end;
-    padding: 10px 12px;
+    align-items: center;
+    padding: 10px;
     border-radius: var(--radius-sm);
     color: #000;
     font-weight: 600;
@@ -108,75 +148,17 @@
     color: var(--white);
 }
 
+/* Hide caret icon but keep toggle clickable */
+.caret-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 
-/* ============================================================
-   MOBILE MODE – 2-tier becomes accordion
-   nav.js toggles .open class
-   ============================================================ */
-
-@media (max-width: 980px) {
-
-    /* Tier-1 dropdown converts to full-width block */
-    .dropdown-pane--tier1 {
-        position: static;
-        width: 100%;
-        background: var(--gray-300);
-        box-shadow: none;
-        border: 1px solid rgba(0,0,0,0.15);
-        margin-top: 10px;
-    }
-
-    /* Tier-2 flyouts become collapsible sections */
-    .submenu-pane {
-        position: static;
-        opacity: 1 !important;
-        visibility: visible !important;
-        display: none;           /* Hidden until clicked */
-        margin-top: 8px;
-        background: var(--gray-200);
-        border: 1px solid rgba(0,0,0,0.1);
-    }
-
-    /* JS adds .open on click */
-    .submenu-pane.open {
-        display: block;
-    }
-
-    /* Mobile styling for tier-2 links */
-    .submenu-pane li a {
-        background: var(--gray-100);
-    }
-
-    .submenu-pane li a:hover {
-        background: var(--teal-400);
-        color: white;
-    }
+    /* Make button invisible but functional */
+    opacity: 0;
 }
 
-@media (min-width: 981px) {
-
-    .menu > .menu-item > .link::after {
-        content: "";
-        position: absolute;
-        left: 12px;
-        right: 12px;
-        bottom: 6px;
-        height: var(--underline-h);
-        background: var(--underline);
-        transform: scaleX(0);
-        transform-origin: left center;
-        transition: transform 500ms cubic-bezier(.22,1,.36,1);
-    }
-
-    .menu > .menu-item:hover > .link::after,
-    .menu > .menu-item > .link:focus-visible::after {
-        transform: scaleX(1);
-    }
-
-    .menu > .menu-item.nav-item--has-dropdown:hover .parent-with-caret > .link {
-        background: var(--teal-800);
-        color: var(--white);
-        transition: background 300ms ease, color 300ms ease;
-    }
-
+.caret-toggle .caret {
+    display: none; /* Hide the SVG */
 }

@@ -24,6 +24,7 @@
     color: var(--white);
     font-weight: 700;
     margin-bottom: 1.5rem;
+    margin-top: 3rem;
 
     /* Gradient Text */
     background: linear-gradient(180deg, var(--teal-600));

@@ -1,0 +1,135 @@
+{
+  "opportunity": {
+    "id": "opportunity",
+    "metaDescription": "Explore the HGI Opportunity: business model, income strategies, leadership development, onboarding, and how to become an HGI agent.",
+    "og": {
+      "description": "Discover the HGI business model, leadership opportunity, income solutions, and how to start your financial services journey.",
+      "image": "/assets/img/social/hgi_opportunity.jpg",
+      "type": "website"
+    },
+    "twitter": {
+      "description": "Explore income growth, leadership development, and business-building opportunities through HGI.",
+      "image": "/assets/img/social/hgi_opportunity.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Overview of the HGI Opportunity including the business model, income pathways, agent onboarding, and leadership development.",
+      "keywords": [
+        "HGI Opportunity",
+        "HGI business model",
+        "Become HGI agent",
+        "HGI Difference",
+        "HGI income",
+        "financial services career",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "business_model": {
+    "id": "business_model",
+    "metaDescription": "Understand how the HGI business model works—from education and licensing to carrier partnerships and pathways for entrepreneurial growth.",
+    "og": {
+      "description": "Explore how the HGI business model empowers individuals through education, licensing, and leadership opportunities.",
+      "image": "/assets/img/social/hgi_business_model.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Learn how the HGI model provides accessible pathways for education, licensing, and building a financial services business.",
+      "image": "/assets/img/social/hgi_business_model.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Educational overview of how the HGI business model works: fundamentals, licensing routes, carrier access, and entrepreneurship opportunities.",
+      "keywords": [
+        "HGI business model",
+        "financial education",
+        "insurance licensing",
+        "financial services training",
+        "entrepreneurship opportunities",
+        "carrier partnerships",
+        "business opportunity",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "become_agent": {
+    "id": "become_agent",
+    "metaDescription": "Learn how to become an HGI agent—training, mentorship, licensing support, compensation systems, and business-building technology tools.",
+    "og": {
+      "description": "Join HGI as an agent and gain access to industry-leading training, mentorship, commissions, and technology systems.",
+      "image": "/assets/img/social/hgi_become_agent.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Understand training, compensation, and support available when becoming an HGI agent.",
+      "image": "/assets/img/social/hgi_become_agent.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Overview of how HGI agents receive training, licensing pathways, compensation structures, mentorship, and advanced technology tools.",
+      "keywords": [
+        "Become an HGI agent",
+        "HGI training",
+        "insurance licensing",
+        "financial services career",
+        "HGI compensation",
+        "HGI mentorship",
+        "tech-enabled business system",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "difference": {
+    "id": "difference",
+    "metaDescription": "Understand how HGI’s open architecture business model differs from traditional agency structures and supports modern leadership development.",
+    "og": {
+      "description": "See how HGI’s modern, open-architecture model empowers equal opportunity, leadership growth, and collaborative advancement.",
+      "image": "/assets/img/social/hgi_difference.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Explore how HGI’s unique model empowers individuals with leadership development and equal advancement.",
+      "image": "/assets/img/social/hgi_difference.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Overview of how HGI’s modern open-architecture model compares to traditional agencies, including leadership pathways and contract equality.",
+      "keywords": [
+        "HGI business model",
+        "HGI difference",
+        "financial services career",
+        "open architecture model",
+        "HGI leadership development",
+        "HGI compensation",
+        "V & V Advisors"
+      ]
+    }
+  },
+
+  "build_income": {
+    "id": "build_income",
+    "metaDescription": "Discover the multiple income streams available within HGI—personal income, development overrides, bonus pools, and scalable business expansion.",
+    "og": {
+      "description": "Explore how HGI agents earn income through personal production, team development, bonus pools, and national expansion.",
+      "image": "/assets/img/social/hgi_income_streams.jpg",
+      "type": "article"
+    },
+    "twitter": {
+      "description": "Learn about personal production income, overrides, bonus pools, and scalable organization-building within HGI.",
+      "image": "/assets/img/social/hgi_income_streams.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Overview of HGI’s income streams including personal production, development income, bonus pools, and organization expansion.",
+      "keywords": [
+        "HGI income",
+        "HGI compensation",
+        "HGI opportunity",
+        "how HGI agents earn",
+        "financial services income",
+        "bonus pool income",
+        "organization building",
+        "development overrides",
+        "V & V Advisors"
+      ]
+    }
+  }
+}
