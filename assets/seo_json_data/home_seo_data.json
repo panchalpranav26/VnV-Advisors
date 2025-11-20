@@ -1,0 +1,28 @@
+{
+  "home": {
+    "id": "home",
+    "metaDescription": "V & V Advisors empowers families with financial literacy, personalized protection guidance, and long-term wealth-building strategies—rooted in clarity, trust, and evidence-backed education.",
+    "og": {
+      "description": "Learn the essentials of money, insurance, and long-term financial growth with evidence-backed guidance.",
+      "image": "/assets/img/social/home_preview.jpg",
+      "type": "website"
+    },
+    "twitter": {
+      "description": "Start your financial education journey—learn money basics, protection, and long-term family planning.",
+      "image": "/assets/img/social/home_preview.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Financial literacy, protection education, and family wealth-building guidance designed for clarity and confidence.",
+      "keywords": [
+        "V & V Advisors",
+        "financial literacy",
+        "protection planning",
+        "family wealth building",
+        "life insurance basics",
+        "financial education",
+        "budgeting and planning",
+        "family financial wellness"
+      ]
+    }
+  }
+}

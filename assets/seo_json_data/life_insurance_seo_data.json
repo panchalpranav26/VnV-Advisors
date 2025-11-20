@@ -1,6 +1,6 @@
 {
-  "life_insurance_products": {
-    "id": "life_insurance_products",
+  "life_insurance": {
+    "id": "life_insurance",
     "metaDescription": "Explore an educational overview of core, advanced, and simplified life insurance products. Learn how each category may support income protection, family security, and long-term planning.",
     "og": {
       "description": "Understand the major life insurance product families—core, advanced, and simplified/guaranteed—and how they may fit different family needs.",
@@ -74,8 +74,8 @@
     }
   },
 
-  "simplified_guaranteed_life": {
-    "id": "simplified_guaranteed_life",
+  "simplified_guaranteed": {
+    "id": "simplified_guaranteed",
     "metaDescription": "Learn about Guaranteed Issue, Final Expense, and Children's Whole Life Insurance. A V & V Advisors guide to simplified and guaranteed protection options for families.",
     "og": {
       "description": "Understand consumer-friendly life insurance options that require little to no medical underwriting.",

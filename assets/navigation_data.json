@@ -1,11 +1,13 @@
 {
-  "home": {
-    "id": "home",
-    "title": "Home",
-    "url": "/index.html"
-  },
-
   "sections": [
+    {
+      "id": "home",
+      "title": "Home",
+      "dir": "/",
+      "url": "/index.html",
+      "isFolderOnly": true
+    },
+
     {
       "id": "financial_education",
       "title": "Financial Education",
@@ -188,7 +190,7 @@
 
       "subcategories": [
         {
-          "id": "pp_life_insurance",
+          "id": "life_insurance",
           "icon": "🛡",
           "title": "Life Insurance Products",
           "dir": "/pages/",
@@ -214,7 +216,7 @@
         },
 
         {
-          "id": "pp_annuity",
+          "id": "annuity",
           "icon": "📈",
           "title": "Annuity Products",
           "dir": "/pages/",
@@ -240,7 +242,7 @@
         },
 
         {
-          "id": "pp_estate_legacy",
+          "id": "estate_legacy",
           "icon": "📜",
           "title": "Estate & Legacy Protection",
           "dir": "/pages/",
@@ -359,6 +361,7 @@
       "url": "/contact.html",
       "isFolderOnly": true
     },
+
     {
       "id": "consultation",
       "title": "Consultation",

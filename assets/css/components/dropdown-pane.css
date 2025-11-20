@@ -88,7 +88,7 @@
 .mini-card {
     background: var(--gray-300);
     border-radius: var(--radius-sm);
-    padding: 8px;
+    padding: 10px;
 }
 
 .tier1-label {
@@ -130,30 +130,46 @@
 
 .submenu-pane {
     position: absolute;
-    top: 0;
-    left: 100%;
-    margin-left: 2px;
+    top: 0;          /* align top to the li */
+    left: 100%;      /* to the right of the li */
+    margin-left: 28px;
 
     min-width: 260px;
-    padding: 12px;
+    padding: 15px;
     border-radius: var(--radius);
-
     background: var(--teal-800);
     border: 1px solid rgba(45,212,191,0.32);
-
     box-shadow:
             0 10px 26px rgba(0,0,0,0.52),
             0 0 12px rgba(45,212,191,0.25);
 
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
+}
+
+.dropdown-item {
+    position: relative;
+}
+
+/* tier-1 list items anchor the submenu */
+.tier1-item {
+    position: relative;
+}
+
+/* show submenu on hover (desktop) */
+.tier1-item:hover > .submenu-pane {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .submenu-pane.open {
     opacity: 1;
     visibility: visible;
-
+    pointer-events: auto;
 }
+
 
 .submenu-pane ul {
     list-style: none;

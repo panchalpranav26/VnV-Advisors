@@ -1,0 +1,28 @@
+{
+  "contact": {
+    "id": "contact",
+    "metaDescription": "Contact V & V Advisors to book a consultation, ask a question, or begin your journey to financial literacy, protection, and wealth-building.",
+    "og": {
+      "description": "Connect with V & V Advisors to schedule a consultation and begin building financial confidence for your family.",
+      "image": "/assets/img/social/preview.jpg",
+      "type": "website"
+    },
+    "twitter": {
+      "description": "Connect with V & V Advisors for financial education, protection guidance, and family planning support.",
+      "image": "/assets/img/social/preview.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Reach out to V & V Advisors to schedule a consultation or ask questions about financial literacy, protection, and wealth-building.",
+      "keywords": [
+        "contact V & V Advisors",
+        "financial consultation",
+        "life insurance guidance",
+        "family protection planning",
+        "wealth building",
+        "financial literacy",
+        "Tracy CA",
+        "V & V Advisors"
+      ]
+    }
+  }
+}

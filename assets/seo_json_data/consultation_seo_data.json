@@ -1,0 +1,27 @@
+{
+  "consultation": {
+    "id": "consultation",
+    "metaDescription": "Book a friendly, no-pressure consultation with V & V Advisors. Get clarity on financial literacy, protection planning, and long-term wealth-building.",
+    "og": {
+      "description": "Friendly, education-first guidance to help your family move toward clarity, confidence, and long-term stability.",
+      "image": "/assets/img/social/book_consultation.jpg",
+      "type": "website"
+    },
+    "twitter": {
+      "description": "Empower your financial future with clarity and evidence-backed guidance.",
+      "image": "/assets/img/social/book_consultation.jpg"
+    },
+    "jsonld": {
+      "pageDescription": "Schedule a consultation with V & V Advisors for guidance on financial literacy, protection planning, and wealth-building.",
+      "keywords": [
+        "consultation",
+        "financial consultation",
+        "financial literacy",
+        "protection planning",
+        "wealth building",
+        "family financial planning",
+        "V & V Advisors"
+      ]
+    }
+  }
+}

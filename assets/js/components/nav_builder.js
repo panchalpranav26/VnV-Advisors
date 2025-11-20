@@ -28,10 +28,14 @@ export async function buildDynamicNav() {
     console.groupCollapsed("%c[nav_builder] Building Menu", "color:#4db6ac");
 
     // HOME
-    root.appendChild(makeSimpleItem(navData.home.title, navData.home.url, "home"));
+    const home = navData.sections.find(s => s.id === "home");
+    root.appendChild(makeSimpleItem(home.title, buildUrl(home), "home"));
 
     // MAIN SECTIONS
     navData.sections.forEach(section => {
+
+        // 🛑 Skip HOME — already added above
+        if (section.id === "home") return;
 
         // Case 1: Tiered (Financial Ed, Protection Products)
         if (section.subcategories) {
@@ -191,7 +195,7 @@ function makeTieredSection(section) {
             <div class="mini-card card-tier1">
                 <ul class="tier1-list">
                     ${section.subcategories.map(cat => `
-                        <li class="tier1-item" ${CURRENT_TIER1 === cat.id ? "nav-active-tier1" : ""}"
+                        <li class="tier1-item ${CURRENT_TIER1 === cat.id ? "nav-active-tier1" : ""}"
                             data-submenu="${cat.id}"
                             data-nav-id="${cat.id}">
 
@@ -202,31 +206,32 @@ function makeTieredSection(section) {
                                role="menuitem">
                                 ${cat.icon || ""} ${cat.title}
                             </a>
+
+                            <!-- 🔽 Submenu now lives inside THIS li -->
+                            <div class="submenu-pane" id="submenu-${cat.id}">
+                                <div class="mini-card card-tier2">
+                                    <ul>
+                                        ${cat.pages.map(p => `
+                                            <li>
+                                                <a href="${buildUrl(p, cat)}"
+                                                   role="menuitem"
+                                                   data-title="${p.title}"
+                                                   data-nav-id="${p.title.toLowerCase().replace(/\s+/g,'_')}">
+                                                    ${p.title}
+                                                </a>
+                                            </li>
+                                        `).join("")}
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 🔼 end submenu-pane -->
                         </li>
                     `).join("")}
                 </ul>
             </div>
-
-            ${section.subcategories.map(cat => `
-                <div class="submenu-pane" id="submenu-${cat.id}">
-                    <div class="mini-card card-tier2">
-                        <ul>
-                            ${cat.pages.map(p => `
-                                <li>
-                                    <a href="${buildUrl(p, cat)}"
-                                       role="menuitem"
-                                       data-title="${p.title}"
-                                       data-nav-id="${p.title.toLowerCase().replace(/\s+/g,'_')}">
-                                        ${p.title}
-                                    </a>
-                                </li>
-                            `).join("")}
-                        </ul>
-                    </div>
-                </div>
-            `).join("")}
         </div>
     `;
 
     return root;
 }
+

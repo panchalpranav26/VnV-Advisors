@@ -577,37 +577,46 @@
    ============================================================ */
 
 .form-glass {
-    background: var(--backdrop-color);
+    background: var(--white);
     backdrop-filter: blur(6px);
     padding: 2rem;
-    max-width: 500px;
+    max-width: 600px;
     margin: 2rem auto;
     border-radius: var(--radius);
-    border: 1px solid rgba(45,212,191,0.3);
+    border: 2px solid var(--teal-400);
     box-shadow: var(--shadow-1);
-    text-align: center;
+    text-align: left;
     font-family: var(--font-serif);
 }
 
 .form-glass input,
 .form-glass select,
 .form-glass textarea {
-    width: 100%;
+    width: 95%;
     padding: 0.75rem;
-    margin: 0.5rem 0 1rem;
+    margin-bottom: 2rem;
+    margin-top: 0;
     border: 1px solid var(--teal-400);
     border-radius: var(--radius-sm);
-    background: rgba(11,27,42,0.6);
-    color: white;
+    background: var(--gray-200);
+    color: #000000;
 }
 
 .form-glass input:focus,
 .form-glass select:focus,
 .form-glass textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(45,212,191,0.3);
 }
 
+.form-glass textarea {
+    resize: none;
+    height: auto;
+    overflow: hidden;
+}
+.form-group label {
+    display: block; /* Forces label onto its own line */
+    margin-bottom: 0;
+}
 
 /* ============================================================
    11. MODAL

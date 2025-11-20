@@ -4,23 +4,50 @@
    100% reliable for highlighting & breadcrumbs
    ============================================================ */
 
+/* ============================================================
+   lookupNavTitles_v5.js — FINAL + ROBUST
+   Matches using folder → id → title (in that order)
+   100% reliable for highlighting & breadcrumbs
+   ============================================================ */
+
 export async function lookupNavTitles() {
     try {
+
+        /* ===============================================
+           FIX: EARLY HOME DETECTION
+        =============================================== */
+        const currentUrl = window.location.pathname;
+
+        if (currentUrl === "/" || currentUrl === "/index.html") {
+            return {
+                level: "home",
+                jsonMenuTitle: "Home",
+                jsonSectionTitle: null,
+                jsonPageTitle: "Home",
+                menuData: { id: "home", title: "Home", url: "/index.html" },
+                sectionData: null,
+                pageData: { id: "home", title: "Home", url: "/index.html" }
+            };
+        }
+
+        /* ===============================================
+           Continue with normal matching
+        =============================================== */
         const res = await fetch("/assets/navigation_data.json");
         if (!res.ok) throw new Error("Failed to load navigation_data.json");
         const nav = await res.json();
 
         const rawTitle = document.title || "";
         const normalizedTitle = rawTitle.toLowerCase();
-
-        /* Folder-based matching (more reliable) */
         const path = window.location.pathname.split("/").filter(Boolean);
 
-        const folder1 = path[1] || "";   // financial_education, protection_products
-        const folder2 = path[2] || "";   // foundations, wealth, etc.
+        /* 🔥 You MUST restore these */
+        const folder1 = path[1] || "";
+        const folder2 = path[2] || "";
         const pageFile = path[path.length - 1] || "";
 
         const result = {
+            level: "page",
             jsonMenuTitle: null,
             jsonSectionTitle: null,
             jsonPageTitle: null,
@@ -29,12 +56,11 @@ export async function lookupNavTitles() {
             pageData: null
         };
 
-        /* Fast helper */
         const titleMatches = (t) =>
             t && normalizedTitle.includes(t.toLowerCase());
 
         /* ------------------------------------------------------------
-           1. PAGE MATCH (deepest match)
+           1. PAGE MATCH
         ------------------------------------------------------------ */
         for (const menu of nav.sections) {
             if (menu.subcategories) {
@@ -58,7 +84,7 @@ export async function lookupNavTitles() {
                 }
             }
 
-            /* Mini sections (Services, About) */
+            /* Mini-sections */
             if (menu.pages) {
                 for (const p of menu.pages) {
                     const jsonFile = p.url.split("/").pop();
@@ -77,7 +103,7 @@ export async function lookupNavTitles() {
         }
 
         /* ------------------------------------------------------------
-           2. SECTION MATCH (folder2)
+           2. SECTION MATCH
         ------------------------------------------------------------ */
         for (const menu of nav.sections) {
             if (menu.subcategories) {
@@ -88,7 +114,7 @@ export async function lookupNavTitles() {
 
                         result.menuData = menu;
                         result.sectionData = sub;
-                        result.pageData = sub; // section index page
+                        result.pageData = sub;
 
                         return result;
                     }
@@ -97,13 +123,13 @@ export async function lookupNavTitles() {
         }
 
         /* ------------------------------------------------------------
-           3. MENU MATCH (folder1)
+           3. MENU MATCH
         ------------------------------------------------------------ */
         for (const menu of nav.sections) {
             if (menu.id === folder1 || titleMatches(menu.title)) {
                 result.jsonMenuTitle = menu.title;
                 result.menuData = menu;
-                result.pageData = menu; // menu index
+                result.pageData = menu;
 
                 return result;
             }
@@ -124,3 +150,4 @@ export async function lookupNavTitles() {
         };
     }
 }
+

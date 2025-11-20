@@ -1,57 +1,71 @@
 /* ============================================================
-   page_toc_v3.js
-   Title-aware Floating Page TOC
-   Uses lookupNavTitles_v3.js for breadcrumb resolution.
+   page_toc_v4.js
+   Clean TOC — Powered by lookupNavTitles_v7.js
+   Pure lookup-driven breadcrumbs, no guessing.
    ============================================================ */
 
 import { lookupNavTitles } from "./lookupNavTitles.js";
 
 export async function initPageTOC() {
     console.groupCollapsed(
-        "%c[TOC] Init Floating Page TOC (title-aware)",
+        "%c[TOC] Init Floating Page TOC (LEVEL-AWARE)",
         "color:#4db6ac;font-weight:600;"
     );
 
     /* ------------------------------------------------------------
-       1. GET PAGE TITLE (normalize)
-    ------------------------------------------------------------ */
-    const fullTitle = document.title || "";
-    const cleanPageTitle = fullTitle.replace("– V & V Advisors", "").trim();
-
-    console.log("[TOC][debug] HTML Title:", cleanPageTitle);
-
-
-    /* ------------------------------------------------------------
-       2. LOOKUP JSON MENU/SECTION/PAGE TITLES
+       1. LOOKUP NAV TITLES (STRICT URL + DIR MATCHING)
     ------------------------------------------------------------ */
     const lookup = await lookupNavTitles();
-    console.log("[TOC][debug] Lookup Result:", lookup);
+    console.log("[TOC] Lookup:", lookup);
 
     const {
+        level,
         jsonMenuTitle,
         jsonSectionTitle,
         jsonPageTitle,
-        pageUrl
+        menuData,
+        sectionData,
+        pageData
     } = lookup;
 
+    const isHomePage = level === "home";
 
     /* ------------------------------------------------------------
-       3. SELECT ALL SECTIONS <h2>
+       2. RESOLVE PAGE TITLE (after lookup!)
+    ------------------------------------------------------------ */
+    const htmlTitle = (document.title || "")
+        .replace("– V & V Advisors", "")
+        .trim();
+
+    let pageTitle = lookup.jsonPageTitle;
+
+// If it's a section index, fallback appropriately
+    if (!pageTitle) {
+        pageTitle = lookup.jsonSectionTitle || lookup.jsonMenuTitle || htmlTitle;
+    }
+
+    console.log("[TOC] Final Resolved Page Title:", pageTitle);
+
+    /* ------------------------------------------------------------
+       3. FIND <h2> HEADINGS
     ------------------------------------------------------------ */
     const headings = document.querySelectorAll(".flashy-section h2");
     if (!headings.length) {
-        console.warn("[TOC] No .flashy-section h2 headings found → TOC cancelled.");
+        console.warn("[TOC] No .flashy-section h2 headings → TOC cancelled.");
         console.groupEnd();
         return;
     }
 
+    /* ------------------------------------------------------------
+       4. BUILD TOC CONTAINER
+    ------------------------------------------------------------ */
     const toc = document.createElement("nav");
     toc.className = "page-toc page-toc--left";
 
     const header = document.createElement("div");
     header.className = "page-toc__header";
 
-    /* Add HOME at very top of TOC */
+    /* Always add HOME at top */
     const homeTop = document.createElement("a");
     homeTop.className = "page-toc__title btn-toc-glow--headers";
     homeTop.textContent = "Home";
@@ -59,102 +73,86 @@ export async function initPageTOC() {
     header.appendChild(homeTop);
 
     /* ------------------------------------------------------------
-       SPECIAL CASE — HOME PAGE RULES
-       Show only:
-       • Home button
-       • Page anchors
-       • Book Consultation CTA
-       Hide:
-       • Tagline title
-       • Breadcrumbs
+       5. BREADCRUMBS
     ------------------------------------------------------------ */
-    const isHomePage =
-        cleanPageTitle === "Home" ||
-        cleanPageTitle.startsWith("V & V Advisors");
+    console.groupCollapsed(
+        "%c[TOC][breadcrumbs] Rendering Breadcrumbs",
+        "color:#ffc107;font-weight:700;"
+    );
+    console.log("[isHomePage]:", isHomePage);
+    console.log("[jsonMenuTitle]:", jsonMenuTitle);
+    console.log("[jsonSectionTitle]:", jsonSectionTitle);
+    console.log("[jsonPageTitle]:", jsonPageTitle);
+    console.log("[pageTitle]:", pageTitle);
 
-    if (isHomePage) {
-        // DO NOT append breadcrumbs or page title
-        // DO NOT return here — allow anchors + CTA to render
+    if (!isHomePage) {
 
-        // Continue building TOC (skip breadcrumb section only)
-    }
-
-    /* ------------------------------------------------------------
-       4. CREATE BREADCRUMBS BASED ON MATCH TYPE (DIR-AWARE)
-    ------------------------------------------------------------ */
-
-    const menuURL    = buildUrlTOC(lookup.menuData);
-    const sectionURL = buildUrlTOC(lookup.sectionData, lookup.menuData);
-    const pageURL    = buildUrlTOC(lookup.pageData, lookup.sectionData);
-
-
-    /** CASE A — HOME PAGE */
-    if (isHomePage) {
-        // do nothing here — no breadcrumbs or page title
-    }
-
-    /** CASE B — TOP LEVEL PAGE (Stories, Contact, etc.) */
-    else if (jsonMenuTitle && !jsonSectionTitle) {
-        header.appendChild(makeCrumb(jsonMenuTitle, menuURL, "menu"));
-    }
-
-    /** CASE C — MENU INDEX PAGE */
-    else if (jsonMenuTitle && cleanPageTitle === jsonMenuTitle) {
-        header.appendChild(makeCrumb(jsonMenuTitle, menuURL, "menu"));
-    }
-
-    /** CASE D — SECTION INDEX PAGE */
-    else if (jsonMenuTitle && jsonSectionTitle && cleanPageTitle === jsonSectionTitle) {
-        header.appendChild(makeCrumb(jsonMenuTitle, menuURL, "menu"));
-        header.appendChild(makeCrumb(jsonSectionTitle, sectionURL, "section"));
-    }
-
-    /** CASE E — CONTENT PAGE */
-    else if (jsonPageTitle) {
-        header.appendChild(makeCrumb(jsonMenuTitle, menuURL, "menu"));
-
-        if (jsonSectionTitle) {
-            header.appendChild(makeCrumb(jsonSectionTitle, sectionURL, "section"));
+        /* MENU LEVEL */
+        if (jsonMenuTitle) {
+            console.log(
+                `%c[breadcrumb] MENU → ${jsonMenuTitle}`,
+                "color:#4caf50;font-weight:600;"
+            );
+            header.appendChild(
+                makeCrumb(jsonMenuTitle, buildUrl(menuData), "menu")
+            );
         }
+
+        /* SECTION LEVEL */
+        if (jsonSectionTitle) {
+            console.log(
+                `%c[breadcrumb] SECTION → ${jsonSectionTitle}`,
+                "color:#2196f3;font-weight:600;"
+            );
+            header.appendChild(
+                makeCrumb(jsonSectionTitle, buildUrl(sectionData), "section")
+            );
+        }
+
+        /* PAGE TITLE LEVEL (only if unique) */
+        let skipPageTitle =
+            !pageTitle ||
+            pageTitle.toLowerCase() === "home" ||
+            pageTitle === jsonMenuTitle ||
+            pageTitle === jsonSectionTitle;
+
+// NEW FIX — If the menu is Home, skip page-title in TOC
+        if (jsonMenuTitle === "Home") skipPageTitle = true;
+
+        console.log("[page-title skip?]:", skipPageTitle);
+
+
+        if (!skipPageTitle) {
+            console.log(`[breadcrumb] PAGE TITLE → ${pageTitle}`);
+
+            const titleBtn = document.createElement("button");
+            titleBtn.className = "page-toc__title btn-toc-glow--title active";
+            titleBtn.textContent = pageTitle;
+
+            titleBtn.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setActiveLink(null);
+            });
+
+            header.appendChild(titleBtn);
+        }
+
+
     }
 
+    console.groupEnd();
 
-    /* Divider line */
+    /* Divider */
     header.appendChild(
         Object.assign(document.createElement("div"), {
             className: "page-toc__divider"
         })
     );
 
-
-    /* ------------------------------------------------------------
-       5. ADD PAGE TITLE (avoid duplicates)
-    ------------------------------------------------------------ */
-    let shouldHidePageTitle =
-        cleanPageTitle === jsonMenuTitle ||
-        cleanPageTitle === jsonSectionTitle;
-
-    if (isHomePage) shouldHidePageTitle = true;
-
-
-    if (!shouldHidePageTitle) {
-        const titleBtn = document.createElement("button");
-        titleBtn.className = "page-toc__title btn-toc-glow--title active";
-        titleBtn.textContent = cleanPageTitle;
-
-        titleBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-            setActiveLink(null);
-        });
-
-        header.appendChild(titleBtn);
-    }
-
     toc.appendChild(header);
 
-
     /* ------------------------------------------------------------
-       6. BUILD ANCHOR LIST FROM <h2> HEADINGS
+       6. SECTION ANCHORS
     ------------------------------------------------------------ */
     const list = document.createElement("ul");
     const tocLinks = [];
@@ -162,9 +160,7 @@ export async function initPageTOC() {
     headings.forEach((heading, idx) => {
         const text = heading.textContent.trim();
         const slug = text.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-
         const section = heading.closest(".flashy-section");
-        if (!section) return;
 
         if (!section.id) section.id = slug || `section-${idx}`;
 
@@ -186,28 +182,18 @@ export async function initPageTOC() {
 
     toc.appendChild(list);
 
-
-
     /* ------------------------------------------------------------
-       8. ADD FREE CONSULTATION CTA AT BOTTOM OF TOC
+       7. CTA
     ------------------------------------------------------------ */
     const tocCTA = document.createElement("div");
     tocCTA.className = "btn-toc-consult";
-
-    tocCTA.innerHTML = `
-    <a href="/pages/consultation.html">
-        Book Consultation
-    </a>
-    `;
-
-// Append CTA *after* the heading list
+    tocCTA.innerHTML = `<a href="/pages/consultation.html">Book Consultation</a>`;
     toc.appendChild(tocCTA);
 
     document.body.appendChild(toc);
 
-
     /* ------------------------------------------------------------
-       7. SCROLL-BASED ACTIVE HIGHLIGHT
+       8. ACTIVE HIGHLIGHT
     ------------------------------------------------------------ */
     function setActiveLink(activeLink) {
         tocLinks.forEach(item => item.link.classList.remove("active"));
@@ -246,45 +232,49 @@ export async function initPageTOC() {
     });
 
     console.groupEnd();
+}
 
-    /* ============================================================
-       HELPERS
-    ============================================================ */
-    function makeCrumb(title, url, level = "menu") {
-        const a = document.createElement("a");
-        a.className = "page-toc__title btn-toc-glow--headers";
+/* ============================================================
+   HELPERS
+============================================================ */
+function buildUrl(item) {
+    if (!item) return "#";
+    return item.dir
+        ? item.dir + item.url.replace(/^\//, "")
+        : item.url;
+}
 
-        // Add hierarchy arrows:
-        let icon = "";
-        if (level === "menu") icon = "› ";
-        if (level === "section") icon = "» ";
-        if (level === "root") icon = ""; // Home
+function makeCrumb(title, url, level = "menu") {
+    const currentUrl = window.location.pathname;
+    const a = document.createElement("a");
+    a.className = "page-toc__title btn-toc-glow--headers";
 
-        a.textContent = icon + title;
-        a.href = url;
+    let icon = "";
+    if (level === "menu") icon = "› ";
+    if (level === "section") icon = "» ";
+
+    a.textContent = icon + title;
+
+    /* -----------------------------------------------
+       CASE: User is already on this page
+       → convert crumb to scroll-to-top
+    -------------------------------------------------*/
+    if (url === currentUrl) {
+        console.log(`[breadcrumb] SELF → ${title} (scroll to top)`);
+
+        a.href = "#";
+        a.addEventListener("click", e => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
         return a;
     }
 
-
+    /* -----------------------------------------------
+       Normal navigation
+    -------------------------------------------------*/
+    a.href = url;
+    return a;
 }
 
-
-/* ============================================================
-   DIR-AWARE URL BUILDER for TOC (matches nav_builder_v3)
-   ============================================================ */
-function buildUrlTOC(item, parent = null) {
-    if (!item) return "#";
-
-    // 1. If JSON entry has absolute dir → use it
-    if (item.dir) {
-        return item.dir + item.url.replace(/^\//, "");
-    }
-
-    // 2. Inherit dir from parent
-    if (parent && parent.dir) {
-        return parent.dir + item.url.replace(/^\//, "");
-    }
-
-    // 3. Fallback: use url as-is
-    return item.url;
-}
