@@ -111,25 +111,55 @@ footer {
 .source-list li,
 .sources,
 .sources-inline {
-    font-size: 0.85rem;
     color: #000000;
     margin-top: 1rem;
 }
 
+
+/* Base state */
 .source a,
+.resource a,
 .source-list a,
-.sources a,
 .sources-inline a {
     color: #000000;
+    display: inline-flex;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid transparent;   /* prevents layout shift */
+    border-radius: var(--radius);
+}
+
+/* Extended hover for resources only */
+.resource a {
+    font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.resource a i.feather-icon {
+    width: 10px!important;
+    height: 10px!important;
+}
+
+
+/* Hover state */
+/* Shared hover */
+.source a:hover,
+.resource a:hover,
+.source-list a:hover,
+.sources-inline a:hover {
+    font-weight: bold;
     text-decoration: underline;
 }
 
-.source a:hover,
-.source-list a:hover,
-.sources a:hover,
-.sources-inline a:hover {
-    color: var(--teal-700);
+/* Extended hover for resources only */
+.resource a:hover {
+    text-decoration: underline;
+    font-weight: unset;
+    border-color: var(--teal-400) !important;
 }
+
+
 
 .note {
     text-align: center;

@@ -1,0 +1,227 @@
+{
+  "topic_domain": [
+    "Foundations of Money",
+    "Budgeting & Cash Flow",
+    "Emergency Preparedness",
+    "Debt & Credit Management",
+    "Insurance & Protection",
+    "Family Risk Planning",
+    "Health, Disability & Income Protection",
+    "Understanding Life Insurance",
+    "Choosing Protection Strategy",
+    "Investment Basics",
+    "Retirement Planning",
+    "Risk & Return",
+    "Compounding & Time",
+    "Annuities",
+    "Long-Term Wealth Building",
+    "Family & Financial Wellness",
+    "Kids & Teens Education",
+    "Preparing for College",
+    "Family Financial Planning",
+    "Estate Planning",
+    "Wills & Trusts",
+    "Beneficiary Planning",
+    "Powers of Attorney",
+    "Advance Directives",
+    "Passing Wealth",
+    "Legal Protection"
+  ],
+
+  "financial_domain": [
+    "Behavioral Finance",
+    "Financial Literacy",
+    "Money Habits",
+    "Cash Flow Awareness",
+    "Consumer Protection",
+    "Financial Wellness",
+    "Family Finance Dynamics",
+    "Risk Awareness",
+    "Long-Term Planning",
+    "Tax-Efficiency Basics"
+  ],
+
+  "product_category": [
+    "Core Life Insurance",
+    "Advanced Life Insurance",
+    "Simplified / Guaranteed",
+    "Supplemental Protection",
+    "Traditional Annuities",
+    "Growth-Oriented Annuities",
+    "Specialized Annuities",
+    "Hybrid Life + LTC",
+    "Estate Planning Tools",
+    "College Planning Solutions",
+    "Family Risk Management"
+  ],
+
+  "product_type": [
+    "Term Life Insurance",
+    "Whole Life Insurance",
+    "Universal Life Insurance",
+    "Indexed Universal Life (IUL)",
+    "Variable Universal Life (VUL)",
+    "Permanent Life Insurance",
+    "Guaranteed Issue Life Insurance",
+    "Final Expense Insurance",
+    "AD&D Insurance",
+    "Traditional Fixed Annuity",
+    "Fixed Indexed Annuity (FIA)",
+    "Registered Index-Linked Annuity (RILA)",
+    "Immediate Annuity",
+    "Multi-Year Guaranteed Annuity (MYGA)",
+    "Structured Settlement Annuity",
+    "Hybrid Life + Long-Term Care (LTC)",
+    "Funeral Concierge Service",
+    "Estate Documents (Wills/Trusts/POA)",
+    "Youth Whole Life Insurance"
+  ],
+
+  "product_features": {
+    "label": "Product Features",
+    "description": "Semantic traits extracted from product matrix descriptions",
+    "tags": [
+      "Cash Value",
+      "Index-Linked Growth",
+      "Guaranteed Growth",
+      "Market Exposure",
+      "Tax-Deferred Growth",
+      "Fixed Interest",
+      "Flexible Premiums",
+      "Lifetime Income",
+      "Living Benefits",
+      "Long-Term Care Rider",
+      "Death Benefit Guarantee",
+      "No-Medical Exam",
+      "Guaranteed Issue",
+      "Final Expense Focus",
+      "Income Replacement",
+      "Estate Protection",
+      "Principal Protection",
+      "Buffered Market Risk",
+      "Upside Market Participation",
+      "Policy Riders",
+      "Immediate Income",
+      "Deferred Income"
+    ]
+  },
+
+  "planning_stage": [
+    "Learning Basics",
+    "Early Career",
+    "Mid Career",
+    "Pre-Retirement",
+    "Retirement",
+    "Family Building",
+    "Legacy Planning"
+  ],
+
+  "life_event": {
+    "label": "Life Events",
+    "description": "Triggers that shape financial needs & product fit",
+    "tags": [
+      "New Job",
+      "Marriage",
+      "Having Children",
+      "Buying a Home",
+      "Starting a Business",
+      "College Planning",
+      "Divorce",
+      "Health Event",
+      "Job Loss",
+      "Retirement",
+      "Caring for Aging Parents",
+      "Death in Family"
+    ]
+  },
+
+  "risk_type": [
+    "Income Loss Risk",
+    "Death Risk",
+    "Health Risk",
+    "Disability Risk",
+    "Longevity Risk",
+    "Market Risk",
+    "Liquidity Risk",
+    "Credit Risk",
+    "Inflation Risk",
+    "Family Risk",
+    "Estate Risk"
+  ],
+
+  "carrier": [
+    "American Amicable",
+    "American Equity",
+    "Everest",
+    "Ameritas",
+    "Athene Annuities",
+    "Corebridge Direct",
+    "Corebridge Financial",
+    "Ethos",
+    "Fidelity & Guarantee Life (F&G)",
+    "Lincoln Financial Life",
+    "Mutual of Omaha",
+    "Nationwide Life",
+    "North American Life",
+    "NetLaw"
+  ],
+
+  "pillar": [
+    "Pillar 1 — Foundations & Literacy",
+    "Pillar 2 — Protection",
+    "Pillar 3 — Wealth Building",
+    "Pillar 4 — Legacy & Legal"
+  ],
+
+  "audience": [
+    "General Adults",
+    "Parents",
+    "Kids",
+    "Teens",
+    "Seniors",
+    "College Students",
+    "Young Professionals",
+    "Pre-Retirees",
+    "Retirees",
+    "High-Risk Households",
+    "Low-Income Households"
+  ],
+
+  "resource_type": {
+    "label": "Resource Types",
+    "description": "Educational content formats used on V&V Advisors",
+    "tags": [
+      "Calculator",
+      "Worksheet",
+      "Interactive Tool",
+      "PDF Guide",
+      "Checklist",
+      "Video",
+      "Infographic",
+      "External Link",
+      "Fact Sheet",
+      "Activity",
+      "Youth Activity",
+      "Teacher Resource",
+      "Topic Hub"
+    ]
+  },
+
+  "intent_type": {
+    "label": "Intent Meaning",
+    "description": "AI classification of user intent for routing & resource selection",
+    "tags": [
+      "Learn",
+      "Calculate",
+      "Compare",
+      "Evaluate Risk",
+      "Explore Options",
+      "Plan",
+      "Take Action",
+      "Teach",
+      "Youth Engagement",
+      "Download",
+      "Explore Product"
+    ]
+  }
+}

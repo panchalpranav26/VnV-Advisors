@@ -1,0 +1,458 @@
+{
+  "home": {
+    "menu": "home",
+    "section": null,
+    "subcategory": null,
+    "url": "/index.html",
+    "canonical": "https://vnvadvisors.netlify.app/index.html",
+    "seo_json": "home_seo_data.json"
+  },
+  "financial_education": {
+    "menu": "financial_education",
+    "section": null,
+    "subcategory": null,
+    "url": "/financial_education/index.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/index.html",
+    "seo_json": "financial_education_seo_data.json"
+  },
+  "foundation_money": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "foundation_money",
+    "url": "/financial_education/foundation_money/index.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/foundation_money/index.html",
+    "seo_json": "foundation_money_seo_data.json"
+  },
+  "budget_basics": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "foundation_money",
+    "url": "/financial_education/foundation_money/budget_basics.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/foundation_money/budget_basics.html",
+    "seo_json": "foundation_money_seo_data.json"
+  },
+  "emer_funds": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "foundation_money",
+    "url": "/financial_education/foundation_money/emer_funds.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/foundation_money/emer_funds.html",
+    "seo_json": "foundation_money_seo_data.json"
+  },
+  "manage_debit": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "foundation_money",
+    "url": "/financial_education/foundation_money/manage_debit.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/foundation_money/manage_debit.html",
+    "seo_json": "foundation_money_seo_data.json"
+  },
+  "protecting_future": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "protecting_future",
+    "url": "/financial_education/protecting_future/index.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/protecting_future/index.html",
+    "seo_json": "protecting_future_seo_data.json"
+  },
+  "insurance_101": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "protecting_future",
+    "url": "/financial_education/protecting_future/insurance_101.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/protecting_future/insurance_101.html",
+    "seo_json": "protecting_future_seo_data.json"
+  },
+  "family_risk_protection": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "protecting_future",
+    "url": "/financial_education/protecting_future/family_risk_protection.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/protecting_future/family_risk_protection.html",
+    "seo_json": "protecting_future_seo_data.json"
+  },
+  "how_life_ins_fits": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "protecting_future",
+    "url": "/financial_education/protecting_future/how_life_ins_fits.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/protecting_future/how_life_ins_fits.html",
+    "seo_json": "protecting_future_seo_data.json"
+  },
+  "riders_living_benefits": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "protecting_future",
+    "url": "/financial_education/protecting_future/riders_living_benefits.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/protecting_future/riders_living_benefits.html",
+    "seo_json": "protecting_future_seo_data.json"
+  },
+  "how_to_choose_protection": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "protecting_future",
+    "url": "/financial_education/protecting_future/how_to_choose_protection.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/protecting_future/how_to_choose_protection.html",
+    "seo_json": "protecting_future_seo_data.json"
+  },
+  "building_wealth": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "building_wealth",
+    "url": "/financial_education/building_wealth/index.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/building_wealth/index.html",
+    "seo_json": "building_wealth_seo_data.json"
+  },
+  "compounding_time": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "building_wealth",
+    "url": "/financial_education/building_wealth/compounding_time.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/building_wealth/compounding_time.html",
+    "seo_json": "building_wealth_seo_data.json"
+  },
+  "retirement_basics": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "building_wealth",
+    "url": "/financial_education/building_wealth/retirement_basics.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/building_wealth/retirement_basics.html",
+    "seo_json": "building_wealth_seo_data.json"
+  },
+  "risk_return": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "building_wealth",
+    "url": "/financial_education/building_wealth/risk_return.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/building_wealth/risk_return.html",
+    "seo_json": "building_wealth_seo_data.json"
+  },
+  "annuities_101": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "building_wealth",
+    "url": "/financial_education/building_wealth/annuities_101.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/building_wealth/annuities_101.html",
+    "seo_json": "building_wealth_seo_data.json"
+  },
+  "fixed_indexed_variable": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "building_wealth",
+    "url": "/financial_education/building_wealth/fixed_indexed_variable.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/building_wealth/fixed_indexed_variable.html",
+    "seo_json": "building_wealth_seo_data.json"
+  },
+  "lifetime_income_riders": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "building_wealth",
+    "url": "/financial_education/building_wealth/income_riders.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/building_wealth/income_riders.html",
+    "seo_json": "building_wealth_seo_data.json"
+  },
+  "family_fin_wellness": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "family_fin_wellness",
+    "url": "/financial_education/family_fin_wellness/index.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/family_fin_wellness/index.html",
+    "seo_json": "family_fin_wellness_seo_data.json"
+  },
+  "kids_teens": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "family_fin_wellness",
+    "url": "/financial_education/family_fin_wellness/kids_teens.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/family_fin_wellness/kids_teens.html",
+    "seo_json": "family_fin_wellness_seo_data.json"
+  },
+  "college_prepare": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "family_fin_wellness",
+    "url": "/financial_education/family_fin_wellness/college_prepare.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/family_fin_wellness/college_prepare.html",
+    "seo_json": "family_fin_wellness_seo_data.json"
+  },
+  "family_fin_planning": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "family_fin_wellness",
+    "url": "/financial_education/family_fin_wellness/family_fin_planning.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/family_fin_wellness/family_fin_planning.html",
+    "seo_json": "family_fin_wellness_seo_data.json"
+  },
+  "estate_planning": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "estate_planning",
+    "url": "/financial_education/estate_planning/index.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/estate_planning/index.html",
+    "seo_json": "estate_planning_seo_data.json"
+  },
+  "estate_wills_trusts": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "estate_planning",
+    "url": "/financial_education/estate_planning/estate_wills_trusts.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/estate_planning/estate_wills_trusts.html",
+    "seo_json": "estate_planning_seo_data.json"
+  },
+  "estate_beneficiaries": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "estate_planning",
+    "url": "/financial_education/estate_planning/estate_beneficiaries.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/estate_planning/estate_beneficiaries.html",
+    "seo_json": "estate_planning_seo_data.json"
+  },
+  "estate_poa": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "estate_planning",
+    "url": "/financial_education/estate_planning/estate_poa.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/estate_planning/estate_poa.html",
+    "seo_json": "estate_planning_seo_data.json"
+  },
+  "estate_directives": {
+    "menu": "financial_education",
+    "section": "Financial Education",
+    "subcategory": "estate_planning",
+    "url": "/financial_education/estate_planning/estate_directives.html",
+    "canonical": "https://vnvadvisors.netlify.app/financial_education/estate_planning/estate_directives.html",
+    "seo_json": "estate_planning_seo_data.json"
+  },
+  "estate_legacy": {
+    "menu": "protection_products",
+    "section": "Protection Products",
+    "subcategory": "estate_legacy",
+    "url": "/protection_products/estate_legacy/index.html",
+    "canonical": "https://vnvadvisors.netlify.app/protection_products/estate_legacy/index.html",
+    "seo_json": "estate_legacy_seo_data.json"
+  },
+  "protection_products": {
+    "menu": "protection_products",
+    "section": null,
+    "subcategory": null,
+    "url": "/protection_products/index.html",
+    "canonical": "https://vnvadvisors.netlify.app/protection_products/index.html",
+    "seo_json": "protection_products_seo_data.json"
+  },
+  "life_insurance": {
+    "menu": "protection_products",
+    "section": "Protection Products",
+    "subcategory": "life_insurance",
+    "url": "/protection_products/life_insurance/index.html",
+    "canonical": "https://vnvadvisors.netlify.app/protection_products/life_insurance/index.html",
+    "seo_json": "life_insurance_seo_data.json"
+  },
+  "core_life_insurance": {
+    "menu": "protection_products",
+    "section": "Protection Products",
+    "subcategory": "life_insurance",
+    "url": "/protection_products/life_insurance/core_life_insurance.html",
+    "canonical": "https://vnvadvisors.netlify.app/protection_products/life_insurance/core_life_insurance.html",
+    "seo_json": "life_insurance_seo_data.json"
+  },
+  "advanced_life_insurance": {
+    "menu": "protection_products",
+    "section": "Protection Products",
+    "subcategory": "life_insurance",
+    "url": "/protection_products/life_insurance/advanced_life_insurance.html",
+    "canonical": "https://vnvadvisors.netlify.app/protection_products/life_insurance/advanced_life_insurance.html",
+    "seo_json": "life_insurance_seo_data.json"
+  },
+  "simplified_guaranteed": {
+    "menu": "protection_products",
+    "section": "Protection Products",
+    "subcategory": "life_insurance",
+    "url": "/protection_products/life_insurance/simplified_guaranteed.html",
+    "canonical": "https://vnvadvisors.netlify.app/protection_products/life_insurance/simplified_guaranteed.html",
+    "seo_json": "life_insurance_seo_data.json"
+  },
+  "annuity": {
+    "menu": "protection_products",
+    "section": "Protection Products",
+    "subcategory": "annuity",
+    "url": "/protection_products/annuity/index.html",
+    "canonical": "https://vnvadvisors.netlify.app/protection_products/annuity/index.html",
+    "seo_json": "annuity_seo_data.json"
+  },
+  "traditional_annuities": {
+    "menu": "protection_products",
+    "section": "Protection Products",
+    "subcategory": "annuity",
+    "url": "/protection_products/annuity/traditional_annuities.html",
+    "canonical": "https://vnvadvisors.netlify.app/protection_products/annuity/traditional_annuities.html",
+    "seo_json": "annuity_seo_data.json"
+  },
+  "growth_oriented_annuities": {
+    "menu": "protection_products",
+    "section": "Protection Products",
+    "subcategory": "annuity",
+    "url": "/protection_products/annuity/growth_oriented_annuities.html",
+    "canonical": "https://vnvadvisors.netlify.app/protection_products/annuity/growth_oriented_annuities.html",
+    "seo_json": "annuity_seo_data.json"
+  },
+  "specialized_annuities": {
+    "menu": "protection_products",
+    "section": "Protection Products",
+    "subcategory": "annuity",
+    "url": "/protection_products/annuity/specialized_annuities.html",
+    "canonical": "https://vnvadvisors.netlify.app/protection_products/annuity/specialized_annuities.html",
+    "seo_json": "annuity_seo_data.json"
+  },
+  "legal_protection_essentials": {
+    "menu": "protection_products",
+    "section": "Protection Products",
+    "subcategory": "estate_legacy",
+    "url": "/protection_products/estate_legacy/legal_protection_essentials.html",
+    "canonical": "https://vnvadvisors.netlify.app/protection_products/estate_legacy/legal_protection_essentials.html",
+    "seo_json": "estate_legacy_seo_data.json"
+  },
+  "family_end_of_life": {
+    "menu": "protection_products",
+    "section": "Protection Products",
+    "subcategory": "estate_legacy",
+    "url": "/protection_products/estate_legacy/family_end_of_life.html",
+    "canonical": "https://vnvadvisors.netlify.app/protection_products/estate_legacy/family_end_of_life.html",
+    "seo_json": "estate_legacy_seo_data.json"
+  },
+  "our_services": {
+    "menu": "our_services",
+    "section": null,
+    "subcategory": null,
+    "url": "/our_services/index.html",
+    "canonical": "https://vnvadvisors.netlify.app/our_services/index.html",
+    "seo_json": "our_services_seo_data.json"
+  },
+  "education_session": {
+    "menu": "our_services",
+    "section": null,
+    "subcategory": null,
+    "url": "/our_services/education_session.html",
+    "canonical": "https://vnvadvisors.netlify.app/our_services/education_session.html",
+    "seo_json": "our_services_seo_data.json"
+  },
+  "life_ins_guidance": {
+    "menu": "our_services",
+    "section": null,
+    "subcategory": null,
+    "url": "/our_services/life_ins_guidance.html",
+    "canonical": "https://vnvadvisors.netlify.app/our_services/life_ins_guidance.html",
+    "seo_json": "our_services_seo_data.json"
+  },
+  "family_protection": {
+    "menu": "our_services",
+    "section": null,
+    "subcategory": null,
+    "url": "/our_services/family_protection.html",
+    "canonical": "https://vnvadvisors.netlify.app/our_services/family_protection.html",
+    "seo_json": "our_services_seo_data.json"
+  },
+  "workshop_webinar": {
+    "menu": "our_services",
+    "section": null,
+    "subcategory": null,
+    "url": "/our_services/workshop_webinar.html",
+    "canonical": "https://vnvadvisors.netlify.app/our_services/workshop_webinar.html",
+    "seo_json": "our_services_seo_data.json"
+  },
+  "opportunity": {
+    "menu": "opportunity",
+    "section": null,
+    "subcategory": null,
+    "url": "/opportunity/index.html",
+    "canonical": "https://vnvadvisors.netlify.app/opportunity/index.html",
+    "seo_json": "opportunity_seo_data.json"
+  },
+  "business_model": {
+    "menu": "opportunity",
+    "section": null,
+    "subcategory": null,
+    "url": "/opportunity/business_model.html",
+    "canonical": "https://vnvadvisors.netlify.app/opportunity/business_model.html",
+    "seo_json": "opportunity_seo_data.json"
+  },
+  "become_agent": {
+    "menu": "opportunity",
+    "section": null,
+    "subcategory": null,
+    "url": "/opportunity/become_agent.html",
+    "canonical": "https://vnvadvisors.netlify.app/opportunity/become_agent.html",
+    "seo_json": "opportunity_seo_data.json"
+  },
+  "difference": {
+    "menu": "opportunity",
+    "section": null,
+    "subcategory": null,
+    "url": "/opportunity/difference.html",
+    "canonical": "https://vnvadvisors.netlify.app/opportunity/difference.html",
+    "seo_json": "opportunity_seo_data.json"
+  },
+  "build_income": {
+    "menu": "opportunity",
+    "section": null,
+    "subcategory": null,
+    "url": "/opportunity/build_income.html",
+    "canonical": "https://vnvadvisors.netlify.app/opportunity/build_income.html",
+    "seo_json": "opportunity_seo_data.json"
+  },
+  "about_us": {
+    "menu": "about_us",
+    "section": null,
+    "subcategory": null,
+    "url": "/about_us/index.html",
+    "canonical": "https://vnvadvisors.netlify.app/about_us/index.html",
+    "seo_json": "about_us_seo_data.json"
+  },
+  "mission_story": {
+    "menu": "about_us",
+    "section": null,
+    "subcategory": null,
+    "url": "/about_us/mission_story.html",
+    "canonical": "https://vnvadvisors.netlify.app/about_us/mission_story.html",
+    "seo_json": "about_us_seo_data.json"
+  },
+  "credentials_licenses": {
+    "menu": "about_us",
+    "section": null,
+    "subcategory": null,
+    "url": "/about_us/credentials_licenses.html",
+    "canonical": "https://vnvadvisors.netlify.app/about_us/credentials_licenses.html",
+    "seo_json": "about_us_seo_data.json"
+  },
+  "values_ethics": {
+    "menu": "about_us",
+    "section": null,
+    "subcategory": null,
+    "url": "/about_us/values_ethics.html",
+    "canonical": "https://vnvadvisors.netlify.app/about_us/values_ethics.html",
+    "seo_json": "about_us_seo_data.json"
+  },
+  "team": {
+    "menu": "about_us",
+    "section": null,
+    "subcategory": null,
+    "url": "/about_us/team.html",
+    "canonical": "https://vnvadvisors.netlify.app/about_us/team.html",
+    "seo_json": "about_us_seo_data.json"
+  },
+  "contact": {
+    "menu": "contact",
+    "section": null,
+    "subcategory": null,
+    "url": "/contact.html",
+    "canonical": "https://vnvadvisors.netlify.app/contact.html",
+    "seo_json": "contact_seo_data.json"
+  },
+  "consultation": {
+    "menu": "consultation",
+    "section": null,
+    "subcategory": null,
+    "url": "/consultation.html",
+    "canonical": "https://vnvadvisors.netlify.app/consultation.html",
+    "seo_json": "consultation_seo_data.json"
+  }
+}

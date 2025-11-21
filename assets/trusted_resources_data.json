@@ -1,0 +1,253 @@
+[
+  {
+    "id": "cfpb",
+    "name": "Consumer Financial Protection Bureau (CFPB)",
+    "description": "Federal agency offering practical tools, financial education, and protections for consumers.",
+    "link": "https://www.consumerfinance.gov/",
+    "modal_target": "vvModal",
+    "icon": "external-link",
+    "html_content": "",
+    "section_ids": ["financial_education"],
+    "subcategory_ids": ["foundation_money", "family_fin_wellness"],
+    "page_ids": [
+      "budget_basics",
+      "emer_funds",
+      "manage_debit",
+      "family_fin_planning",
+      "kids_teens"
+    ],
+    "resources": [
+      {
+        "resource": "Consumer Tools",
+        "focus": "Practical financial guidance on budgeting, debt, credit, and everyday money decisions.",
+        "audience": "General consumers",
+        "url": "https://www.consumerfinance.gov/consumer-tools/",
+        "types": ["tools", "education", "topics"]
+      },
+      {
+        "resource": "Money as You Grow",
+        "focus": "Age-based milestones and activities that build children’s money understanding.",
+        "audience": "Parents & caregivers",
+        "url": "https://www.consumerfinance.gov/consumer-tools/money-as-you-grow/",
+        "types": ["youth", "education", "activities"]
+      },
+      {
+        "resource": "Youth Financial Education",
+        "focus": "K–12 aligned financial lessons and youth money-skill evaluation tools.",
+        "audience": "Teachers & youth programs",
+        "url": "https://www.consumerfinance.gov/consumer-tools/educator-tools/youth-financial-education/",
+        "types": ["education", "youth", "teacher"]
+      },
+      {
+        "resource": "Adult Tools & Worksheets",
+        "focus": "Downloadable budgeting worksheets, debt-tracking tools, and spending guides.",
+        "audience": "Adults & financial learners",
+        "url": "https://www.consumerfinance.gov/consumer-tools/educator-tools/adult-financial-education/tools-and-resources/",
+        "types": ["worksheet", "budgeting", "debt"]
+      }
+    ]
+  },
+
+  {
+    "id": "nefe",
+    "name": "National Endowment for Financial Education (NEFE)",
+    "description": "Nonprofit research and educational organization improving financial well-being for learners.",
+    "link": "https://www.nefe.org/",
+    "modal_target": "vvModal",
+    "icon": "external-link",
+    "html_content": "",
+    "section_ids": ["financial_education"],
+    "subcategory_ids": ["foundation_money"],
+    "page_ids": [
+      "budget_basics",
+      "manage_debit",
+      "college_prepare"
+    ],
+    "resources": [
+      {
+        "resource": "CashCourse",
+        "focus": "Student-friendly lessons covering budgeting, spending, debt, and money habits.",
+        "audience": "High school & college students",
+        "url": "https://www.cashcourse.org/",
+        "types": ["education", "youth", "budgeting"]
+      }
+    ]
+  },
+
+  {
+    "id": "naic",
+    "name": "National Association of Insurance Commissioners (NAIC)",
+    "description": "Insurance regulators providing consumer protections, education, and insurance shopping tools.",
+    "link": "https://content.naic.org/consumer",
+    "modal_target": "vvModal",
+    "icon": "external-link",
+    "html_content": "",
+    "section_ids": ["protection_products"],
+    "subcategory_ids": [
+      "protecting_future",
+      "estate_planning"
+    ],
+    "page_ids": [
+      "insurance_101",
+      "family_risk_protection",
+      "how_life_ins_fits",
+      "riders_living_benefits",
+      "how_to_choose_protection",
+      "estate_wills_trusts",
+      "estate_beneficiaries"
+    ],
+    "resources": [
+      {
+        "resource": "Consumer Insurance Hub",
+        "focus": "Articles and guides on understanding coverage, shopping for insurance, and state protections.",
+        "audience": "General consumers",
+        "url": "https://content.naic.org/consumer",
+        "types": ["insurance", "education", "hub"]
+      },
+      {
+        "resource": "Insurance Learning Tools",
+        "focus": "Interactive tools for researching insurance options and comparing features.",
+        "audience": "Consumers & families",
+        "url": "https://content.naic.org/consumer/learning-resources.htm",
+        "types": ["tools", "insurance", "interactive"]
+      }
+    ]
+  },
+
+  {
+    "id": "apa",
+    "name": "American Psychological Association (APA)",
+    "description": "Research-based insights on how money affects behavior, stress, decision-making, and relationships.",
+    "link": "https://www.apa.org/topics/money",
+    "modal_target": "vvModal",
+    "icon": "external-link",
+    "html_content": "",
+    "section_ids": ["financial_education"],
+    "subcategory_ids": ["family_fin_wellness"],
+    "page_ids": [
+      "family_fin_planning",
+      "budget_basics",
+      "emer_funds"
+    ],
+    "resources": [
+      {
+        "resource": "Money & Finances Hub",
+        "focus": "Articles analyzing financial stress, money conflicts, and behavior patterns.",
+        "audience": "General public",
+        "url": "https://www.apa.org/topics/money",
+        "types": ["education", "topic", "behavior"]
+      }
+    ]
+  },
+
+  {
+    "id": "mymoney",
+    "name": "MyMoney.gov",
+    "description": "Federal site providing foundational money guidance across earning, saving, spending, and protecting.",
+    "link": "https://www.mymoney.gov/",
+    "modal_target": "vvModal",
+    "icon": "external-link",
+    "html_content": "",
+    "section_ids": ["financial_education"],
+    "subcategory_ids": ["foundation_money", "family_fin_wellness"],
+    "page_ids": [
+      "budget_basics",
+      "emer_funds",
+      "kids_teens",
+      "family_fin_planning"
+    ],
+    "resources": [
+      {
+        "resource": "MyMoney.gov Home",
+        "focus": "Money basics for families, teachers, and consumers.",
+        "audience": "General public",
+        "url": "https://www.mymoney.gov/",
+        "types": ["education", "basics", "hub"]
+      },
+      {
+        "resource": "Tools Library",
+        "focus": "Federal calculators, checklists, and worksheets for day-to-day personal finance.",
+        "audience": "Consumers & families",
+        "url": "https://www.mymoney.gov/tools",
+        "types": ["tools", "calculator", "worksheet"]
+      },
+      {
+        "resource": "Youth Resources",
+        "focus": "Games and activities that introduce kids and teens to money basics.",
+        "audience": "Youth & families",
+        "url": "https://www.mymoney.gov/for-youth",
+        "types": ["youth", "education", "activities"]
+      }
+    ]
+  }
+,
+
+  {
+    "id": "investor-gov",
+    "name": "Investor.gov",
+    "description": "SEC resource helping individuals understand investing, risk, fraud prevention, and long-term planning.",
+    "link": "https://www.investor.gov",
+    "modal_target": "vvModal",
+    "icon": "external-link",
+    "html_content": "",
+    "section_ids": ["financial_education"],
+    "subcategory_ids": ["building_wealth"],
+    "page_ids": [
+      "compounding_time",
+      "risk_return",
+      "retirement_basics",
+      "annuities_101",
+      "fixed_indexed_variable"
+    ],
+    "resources": [
+      {
+        "resource": "Free Financial Planning Tools",
+        "focus": "Calculators for savings growth, compound interest, RMDs, and long-term projections.",
+        "audience": "Savers & pre-retirees",
+        "url": "https://www.investor.gov/free-financial-planning-tools",
+        "types": ["calculator", "tools", "planning"]
+      },
+      {
+        "resource": "Fund Analyzer",
+        "focus": "Interactive comparison of mutual fund fees and their long-term impact.",
+        "audience": "Fund investors",
+        "url": "https://www.investor.gov/financial-tools-calculators/financial-tools/mutual-fund-analyzer",
+        "types": ["calculator", "investment", "analysis"]
+      }
+    ]
+  },
+
+  {
+    "id": "finra",
+    "name": "FINRA",
+    "description": "Independent regulator offering tools and education for safer investing and financial decision-making.",
+    "link": "https://www.finra.org/",
+    "modal_target": "vvModal",
+    "icon": "external-link",
+    "html_content": "",
+    "section_ids": ["financial_education"],
+    "subcategory_ids": ["building_wealth"],
+    "page_ids": [
+      "compounding_time",
+      "risk_return",
+      "retirement_basics",
+      "annuities_101"
+    ],
+    "resources": [
+      {
+        "resource": "Tools & Calculators Hub",
+        "focus": "Investment-focused calculators for savings, retirement readiness, and risk assessment.",
+        "audience": "Savers & investors",
+        "url": "https://www.finra.org/investors/tools-and-calculators",
+        "types": ["calculator", "investment", "tools"]
+      },
+      {
+        "resource": "Savings Calculator",
+        "focus": "Calculates monthly savings required to reach a financial goal.",
+        "audience": "Savers",
+        "url": "https://savingscalculator.nga.finra.org/",
+        "types": ["calculator", "savings"]
+      }
+    ]
+  }
+]

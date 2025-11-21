@@ -1,0 +1,79 @@
+{
+  "Term Life Insurance": "Term Life Insurance",
+  "Term life": "Term Life Insurance",
+  "Level Term": "Term Life Insurance",
+
+  "Whole Life Insurance": "Whole Life Insurance",
+  "Whole life": "Whole Life Insurance",
+  "Children Whole Life Insurance": "Children's Whole Life Insurance",
+  "Childrens Whole Life Insurance": "Children's Whole Life Insurance",
+
+  "Permanent Life Insurance": "Permanent Life Insurance",
+  "Universal Life Insurance": "Universal Life Insurance",
+
+  "Indexed Universal Life (IUL)": "Indexed Universal Life (IUL)",
+  "Indexed UL": "Indexed Universal Life (IUL)",
+  "IUL": "Indexed Universal Life (IUL)",
+
+  "Variable Universal Life (VUL)": "Variable Universal Life (VUL)",
+  "VUL": "Variable Universal Life (VUL)",
+
+  "Hybrid Life + Long-Term Care (Linked-Benefit)": "Linked-Benefit Life & LTC",
+
+  "Guaranteed Issue Life Insurance": "Guaranteed Issue Life Insurance",
+  "Guaranteed Issue": "Guaranteed Issue Life Insurance",
+  "Simplified Issue": "Simplified Issue Life Insurance",
+  "Final Expense Life Insurance": "Final Expense Life Insurance",
+
+  "Accidental Death & Dismemberment (AD&D)": "Accidental Death & Dismemberment (AD&D)",
+  "AD&D": "Accidental Death & Dismemberment (AD&D)",
+
+  "Fixed Annuity": "Fixed Annuity",
+  "Fixed annuity": "Fixed Annuity",
+  "Traditional Fixed Annuity": "Fixed Annuity",
+
+  "Fixed Indexed Annuity (FIA)": "Fixed Indexed Annuity (FIA)",
+  "Indexed Annuities": "Fixed Indexed Annuity (FIA)",
+  "Index-lined Annuities": "Fixed Indexed Annuity (FIA)",
+  "Index Linked Annuities": "Fixed Indexed Annuity (FIA)",
+  "FIA": "Fixed Indexed Annuity (FIA)",
+
+  "Registered Index-Linked Annuity (RILA)": "Registered Index-Linked Annuity (RILA)",
+  "Index-Linked Annuity": "Registered Index-Linked Annuity (RILA)",
+  "RILA": "Registered Index-Linked Annuity (RILA)",
+
+  "Multi-Year Guaranteed Annuity (MYGA)": "Multi-Year Guaranteed Annuity (MYGA)",
+  "MYGA": "Multi-Year Guaranteed Annuity (MYGA)",
+  "Multi Year Guaranteed Annuity": "Multi-Year Guaranteed Annuity (MYGA)",
+
+  "Variable Annuity": "Variable Annuity",
+  "VA": "Variable Annuity",
+
+  "Immediate Annuity": "Immediate Annuity",
+  "SPIA": "Immediate Annuity",
+
+  "Deferred Income Annuity": "Deferred Income Annuity",
+  "DIA": "Deferred Income Annuity",
+
+  "Index Annuity": "Fixed Indexed Annuity (FIA)",
+
+  "Structured Settlement Annuity": "Structured Settlement Annuity",
+  "Income Annuity": "Income Annuity",
+
+  "Wills & Ancillary Documents": "Wills Package",
+  "Will & ancillary docs": "Wills Package",
+  "Will Package": "Wills Package",
+
+  "Revocable living trust": "Revocable Living Trust",
+  "Living Trust": "Revocable Living Trust",
+
+  "Financial & healthcare POA / directives": "Advance Directives",
+  "POA / Directives": "Advance Directives",
+
+  "Beneficiary Designations": "Beneficiary Designations",
+  "Advance Directives": "Advance Directives",
+  "Powers of Attorney": "Powers of Attorney",
+  "Power of Attorney": "Powers of Attorney",
+
+  "Passing Wealth Efficiently": "Estate Transfer Planning"
+}

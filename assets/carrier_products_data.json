@@ -1,0 +1,785 @@
+[
+  {
+    "carrier": "American Amicable",
+    "product": "Term Life Insurance",
+    "pillars": [
+      "Pillar 2"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Term Life Insurance",
+    "website": "https://www.americanamicable.com/v4/products.html#term",
+    "description": "Level-term life insurance for a fixed period"
+  },
+  {
+    "carrier": "American Amicable",
+    "product": "Whole Life Insurance",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Whole Life Insurance",
+    "website": "https://www.americanamicable.com/v4/products.html#whole",
+    "description": "Permanent coverage with guaranteed death benefit and cash value."
+  },
+  {
+    "carrier": "American Amicable",
+    "product": "Universal Life Insurance",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Universal Life Insurance",
+    "website": "https://www.americanamicable.com/v4/products.html#universal",
+    "description": "Permanent coverage with flexible premiums/death benefit and cash value."
+  },
+  {
+    "carrier": "American Equity",
+    "product": "Fixed Indexed Annuity (e.g., IncomeShield, AssetShield)",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Growth-Oriented Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.american-equity.com/annuities/fixed-index-annuities",
+    "description": "Principal-protected annuity with index-linked interest crediting; options for income."
+  },
+  {
+    "carrier": "American Equity",
+    "product": "Fixed annuity",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Traditional Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.american-equity.com/annuities/traditional-fixed-annuities",
+    "description": "Traditional fixed interest annuity for tax-deferred growth."
+  },
+  {
+    "carrier": "American Equity",
+    "product": "Immediate annuity",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Traditional Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.american-equity.com/annuities/immediate-annuity",
+    "description": "Single-premium income annuity that starts payouts right away."
+  },
+  {
+    "carrier": "Everest",
+    "product": "Funeral planning concierge / Value-Added Service",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 4"
+    ],
+    "category": "Family & End-of-Life Planning",
+    "sub_category": "Funeral Concierge",
+    "website": "https://www.everestfuneral.com/funeral-planning/",
+    "description": "24/7 funeral planning & price-shopping concierge service offered alongside many life policies."
+  },
+  {
+    "carrier": "Ameritas",
+    "product": "Term Life Insurance",
+    "pillars": [
+      "Pillar 2"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Term Life Insurance",
+    "website": "https://www.ameritas.com/life-insurance/term-life/",
+    "description": "Temporary, affordable coverage for a set term."
+  },
+  {
+    "carrier": "Ameritas",
+    "product": "Whole Life Insurance",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Whole Life Insurance",
+    "website": "https://www.ameritas.com/life-insurance/whole-life/",
+    "description": "Permanent coverage with guaranteed cash value accumulation."
+  },
+  {
+    "carrier": "Ameritas",
+    "product": "Universal Life Insurance",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Universal Life Insurance",
+    "website": "https://www.ameritas.com/life-insurance/universal-life/",
+    "description": "Flexible-premium permanent life with adjustable death benefit."
+  },
+  {
+    "carrier": "Ameritas",
+    "product": "Indexed Annuities",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Growth-Oriented Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.ameritas.com/annuities/index-annuities/",
+    "description": "Annuities offering index-linked interest crediting with downside protection for tax-deferred growth."
+  },
+  {
+    "carrier": "Ameritas",
+    "product": "Variable Annuities",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Growth-Oriented Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.ameritas.com/annuities/variable-annuities/",
+    "description": "Market-linked annuities with investment subaccounts for growth potential, offering tax-deferred accumulation."
+  },
+  {
+    "carrier": "Ameritas",
+    "product": "Fixed Annuities",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Traditional Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.ameritas.com/annuities/fixed-annuities/",
+    "description": "Traditional fixed-rate annuities providing guaranteed interest and predictable income with tax-deferred growth."
+  },
+  {
+    "carrier": "Athene Annuities",
+    "product": "Fixed Indexed Annuity (FIA)",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Growth-Oriented Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.athene.com/products/fia",
+    "description": "Index-linked growth opportunity with downside protection, tax-deferred accumulation, and income options."
+  },
+  {
+    "carrier": "Athene Annuities",
+    "product": "Registered Index-Linked Annuity (RILA)",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Growth-Oriented Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.athene.com/products/rila",
+    "description": "Annuity tied to market indexes with buffered downside risk and growth potential based on market performance."
+  },
+  {
+    "carrier": "Athene Annuities",
+    "product": "Fixed Annuities",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Traditional Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.athene.com/products/fixed",
+    "description": "Guaranteed fixed interest growth for tax-deferred savings and future predictable income."
+  },
+  {
+    "carrier": "Athene Annuities",
+    "product": "Immediate Annuities",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Traditional Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.athene.com/products/immediate",
+    "description": "Single-premium annuity that begins income payments immediately, offering lifetime or period-certain payouts."
+  },
+  {
+    "carrier": "Athene Annuities",
+    "product": "Structured Settlement Annuity",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Specialized Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.athene.com/products/structured-settlement-annuity",
+    "description": "Customized guaranteed income streams used for legal settlements, providing long-term financial security."
+  },
+  {
+    "carrier": "Corebridge Direct",
+    "product": "Term Life Insurance",
+    "pillars": [
+      "Pillar 2"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Term Life Insurance",
+    "website": "https://www.corebridgedirect.com/term-life-insurance",
+    "description": "Affordable coverage for a set period to replace income/cover needs."
+  },
+  {
+    "carrier": "Corebridge Direct",
+    "product": "Permanent Life Insurance",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Permanent Life Insurance",
+    "website": "https://www.corebridgedirect.com/permanent-life-insurance",
+    "description": "Lifelong life insurance designed to provide a death benefit with cash value growth and flexible coverage options."
+  },
+  {
+    "carrier": "Corebridge Direct",
+    "product": "Universal Life Insurance",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Universal Life Insurance",
+    "website": "https://www.corebridgedirect.com/universal-life-insurance",
+    "description": "Flexible permanent life insurance with adjustable premiums, lifetime coverage, and cash value accumulation."
+  },
+  {
+    "carrier": "Corebridge Direct",
+    "product": "Whole Life Insurance",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Whole Life Insurance",
+    "website": "https://www.corebridgedirect.com/whole-life-insurance",
+    "description": "Permanent life insurance with guaranteed premiums, guaranteed cash value, and a guaranteed death benefit."
+  },
+  {
+    "carrier": "Corebridge Direct",
+    "product": "Guaranteed Issue Whole Life Insurance",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3",
+      "Pillar 4"
+    ],
+    "category": "Simplified / Guaranteed",
+    "sub_category": "Guaranteed Issue Life Insurance",
+    "website": "https://www.corebridgedirect.com/guaranteed-issue-whole-life-insurance",
+    "description": "Whole life coverage with no medical exam or health questions, designed to cover final expenses and end-of-life costs."
+  },
+  {
+    "carrier": "Corebridge Direct",
+    "product": "Final Expense Insurance",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 4"
+    ],
+    "category": "Simplified / Guaranteed",
+    "sub_category": "Final Expense Life Insurance",
+    "website": "https://www.corebridgedirect.com/final-expense-insurance",
+    "description": "Simplified whole life insurance for smaller coverage needs to help families pay for funeral, medical, and end-of-life expenses."
+  },
+  {
+    "carrier": "Corebridge Direct",
+    "product": "Accidental Death and Dismemberment Insurance",
+    "pillars": [
+      "Pillar 2"
+    ],
+    "category": "Supplemental Protection",
+    "sub_category": "AD&D Insurance",
+    "website": "https://www.corebridgedirect.com/accidental-death-insurance",
+    "description": "Coverage that pays benefits for accidental death or qualifying severe injuries, offering affordable supplemental protection."
+  },
+  {
+    "carrier": "Corebridge Financial",
+    "product": "Index annuity",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Growth-Oriented Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.corebridgefinancial.com/what-we-offer/annuities/index-annuities",
+    "description": "Fixed annuities with index-linked interest potential, offering growth opportunities with downside protection and tax-deferred accumulation."
+  },
+  {
+    "carrier": "Corebridge Financial",
+    "product": "Fixed annuity",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Traditional Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.corebridgefinancial.com/what-we-offer/annuities/fixed-annuities",
+    "description": "Guaranteed interest annuity providing stable, tax-deferred growth and predictable future income."
+  },
+  {
+    "carrier": "Corebridge Financial",
+    "product": "Variable annuity",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Growth-Oriented Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.corebridgefinancial.com/what-we-offer/annuities/variable-annuities",
+    "description": "Tax-deferred annuity offering market-linked investment options through subaccounts for higher growth potential."
+  },
+  {
+    "carrier": "Corebridge Financial",
+    "product": "Registered Index-Linked Annuity (RILA)",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Growth-Oriented Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.corebridgefinancial.com/what-we-offer/annuities/registered-index-linked-annuity",
+    "description": "Annuity linked to market performance with upside potential and defined downside protection options."
+  },
+  {
+    "carrier": "Corebridge Financial",
+    "product": "Term Life Insurance",
+    "pillars": [],
+    "category": "Core Life Insurance",
+    "sub_category": "Term Life Insurance",
+    "website": "https://www.corebridgefinancial.com/what-we-offer/life-insurance/term-life",
+    "description": "Affordable temporary protection for a set timeframe, designed to replace income and cover major family needs."
+  },
+  {
+    "carrier": "Corebridge Financial",
+    "product": "Permanent Life Insurance",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Permanent Life Insurance",
+    "website": "https://www.corebridgefinancial.com/what-we-offer/life-insurance/permanent-life-insurance",
+    "description": "Lifelong protection with cash value accumulation and flexible policy options for long-term financial planning."
+  },
+  {
+    "carrier": "Corebridge Financial",
+    "product": "Final Expense Insurance",
+    "pillars": [
+      "Pillar 4"
+    ],
+    "category": "Simplified / Guaranteed",
+    "sub_category": "Final Expense Life Insurance",
+    "website": "https://www.corebridgefinancial.com/what-we-offer/life-insurance/final-expense-whole-life-insurance",
+    "description": "Whole life coverage designed to help families cover funeral and end-of-life costs without medical exams."
+  },
+  {
+    "carrier": "Ethos",
+    "product": "Term life",
+    "pillars": [
+      "Pillar 2"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Term Life Insurance",
+    "website": "https://www.ethos.com/life/term-life-policies/",
+    "description": "Instant-quote, no-medical-exam term coverage for many applicants."
+  },
+  {
+    "carrier": "Ethos",
+    "product": "Whole Life Insurance",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Whole Life Insurance",
+    "website": "https://www.ethos.com/life/whole-life-policies/",
+    "description": "Permanent life insurance with lifetime coverage, level premiums, and cash value accumulation\u2014applied for fully online."
+  },
+  {
+    "carrier": "Ethos",
+    "product": "Guaranteed-issue whole life",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3",
+      "Pillar 4"
+    ],
+    "category": "Simplified / Guaranteed",
+    "sub_category": "Whole Life Insurance",
+    "website": "https://www.ethoslife.com/whole-life",
+    "description": "Final-expense style whole life; guaranteed approval for eligible ages."
+  },
+  {
+    "carrier": "Ethos",
+    "product": "Permanent Life Insurance",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Permanent Life Insurance",
+    "website": "https://www.ethos.com/life-insurance/permanent-life-insurance/",
+    "description": "Overview of permanent life options designed to last a lifetime and build cash value alongside a guaranteed death benefit."
+  },
+  {
+    "carrier": "Ethos",
+    "product": "Guaranteed Issue Life Insurance",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 4"
+    ],
+    "category": "Simplified / Guaranteed",
+    "sub_category": "Guaranteed Issue Life Insurance",
+    "website": "https://www.ethos.com/life-insurance/guaranteed-issue-life-insurance/",
+    "description": "Whole life coverage with guaranteed acceptance (no medical exam), generally aimed at covering end-of-life and final expenses."
+  },
+  {
+    "carrier": "Ethos",
+    "product": "Final Expense Insurance",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 4"
+    ],
+    "category": "Simplified / Guaranteed",
+    "sub_category": "Final Expense Life Insurance",
+    "website": "https://www.ethos.com/life-insurance/final-expense-life-insurance/",
+    "description": "Affordable, easy-to-apply coverage intended to help loved ones pay funeral, burial, and other end-of-life costs."
+  },
+  {
+    "carrier": "Ethos",
+    "product": "Indexed Universal Life Insurance",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Advanced Life Insurance",
+    "sub_category": "Indexed Universal Life (IUL)",
+    "website": "https://www.ethos.com/life-insurance/what-is-indexed-universal-life-insurance-iul/",
+    "description": "Explainer of IUL: permanent coverage with flexible premiums and cash value interest tied to a market index (with caps/floors); availability varies."
+  },
+  {
+    "carrier": "Fidelity & Guarantee Life (F&G)",
+    "product": "Fixed Annuity",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Traditional Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.fglife.com/annuities/fia",
+    "description": "Fixed indexed annuity offering index-linked growth potential with downside protection and tax-deferred accumulation; income features available. (F&G)"
+  },
+  {
+    "carrier": "Fidelity & Guarantee Life (F&G)",
+    "product": "Multi-Year Guaranteed Annuity (MYGA)",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Traditional Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.fglife.com/annuities/myga",
+    "description": "Fixed annuity with a multi-year guaranteed interest rate, providing predictable, tax-deferred growth for a set term. (F&G)"
+  },
+  {
+    "carrier": "Fidelity & Guarantee Life (F&G)",
+    "product": "Registered Index-Linked Annuity (RILA)",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Growth-Oriented Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.fglife.com/annuities/rila",
+    "description": "Market-linked annuity with buffered downside and upside potential; values can fluctuate and principal loss is possible. (F&G)"
+  },
+  {
+    "carrier": "Fidelity & Guarantee Life (F&G)",
+    "product": "Indexed Universal Life (IUL)",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Advanced Life Insurance",
+    "sub_category": "Indexed Universal Life (IUL)",
+    "website": "https://www.fglife.com/life-insurance",
+    "description": "Permanent life insurance with flexible premiums and cash value that earns interest via index crediting; includes various life-insurance features and options. (F&G)"
+  },
+  {
+    "carrier": "Lincoln Financial Life",
+    "product": "Fixed Annuties",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Traditional Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.lincolnfinancial.com/public/individuals/products/annuities/fixedannuities",
+    "description": "Fixed annuities that provide guaranteed interest growth, tax-deferred accumulation, and options for predictable future income."
+  },
+  {
+    "carrier": "Lincoln Financial Life",
+    "product": "Fixed Index Annuties",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Growth-Oriented Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.lincolnfinancial.com/public/individuals/products/annuities/fixedindexedannuities",
+    "description": "Fixed indexed annuities offering growth tied to market indexes with protection from market loss and income options for retirement."
+  },
+  {
+    "carrier": "Lincoln Financial Life",
+    "product": "Variable Annuties",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Growth-Oriented Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.lincolnfinancial.com/public/individuals/products/annuities/variableannuities",
+    "description": "Market-linked annuities with investment options for growth potential, tax-deferred accumulation, and optional income or protection features."
+  },
+  {
+    "carrier": "Lincoln Financial Life",
+    "product": "Index-lined Annuties",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Growth-Oriented Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.lincolnfinancial.com/public/individuals/products/annuities/indexlinkedannuities",
+    "description": "Index-linked annuities offering a balance of growth potential with defined levels of downside protection based on market performance."
+  },
+  {
+    "carrier": "Lincoln Financial Life",
+    "product": "Term life",
+    "pillars": [],
+    "category": "Core Life Insurance",
+    "sub_category": "Term Life Insurance",
+    "website": "https://www.lincolnfinancial.com/public/individuals/products/lifeinsurance/termlife",
+    "description": "Convertible term protection options."
+  },
+  {
+    "carrier": "Lincoln Financial Life",
+    "product": "Indexed UL (IUL)",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Advanced Life Insurance",
+    "sub_category": "Indexed Universal Life (IUL)",
+    "website": "https://www.lincolnfinancial.com/public/individuals/products/lifeinsurance/permanentlife/indexeduniversallife",
+    "description": "Permanent life with index-linked growth potential."
+  },
+  {
+    "carrier": "Lincoln Financial Life",
+    "product": "Variable UL (VUL)",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Advanced Life Insurance",
+    "sub_category": "Variable Universal Life (VUL)",
+    "website": "https://www.lincolnfinancial.com/public/individuals/products/lifeinsurance/permanentlife/variableuniversallife",
+    "description": "Market-exposed cash value via subaccounts."
+  },
+  {
+    "carrier": "Lincoln Financial Life",
+    "product": "MoneyGuard\u00ae (UL/VUL with LTC riders)",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Advanced Life Insurance",
+    "sub_category": "Hybrid Life + Long-Term Care (Linked-Benefit)",
+    "website": "https://www.lincolnfinancial.com/public/individuals/products/longtermcareplanning/moneyguardsolutions",
+    "description": "Hybrid life/LTC solutions reimbursing qualified long-term-care expenses."
+  },
+  {
+    "carrier": "Mutual of Omaha",
+    "product": "Income & Deferred Annuities",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Specialized Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.mutualofomaha.com/annuities/plans",
+    "description": "Portfolio of immediate and deferred annuities offering guaranteed income now or in the future, with tax-deferred growth options."
+  },
+  {
+    "carrier": "Mutual of Omaha",
+    "product": "Term life",
+    "pillars": [
+      "Pillar 2"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Term Life Insurance",
+    "website": "https://www.mutualofomaha.com/life-insurance/term-life-insurance",
+    "description": "Fixed-term coverage; often convertible to permanent."
+  },
+  {
+    "carrier": "Mutual of Omaha",
+    "product": "Whole life",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Whole Life Insurance",
+    "website": "https://www.mutualofomaha.com/life-insurance/whole-life-insurance",
+    "description": "Permanent coverage with guaranteed cash value."
+  },
+  {
+    "carrier": "Mutual of Omaha",
+    "product": "Children Whole Life Insurance",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3",
+      "Pillar 4"
+    ],
+    "category": "Simplified / Guaranteed",
+    "sub_category": "Children Whole Life Insurance",
+    "website": "https://www.mutualofomaha.com/life-insurance/Children-whole-life-insurance",
+    "description": "Lifetime coverage for children with level premiums, guaranteed death benefit, and cash value designed to grow over time."
+  },
+  {
+    "carrier": "Mutual of Omaha",
+    "product": "Universal life",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Universal Life Insurance",
+    "website": "https://www.mutualofomaha.com/life-insurance/universal-life-insurance",
+    "description": "Flexible-premium permanent coverage with cash value."
+  },
+  {
+    "carrier": "Nationwide Life",
+    "product": "Advisory Variable Universal Life (VUL)",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Advanced Life Insurance",
+    "sub_category": "Variable Universal Life (VUL)",
+    "website": "https://www.nationwide.com/personal/insurance/life/permanent/variable/advisor-vul/",
+    "description": "Fee-based VUL built for RIAs; 140+ investment options."
+  },
+  {
+    "carrier": "Nationwide Life",
+    "product": "Term life",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Term Life Insurance",
+    "website": "https://www.nationwide.com/personal/insurance/life/term/",
+    "description": "Affordable protection for a set period with level premiums; often includes options to convert to permanent coverage."
+  },
+  {
+    "carrier": "Nationwide Life",
+    "product": "Whole Life Insurance",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Whole Life Insurance",
+    "website": "https://www.nationwide.com/personal/insurance/life/permanent/whole/",
+    "description": "Lifetime coverage with guaranteed premiums, guaranteed cash value, and a guaranteed death benefit."
+  },
+  {
+    "carrier": "Nationwide Life",
+    "product": "Universal Life Insurance",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Universal Life Insurance",
+    "website": "https://www.nationwide.com/personal/insurance/life/permanent/universal/",
+    "description": "Flexible permanent life insurance with adjustable premiums and death benefit, plus cash value that earns interest."
+  },
+  {
+    "carrier": "Nationwide Life",
+    "product": "Indexed Universal Life (IUL)",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Advanced Life Insurance",
+    "sub_category": "Indexed Universal Life (IUL)",
+    "website": "https://www.nationwide.com/personal/insurance/life/permanent/indexed-universal/",
+    "description": "Permanent life with flexible premiums and cash value interest tied to a market index (with caps/floors) for growth potential."
+  },
+  {
+    "carrier": "Nationwide Life",
+    "product": "Variable Universal Life (VUL)",
+    "pillars": [
+      "Pillar 2"
+    ],
+    "category": "Advanced Life Insurance",
+    "sub_category": "Variable Universal Life (VUL)",
+    "website": "https://www.nationwide.com/personal/insurance/life/permanent/variable/",
+    "description": "Permanent life offering market-based investment options (subaccounts) for higher growth potential with associated market risk."
+  },
+  {
+    "carrier": "North American Life",
+    "product": "Fixed / Fixed Indexed annuities",
+    "pillars": [
+      "Pillar 3"
+    ],
+    "category": "Traditional Annuities",
+    "sub_category": "Annuities",
+    "website": "https://www.northamericancompany.com/explore-annuities",
+    "description": "Principal-protected annuities offering fixed interest or index-linked crediting, tax-deferred growth, and income options for retirement."
+  },
+  {
+    "carrier": "North American Life",
+    "product": "Term life",
+    "pillars": [
+      "Pillar 2"
+    ],
+    "category": "Core Life Insurance",
+    "sub_category": "Term Life Insurance",
+    "website": "https://www.northamericancompany.com/explore-life-insurance",
+    "description": "Affordable coverage for a defined period."
+  },
+  {
+    "carrier": "North American Life",
+    "product": "Indexed Universal Life (IUL)",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 3"
+    ],
+    "category": "Advanced Life Insurance",
+    "sub_category": "Indexed Universal Life (IUL)",
+    "website": "https://www.northamericancompany.com/explore-life-insurance",
+    "description": "Permanent life with index-linked crediting; multiple IUL series."
+  },
+  {
+    "carrier": "NetLaw",
+    "product": "Will & ancillary docs",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 4"
+    ],
+    "category": "Legal Protection Essentials",
+    "sub_category": "Estate Planning",
+    "website": "https://www.netlaw.com/legacy/",
+    "description": "Attorney-backed online Last Will, HIPAA authorization, etc."
+  },
+  {
+    "carrier": "NetLaw",
+    "product": "Revocable living trust",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 4"
+    ],
+    "category": "Legal Protection Essentials",
+    "sub_category": "Estate Planning",
+    "website": "https://www.netlaw.com/solutions/",
+    "description": "Online attorney-led revocable trust creation and updates."
+  },
+  {
+    "carrier": "NetLaw",
+    "product": "Financial & healthcare POA / directives",
+    "pillars": [
+      "Pillar 2",
+      "Pillar 4"
+    ],
+    "category": "Family & End-of-Life Planning",
+    "sub_category": "Estate Planning",
+    "website": "https://www.netlaw.com/solutions/",
+    "description": "Financial POA, healthcare proxy/surrogate and living will."
+  }
+]

@@ -13,12 +13,20 @@
 
 :root {
     /* Brand palette */
-    --navy-900: #0b1b2a;
-    --navy-800: #11283d;
-    --navy-700: #18334c;
-    --navy-600: #20405b;  /* Lighter than 700, still rich navy */
-    --navy-500: #2a4d6c;  /* Mid-navy, good for borders, secondary text, UI accents */
 
+    --navy-100: #e8eef5;   /* Soft mist blue-gray, very light */
+    --navy-200: #c9d6e4;   /* Gentle pastel navy, clean + airy */
+    --navy-300: #9eb4c8;   /* Muted slate navy, warm + modern */
+    --navy-400: #54738f;   /* True mid-slate navy, rich but soft */
+    --navy-500: #2a4d6c;  /* Mid-navy, good for borders, secondary text, UI accents */
+    --navy-600: #20405b;  /* Lighter than 700, still rich navy */
+    --navy-700: #18334c;
+    --navy-800: #11283d;
+    --navy-900: #0b1b2a;
+
+    --teal-100: #ccfbf1;   /* softest, airy, luxe highlight */
+    --teal-200: #99f6e4;   /* pastel teal, gentle glow */
+    --teal-300: #5eead4;   /* soft-luxe midtone, matches your style */
     --teal-400: #2dd4bf;
     --teal-500: #14b8a6;
     --teal-600: #0ea5a0;
@@ -150,23 +158,10 @@ a {
     text-decoration: none;
 }
 
-a.is-hoverable {
-    display: inline-flex;       /* allows smooth transform */
-    align-items: center;
-    transition: all var(--anim-fast) ease;
-}
-
-a.is-hoverable:hover {
-    transform: translateX(8px); /* same sideways bump as flashy-list */
-    color: var(--teal-700) !important; /* same text color during hover */
-}
-
 a.link{
     padding: 10px 12px;
     border-radius: var(--radius-sm);
-    color: #000;
     font-weight: 600;
-    background: var(--teal-400);
 }
 
 a.link:hover {

@@ -174,8 +174,8 @@
   <section class="flashy-section delay-2">
     <h2><i data-feather="calculator" class="icon"></i> Interactive Compound Interest Calculator</h2>
     <p>Use the SEC’s trusted calculator to see your own long-term growth projections.</p>
-
-    <button id="openCalcModal" class="btn-glow md">
+    <!-- TRIGGER BUTTON -->
+    <button data-modal-open="calcModal" class="btn-glow sm" id="openCalcModal">
       Open Compound Interest Calculator ↗
     </button>
   </section>
@@ -184,9 +184,16 @@
 
 <div id="site-footer"></div>
 
+<script type="module" src="/assets/js/auto_page_id.js" defer></script>
+<script type="module" src="/assets/js/taxonomy/taxonomy_manager.js" defer></script>
+<script type="module" src="/assets/js/taxonomy/taxonomy_loader.js" defer></script>
+<script type="module" src="/assets/js/taxonomy/page_metadata.js" defer></script>
+<script src="/assets/js/resource_core.js" defer></script>
+
 <!-- Core Scripts -->
 <script type="module" src="/assets/js/core.js" defer></script>
 <script type="module" src="/assets/js/pages/financial_ed.js" defer></script>
+
 
 <!-- MODAL -->
 <div id="calcModal" class="vv-modal hidden">
@@ -205,28 +212,12 @@
         Continue to Calculator ↗
       </a>
 
-      <button id="closeCalcModal" class="btn-glow sm" style="background:#ccc; color:#000;">
+      <button data-modal-close class="btn-glow sm" style="background:#ccc; color:#000;">
         Close
       </button>
     </div>
   </div>
 </div>
-
-<script>
-  document.getElementById("openCalcModal").addEventListener("click", () => {
-    document.getElementById("calcModal").classList.remove("hidden");
-  });
-
-  document.getElementById("closeCalcModal").addEventListener("click", () => {
-    document.getElementById("calcModal").classList.add("hidden");
-  });
-
-  document.getElementById("calcModal").addEventListener("click", (e) => {
-    if (e.target.id === "calcModal") {
-      document.getElementById("calcModal").classList.add("hidden");
-    }
-  });
-</script>
-
+<script type="module" src="/assets/js/core.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,35 @@
+#taxonomy-badges {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.badge-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.badge-label {
+    font-weight: 600;
+    color: var(--navy-700);
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--gray-100);
+    font-size: 0.85rem;
+    color: var(--navy-700);
+    border: 1px solid var(--gray-300);
+}
+
+.badge-topic      { background: var(--teal-100);    border-color: var(--teal-300); }
+.badge-format     { background: var(--gray-200);    }
+.badge-product    { background: var(--yellow-100);  }
+.badge-carrier    { background: var(--purple-100);  }
+.badge-pillar     { background: var(--blue-100);    }
+.badge-resource   { background: var(--green-100);   }

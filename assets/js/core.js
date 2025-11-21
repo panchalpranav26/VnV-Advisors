@@ -12,17 +12,34 @@
 import { initNav } from './components/nav.js';
 import { initMobileNav } from './components/mobile_nav.js';
 import { initPageTOC } from './components/page_toc.js';
+import { TaxonomyManager } from "/assets/js/taxonomy/taxonomy_manager.js";
+import { PageMetadata } from "/assets/js/taxonomy/page_metadata.js";
 
 let currentNavMode = null;      // "desktop" or "mobile"
 let mobileNavAPI = null;        // stores return object from initMobileNav()
+
+window.VVResourceStore = {
+    data: null,
+    loaded: false
+};
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         // 1) Load header & footer HTML fragments
         await loadHeaderFooter();
-
-        // 2) Fix Home links (must run AFTER header loads)
+        await window.loadTrustedResources();
+        console.info("[core] Trusted Resources Loaded");
+        attachResourceIcons();
         fixHomeLinks();
+        initExtLinkModals();
+        attachExtLinkResourceModalHandlers();
+
+        // 2) Load Taxonomy FIRST (because other loaders may use it)
+        // Load taxonomy + page metadata
+        await TaxonomyManager.load();
+        await PageMetadata.load();
+        PageMetadata.applyBadges();
+        console.info("[core] Taxonomy + Page Metadata applied.");
 
     } catch (e) {
         console.error('[core] Init failed:', e);
@@ -303,7 +320,23 @@ function loadFeatherIcons() {
     });
 }
 
+function attachResourceIcons() {
+    const resourceLinks = document.querySelectorAll(".resource a");
 
+    resourceLinks.forEach(link => {
+        // Skip if already injected
+        if (link.querySelector("i[data-feather]")) return;
+
+        const icon = document.createElement("i");
+        icon.setAttribute("data-feather", "external-link"); // choose icon
+        icon.classList.add("feather-icon");
+
+        link.prepend(icon); // or append(icon)
+    });
+
+    // Re-run Feather replacement
+    if (window.feather) feather.replace();
+}
 
 async function initUIEffects() {
     await loadFeatherIcons();
@@ -328,3 +361,169 @@ async function initUIEffects() {
 
     elementsToReveal.forEach(el => revealObserver.observe(el));
 }
+
+
+/* ============================================================
+   UNIVERSAL MODAL HANDLER — Drop-in Reusable System
+   Works for ANY modal with data-modal-target + data-modal-close
+   ============================================================ */
+
+export function initExtLinkModals() {
+    console.info("[core] Modal system initialized…");
+
+    /* OPEN MODAL HANDLERS */
+    document.querySelectorAll("[data-modal-open]").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const target = btn.getAttribute("data-modal-open");
+            const modal = document.getElementById(target);
+            if (modal) modal.classList.remove("hidden");
+        });
+    });
+
+    /* CLOSE MODAL HANDLERS */
+    document.querySelectorAll("[data-modal-close]").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const modal = btn.closest(".vv-modal");
+            if (modal) modal.classList.add("hidden");
+        });
+    });
+
+    /* CLICK OUTSIDE TO CLOSE */
+    document.querySelectorAll(".vv-modal").forEach(modal => {
+        modal.addEventListener("click", e => {
+            if (e.target === modal) {
+                modal.classList.add("hidden");
+            }
+        });
+    });
+}
+
+// Close buttons
+document.addEventListener("click", e => {
+    if (e.target.matches("[data-modal-close]")) {
+        document.getElementById("vvModal").classList.add("hidden");
+    }
+});
+
+
+function attachExtLinkResourceModalHandlers() {
+    document.querySelectorAll("[data-modal-open]").forEach(el => {
+        el.addEventListener("click", () => {
+            const orgId = el.getAttribute("data-modal-id");
+            const resourceUrl = el.getAttribute("data-resource-url");
+
+            const org = window.VVResourceStore.data.find(o => o.id === orgId);
+            if (!org) return;
+
+            document.getElementById("vvModalTitle").textContent = org.name;
+            document.getElementById("vvModalText").textContent = org.description;
+
+            const btn = document.getElementById("vvModalPrimaryBtn");
+            btn.href = resourceUrl;
+            btn.textContent = "Visit Resource ↗";
+
+            document.getElementById("vvModal").classList.remove("hidden");
+        });
+    });
+}
+
+
+/**
+ * getPageResources(pageId)
+ * Returns a formatted HTML string of resource links for a specific page.
+ *
+ * OUTPUT EXAMPLE:
+ * <a href="URL">Resource (ORG)</a> | <a href="URL2">Resource (ORG)</a>
+ */
+async function getPageResources(pageId, subcategoryId, sectionId, type = null) {
+    try {
+        if (!window.VVResourceStore || !window.VVResourceStore.loaded) {
+            await loadTrustedResources();
+        }
+
+        const allOrgs = window.VVResourceStore.data;
+        const results = [];
+
+        allOrgs.forEach(org => {
+
+            const matchSection     = org.section_ids.includes(sectionId);
+            const matchSubcategory = org.subcategory_ids.includes(subcategoryId);
+            const matchPage        = org.page_ids.includes(pageId);
+
+            console.log("ORG CHECK:", {
+                org: org.id,
+                sectionMatch: org.section_ids.includes(sectionId),
+                subMatch: org.subcategory_ids.includes(subcategoryId),
+                pageMatch: org.page_ids.includes(pageId),
+                resourceTypes: org.resources.map(r => r.types)
+            });
+
+            if (matchSection && matchSubcategory && matchPage) {
+
+                org.resources.forEach(r => {
+
+                    const matchType = type
+                        ? r.types.includes(type)
+                        : true;
+
+                    if (!matchType) return;
+
+                    results.push({
+                        url: r.url,
+                        title: r.resource,
+                        orgName: org.name
+                    });
+                });
+            }
+        });
+
+        if (results.length === 0) return "";
+
+        return results
+            .map(item =>
+                `<a href="${item.url}" target="_blank">
+                    ${item.title} (${item.orgName})
+                 </a>`
+            )
+            .join(" | ");
+
+    } catch (err) {
+        console.error("[getPageResources] Error:", err);
+        return "";
+    }
+}
+
+// ➜ Expose globally for inline scripts
+
+
+/* ============================================================
+   Load Trusted Resources JSON One Time (Global Store)
+   ============================================================ */
+window.loadTrustedResources = async function () {
+    if (!window.VVResourceStore) {
+        window.VVResourceStore = { loaded: false, data: [] };
+    }
+
+    // Already loaded → skip re-fetch
+    if (window.VVResourceStore.loaded) {
+        return window.VVResourceStore.data;
+    }
+
+    try {
+        const res = await fetch("/assets/trusted_resources_data.json");
+        const json = await res.json();
+
+        window.VVResourceStore.data = json;
+        window.VVResourceStore.loaded = true;
+
+        console.info("[VVResourceStore] Loaded trusted resources");
+        return json;
+
+    } catch (err) {
+        console.error("[VVResourceStore] Failed to load:", err);
+        return [];
+    }
+};
+
+window.attachExtLinkResourceModalHandlers = attachExtLinkResourceModalHandlers;
+window.getPageResources = getPageResources;

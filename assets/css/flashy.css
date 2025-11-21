@@ -136,7 +136,17 @@
 /* CONTENT drives height */
 .flashy-section.two-col .content-col {
     flex: 2;
+    min-width: 320px;              /* prevents bullet clipping */
+    padding: 1.5rem 0 1.5rem 0.5rem;
 }
+
+
+/* Ensure lists always render properly */
+.flashy-section.two-col .content-col ul,
+.flashy-section.two-col .content-col ol {
+    margin: 1rem 0;
+}
+
 
 /* IMAGE COLUMN matches content height */
 .flashy-section.two-col .image-col {
@@ -179,9 +189,11 @@
 
 
 /* ============================================================
-   4. FLASHY LISTS (.flashy-list)
-   ============================================================ */
+   SOFT LUXE FLASHY LIST — Unified UL + OL
+   Black default → teal glow hover
+============================================================ */
 
+/* Reset */
 .flashy-list,
 .flashy-list ul,
 .flashy-list ol {
@@ -190,54 +202,221 @@
     margin: 1.5rem 0;
 }
 
+/* Base LI */
 .flashy-list li {
     position: relative;
     padding-left: 2.2rem;
     margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    transition: all var(--anim-fast) ease;
+    text-align: left;
+
+    display: block;
+    align-items: flex-start;
+
+    line-height: 1.55;
+
+    transition:
+            transform var(--anim-fast) ease,
+            color var(--anim-fast) ease;
 }
 
 .flashy-list li:hover {
-    transform: translateX(8px);
+    transform: translateX(6px);
     color: var(--teal-700);
+    text-decoration: underline;
 }
 
-.flashy-list ul li::before {
-    content: '•';
+/* ============================================================
+   1) UL BULLETS — Black → Teal on hover
+============================================================ */
+
+.flashy-list li::before {
+    content: "";
     position: absolute;
     left: 0;
-    font-size: 1.5rem;
-    color: var(--teal-400);
+    top: 0.45rem;
+
+    width: 0.50rem;
+    height: 0.50rem;
+    border-radius: 50%;
+
+    /* DEFAULT — black orb */
+    background: linear-gradient(135deg, #000, #1a1a1a);
+
+    box-shadow:
+            0 0 4px rgba(0,0,0,0.35),
+            0 2px 6px rgba(0,0,0,0.22);
+
+    transition: all var(--anim-fast) ease;
 }
+
+/* Hover: Soft-Luxe teal glow */
+.flashy-list li:hover::before {
+    transform: scale(1.5);
+    transition: transform 0.18s ease, filter 0.18s ease;
+    background: linear-gradient(
+            135deg,
+            var(--teal-300),
+            var(--teal-500),
+            var(--navy-600)
+    );
+    box-shadow:
+            0 0 10px rgba(45,212,191,0.7),
+            0 4px 14px rgba(0,0,0,0.22);
+
+}
+
+/* ============================================================
+   Check BULLET VARIANT — Soft Luxe
+   Check → teal glow + scale on hover
+============================================================ */
+
+.flashy-list--check li::before {
+    content: "✔";
+    font-size: 0.95rem;
+    color: #000000;
+
+    background: none !important;
+    box-shadow: none !important;
+
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    transform: none !important;
+
+    display: inline-block;  /* ← REQUIRED for scale to work */
+
+    top: 0.15rem;
+    line-height: 1;
+}
+
+/* Increase checkmark size on hover */
+.flashy-list--check li:hover::before {
+    color: var(--teal-600);
+    transform: scale(1.5) !important;
+    filter: drop-shadow(0 0 6px rgba(45,212,191,0.65));
+    transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+/* ============================================================
+   ARROW BULLET VARIANT — Soft Luxe
+   Black arrow → teal glow + scale on hover
+============================================================ */
+
+.flashy-list--arrow li::before {
+    content: "➤";                  /* ← arrow character */
+    color: #000000;
+
+    /* override original orb styles */
+    background: none !important;
+    box-shadow: none !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    transform: scale(1);               /* make sure transform is applied */
+
+    display: inline-block;         /* required for transform */
+
+    top: 0.15rem;
+    left: 0;
+    line-height: 1;
+
+    transition: transform 0.18s ease,
+    filter 0.18s ease,
+    color 0.18s ease;
+}
+
+/* Hover animation */
+.flashy-list--arrow li:hover::before {
+    transform: scale(1.5) !important;  /* bigger on hover */
+    color: var(--teal-600);            /* deeper teal */
+    filter: drop-shadow(0 0 6px rgba(45,212,191,0.65));
+}
+
+
+
+/* ============================================================
+   2) OL NUMBER BUBBLES — Black → Teal on hover
+============================================================ */
 
 .flashy-list ol {
-    counter-reset: list-item;
+    counter-reset: luxe-counter;
 }
+
 .flashy-list ol li {
-    counter-increment: list-item;
+    counter-increment: luxe-counter;
 }
+
 .flashy-list ol li::before {
-    content: counter(list-item) '.';
+    content: counter(luxe-counter);
+
     position: absolute;
     left: 0;
-    font-weight: bold;
-    color: var(--teal-400);
+    top: 0.2rem;
+
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+
+    /* DEFAULT — black */
+    background: linear-gradient(135deg, #000, #1a1a1a);
+
+    box-shadow:
+            0 0 4px rgba(0,0,0,0.35),
+            0 2px 6px rgba(0,0,0,0.22);
+
+    transition: all var(--anim-fast) ease;
 }
+
+/* Hover: Soft-Luxe teal glow */
+.flashy-list ol li:hover::before {
+    transform: scale(1.12);
+    background: linear-gradient(
+            135deg,
+            var(--teal-300),
+            var(--teal-500),
+            var(--navy-600)
+    );
+    box-shadow:
+            0 0 10px rgba(45,212,191,0.7),
+            0 4px 14px rgba(0,0,0,0.22);
+}
+
+/* ============================================================
+   ICON MODE (unchanged)
+============================================================ */
 
 .flashy-list li i {
     position: absolute;
     left: 0;
+    top: 0.2rem;
+
     width: 1.6rem;
     height: 1.6rem;
+    font-size: 1.2rem;
+
     color: var(--teal-400);
-    transition: transform var(--anim-fast);
+
+    filter: drop-shadow(0 2px 6px rgba(45,212,191,0.45));
+
+    transition:
+            transform var(--anim-fast),
+            filter var(--anim-fast);
 }
 
 .flashy-list li:hover i {
-    transform: scale(1.3) rotate(15deg);
+    transform: scale(1.25) rotate(8deg);
+    filter: drop-shadow(0 4px 12px rgba(45,212,191,0.6));
 }
+
+
 
 
 /* ============================================================
@@ -651,8 +830,15 @@
     to { transform: scale(1); opacity: 1; }
 }
 
+.modal-top-title {
+    font-size: 1.4rem!important;
+    color: #000000!important;
+    margin-bottom: 1rem!important;
+}
+
+
 .modal-title {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     color: var(--teal-700);
     margin-bottom: 1rem;
 }

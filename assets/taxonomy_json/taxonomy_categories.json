@@ -1,0 +1,50 @@
+{
+  "categories": [
+
+    {
+      "category": "Life Insurance Products",
+      "sub_categories": [
+        "Term Life Insurance",
+        "Whole Life Insurance",
+        "Children's Whole Life Insurance",
+        "Permanent Life Insurance",
+        "Universal Life Insurance",
+        "Indexed Universal Life (IUL)",
+        "Variable Universal Life (VUL)",
+        "Simplified Issue Life Insurance",
+        "Guaranteed Issue Life Insurance",
+        "Final Expense Life Insurance",
+        "Linked-Benefit Life & LTC",
+        "Accidental Death & Dismemberment (AD&D)"
+      ]
+    },
+
+    {
+      "category": "Annuity Products",
+      "sub_categories": [
+        "Fixed Annuity",
+        "Fixed Indexed Annuity (FIA)",
+        "Registered Index-Linked Annuity (RILA)",
+        "Multi-Year Guaranteed Annuity (MYGA)",
+        "Variable Annuity",
+        "Immediate Annuity",
+        "Deferred Income Annuity",
+        "Income Annuity",
+        "Structured Settlement Annuity"
+      ]
+    },
+
+    {
+      "category": "Estate & Legal Protection",
+      "sub_categories": [
+        "Wills Package",
+        "Revocable Living Trust",
+        "Advance Directives",
+        "Powers of Attorney",
+        "Beneficiary Designations",
+        "Estate Transfer Planning"
+      ]
+    }
+
+  ]
+}
