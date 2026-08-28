@@ -2,5 +2,4 @@
 .netlify
 .idea
 /node_modules/
-/.env
 /extra_docs/
